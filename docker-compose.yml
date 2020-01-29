@@ -1,0 +1,16 @@
+
+version: "3"
+services:
+  ex:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ex
+    ports:
+      - 8080:8080
+    networks:
+      - netw
+    container_name: ex
+
+networks:
+  netw:
