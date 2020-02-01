@@ -9,8 +9,7 @@ pipeline {
         }
         stage('ConnectBuild') {
             steps {
-                sh 'docker -H localhost:2375 images'
-                sh 'docker-compose up'
+                sh 'sudo docker-compose up'
             }
         }
     }
