@@ -9,8 +9,7 @@ pipeline {
         }
         stage('Connect') {
             steps {
-                sh 'docker -H localhost:2375'
-                sh 'docker ps -a'
+                sh 'docker -H localhost:2375 images'
             }
         }
         stage('Deploy') {
