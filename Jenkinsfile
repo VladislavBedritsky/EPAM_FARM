@@ -7,13 +7,9 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Connect') {
+        stage('ConnectBuild') {
             steps {
                 sh 'docker -H localhost:2375 images'
-            }
-        }
-        stage('Deploy') {
-            steps{
                 sh 'docker-compose up'
             }
         }
