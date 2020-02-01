@@ -4,16 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir('/') {
-                    sh 'mvn install'
-                }
+                sh 'mvn clean install'
             }
         }
         stage('Deploy') {
             steps{
-                dir('/') {
-                    sh 'sudo docker-compose up'
-                }
+                sh 'sudo docker-compose up'
             }
         }
     }
