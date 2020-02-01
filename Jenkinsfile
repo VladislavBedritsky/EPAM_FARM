@@ -9,7 +9,7 @@ pipeline {
         }
         stage('ConnectBuild') {
             steps {
-                sh 'sudo docker-compose build'
+                sh 'docker-compose build'
                 sh 'docker-compose up -d'
             }
         }
