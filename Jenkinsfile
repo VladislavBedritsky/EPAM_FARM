@@ -9,8 +9,8 @@ pipeline {
         }
         stage('ConnectBuild') {
             steps {
-                sh 'export DOCKER_HOST=127.0.0.1:2375'
-                sh 'sudo docker-compose up'
+                sh 'sudo docker-compose build'
+                sh 'docker-compose up -d'
             }
         }
     }
