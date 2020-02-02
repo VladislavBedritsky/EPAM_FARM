@@ -5,6 +5,7 @@ pipeline {
         jdk '1.8.0_221'
     }
     stages {
+            def myImg
             stage('Build') {
                 steps {
                     bat 'mvn clean install'
@@ -12,7 +13,7 @@ pipeline {
             }
             stage('ConnectBuild') {
                 steps {
-                      docker.build 'hello-world'
+                     myImg = docker.build 'hello-world'
                 }
             }
     }
