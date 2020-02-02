@@ -10,8 +10,8 @@ pipeline {
                     bat 'mvn clean install'
                 }
             }
-         docker.withRegistry('https://registry.example.com/', 'svc-acct') {    
             stage('ConnectBuild') {
+                         docker.withRegistry('https://registry.example.com/', 'svc-acct') {    
                 steps {
                     bat 'docker-compose --version'
                     bat 'docker --version'
