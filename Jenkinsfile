@@ -9,9 +9,7 @@ pipeline {
         }
         stage('ConnectBuild') {
             steps {
-                sh 'cd /usr/local/bin'
-                sh 'docker-compose build'
-                sh 'docker-compose up -d'
+                sh 'docker-compose up'
             }
         }
     }
