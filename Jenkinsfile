@@ -12,7 +12,7 @@ pipeline {
         }
         stage('ConnectBuild') {
             steps {
-                bat 'docker-compose up'
+                bat 'docker run hello-world'
             }
         }
     }
