@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
         stage('ConnectBuild') {
             steps {
-                echo 'docker-compose up'
+                bat 'docker-compose up'
             }
         }
     }
