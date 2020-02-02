@@ -4,13 +4,13 @@ pipeline {
         maven '3.6.3'
         jdk '1.8.0_221'
     }
-    docker.withRegistry('https://registry.example.com/', 'svc-acct') {
-        stages {
+    stages {
             stage('Build') {
                 steps {
                     bat 'mvn clean install'
                 }
             }
+         docker.withRegistry('https://registry.example.com/', 'svc-acct') {    
             stage('ConnectBuild') {
                 steps {
                     bat 'docker-compose --version'
