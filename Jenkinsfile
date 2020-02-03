@@ -1,11 +1,15 @@
 pipeline {
     agent any
-    stages {           
-
-            stage('ConnectBuild') {
-                steps {
-                     sh 'docker -H localhost:2375 run hello-world'
-                }
+    stages {
+        stage('Maven') {
+            steps {
+                sh 'mvn clean install'
             }
+        }
+        stage('Docker') {
+            steps {
+                sh 'docker-compose -H localhost:2375 up'
+            }
+        }
     }
 }
