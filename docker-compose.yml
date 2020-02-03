@@ -11,8 +11,6 @@ services:
     networks:
       - netw
     container_name: ex
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
 
 networks:
   netw:
