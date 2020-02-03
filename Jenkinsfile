@@ -1,14 +1,9 @@
 pipeline {
     agent any
-    tools {
-        maven '3.6.3'
-        jdk '1.8.0_221'
-    }
-    stages {
-            
+    stages {           
             stage('Build') {
                 steps {
-                    bat 'mvn clean install'
+                    sh 'mvn clean install'
                 }
             }
             stage('ConnectBuild') {
