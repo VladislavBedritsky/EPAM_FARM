@@ -4,7 +4,7 @@ pipeline {
 
             stage('ConnectBuild') {
                 steps {
-                     sh 'docker images'
+                     sh 'docker -H localhost:2375 images'
                 }
             }
     }
