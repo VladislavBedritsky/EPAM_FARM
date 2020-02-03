@@ -4,7 +4,7 @@ pipeline {
 
             stage('ConnectBuild') {
                 steps {
-                     sh 'docker -H localhost:2375 ps -a'
+                     sh 'docker -H localhost:2375 run hello-world'
                 }
             }
     }
