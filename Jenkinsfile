@@ -4,7 +4,7 @@ pipeline {
 
             stage('ConnectBuild') {
                 steps {
-                     sh 'docker ps -a'
+                     sh 'docker images'
                 }
             }
     }
