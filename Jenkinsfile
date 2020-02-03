@@ -4,7 +4,7 @@ pipeline {
 
             stage('ConnectBuild') {
                 steps {
-                     sh 'sudo service docker start && docker run hello-world'
+                     sh 'docker ps -a'
                 }
             }
     }
