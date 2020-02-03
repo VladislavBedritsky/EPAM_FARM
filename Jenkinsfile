@@ -4,7 +4,7 @@ pipeline {
 
             stage('ConnectBuild') {
                 steps {
-                     sh 'docker -v'
+                     sh 'docker run hello-world'
                 }
             }
     }
