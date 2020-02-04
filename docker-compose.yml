@@ -9,6 +9,8 @@ services:
     ports:
       - 8088:8080
     container_name: app
+    networks:
+      - net
 
   jenkins:
     image: jenkins/jenkins:lts
@@ -25,6 +27,8 @@ services:
     ports:
       - 8087:8080
     container_name: tomcat
+    networks:
+      - net
 
   sonarqube:
     image: library/sonarqube:latest
@@ -33,12 +37,24 @@ services:
     container_name: sonarqube
     networks:
       - net
+    volumes:
+      - sonarqube_conf:/opt/sonarqube/conf
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
 
   artifactory:
     image: docker.bintray.io/jfrog/artifactory-oss:latest
     ports:
       - 8081:8081
     container_name: artifactory
+    networks:
+      - net
 
 networks:
   net:
+    driver: bridge
+
+volumes:
+  sonarqube_conf:
+  sonarqube_data:
+  sonarqube_extensions:
