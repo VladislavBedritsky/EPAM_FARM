@@ -1,11 +1,44 @@
 
 version: "3"
 services:
-  ex:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ex
+    image: app
     ports:
       - 8088:8080
-    container_name: ex
+    container_name: app
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - 8089:8080
+      - 50000:50000
+    container_name: jenkins
+    networks:
+      - net
+
+  tomcat:
+    image: tomcat:8.5.16-jre8-alpine
+    command: catalina.sh run
+    ports:
+      - 8087:8080
+    container_name: tomcat
+
+  sonarqube:
+    image: library/sonarqube:latest
+    ports:
+      - 9000:9000
+    container_name: sonarqube
+    networks:
+      - net
+
+  artifactory:
+    image: docker.bintray.io/jfrog/artifactory-oss:latest
+    ports:
+      - 8081:8081
+    container_name: artifactory
+
+networks:
+  net:
