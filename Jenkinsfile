@@ -5,7 +5,6 @@ pipeline {
             steps {
                 withSonarQubeEnv('Sonarqube') {
                     sh 'mvn install -Dmaven.test.failure.ignore=true sonar:sonar'
-                    step( [exclusionPattern: '**/*Exception*,**/Application*'] )
                 }
             }
         }
