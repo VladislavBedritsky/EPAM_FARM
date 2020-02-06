@@ -9,9 +9,10 @@ pipeline {
             }
         }
         stage("Quality Gate"){
-            timeout(time: 1, unit: 'HOURS') {
-                def qg = waitForQualityGate()
-                if (qg.status != 'OK') {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                 def qg = waitForQualityGate()
+                 if (qg.status != 'OK') {
                     slackSend baseUrl: 'https://hooks.slack.com/services/'
                     channel: 'jenkins-pipeline-demo'
                     color: 'danger'
@@ -21,7 +22,7 @@ pipeline {
                     error "Pipeline aborted due to quality gate failure: ${qg.status}"
                 }
             }
+            }
         }
-
     }
 }
