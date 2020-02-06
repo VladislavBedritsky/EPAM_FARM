@@ -15,6 +15,7 @@ pipeline {
                         def qg = waitForQualityGate()
                         if (qg.status != 'OK') {
                             error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                            emailext body: 'SonarQube tests are less than 80% => jenkins job(SNAPSHOT) failed', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'SonarQube FAILED'
                         }
                     }
                 }
