@@ -22,7 +22,7 @@ public class MainControllerTest {
 
     @Test
     public void shouldReturnDefaultMessage() throws Exception {
-        this.mockMvc.perform(get("/a")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/")).andExpect(status().isOk());
     }
 
 }
