@@ -11,9 +11,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith(SpringRunner.class)
+
 @SpringBootTest
 @AutoConfigureMockMvc
+@RunWith(SpringRunner.class)
 public class MainControllerTest {
 
     @Autowired
@@ -21,7 +22,7 @@ public class MainControllerTest {
 
     @Test
     public void shouldReturnDefaultMessage() throws Exception {
-        this.mockMvc.perform(get("/a")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/")).andExpect(status().isOk());
     }
 
 }
