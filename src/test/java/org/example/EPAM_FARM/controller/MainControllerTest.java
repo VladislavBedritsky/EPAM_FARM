@@ -21,7 +21,7 @@ public class MainControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void shouldReturnDefaultMessage() throws Exception {
+    public void shouldReturnDefaultMessage() throws Throwable {
         this.mockMvc.perform(get("/")).andExpect(status().isOk());
     }
 
