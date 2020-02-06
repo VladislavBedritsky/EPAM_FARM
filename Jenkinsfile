@@ -5,8 +5,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('Sonarqube') {
                     sh 'mvn install -Dmaven.test.failure.ignore=true sonar:sonar'
-                    step( [$class: 'JacocoPublisher',
-                           exclusionPattern: '**/*Exception*,**/Application*'] )
+                    step( [exclusionPattern: '**/*Exception*,**/Application*'] )
                 }
             }
         }
