@@ -8,7 +8,7 @@ pipeline {
                 }
             }
         }
-        stage("Quality Gate"){
+        stage("Quality Gate") {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
                     script {
@@ -21,6 +21,16 @@ pipeline {
                 }
             }
         }
+        stage("Check Artifactory") {
+            steps {
+                script {
+                    def artServer = Artifactory.server('ARTIFACTORY_SERVER')
+                    def buildInfo = Artifactory.newBuildInfo()
+                    artServer.publishBuildInfo buildInfo
+                }
+            }
+        }
+
     }
 }
 
