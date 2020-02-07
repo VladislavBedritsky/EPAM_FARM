@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage ('Git') {
+            steps {
+                git url: 'https://github.com/VladislavBedritsky/EPAM_FARM.git', branch: 'feature0.01'
+            }
+        }
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('Sonarqube') {
@@ -30,7 +35,20 @@ pipeline {
                 }
             }
         }
+        stage ('Publish to Artifactory') {
+            steps {
+                script {
+                    def artServer = Artifactory.server('ARTIFACTORY_SERVER')
+                    def rtMaven = Artifactory.newMavenBuild()
+                    def buildInfo = rtMaven.run pom: 'pom.xml',  goals: 'clean install'
 
+                    rtMaven.resolver server: artServer, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
+                    rtMaven.deployer server: artServer, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
+                    artServer.publishBuildInfo buildInfo
+                    rtMaven.deployer.deployArtifacts buildInfo
+                }
+            }
+        }
     }
 }
 
