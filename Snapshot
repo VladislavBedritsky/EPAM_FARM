@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    stages {
+        stage ('SNAPSHOT') {
+            steps {
+                step('SonarQube Analysis') {
+                    withSonarQubeEnv('Sonarqube') {
+                        sh 'mvn install -Dmaven.test.failure.ignore=true sonar:sonar'
+                    }
+                }
+            }
+        }
+    }
+}
