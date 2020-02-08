@@ -24,6 +24,12 @@ pipeline {
                     artServer.publishBuildInfo buildInfo
                 }
             }
+            post {
+                always {
+                    junit '**/surefire-reports/*.xml'
+                    recordIssues(tools: [checkStyle(), pmdParser(), spotBugs(useRankAsPriority: true)])
+                }
+            }
         }
 
         stage('RELEASE') {
