@@ -5,7 +5,7 @@ pipeline {
             steps {
 
                 withSonarQubeEnv('Sonarqube') {
-                    sh 'mvn install -Dmaven.test.failure.ignore=true sonar:sonar'
+                    sh 'mvn clean install -Dmaven.test.failure.ignore=true sonar:sonar'
                 }
 
                 timeout(time: 1, unit: 'HOURS') {
@@ -58,6 +58,7 @@ pipeline {
         stage('DEPLOY') {
             steps {
                 script {
+                    sh 'mvn clean install'
                     deploy adapters: [tomcat8(credentialsId: '7beb35bc-9714-44a7-a2cc-ff2acd2e7ca4', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'target/*.war'
                 }
             }
