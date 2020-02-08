@@ -14,4 +14,9 @@ public class MainController {
         model.addAttribute("hello","Hello world");
         return "index";
     }
+
+    @GetMapping("/q")
+    public String getPage (Model model) {
+        return "page";
+    }
 }
