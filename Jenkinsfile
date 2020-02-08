@@ -49,7 +49,22 @@ pipeline {
             post {
                 failure {
                     script {
-                        mail bcc: '', body: 'Artifactory stage failed.', cc: '', from: '', replyTo: '', subject: 'RELEASE FAILED', to: 'uladzislau_biadrytski@epam.com'
+                        mail bcc: '', body: 'Release stage failed.', cc: '', from: '', replyTo: '', subject: 'RELEASE FAILED', to: 'uladzislau_biadrytski@epam.com'
+                    }
+                }
+            }
+        }
+
+        stage('DEPLOY') {
+            steps {
+                script {
+                    deploy adapters: [tomcat8(credentialsId: '7beb35bc-9714-44a7-a2cc-ff2acd2e7ca4', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'target/*.war'
+                }
+            }
+            post {
+                failure {
+                    script {
+                        mail bcc: '', body: 'Deploy stage failed.', cc: '', from: '', replyTo: '', subject: 'DEPLOY FAILED', to: 'uladzislau_biadrytski@epam.com'
                     }
                 }
             }
