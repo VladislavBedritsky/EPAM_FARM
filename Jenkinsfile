@@ -62,7 +62,7 @@ pipeline {
                     deploy adapters: [tomcat8(credentialsId: '7beb35bc-9714-44a7-a2cc-ff2acd2e7ca4', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'target/*.war'
                 }
                 script {
-                    def status = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://localhost:8087/EPAM_FARM-1.4/', returnStdout: true)
+                    def status = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8087/EPAM_FARM-1.4/', returnStdout: true)
                     if (status != 200) {
                         currentBuild.result = 'FAILURE'
                     }
@@ -76,7 +76,6 @@ pipeline {
                 }
             }
         }
-
     }
 }
 
