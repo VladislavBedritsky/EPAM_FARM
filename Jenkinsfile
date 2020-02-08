@@ -63,8 +63,8 @@ pipeline {
 
                     sh 'sleep 15'
 
-                    def status = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8087/EPAM_FARM-1.4/', returnStdout: true)
-                    if (status != 200) {
+                    def status = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8087/EPAM_FARM-1.5/', returnStdout: true)
+                    if (status != "200") {
                         currentBuild.result = 'FAILURE'
                     }
                 }
