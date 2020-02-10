@@ -18,11 +18,11 @@ pipeline {
                     }
                 }
 
-                script {
-                    def artServer = Artifactory.server('ARTIFACTORY_SERVER')
-                    def buildInfo = Artifactory.newBuildInfo()
-                    artServer.publishBuildInfo buildInfo
-                }
+//                script {
+//                    def artServer = Artifactory.server('ARTIFACTORY_SERVER')
+//                    def buildInfo = Artifactory.newBuildInfo()
+//                    artServer.publishBuildInfo buildInfo
+//                }
             }
             post {
                 always {
