@@ -21,8 +21,12 @@ public class MainControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void shouldReturnDefaultMessage() throws Exception {
+    public void shouldReturnDefaultMessageGetIndex() throws Exception {
         this.mockMvc.perform(get("/")).andExpect(status().isOk());
     }
 
+    @Test
+    public void shouldReturnDefaultMessageGetPage() throws Exception {
+        this.mockMvc.perform(get("/q")).andExpect(status().isOk());
+    }
 }
