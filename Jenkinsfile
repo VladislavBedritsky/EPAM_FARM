@@ -17,12 +17,6 @@ pipeline {
                         }
                     }
                 }
-
-//                script {
-//                    def artServer = Artifactory.server('ARTIFACTORY_SERVER')
-//                    def buildInfo = Artifactory.newBuildInfo()
-//                    artServer.publishBuildInfo buildInfo
-//                }
             }
             post {
                 always {
@@ -35,6 +29,12 @@ pipeline {
         stage('RELEASE') {
             steps {
                 script {
+
+                    def ret = sh(script: 'curl -u admin:Eurovision2016  -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8081/artifactory/api/storage/libs-release-local/org/example/EPAM_FARM/1.5/EPAM_FARM-1.5.pom', returnStdout: true)
+                    if (ret == "200") {
+                        currentBuild.result = 'FAILURE'
+                    }
+
                     def artServer = Artifactory.server('ARTIFACTORY_SERVER')
                     def rtMaven = Artifactory.newMavenBuild()
                     rtMaven.tool = 'Maven-3.6'
@@ -68,9 +68,6 @@ pipeline {
                         currentBuild.result = 'FAILURE'
                     }
                 }
-
-
-
             }
             post {
                 failure {

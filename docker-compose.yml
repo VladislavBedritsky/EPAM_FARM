@@ -50,6 +50,14 @@ services:
     networks:
       - net
 
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    container_name: nginx
+    networks:
+      - net
+
 networks:
   net:
     driver: bridge
