@@ -33,6 +33,7 @@ pipeline {
                     def ret = sh(script: 'curl -u admin:Eurovision2016  -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8081/artifactory/api/storage/libs-release-local/org/example/EPAM_FARM/1.5/EPAM_FARM-1.5.pom', returnStdout: true)
                     if (ret == "200") {
                         currentBuild.result = 'FAILURE'
+                        error "release failed"
                     }
 
                     def artServer = Artifactory.server('ARTIFACTORY_SERVER')
@@ -66,6 +67,7 @@ pipeline {
                     def status = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8087/EPAM_FARM-1.5/', returnStdout: true)
                     if (status != "200") {
                         currentBuild.result = 'FAILURE'
+                        error "deploy failed"
                     }
                 }
             }
