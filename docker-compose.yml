@@ -1,16 +1,16 @@
 
-version: "3"
+version: "3.3"
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: app
-    ports:
-      - 8088:8080
-    container_name: app
-    networks:
-      - net
+#  app:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    image: app
+#    ports:
+#      - 8088:8080
+#    container_name: app
+#    networks:
+#      - net
 
   jenkins:
     image: jenkins/jenkins:lts
@@ -21,6 +21,17 @@ services:
     networks:
       - net
 
+#  jen:
+#    image: jenkins/jenkins:lts
+#    ports:
+#      - 8001:8080
+#      - 50001:50000
+#    container_name: jen
+#    networks:
+#      - net
+#    volumes:
+#      - ./config/jenkins_home:/var/jenkins_home
+
   tomcat:
     image: tomcat:8.5.16-jre8-alpine
     command: catalina.sh run
@@ -29,6 +40,9 @@ services:
     container_name: tomcat
     networks:
       - net
+    volumes:
+      - ./config/tomcat/context.xml:/usr/local/tomcat/webapps/manager/META-INF/context.xml
+      - ./config/tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
 
   sonarqube:
     image: library/sonarqube:latest
@@ -66,3 +80,4 @@ volumes:
   sonarqube_conf:
   sonarqube_data:
   sonarqube_extensions:
+

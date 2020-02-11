@@ -60,7 +60,7 @@ pipeline {
             steps {
                 script {
                     sh 'mvn clean install'
-                    deploy adapters: [tomcat8(credentialsId: '7beb35bc-9714-44a7-a2cc-ff2acd2e7ca4', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'target/*.war'
+                    deploy adapters: [tomcat8(credentialsId: '8dd11141-bd32-4d3d-8d85-f176d964449e', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'target/*.war'
 
                     sh 'sleep 15'
 
