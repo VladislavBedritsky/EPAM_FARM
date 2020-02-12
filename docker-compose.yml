@@ -13,15 +13,6 @@ services:
     volumes:
       - ./config/jenkins/jenkins_home:/var/jenkins_home
 
-  jen:
-    image: jenkins/jenkins:lts
-    ports:
-      - 808:8080
-      - 50001:50000
-    container_name: jen
-    networks:
-      - net
-
   tomcat:
     image: tomcat:8.5.16-jre8-alpine
     command: catalina.sh run
@@ -62,7 +53,7 @@ services:
     user: root
     volumes:
       - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
-#      - ./config/nginx/hosts:/etc/hosts
+      - ./config/nginx/hosts:/etc/hosts
 
 
 networks:
