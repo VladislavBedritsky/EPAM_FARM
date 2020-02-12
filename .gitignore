@@ -9,3 +9,4 @@ script.sh
 target
 Snapshot
 Dockerfile
+config/jenkins/jenkins_home

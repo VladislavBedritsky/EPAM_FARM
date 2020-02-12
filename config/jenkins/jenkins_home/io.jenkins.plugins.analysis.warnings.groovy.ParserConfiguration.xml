@@ -1,4 +1,0 @@
-<?xml version='1.1' encoding='UTF-8'?>
-<io.jenkins.plugins.analysis.warnings.groovy.ParserConfiguration plugin="warnings-ng@7.3.0">
-  <parsers/>
-</io.jenkins.plugins.analysis.warnings.groovy.ParserConfiguration>
