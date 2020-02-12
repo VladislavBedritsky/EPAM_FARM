@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
 
-                    def ret = sh(script: 'curl -u admin:Eurovision2016  -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8081/artifactory/api/storage/libs-release-local/org/example/EPAM_FARM/1.6/EPAM_FARM-1.6.pom', returnStdout: true)
+                    def ret = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8081/artifactory/api/storage/libs-release-local/org/example/EPAM_FARM/1.6/EPAM_FARM-1.6.pom', returnStdout: true)
                     if (ret == "200") {
                         currentBuild.result = 'FAILURE'
                         error "release failed"
@@ -62,7 +62,7 @@ pipeline {
                     sh 'mvn clean install'
                     deploy adapters: [tomcat8(credentialsId: '8dd11141-bd32-4d3d-8d85-f176d964449e', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'target/*.war'
 
-                    sh 'sleep 15'
+                    sh 'sleep 10'
 
                     def status = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8087/EPAM_FARM-1.6/', returnStdout: true)
                     if (status != "200") {

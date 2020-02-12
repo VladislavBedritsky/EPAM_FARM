@@ -1,0 +1,447 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<analysisReport plugin="analysis-model-api@7.0.4">
+  <elements class="linked-hash-set">
+    <issue>
+      <category>Checks</category>
+      <type>NewlineAtEndOfFileCheck</type>
+      <severity>ERROR</severity>
+      <message>File does not end with a newline.</message>
+      <lineStart>1</lineStart>
+      <lineEnd>1</lineEnd>
+      <columnStart>0</columnStart>
+      <columnEnd>0</columnEnd>
+      <lineRanges/>
+      <id>1daf9956-0a20-4cb6-94b3-f9545bd8173a</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/Application.java</fileName>
+      <fingerprint>E6C45F07535D64057675A905A80810E6</fingerprint>
+    </issue>
+    <issue>
+      <category>Javadoc</category>
+      <type>JavadocPackageCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Missing package-info.java file.</message>
+      <lineStart>1</lineStart>
+      <lineEnd>1</lineEnd>
+      <columnStart>0</columnStart>
+      <columnEnd>0</columnEnd>
+      <lineRanges/>
+      <id>87f35e7a-4561-4c5f-8990-94f97f4f1815</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/Application.java</fileName>
+      <fingerprint>E6C45F07535D64057675A905A80810E6</fingerprint>
+    </issue>
+    <issue>
+      <category>Javadoc</category>
+      <type>JavadocTypeCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Missing a Javadoc comment.</message>
+      <lineStart>8</lineStart>
+      <lineEnd>8</lineEnd>
+      <columnStart>0</columnStart>
+      <columnEnd>0</columnEnd>
+      <lineRanges/>
+      <id>b22c95f1-b93b-4c90-be05-f3f8e33e19a1</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/Application.java</fileName>
+      <fingerprint>08A9A4FCF36356C33D0F518AF3C85D0A</fingerprint>
+    </issue>
+    <issue>
+      <category>Javadoc</category>
+      <type>JavadocMethodCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Missing a Javadoc comment.</message>
+      <lineStart>11</lineStart>
+      <lineEnd>11</lineEnd>
+      <columnStart>5</columnStart>
+      <columnEnd>5</columnEnd>
+      <lineRanges/>
+      <id>9c35ae04-c3ee-4438-b0fc-cb680e105220</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/Application.java</fileName>
+      <fingerprint>3A77C727196F738FE0E62F5F1B3F0DC1</fingerprint>
+    </issue>
+    <issue>
+      <category>Checks</category>
+      <type>FinalParametersCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Parameter args should be final.</message>
+      <lineStart>11</lineStart>
+      <lineEnd>11</lineEnd>
+      <columnStart>29</columnStart>
+      <columnEnd>29</columnEnd>
+      <lineRanges/>
+      <id>e713f01d-917e-4588-97eb-49d9bd98b56f</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/Application.java</fileName>
+      <fingerprint>3A77C727196F738FE0E62F5F1B3F0DC1</fingerprint>
+    </issue>
+    <issue>
+      <category>Checks</category>
+      <type>ArrayTypeStyleCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Array brackets at illegal position.</message>
+      <lineStart>11</lineStart>
+      <lineEnd>11</lineEnd>
+      <columnStart>40</columnStart>
+      <columnEnd>40</columnEnd>
+      <lineRanges/>
+      <id>0620910b-66aa-4887-8c72-8c164e1fface</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/Application.java</fileName>
+      <fingerprint>3A77C727196F738FE0E62F5F1B3F0DC1</fingerprint>
+    </issue>
+    <issue>
+      <category>Design</category>
+      <type>DesignForExtensionCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Class &apos;Application&apos; looks like designed for extension (can be subclassed), but the method &apos;configure&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Application&apos; final or making the method &apos;configure&apos; static/final/abstract/empty, or adding allowed annotation for the method.</message>
+      <lineStart>15</lineStart>
+      <lineEnd>15</lineEnd>
+      <columnStart>5</columnStart>
+      <columnEnd>5</columnEnd>
+      <lineRanges/>
+      <id>f4f03d49-a873-488a-b558-883c1dfae650</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/Application.java</fileName>
+      <fingerprint>0E27403FF8626AA0CCD1B3006D90BF01</fingerprint>
+    </issue>
+    <issue>
+      <category>Sizes</category>
+      <type>LineLengthCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Line is longer than 80 characters (found 84).</message>
+      <lineStart>16</lineStart>
+      <lineEnd>16</lineEnd>
+      <columnStart>0</columnStart>
+      <columnEnd>0</columnEnd>
+      <lineRanges/>
+      <id>3ff35c2d-a34f-49e3-80ee-92bc055fa88d</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/Application.java</fileName>
+      <fingerprint>F18816AE312657FE3E2F67241B375B93</fingerprint>
+    </issue>
+    <issue>
+      <category>Checks</category>
+      <type>FinalParametersCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Parameter builder should be final.</message>
+      <lineStart>16</lineStart>
+      <lineEnd>16</lineEnd>
+      <columnStart>50</columnStart>
+      <columnEnd>50</columnEnd>
+      <lineRanges/>
+      <id>d20d0061-4749-498b-b696-53ccca2289b7</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/Application.java</fileName>
+      <fingerprint>F18816AE312657FE3E2F67241B375B93</fingerprint>
+    </issue>
+    <issue>
+      <category>Javadoc</category>
+      <type>JavadocPackageCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Missing package-info.java file.</message>
+      <lineStart>1</lineStart>
+      <lineEnd>1</lineEnd>
+      <columnStart>0</columnStart>
+      <columnEnd>0</columnEnd>
+      <lineRanges/>
+      <id>99511e00-0066-4897-886d-f6b9b833821b</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>C0E78F46A597464ED5B5E8EF0C533DF3</fingerprint>
+    </issue>
+    <issue>
+      <category>Javadoc</category>
+      <type>JavadocTypeCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Missing a Javadoc comment.</message>
+      <lineStart>9</lineStart>
+      <lineEnd>9</lineEnd>
+      <columnStart>0</columnStart>
+      <columnEnd>0</columnEnd>
+      <lineRanges/>
+      <id>840e61a9-66d7-42c5-8bf9-7ba1ea6087dd</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>307EF2D315653371D406CB03F684C228</fingerprint>
+    </issue>
+    <issue>
+      <category>Javadoc</category>
+      <type>JavadocVariableCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Missing a Javadoc comment.</message>
+      <lineStart>13</lineStart>
+      <lineEnd>13</lineEnd>
+      <columnStart>5</columnStart>
+      <columnEnd>5</columnEnd>
+      <lineRanges/>
+      <id>41b23bdd-889a-40a5-9a69-05f35fffc640</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>588CD3DD8B653896B3F3DDD1C73BC697</fingerprint>
+    </issue>
+    <issue>
+      <category>Design</category>
+      <type>DesignForExtensionCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Class &apos;MainController&apos; looks like designed for extension (can be subclassed), but the method &apos;getIndex&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;MainController&apos; final or making the method &apos;getIndex&apos; static/final/abstract/empty, or adding allowed annotation for the method.</message>
+      <lineStart>16</lineStart>
+      <lineEnd>16</lineEnd>
+      <columnStart>5</columnStart>
+      <columnEnd>5</columnEnd>
+      <lineRanges/>
+      <id>52a271e8-35fe-4dca-a1b3-3296dc54a751</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>C01958380EEABE9B5B3F746E91082B65</fingerprint>
+    </issue>
+    <issue>
+      <category>Javadoc</category>
+      <type>JavadocMethodCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Missing a Javadoc comment.</message>
+      <lineStart>16</lineStart>
+      <lineEnd>16</lineEnd>
+      <columnStart>5</columnStart>
+      <columnEnd>5</columnEnd>
+      <lineRanges/>
+      <id>41d77575-25d0-4a63-9b0c-e5ff11c299ea</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>C01958380EEABE9B5B3F746E91082B65</fingerprint>
+    </issue>
+    <issue>
+      <category>Whitespace</category>
+      <type>MethodParamPadCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>&apos;(&apos; is preceded with whitespace.</message>
+      <lineStart>17</lineStart>
+      <lineEnd>17</lineEnd>
+      <columnStart>28</columnStart>
+      <columnEnd>28</columnEnd>
+      <lineRanges/>
+      <id>42ac69e6-0f83-4e83-b679-abfb1d70267e</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>0B05ABC9E4DA2F9474CA4FD2C0F9F969</fingerprint>
+    </issue>
+    <issue>
+      <category>Checks</category>
+      <type>FinalParametersCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Parameter model should be final.</message>
+      <lineStart>17</lineStart>
+      <lineEnd>17</lineEnd>
+      <columnStart>29</columnStart>
+      <columnEnd>29</columnEnd>
+      <lineRanges/>
+      <id>5986ae6f-6bab-4e3f-9ceb-20458109feae</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>0B05ABC9E4DA2F9474CA4FD2C0F9F969</fingerprint>
+    </issue>
+    <issue>
+      <category>Whitespace</category>
+      <type>WhitespaceAfterCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>&apos;,&apos; is not followed by whitespace.</message>
+      <lineStart>18</lineStart>
+      <lineEnd>18</lineEnd>
+      <columnStart>35</columnStart>
+      <columnEnd>35</columnEnd>
+      <lineRanges/>
+      <id>fe876117-1ec4-4a5e-a97e-d6db90137890</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>7B57E2920798C98B2942CA3045EBE7BF</fingerprint>
+    </issue>
+    <issue>
+      <category>Design</category>
+      <type>DesignForExtensionCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Class &apos;MainController&apos; looks like designed for extension (can be subclassed), but the method &apos;getPage&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;MainController&apos; final or making the method &apos;getPage&apos; static/final/abstract/empty, or adding allowed annotation for the method.</message>
+      <lineStart>23</lineStart>
+      <lineEnd>23</lineEnd>
+      <columnStart>5</columnStart>
+      <columnEnd>5</columnEnd>
+      <lineRanges/>
+      <id>cc3631b4-4b24-4a0d-acad-8f111d8b253e</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>CAB3D3E28167B9AE81F126FFB3DEF8C6</fingerprint>
+    </issue>
+    <issue>
+      <category>Javadoc</category>
+      <type>JavadocMethodCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Missing a Javadoc comment.</message>
+      <lineStart>23</lineStart>
+      <lineEnd>23</lineEnd>
+      <columnStart>5</columnStart>
+      <columnEnd>5</columnEnd>
+      <lineRanges/>
+      <id>d82c2484-e0a8-4277-9080-e273b6686a5d</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>CAB3D3E28167B9AE81F126FFB3DEF8C6</fingerprint>
+    </issue>
+    <issue>
+      <category>Whitespace</category>
+      <type>MethodParamPadCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>&apos;(&apos; is preceded with whitespace.</message>
+      <lineStart>24</lineStart>
+      <lineEnd>24</lineEnd>
+      <columnStart>27</columnStart>
+      <columnEnd>27</columnEnd>
+      <lineRanges/>
+      <id>a362cdbb-dd11-4f37-976c-a7a7a22a591c</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>E770C8F99370AFF42C0D53FCE9F053A0</fingerprint>
+    </issue>
+    <issue>
+      <category>Checks</category>
+      <type>FinalParametersCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>Parameter model should be final.</message>
+      <lineStart>24</lineStart>
+      <lineEnd>24</lineEnd>
+      <columnStart>28</columnStart>
+      <columnEnd>28</columnEnd>
+      <lineRanges/>
+      <id>ba6e744e-fbc8-402a-b53d-ad00a0a6c854</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>org.example.EPAM_FARM.controller</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/java/org/example/EPAM_FARM/controller/MainController.java</fileName>
+      <fingerprint>E770C8F99370AFF42C0D53FCE9F053A0</fingerprint>
+    </issue>
+    <issue>
+      <category>Checks</category>
+      <type>NewlineAtEndOfFileCheck</type>
+      <severity reference="../../issue/severity"/>
+      <message>File does not end with a newline.</message>
+      <lineStart>1</lineStart>
+      <lineEnd>1</lineEnd>
+      <columnStart>0</columnStart>
+      <columnEnd>0</columnEnd>
+      <lineRanges/>
+      <id>4e4ea08c-ba11-419e-8fb5-845b53a04f53</id>
+      <description></description>
+      <reference>1</reference>
+      <origin>checkstyle</origin>
+      <moduleName>EPAM_FARM</moduleName>
+      <packageName>-</packageName>
+      <fileName>/var/jenkins_home/workspace/main/src/main/resources/application.properties</fileName>
+      <fingerprint>EC9DA93859B2265C4A82660BFE8833B5</fingerprint>
+    </issue>
+  </elements>
+  <infoMessages>
+    <string>Searching for all files in &apos;/var/jenkins_home/workspace/main&apos; that match the pattern &apos;**/checkstyle-result.xml&apos;</string>
+    <string>-&gt; found 1 file</string>
+    <string>Successfully parsed file /var/jenkins_home/workspace/main/target/checkstyle-result.xml</string>
+    <string>-&gt; found 22 issues (skipped 0 duplicates)</string>
+    <string>Post processing issues on &apos;Master&apos; with source code encoding &apos;UTF-8&apos;</string>
+    <string>Resolving absolute file names for all issues in source directories &apos;[/var/jenkins_home/workspace/main]&apos;</string>
+    <string>-&gt; 0 resolved, 0 unresolved, 3 already resolved</string>
+    <string>Resolving module names from module definitions (build.xml, pom.xml, or Manifest.mf files)</string>
+    <string>-&gt; resolved module names for 22 issues</string>
+    <string>Resolving package names (or namespaces) by parsing the affected files</string>
+    <string>-&gt; resolved package names of 3 affected files</string>
+    <string>No filter has been set, publishing all 22 issues</string>
+    <string>Creating fingerprints for all affected code blocks to track issues over different builds</string>
+    <string>-&gt; created fingerprints for 22 issues</string>
+    <string>Copying affected files to Jenkins&apos; build folder &apos;/var/jenkins_home/jobs/main/builds/1/files-with-issues&apos;</string>
+    <string>-&gt; 3 copied, 0 not in workspace, 0 not-found, 0 with I/O error</string>
+    <string>No valid reference build found that meets the criteria (NO_JOB_FAILURE - SUCCESSFUL_QUALITY_GATE)</string>
+    <string>All reported issues will be considered outstanding</string>
+    <string>No quality gates have been set - skipping</string>
+    <string>Health report is disabled - skipping</string>
+  </infoMessages>
+  <errorMessages/>
+  <duplicatesSize>0</duplicatesSize>
+</analysisReport>

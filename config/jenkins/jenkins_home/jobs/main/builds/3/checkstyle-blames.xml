@@ -1,0 +1,11 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<blames plugin="forensics-api@0.6.1">
+  <blamesPerFile/>
+  <log>
+    <title>Errors while extracting author and commit information from Git:</title>
+    <maxLines>20</maxLines>
+    <lines>0</lines>
+    <infoMessages/>
+    <errorMessages/>
+  </log>
+</blames>

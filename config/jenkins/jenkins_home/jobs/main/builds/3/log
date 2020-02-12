@@ -1,0 +1,804 @@
+Started by user [8mha:////4B7tH9anlzgZmgT5RmAHhj9BEGA7cBNgJPEfyKJuquIEAAAAmx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyhEgZ+/dLi1CL9spzElMLSzLw8AADM+5HEAAAA[0mVladislavBedritsky
+Obtained Jenkinsfile from git https://github.com/VladislavBedritsky/EPAM_FARM.git
+Running in Durability level: MAX_SURVIVABILITY
+[8mha:////4JcGH+SXXXopKJD/12Bfdyzc0T8Yb2vwejL9XAcbbxx5AAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4I9JfkVOz8fKVWCpCayLXE9qehUuN2QEteTc1MFdDUx1AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4K0IlVkJzYeguSOGqZOy9URIE44G91ad80Crg58c9KzFAAAAnh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZh/eT83ILSktQifY3cxGIgrakPAHib2iPIAAAA[0mJenkins in /var/jenkins_home/workspace/main
+[8mha:////4KuEW6odjMHFkgAWCP1C+KfZnOxPRi+T3+7qs2RntJPcAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4ITXAavbvG2amnay6/ki4GvgPtxMFvC6ynQ+TK+6q690AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] stage
+[8mha:////4PuxLlduhisNr0COGGsE8fx0Ir7f4uHDmjHLkrfCnnK+AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] { (Declarative: Checkout SCM)
+[8mha:////4OTimZ+BniX5emIjopvW6rWX0bxjA7b6VX/p+ztVYZHVAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaWGsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzLEA29ce4gfg7KmOvAAAAA==[0m[Pipeline] checkout
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/VladislavBedritsky/EPAM_FARM.git # timeout=10
+Fetching upstream changes from https://github.com/VladislavBedritsky/EPAM_FARM.git
+ > git --version # timeout=10
+ > git fetch --tags --progress -- https://github.com/VladislavBedritsky/EPAM_FARM.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/feature0.01^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/feature0.01^{commit} # timeout=10
+Checking out Revision 9df34f6c65b421679356483a41d8a712e9e46c10 (refs/remotes/origin/feature0.01)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 9df34f6c65b421679356483a41d8a712e9e46c10 # timeout=10
+Commit message: "update docker-compose"
+ > git rev-list --no-walk a72772d77557ac7637786f1815d5b3925005e912 # timeout=10
+[8mha:////4FbN9EirQJ5pFjdsPE2CkzVFehCpKB8Zvd0QUytDGjgOAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbGRNjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9Dg2gqvAAAAA==[0m[Pipeline] }
+[8mha:////4GyCEmEdE6vsShaUtUXjA5MksJKBoPYukYjO8at8nyMvAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRbWRhjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9J+wGOvAAAAA==[0m[Pipeline] // stage
+[8mha:////4A0y9YHxwJIxVf1BKkaZwNqWdzSAJYs/cXcy0D2a/l28AAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQDEh2iorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxI6h2G4+x/INtuQqUcEAAAA=[0m[Pipeline] withEnv
+[8mha:////4EVLFoIMiP4ZmxNzt/1dtIresrC2Hl/uRlSQ+WH0Io4SAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoiUzoiJNerCCUITQtLo/zZJSSdOxNW4Ay2VmPBg2Zas93pDGQOcKBjuNHYWY2t570czJ54pdDdPmTu68pYwkte80bkhpc9rbShpWFUw2AjYamw9RYsmwU44+ZCVl2iqSwrzdhTArBrgCYWYyUmG9C1TgP19VJHwx/kLgKlPwOrDYvXyLD8BobDcwgAAAA==[0m[Pipeline] {
+[8mha:////4M7UJR1+5lCnA0SooQI4rb0Akpu0Z/tLNaDkYGGRQXoRAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUZUVMrFEWThCaEJJG/7dJSjpxIq7GHWipxIQHy7ZkvdcbqhjgRMEwp7GzGFvLej+aObFMobt5yszRlbWEkbxmQmdBSp/XKihpWFWUsOGw1dh6ihZNgh138iFrL9HUlxTm7cihtGqAJxR8JicZ0rdMAfb3UUXCH+cvAKY+Qdk0ix2WZ/UBbwyqm8IAAAA=[0m[Pipeline] stage
+[8mha:////4N/1GFp4MkTWdmSCSZl05PfcwXfmcspHYBYU3IVnONYuAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUwIiYukZZOEFoQkgb/V9+UtqJE3E17kBLJSY8WLYl673eUESGE7ETjcXWY6y96ELvpiQG4vYaaBANXURNGClYoeygyNhqqYqShUVZDisJa4t1oOjRJdjIRj90GTS68px42o4Scm/u8IRMTuSkOX3LyLC99SYS/jh/ATB2CfLdfrbD/Cw+y7kUycIAAAA=[0m[Pipeline] { (SNAPSHOT)
+[8mha:////4LAd5je78XA9gEiS3UYi9nNAMUzLeE2CoG3fpLAE6Z0zAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUCDbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxAbNWnxXCAAAA[0m[Pipeline] withSonarQubeEnv
+Injecting SonarQube environment variables using the configuration: Sonarqube
+[8mha:////4DIc0S4GQPiYVvdDDRAYz/pt5yEWrATwyKQsTQNdTBtGAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUSDAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD5WQ+PfCAAAA[0m[Pipeline] {
+[8mha:////4DmXGDKyE+10F1o/rb+Nis91s/1DoeU4XSWSVw6lwmHWAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiCmgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN7LjSKW+AAAA[0m[Pipeline] sh
++ mvn clean install -Dmaven.test.failure.ignore=true sonar:sonar
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EPAM_FARM 1.6
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ EPAM_FARM ---
+[INFO] Deleting /var/jenkins_home/workspace/main/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.3:prepare-agent (default-prepare-agent) @ EPAM_FARM ---
+[INFO] argLine set to -javaagent:/var/jenkins_home/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/var/jenkins_home/workspace/main/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ EPAM_FARM ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ EPAM_FARM ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /var/jenkins_home/workspace/main/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ EPAM_FARM ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/main/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ EPAM_FARM ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/jenkins_home/workspace/main/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ EPAM_FARM ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+16:48:20.040 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:20.048 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:48:20.088 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:48:20.196 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.example.EPAM_FARM.controller.MainControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:48:20.274 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.example.EPAM_FARM.controller.MainControllerTest], using SpringBootContextLoader
+16:48:20.289 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTest-context.xml] does not exist
+16:48:20.290 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTestContext.groovy] does not exist
+16:48:20.291 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.example.EPAM_FARM.controller.MainControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:48:20.298 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.EPAM_FARM.controller.MainControllerTest]: MainControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:48:20.438 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:20.613 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/var/jenkins_home/workspace/main/target/classes/org/example/EPAM_FARM/Application.class]
+16:48:20.616 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.EPAM_FARM.Application for test class org.example.EPAM_FARM.controller.MainControllerTest
+16:48:20.846 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.example.EPAM_FARM.controller.MainControllerTest]: using defaults.
+16:48:20.847 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:48:20.872 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/TransactionDefinition]
+16:48:20.873 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+16:48:20.873 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7b44bfb8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5e0f2c82, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@98637a2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4afd65fd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@141aba65, org.springframework.test.context.event.EventPublishingTestExecutionListener@3356ff58, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@b55f5b7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2aa6bbad, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6b2ef50e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6f867b0c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4b5ad306]
+16:48:20.882 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:20.883 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:20.930 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:20.930 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:48:20.930 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:48:20.931 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.example.EPAM_FARM.controller.MainControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:48:20.932 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.example.EPAM_FARM.controller.MainControllerTest], using SpringBootContextLoader
+16:48:20.933 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTest-context.xml] does not exist
+16:48:20.933 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTestContext.groovy] does not exist
+16:48:20.934 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.example.EPAM_FARM.controller.MainControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:48:20.934 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.EPAM_FARM.controller.MainControllerTest]: MainControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:48:20.938 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:20.939 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.EPAM_FARM.Application for test class org.example.EPAM_FARM.controller.MainControllerTest
+16:48:20.943 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.example.EPAM_FARM.controller.MainControllerTest]: using defaults.
+16:48:20.943 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:48:20.944 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/TransactionDefinition]
+16:48:20.944 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+16:48:20.945 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5aab5b31, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5408d4b3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@eded048, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@65a48cab, org.springframework.test.context.support.DirtiesContextTestExecutionListener@655621fd, org.springframework.test.context.event.EventPublishingTestExecutionListener@77e9dca8, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@fcd0e8d, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4e4d0a0b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1a4083f6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@23f5008a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@44abdb1f]
+16:48:20.945 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:20.945 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:21.069 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:21.069 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+[INFO] Running org.example.EPAM_FARM.controller.MainControllerTest
+16:48:21.075 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:21.075 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:21.076 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:21.076 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:21.087 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@43a59289 testClass = MainControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6c2883b1 testClass = MainControllerTest, locations = '{}', classes = '{class org.example.EPAM_FARM.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@336e3be2 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3aa41da1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@254f906e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@47be0f9b, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@797c3c3b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+16:48:21.091 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:21.092 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:48:21.162 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2020-02-11 16:48:21.913  INFO 264 --- [           main] o.e.E.controller.MainControllerTest      : Starting MainControllerTest on 16a3a46a87c1 with PID 264 (started by jenkins in /var/jenkins_home/workspace/main)
+2020-02-11 16:48:21.916  INFO 264 --- [           main] o.e.E.controller.MainControllerTest      : No active profile set, falling back to default profiles: default
+2020-02-11 16:48:24.364  INFO 264 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-11 16:48:24.513  INFO 264 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-11 16:48:24.815  INFO 264 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-11 16:48:24.816  INFO 264 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-11 16:48:24.835  INFO 264 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 18 ms
+2020-02-11 16:48:24.869  INFO 264 --- [           main] o.e.E.controller.MainControllerTest      : Started MainControllerTest in 3.663 seconds (JVM running for 6.545)
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.972 s - in org.example.EPAM_FARM.controller.MainControllerTest
+2020-02-11 16:48:26.108  INFO 264 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.3:report (default-report) @ EPAM_FARM ---
+[INFO] Loading execution data file /var/jenkins_home/workspace/main/target/jacoco.exec
+[INFO] Analyzed bundle 'EPAM_FARM' with 2 classes
+[INFO] 
+[INFO] --- maven-war-plugin:3.2.3:war (default-war) @ EPAM_FARM ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [EPAM_FARM] in [/var/jenkins_home/workspace/main/target/EPAM_FARM-1.6]
+[INFO] Processing war project
+[INFO] Webapp assembled in [309 msecs]
+[INFO] Building war: /var/jenkins_home/workspace/main/target/EPAM_FARM-1.6.war
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.2.1.RELEASE:repackage (repackage) @ EPAM_FARM ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] >>> maven-pmd-plugin:3.13.0:check (default) > :pmd @ EPAM_FARM >>>
+[INFO] 
+[INFO] --- maven-pmd-plugin:3.13.0:pmd (pmd) @ EPAM_FARM ---
+[WARNING] Unable to locate Source XRef to link to - DISABLED
+[WARNING] Unable to locate Source XRef to link to - DISABLED
+[WARNING] Unable to locate Source XRef to link to - DISABLED
+[WARNING] Unable to locate Source XRef to link to - DISABLED
+[INFO] 
+[INFO] <<< maven-pmd-plugin:3.13.0:check (default) < :pmd @ EPAM_FARM <<<
+[INFO] 
+[INFO] --- maven-pmd-plugin:3.13.0:check (default) @ EPAM_FARM ---
+[INFO] PMD version: 6.21.0
+[INFO] 
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (default) @ EPAM_FARM ---
+[INFO] There are 22 errors reported by Checkstyle 8.19 with config/checkstyle/checkstyle.xml ruleset.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[1] (misc) NewlineAtEndOfFile: File does not end with a newline.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[1] (javadoc) JavadocPackage: Missing package-info.java file.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[8] (javadoc) JavadocType: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[11,5] (javadoc) JavadocMethod: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[11,29] (misc) FinalParameters: Parameter args should be final.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[11,40] (misc) ArrayTypeStyle: Array brackets at illegal position.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[15,5] (design) DesignForExtension: Class 'Application' looks like designed for extension (can be subclassed), but the method 'configure' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Application' final or making the method 'configure' static/final/abstract/empty, or adding allowed annotation for the method.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[16] (sizes) LineLength: Line is longer than 80 characters (found 84).
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[16,50] (misc) FinalParameters: Parameter builder should be final.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[1] (javadoc) JavadocPackage: Missing package-info.java file.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[9] (javadoc) JavadocType: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[13,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[16,5] (design) DesignForExtension: Class 'MainController' looks like designed for extension (can be subclassed), but the method 'getIndex' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'MainController' final or making the method 'getIndex' static/final/abstract/empty, or adding allowed annotation for the method.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[16,5] (javadoc) JavadocMethod: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[17,28] (whitespace) MethodParamPad: '(' is preceded with whitespace.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[17,29] (misc) FinalParameters: Parameter model should be final.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[18,35] (whitespace) WhitespaceAfter: ',' is not followed by whitespace.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[23,5] (design) DesignForExtension: Class 'MainController' looks like designed for extension (can be subclassed), but the method 'getPage' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'MainController' final or making the method 'getPage' static/final/abstract/empty, or adding allowed annotation for the method.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[23,5] (javadoc) JavadocMethod: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[24,27] (whitespace) MethodParamPad: '(' is preceded with whitespace.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[24,28] (misc) FinalParameters: Parameter model should be final.
+[ERROR] src/main/resources/application.properties:[1] (misc) NewlineAtEndOfFile: File does not end with a newline.
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[INFO] 
+[INFO] >>> spotbugs-maven-plugin:3.1.12.2:check (default) > :spotbugs @ EPAM_FARM >>>
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:3.1.12.2:spotbugs (spotbugs) @ EPAM_FARM ---
+[INFO] Fork Value is true
+[INFO] Done SpotBugs Analysis....
+[INFO] 
+[INFO] <<< spotbugs-maven-plugin:3.1.12.2:check (default) < :spotbugs @ EPAM_FARM <<<
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:3.1.12.2:check (default) @ EPAM_FARM ---
+[INFO] BugInstance size is 0
+[INFO] Error size is 0
+[INFO] No errors/warnings found
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ EPAM_FARM ---
+[INFO] Installing /var/jenkins_home/workspace/main/target/EPAM_FARM-1.6.war to /var/jenkins_home/.m2/repository/org/example/EPAM_FARM/1.6/EPAM_FARM-1.6.war
+[INFO] Installing /var/jenkins_home/workspace/main/pom.xml to /var/jenkins_home/.m2/repository/org/example/EPAM_FARM/1.6/EPAM_FARM-1.6.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EPAM_FARM 1.6
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- sonar-maven-plugin:3.7.0.1746:sonar (default-cli) @ EPAM_FARM ---
+[INFO] User cache: /var/jenkins_home/.sonar/cache
+[INFO] SonarQube version: 7.9.2
+[INFO] Default locale: "en", source code encoding: "UTF-8"
+[WARNING] SonarScanner will require Java 11 to run starting in SonarQube 8.x
+[INFO] Load global settings
+[INFO] Load global settings (done) | time=214ms
+[INFO] Server id: BF41A1F2-AXARD4e2GJWH7yiK-7BK
+[INFO] User cache: /var/jenkins_home/.sonar/cache
+[INFO] Load/download plugins
+[INFO] Load plugins index
+[INFO] Load plugins index (done) | time=72ms
+[INFO] Load/download plugins (done) | time=410ms
+[INFO] Process project properties
+[INFO] Execute project builders
+[INFO] Execute project builders (done) | time=4ms
+[INFO] Project key: org.example:EPAM_FARM
+[INFO] Base dir: /var/jenkins_home/workspace/main
+[INFO] Working dir: /var/jenkins_home/workspace/main/target/sonar
+[INFO] Load project settings for component key: 'org.example:EPAM_FARM'
+[INFO] Load project settings for component key: 'org.example:EPAM_FARM' (done) | time=209ms
+[INFO] Load quality profiles
+[INFO] Load quality profiles (done) | time=334ms
+[INFO] Detected Jenkins
+[INFO] Load active rules
+[INFO] Load active rules (done) | time=4173ms
+[INFO] Indexing files...
+[INFO] Project configuration:
+[INFO]   Excluded sources for coverage: **/*Exception.java, **/Application.java
+[INFO] 4 files indexed
+[INFO] 0 files ignored because of scm ignore settings
+[INFO] Quality profile for java: Sonar way
+[INFO] Quality profile for xml: Sonar way
+[INFO] ------------- Run sensors on module EPAM_FARM
+[INFO] Load metrics repository
+[INFO] Load metrics repository (done) | time=74ms
+[INFO] Sensor JavaSquidSensor [java]
+[INFO] Configured Java source version (sonar.java.source): 8
+[INFO] JavaClasspath initialization
+[INFO] JavaClasspath initialization (done) | time=16ms
+[INFO] JavaTestClasspath initialization
+[INFO] JavaTestClasspath initialization (done) | time=3ms
+[INFO] Java Main Files AST scan
+[INFO] 2 source files to be analyzed
+[INFO] Load project repositories
+[INFO] Load project repositories (done) | time=116ms
+[INFO] 2/2 source files have been analyzed
+[WARNING] Classes not found during the analysis : [javax.annotation.meta.When]
+[INFO] Java Main Files AST scan (done) | time=674ms
+[INFO] Java Test Files AST scan
+[INFO] 1 source files to be analyzed
+[WARNING] Classes not found during the analysis : [javax.annotation.meta.When]
+[INFO] 1/1 source files have been analyzed
+[INFO] Java Test Files AST scan (done) | time=70ms
+[INFO] Sensor JavaSquidSensor [java] (done) | time=1702ms
+[INFO] Sensor JaCoCo XML Report Importer [jacoco]
+[INFO] Sensor JaCoCo XML Report Importer [jacoco] (done) | time=34ms
+[INFO] Sensor SurefireSensor [java]
+[INFO] parsing [/var/jenkins_home/workspace/main/target/surefire-reports]
+[INFO] Sensor SurefireSensor [java] (done) | time=38ms
+[INFO] Sensor JaCoCoSensor [java]
+[INFO] Sensor JaCoCoSensor [java] (done) | time=3ms
+[INFO] Sensor JavaXmlSensor [java]
+[INFO] 1 source files to be analyzed
+[INFO] Sensor JavaXmlSensor [java] (done) | time=213ms
+[INFO] 1/1 source files have been analyzed
+[INFO] Sensor HTML [web]
+[INFO] Sensor HTML [web] (done) | time=19ms
+[INFO] Sensor XML Sensor [xml]
+[INFO] 1 source files to be analyzed
+[INFO] 1/1 source files have been analyzed
+[INFO] Sensor XML Sensor [xml] (done) | time=231ms
+[INFO] ------------- Run sensors on project
+[INFO] Sensor Zero Coverage Sensor
+[INFO] Sensor Zero Coverage Sensor (done) | time=1ms
+[INFO] Sensor Java CPD Block Indexer
+[INFO] Sensor Java CPD Block Indexer (done) | time=26ms
+[INFO] SCM provider for this project is: git
+[INFO] 1 files to be analyzed
+[INFO] 1/1 files analyzed
+[INFO] 1 file had no CPD blocks
+[INFO] Calculating CPD for 1 file
+[INFO] CPD calculation finished
+[INFO] Analysis report generated in 76ms, dir size=91 KB
+[INFO] Analysis report compressed in 17ms, zip size=18 KB
+[INFO] Analysis report uploaded in 268ms
+[INFO] ANALYSIS SUCCESSFUL, you can browse http://sonarqube:9000/dashboard?id=org.example%3AEPAM_FARM
+[INFO] Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+[INFO] More about the report processing at http://sonarqube:9000/api/ce/task?id=AXA1J081vecMandi0uRs
+[INFO] Analysis total time: 11.031 s
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 39.814 s
+[INFO] Finished at: 2020-02-11T16:48:53+00:00
+[INFO] Final Memory: 97M/697M
+[INFO] ------------------------------------------------------------------------
+[8mha:////4O3qhAAzmg5OwUXsw827Y1w2viRCLceYm1OjHco5ueIlAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiCkSBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQGOY4V7vgAAAA==[0m[Pipeline] }
+[8mha:////4HjDGWJSwcws2kTJgkSTXh7RSzLzqmnLGevcJTzBzSX5AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJAokRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyu//U7g3N4dT9vgAAAA==[0m[Pipeline] // withSonarQubeEnv
+[8mha:////4I9/m2AQa0gQwwIli1mNIpxriKs3X5LAoIXjoSjdCSC0AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUiAkhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD21FAanCAAAA[0m[Pipeline] timeout
+Timeout set to expire in 1 hr 0 min
+[8mha:////4D9ONSS9zu+/XDJDsfXb+PnAbMFNEzQtgxnzM2qEAx+DAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogU2BDqxBp14QShCSFp9H9JUtKJE3E17kCgEhMeLNuS9Z4vqIKHhrxmVmFvMHSGDW7UObFEvr84SszSmXWEgZxirUotSXWca0tRwayihAWHpcLOUTCoI6y4FXdRO4G6PkWftwOH0sgbPKDgmRyFj98yeVhfRxkIf5y/AJiGCOV2n223+TyrN7xWSV3CAAAA[0m[Pipeline] {
+[8mha:////4OBlk+3I/se21kgbUTKsofflMluP4d/D+8XrYmZBiX7vAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogUWBFT1ygLJwhNCGmj/8tPSjtxIq7GHWipxIQHy7ZkvdcbishwInaisdh6jLUXXejdlMRA3F4DDaKhi6gJIwUrlB0UGVstVVGysCjLYSVhbbEOFD26BBvZ6Icug0ZXnhNP21FC7s0dnpDJiZw0p28ZGba33kTCH+cvAMYuQX7Yzbafn8UHbGnGmsIAAAA=[0m[Pipeline] script
+[8mha:////4MKH7swTRxV7vAWz3wlZ4pTPOtaLQNnZDtcBaeVPfLIsAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycohUdEVMrFEXThCaEJJG/7dJSjpxIq7GHWipxIQHy7ZkvdcbyhjgRMFwp7GzGFvLez+aOfFMobt5ytzRlbeEkbzmjc4NKX1ea0NJw6qCwUbAVmPrKVo0CXbCyYesvERTXVKYt6MAZtUATyjETE4ypG+ZAuzvo4qEP85fAEx9AlYfFquXZ/kBAsTc3cIAAAA=[0m[Pipeline] {
+[8mha:////4CHEG0kLjgIeUACOAODjc4pnwwIwO1aT741jk6v0GEe2AAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggyE0vHypah8QSYIEKY/wkQSeWJvJp3EM2MlVvs7NvmPV+wjgGOFDSzCgeDsTPMu0mXxTKF4eooM0sX1hFGcooJlQX16rSgoKRgSVXDisNGYecoGtQJttzKu2ycRN2cUyjfgUNt+hEeUPFiTjKkL8wBdrepj4Q/z18BzD5B3baf2vs3w5BRkb4AAAA=[0m[Pipeline] waitForQualityGate
+Checking status of SonarQube task 'AXA1J081vecMandi0uRs' on server 'Sonarqube'
+SonarQube task 'AXA1J081vecMandi0uRs' status is 'IN_PROGRESS'
+SonarQube task 'AXA1J081vecMandi0uRs' status is 'SUCCESS'
+SonarQube task 'AXA1J081vecMandi0uRs' completed. Quality gate is 'OK'
+[8mha:////4EeNJ2aLD0yTJ65nVGFxwTeTJ0rIhyKokwDEZkNbegKZAAAApB+LCAAAAAAAAP9tjbEOwiAURV9rHFwd/QiaNG7GyZWw+AXYIkLJexSodPKL/DX/QbSJk3e4uecu5/mCdQxwpKCZVTgYjJ1h3k26LJYpDFdHmVm6sI4wklNMqCyoV6cFBSUFS6oaVhw2CjtH0aBOsOVW3mXjJOrmnEL5Dhxq04/wgIoXc5IhfWEOsLtNfST8ef4KYPY+Qd3uP9W+Ad3NsHm+AAAA[0m[Pipeline] }
+[8mha:////4Ly0wtRaLt/zOIdMzsYUT2ac1kY/8fdt2ss+RYUr+Bf6AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIikKgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcrd/lPbN8JP5Su+AAAA[0m[Pipeline] // script
+[8mha:////4FZaeJCxoturA9Darho/+mXH11vhQE5GiK9yiBZ+44lIAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCKGgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcrd/lPbN/oNdtq+AAAA[0m[Pipeline] }
+[8mha:////4PaE4k3XD6kyAQK063WFBAhU/9CszMVgs6T/6V76un18AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiaBBCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDu9rm2hw84NdtDvgAAAA==[0m[Pipeline] // timeout
+Post stage
+[8mha:////4LRhOLcY4DXb7TLCoiZ3jmr+FwZLX2aDuOskqz9W5QSZAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIioEFCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKYhQrnd59odhg9fRV1avgAAAA==[0m[Pipeline] junit
+Recording test results
+[8mha:////4D/94W9dUaqH+6k7h58VRXnAOkXlZnG+hTF8ceznITPKAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIioEIoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDREKLf7XLvD8AEedEZDvgAAAA==[0m[Pipeline] recordIssues
+[CheckStyle] Using default pattern '**/checkstyle-result.xml' since user defined pattern is not set
+[CheckStyle] Searching for all files in '/var/jenkins_home/workspace/main' that match the pattern '**/checkstyle-result.xml'
+[CheckStyle] -> found 1 file
+[CheckStyle] Successfully parsed file /var/jenkins_home/workspace/main/target/checkstyle-result.xml
+[CheckStyle] -> found 22 issues (skipped 0 duplicates)
+[CheckStyle] Post processing issues on 'Master' with source code encoding 'UTF-8'
+[CheckStyle] Resolving absolute file names for all issues in source directories '[/var/jenkins_home/workspace/main]'
+[CheckStyle] -> 0 resolved, 0 unresolved, 3 already resolved
+[CheckStyle] Resolving module names from module definitions (build.xml, pom.xml, or Manifest.mf files)
+[CheckStyle] -> resolved module names for 22 issues
+[CheckStyle] Resolving package names (or namespaces) by parsing the affected files
+[CheckStyle] -> resolved package names of 3 affected files
+[CheckStyle] No filter has been set, publishing all 22 issues
+[CheckStyle] Creating fingerprints for all affected code blocks to track issues over different builds
+[CheckStyle] -> created fingerprints for 22 issues
+[CheckStyle] Copying affected files to Jenkins' build folder '/var/jenkins_home/jobs/main/builds/3/files-with-issues'
+[CheckStyle] -> 3 copied, 0 not in workspace, 0 not-found, 0 with I/O error
+[CheckStyle] Attaching ResultAction with ID 'checkstyle' to run 'main #3'.
+[CheckStyle] Using reference build 'main #2' to compute new, fixed, and outstanding issues
+[CheckStyle] Issues delta (vs. reference build): outstanding: 22, new: 0, fixed: 0
+[CheckStyle] No quality gates have been set - skipping
+[CheckStyle] Health report is disabled - skipping
+[CheckStyle] Created analysis result for 22 issues (found 0 new issues, fixed 0 issues)
+[PMD] Using default pattern '**/pmd.xml' since user defined pattern is not set
+[PMD] Searching for all files in '/var/jenkins_home/workspace/main' that match the pattern '**/pmd.xml'
+[PMD] -> found 1 file
+[PMD] Successfully parsed file /var/jenkins_home/workspace/main/target/pmd.xml
+[PMD] -> found 0 issues (skipped 0 duplicates)
+[PMD] Attaching ResultAction with ID 'pmd' to run 'main #3'.
+[PMD] Using reference build 'main #2' to compute new, fixed, and outstanding issues
+[PMD] Issues delta (vs. reference build): outstanding: 0, new: 0, fixed: 0
+[PMD] No quality gates have been set - skipping
+[PMD] Health report is disabled - skipping
+[PMD] Created analysis result for 0 issues (found 0 new issues, fixed 0 issues)
+[SpotBugs] Using default pattern '**/spotbugsXml.xml' since user defined pattern is not set
+[SpotBugs] Searching for all files in '/var/jenkins_home/workspace/main' that match the pattern '**/spotbugsXml.xml'
+[SpotBugs] -> found 1 file
+[SpotBugs] Successfully parsed file /var/jenkins_home/workspace/main/target/spotbugsXml.xml
+[SpotBugs] -> found 0 issues (skipped 0 duplicates)
+[SpotBugs] Attaching ResultAction with ID 'spotbugs' to run 'main #3'.
+[SpotBugs] Using reference build 'main #2' to compute new, fixed, and outstanding issues
+[SpotBugs] Issues delta (vs. reference build): outstanding: 0, new: 0, fixed: 0
+[SpotBugs] No quality gates have been set - skipping
+[SpotBugs] Health report is disabled - skipping
+[SpotBugs] Created analysis result for 0 issues (found 0 new issues, fixed 0 issues)
+[8mha:////4NxHn0clC5AIJy63lj2Z0NaxFFQFhqFVTJddd/0JTIHyAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICSomo0lppeIGJjXFi3RnbIal4EV/jD1hEomKL1c4283rDOgY4cTDYaxosxc6id6PJCycOw9XxhD1fsGOK7DS2empZ6WbBlpOGJUUJKwEbTZ3jaMkk2IpePmTlJJnqnEL+jgJKq+7whEJkc5IhfWEOsLuNKjL9PH8FMHufoKz3uQ71ByrnfBi+AAAA[0m[Pipeline] }
+[8mha:////4Gm+s0DqEjciN6K1TWH0vgyRMSU1WpW55BxC7my0cVd6AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiQImo0lppeIGJjXFi3RnbIal4EV/jD1hEomKL1c4283rDOgY4cTDYaxosxc6id6PJCycOw9XxhD1fsGOK7DS2empZ6WbBlpOGJUUJKwEbTZ3jaMkk2IpePmTlJJnqnEL+jgJKq+7whEJkc5IhfWEOsLuNKjL9PH8FMHufoDzUuer9BxkEJ6S+AAAA[0m[Pipeline] // stage
+[8mha:////4DGI+6uZ7UuJI0floBfPX0c7GeK4B6A23d368Jk18MEAAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUhRExdY26cILQhJA0+r8kKenEibgadyBQiQkPlm3Jes8XVMHDkbxmVuFgMPSGjW7SObFEfrg4SszSmfWEgZxinUodSdUutaOoYFFRworDWmHvKBjUETbciruonUBdn6LP24FDaeQNHlDwTI7Cx2+ZPWyvkwyEP85fAMxjhLJpsu13n2f1BkYdNQzCAAAA[0m[Pipeline] stage
+[8mha:////4JOORBBcPeDUnOLjFQ4hmk7xqzrNAOr7sqe4p1fnzfSBAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycohUoiNiYo26cILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMYAJwqGO42dxdha3vvRzIlnCt3NU+aOrrwljOQ1b3RuSOnzWhtKGlYVDDYCthpbT9GiSbATTj5k5SWa6pLCvB0FMKsGeEIhZnKSIX3LFGB/H1Uk/HH+AmDqE7D6sFi9PMsPfTawssIAAAA=[0m[Pipeline] { (RELEASE)
+[8mha:////4LxTxdTQP2qZKJ5LWTTg3qUfGruoyt5TMPPfZW9z2FAIAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0KBtiYo2ycILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMUAJwqGOY2dxdha1vvRzIllCt3NU2aOrqwljOQ1EzoLUvq8VkFJw6qihA2HrcbWU7RoEuy4kw9Ze4mmvqQwb0cOpVUDPKHgMznJkL5lCrC/jyoS/jh/ATD1CcqmWeywPKsPBdk7bsIAAAA=[0m[Pipeline] script
+[8mha:////4JEeDJ3Ll9s3/dNGm1R7PXWEl54+2mY/Il/9Fswd8gwPAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0ACbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxASMfXIzCAAAA[0m[Pipeline] {
+[8mha:////4GrXdoY5I59cZSmzu37oBxlR2ScKJ0IDYIGIqiiaaRErAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIGgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN6Ew6eS+AAAA[0m[Pipeline] sh
++ curl -u admin:Eurovision2016 -s -o /dev/null -w %{http_code} http://192.168.99.1:8081/artifactory/api/storage/libs-release-local/org/example/EPAM_FARM/1.6/EPAM_FARM-1.6.pom
+[8mha:////4JwFrXadv355hFRuCpi2+bopytMuSW4ybHR93WYdGFd0AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIESBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAHgAfL9vgAAAA==[0m[Pipeline] getArtifactoryServer
+[8mha:////4C0anhQWMbtPAIWgew0zhFkSUV2pHHNR/MUnL45OUaX6AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSICQkRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYMpTb3af24Q0vHWp6vgAAAA==[0m[Pipeline] newMavenBuild
+[8mha:////4K63zE2Pzxvt1fZQDMBkmzkn6Iv/DT/PTmcFp/FsX39gAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIAqEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAFuLHFjvgAAAA==[0m[Pipeline] newBuildInfo
+[8mha:////4H+zkk5SatA0pg06r0ZUrdr2tTtRXEjNnvezCQgDNud7AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCBFQoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDREKHeHXPvt8AGigfy3vgAAAA==[0m[Pipeline] artifactoryMavenBuild
+Jenkins Artifactory Plugin version: 3.5.0
+Unpacking https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.6.3/apache-maven-3.6.3-bin.zip to /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/Maven-3.6 on Jenkins
+Artifactory integration is enabled
+[main] $ /usr/local/openjdk-8/bin/java -classpath /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/Maven-3.6/boot/* -Dmaven.home=/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/Maven-3.6 -Dmaven.conf=/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/Maven-3.6/conf -DbuildInfoConfig.propertiesFile=/var/jenkins_home/workspace/main@tmp/artifactory/buildInfo4294642582781817843.properties -Dm3plugin.lib=/var/jenkins_home/workspace/main@tmp/artifactory/cache/artifactory-plugin/3.5.0 -Dclassworlds.conf=/var/jenkins_home/workspace/main@tmp/artifactory/classworlds9161312915532499933conf -Dmaven.multiModuleProjectDirectory=/var/jenkins_home/workspace/main org.codehaus.plexus.classworlds.launcher.Launcher -f pom.xml clean install
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - Scanning for projects...
+[main] INFO org.jfrog.build.extractor.maven.BuildInfoRecorder - Initializing Artifactory Build-Info Recording
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - -----------------------< org.example:EPAM_FARM >------------------------
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - Building EPAM_FARM 1.6
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --------------------------------[ war ]---------------------------------
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-clean-plugin:3.1.0:clean (default-clean) @ EPAM_FARM ---
+[main] INFO org.apache.maven.plugins.clean.CleanMojo - Deleting /var/jenkins_home/workspace/main/target
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- jacoco-maven-plugin:0.8.3:prepare-agent (default-prepare-agent) @ EPAM_FARM ---
+[main] INFO org.jacoco.maven.AgentMojo - argLine set to -javaagent:/var/jenkins_home/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/var/jenkins_home/workspace/main/target/jacoco.exec
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-resources-plugin:3.1.0:resources (default-resources) @ EPAM_FARM ---
+[main] INFO org.apache.maven.shared.filtering.DefaultMavenResourcesFiltering - Using 'UTF-8' encoding to copy filtered resources.
+[main] INFO org.apache.maven.shared.filtering.DefaultMavenResourcesFiltering - Copying 1 resource
+[main] INFO org.apache.maven.shared.filtering.DefaultMavenResourcesFiltering - Copying 2 resources
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-compiler-plugin:3.8.1:compile (default-compile) @ EPAM_FARM ---
+[main] INFO org.apache.maven.plugin.compiler.CompilerMojo - Changes detected - recompiling the module!
+[main] INFO org.codehaus.plexus.compiler.javac.JavacCompiler - Compiling 2 source files to /var/jenkins_home/workspace/main/target/classes
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ EPAM_FARM ---
+[main] INFO org.apache.maven.shared.filtering.DefaultMavenResourcesFiltering - Using 'UTF-8' encoding to copy filtered resources.
+[main] INFO org.apache.maven.shared.filtering.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /var/jenkins_home/workspace/main/src/test/resources
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ EPAM_FARM ---
+[main] INFO org.apache.maven.plugin.compiler.TestCompilerMojo - Changes detected - recompiling the module!
+[main] INFO org.codehaus.plexus.compiler.javac.JavacCompiler - Compiling 1 source file to /var/jenkins_home/workspace/main/target/test-classes
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-surefire-plugin:2.22.2:test (default-test) @ EPAM_FARM ---
+[main] INFO org.apache.maven.plugin.surefire.SurefirePlugin - 
+[main] INFO org.apache.maven.plugin.surefire.SurefirePlugin - -------------------------------------------------------
+[main] INFO org.apache.maven.plugin.surefire.SurefirePlugin -  T E S T S
+[main] INFO org.apache.maven.plugin.surefire.SurefirePlugin - -------------------------------------------------------
+16:49:26.476 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:26.486 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:49:26.534 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:49:26.645 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.example.EPAM_FARM.controller.MainControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:49:26.680 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.example.EPAM_FARM.controller.MainControllerTest], using SpringBootContextLoader
+16:49:26.690 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTest-context.xml] does not exist
+16:49:26.690 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTestContext.groovy] does not exist
+16:49:26.691 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.example.EPAM_FARM.controller.MainControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:49:26.692 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.EPAM_FARM.controller.MainControllerTest]: MainControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:49:26.782 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:26.919 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/var/jenkins_home/workspace/main/target/classes/org/example/EPAM_FARM/Application.class]
+16:49:26.922 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.EPAM_FARM.Application for test class org.example.EPAM_FARM.controller.MainControllerTest
+16:49:27.148 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.example.EPAM_FARM.controller.MainControllerTest]: using defaults.
+16:49:27.149 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:49:27.173 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/TransactionDefinition]
+16:49:27.174 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+16:49:27.174 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5e0f2c82, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@98637a2, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4afd65fd, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@141aba65, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3356ff58, org.springframework.test.context.event.EventPublishingTestExecutionListener@b55f5b7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2aa6bbad, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6b2ef50e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6f867b0c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4b5ad306, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@54be6213]
+16:49:27.191 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.192 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.234 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.235 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:49:27.235 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:49:27.237 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.example.EPAM_FARM.controller.MainControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:49:27.239 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.example.EPAM_FARM.controller.MainControllerTest], using SpringBootContextLoader
+16:49:27.244 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTest-context.xml] does not exist
+16:49:27.245 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTestContext.groovy] does not exist
+16:49:27.246 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.example.EPAM_FARM.controller.MainControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:49:27.247 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.EPAM_FARM.controller.MainControllerTest]: MainControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:49:27.252 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.256 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.EPAM_FARM.Application for test class org.example.EPAM_FARM.controller.MainControllerTest
+16:49:27.263 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.example.EPAM_FARM.controller.MainControllerTest]: using defaults.
+16:49:27.264 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:49:27.268 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/TransactionDefinition]
+16:49:27.270 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+16:49:27.272 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5408d4b3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@eded048, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@65a48cab, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@655621fd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@77e9dca8, org.springframework.test.context.event.EventPublishingTestExecutionListener@fcd0e8d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4e4d0a0b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1a4083f6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@23f5008a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@44abdb1f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@62108cd3]
+16:49:27.275 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.277 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.393 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.393 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+[ThreadedStreamConsumer] INFO org.apache.maven.plugin.surefire.SurefirePlugin - Running org.example.EPAM_FARM.controller.MainControllerTest
+16:49:27.402 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.402 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.403 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.403 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.411 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@6c2883b1 testClass = MainControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@336e3be2 testClass = MainControllerTest, locations = '{}', classes = '{class org.example.EPAM_FARM.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@126a9a3d key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@74fab04a, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3d0035d2, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@2bc426f0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4012d5bc], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+16:49:27.417 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.417 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:27.476 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2020-02-11 16:49:28.054  INFO 420 --- [           main] o.e.E.controller.MainControllerTest      : Starting MainControllerTest on 16a3a46a87c1 with PID 420 (started by jenkins in /var/jenkins_home/workspace/main)
+2020-02-11 16:49:28.058  INFO 420 --- [           main] o.e.E.controller.MainControllerTest      : No active profile set, falling back to default profiles: default
+2020-02-11 16:49:29.863  INFO 420 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-11 16:49:30.014  INFO 420 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-11 16:49:30.273  INFO 420 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-11 16:49:30.274  INFO 420 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-11 16:49:30.289  INFO 420 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 15 ms
+2020-02-11 16:49:30.323  INFO 420 --- [           main] o.e.E.controller.MainControllerTest      : Started MainControllerTest in 2.821 seconds (JVM running for 4.906)
+[ThreadedStreamConsumer] INFO org.apache.maven.plugin.surefire.SurefirePlugin - Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.845 s - in org.example.EPAM_FARM.controller.MainControllerTest
+2020-02-11 16:49:31.295  INFO 420 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[main] INFO org.apache.maven.plugin.surefire.SurefirePlugin - 
+[main] INFO org.apache.maven.plugin.surefire.SurefirePlugin - Results:
+[main] INFO org.apache.maven.plugin.surefire.SurefirePlugin - 
+[main] INFO org.apache.maven.plugin.surefire.SurefirePlugin - Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[main] INFO org.apache.maven.plugin.surefire.SurefirePlugin - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- jacoco-maven-plugin:0.8.3:report (default-report) @ EPAM_FARM ---
+[main] INFO org.jacoco.maven.ReportMojo - Loading execution data file /var/jenkins_home/workspace/main/target/jacoco.exec
+[main] INFO org.jacoco.maven.ReportMojo - Analyzed bundle 'EPAM_FARM' with 2 classes
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-war-plugin:3.2.3:war (default-war) @ EPAM_FARM ---
+[main] INFO org.apache.maven.plugins.war.WarMojo - Packaging webapp
+[main] INFO org.apache.maven.plugins.war.WarMojo - Assembling webapp [EPAM_FARM] in [/var/jenkins_home/workspace/main/target/EPAM_FARM-1.6]
+[main] INFO org.apache.maven.plugins.war.WarMojo - Processing war project
+[main] INFO org.apache.maven.plugins.war.WarMojo - Webapp assembled in [66 msecs]
+[main] INFO org.codehaus.plexus.archiver.war.WarArchiver - Building war: /var/jenkins_home/workspace/main/target/EPAM_FARM-1.6.war
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- spring-boot-maven-plugin:2.2.1.RELEASE:repackage (repackage) @ EPAM_FARM ---
+[main] INFO org.springframework.boot.maven.RepackageMojo - Replacing main artifact with repackaged archive
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - >>> maven-pmd-plugin:3.13.0:check (default) > :pmd @ EPAM_FARM >>>
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-pmd-plugin:3.13.0:pmd (pmd) @ EPAM_FARM ---
+[main] WARNING org.apache.maven.plugins.pmd.PmdReport - Unable to locate Source XRef to link to - DISABLED
+[main] WARNING org.apache.maven.plugins.pmd.PmdReport - Unable to locate Source XRef to link to - DISABLED
+[main] WARNING org.apache.maven.plugins.pmd.PmdReport - Unable to locate Source XRef to link to - DISABLED
+[main] WARNING org.apache.maven.plugins.pmd.PmdReport - Unable to locate Source XRef to link to - DISABLED
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - <<< maven-pmd-plugin:3.13.0:check (default) < :pmd @ EPAM_FARM <<<
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-pmd-plugin:3.13.0:check (default) @ EPAM_FARM ---
+[main] INFO org.apache.maven.plugins.pmd.PmdViolationCheckMojo - PMD version: 6.21.0
+[main] INFO org.apache.maven.plugins.pmd.PmdViolationCheckMojo - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-checkstyle-plugin:3.1.0:check (default) @ EPAM_FARM ---
+[main] INFO org.apache.maven.plugins.checkstyle.exec.DefaultCheckstyleExecutor - There are 22 errors reported by Checkstyle 8.19 with config/checkstyle/checkstyle.xml ruleset.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/Application.java:[1] (misc) NewlineAtEndOfFile: File does not end with a newline.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/Application.java:[1] (javadoc) JavadocPackage: Missing package-info.java file.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/Application.java:[8] (javadoc) JavadocType: Missing a Javadoc comment.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/Application.java:[11,5] (javadoc) JavadocMethod: Missing a Javadoc comment.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/Application.java:[11,29] (misc) FinalParameters: Parameter args should be final.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/Application.java:[11,40] (misc) ArrayTypeStyle: Array brackets at illegal position.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/Application.java:[15,5] (design) DesignForExtension: Class 'Application' looks like designed for extension (can be subclassed), but the method 'configure' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Application' final or making the method 'configure' static/final/abstract/empty, or adding allowed annotation for the method.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/Application.java:[16] (sizes) LineLength: Line is longer than 80 characters (found 84).
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/Application.java:[16,50] (misc) FinalParameters: Parameter builder should be final.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[1] (javadoc) JavadocPackage: Missing package-info.java file.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[9] (javadoc) JavadocType: Missing a Javadoc comment.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[13,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[16,5] (design) DesignForExtension: Class 'MainController' looks like designed for extension (can be subclassed), but the method 'getIndex' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'MainController' final or making the method 'getIndex' static/final/abstract/empty, or adding allowed annotation for the method.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[16,5] (javadoc) JavadocMethod: Missing a Javadoc comment.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[17,28] (whitespace) MethodParamPad: '(' is preceded with whitespace.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[17,29] (misc) FinalParameters: Parameter model should be final.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[18,35] (whitespace) WhitespaceAfter: ',' is not followed by whitespace.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[23,5] (design) DesignForExtension: Class 'MainController' looks like designed for extension (can be subclassed), but the method 'getPage' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'MainController' final or making the method 'getPage' static/final/abstract/empty, or adding allowed annotation for the method.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[23,5] (javadoc) JavadocMethod: Missing a Javadoc comment.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[24,27] (whitespace) MethodParamPad: '(' is preceded with whitespace.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/java/org/example/EPAM_FARM/controller/MainController.java:[24,28] (misc) FinalParameters: Parameter model should be final.
+[main] ERROR org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - src/main/resources/application.properties:[1] (misc) NewlineAtEndOfFile: File does not end with a newline.
+[main] WARNING org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo - checkstyle:check violations detected but failOnViolation set to false
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - >>> spotbugs-maven-plugin:3.1.12.2:check (default) > :spotbugs @ EPAM_FARM >>>
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- spotbugs-maven-plugin:3.1.12.2:spotbugs (spotbugs) @ EPAM_FARM ---
+[main] INFO org.codehaus.mojo.spotbugs.SpotBugsMojo - Fork Value is true
+[main] INFO org.codehaus.mojo.spotbugs.SpotBugsMojo - Done SpotBugs Analysis....
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - <<< spotbugs-maven-plugin:3.1.12.2:check (default) < :spotbugs @ EPAM_FARM <<<
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- spotbugs-maven-plugin:3.1.12.2:check (default) @ EPAM_FARM ---
+[main] INFO org.codehaus.mojo.spotbugs.SpotbugsViolationCheckMojo - BugInstance size is 0
+[main] INFO org.codehaus.mojo.spotbugs.SpotbugsViolationCheckMojo - Error size is 0
+[main] INFO org.codehaus.mojo.spotbugs.SpotbugsViolationCheckMojo - No errors/warnings found
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-install-plugin:2.5.2:install (default-install) @ EPAM_FARM ---
+[main] INFO org.codehaus.plexus.PlexusContainer - Installing /var/jenkins_home/workspace/main/target/EPAM_FARM-1.6.war to /var/jenkins_home/.m2/repository/org/example/EPAM_FARM/1.6/EPAM_FARM-1.6.war
+[main] INFO org.codehaus.plexus.PlexusContainer - Installing /var/jenkins_home/workspace/main/pom.xml to /var/jenkins_home/.m2/repository/org/example/EPAM_FARM/1.6/EPAM_FARM-1.6.pom
+[main] INFO org.jfrog.build.extractor.maven.BuildDeploymentHelper - Artifactory Build Info Recorder: Saving Build Info to '/var/jenkins_home/workspace/main/target/build-info.json'
+[main] INFO org.jfrog.build.extractor.maven.BuildDeploymentHelper - Artifactory Build Info Recorder: deploy artifacts set to false, artifacts will not be deployed...
+[main] INFO org.jfrog.build.extractor.maven.BuildDeploymentHelper - Artifactory Build Info Recorder: publish build info set to false, build info will not be published...
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - ------------------------------------------------------------------------
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - BUILD SUCCESS
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - ------------------------------------------------------------------------
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - Total time:  21.852 s
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - Finished at: 2020-02-11T16:49:44Z
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - ------------------------------------------------------------------------
+[8mha:////4Cha3jFR+QdijAMTNdW4FGtMOKcbYMA0soAmyxkApUbVAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiBFQoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDREKHeHXPvt8AHjsOeuvgAAAA==[0m[Pipeline] publishBuildInfo
+Deploying build info to: http://artifactory:8081/artifactory/api/build
+Deploying build descriptor to: http://artifactory:8081/artifactory/api/build
+Build successfully deployed. Browse it in Artifactory under http://artifactory:8081/artifactory/webapp/builds/main/3
+[8mha:////4CSt4aLt6g/T4d24Ntjp+MUER+s4S2RY1m7LtXdkbsgtAAAApR+LCAAAAAAAAP9tjTsOwjAQRDdBFLSUHGIj8alQKlrLDScwiTFOrN1gOzgVJ+Jq3AGLSFRMMZo3zXu9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKYhQrk75Npvhw8g48qFvgAAAA==[0m[Pipeline] deployArtifacts
+Deploying artifact: http://artifactory:8081/artifactory/libs-release-local/org/example/EPAM_FARM/1.6/EPAM_FARM-1.6.war
+Deploying artifact: http://artifactory:8081/artifactory/libs-release-local/org/example/EPAM_FARM/1.6/EPAM_FARM-1.6.pom
+[8mha:////4LHO+q1VBjt1kDIEbfsWuc6/vJvPOUQPrRnUDCuZGCb3AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSBCpEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNn7BOW+zlUfPr1sGoC+AAAA[0m[Pipeline] }
+[8mha:////4MoUGhSloZZ+5PpcEHk/yuSn3hqrKzs5bpWBpPtCacjtAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIpSIeoaC03vMAkh3Fi3Rnbwal4EV/jD1hEomKL1c4283rDOgY4cjBiQBotxc4K7yZTlsgcxqvjLAa+iI4pskOhMCvu8bSg4oSwpKphJWGD1DmOlkyCrRz0QzdOk2nOKZTvIKG2/R2eUMliTjqkL8wBdrepj0w/z18BzN4nqNu21L79AJNsGOq+AAAA[0m[Pipeline] // script
+[8mha:////4Fnau1TeyCyvIz8oX/8avUeXRUFFgEz6nuzDQVwcFI++AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSBCpEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNn7BOX+kKuuP5UqIL++AAAA[0m[Pipeline] }
+[8mha:////4KOMOZjdK1J6ibsIuNRGrob/vhOHGwLWC1i96oFB2caKAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiAaJBqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDuD7l22w+taLNOvgAAAA==[0m[Pipeline] // stage
+[8mha:////4Bgu9flDwfnJ9v7ebY2Sj1AX5y3EXCND2JwS1/ADb+TyAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUlZAYEFPXqAsnCE0ISaP/S5KSTpyIq3EHApWY8GDZlqz3fEEVPBzJa2YVDgZDb9joJp0TS+SHi6PELJ1ZTxjIKdap1JFU7VI7igoWFSWsOKwV9o6CQR1hw624i9oJ1PUp+rwdOJRG3uABBc/kKHz8ltnD9jrJQPjj/AXAPEYomybbbv95Vm97sl+ZwgAAAA==[0m[Pipeline] stage
+[8mha:////4JbzwqG80fxsiHF/YVXJcVkw9jS58sGVTWSsYFTv2hyOAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0QQIJMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLku/1sh/lZfAD9vR8YwgAAAA==[0m[Pipeline] { (DEPLOY)
+[8mha:////4IGjTkQ5eVUjSi1Md5FmKBYs7cV41KR25CbiwA0AzpF0AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0YQAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD56au0DCAAAA[0m[Pipeline] script
+[8mha:////4CsH1WMNYcfBVgJvV6p97vFf4YSggDPPFI6MxiwucJMyAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoiUAQaEOrFGXThBaEJIGv1fkpR04kRcjTsQqMSEB8u2ZL3nC6rgoSGvmVXYGwydYYMbdU4ske8vjhKzdGYdYSCnWKtSS1Id59pSVDCrKGHBYamwcxQM6ggrbsVd1E6grk/R5+3AoTTyBg8oeCZH4eO3TB7W11EGwh/nLwCmIUK53WfbbT7P6g0iH00AwgAAAA==[0m[Pipeline] {
+[8mha:////4GlEOfoikBjhWBE9HEqKa4FIEyj61Ol/4IYwW8uIaupuAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICBRWiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBvT8cju+AAAA[0m[Pipeline] sh
++ mvn clean install
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EPAM_FARM 1.6
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ EPAM_FARM ---
+[INFO] Deleting /var/jenkins_home/workspace/main/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.3:prepare-agent (default-prepare-agent) @ EPAM_FARM ---
+[INFO] argLine set to -javaagent:/var/jenkins_home/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/var/jenkins_home/workspace/main/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ EPAM_FARM ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ EPAM_FARM ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /var/jenkins_home/workspace/main/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ EPAM_FARM ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/main/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ EPAM_FARM ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/jenkins_home/workspace/main/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ EPAM_FARM ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+16:49:58.675 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:58.683 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:49:58.704 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:49:58.792 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.example.EPAM_FARM.controller.MainControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:49:58.828 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.example.EPAM_FARM.controller.MainControllerTest], using SpringBootContextLoader
+16:49:58.838 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTest-context.xml] does not exist
+16:49:58.838 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTestContext.groovy] does not exist
+16:49:58.839 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.example.EPAM_FARM.controller.MainControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:49:58.840 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.EPAM_FARM.controller.MainControllerTest]: MainControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:49:58.948 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.090 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/var/jenkins_home/workspace/main/target/classes/org/example/EPAM_FARM/Application.class]
+16:49:59.093 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.EPAM_FARM.Application for test class org.example.EPAM_FARM.controller.MainControllerTest
+16:49:59.314 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.example.EPAM_FARM.controller.MainControllerTest]: using defaults.
+16:49:59.316 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:49:59.340 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/TransactionDefinition]
+16:49:59.341 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+16:49:59.341 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@b5312df, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4300e240, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5f409872, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@547aaa32, org.springframework.test.context.support.DirtiesContextTestExecutionListener@472c9f88, org.springframework.test.context.event.EventPublishingTestExecutionListener@37a67cf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5822ecda, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5908e6d6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7afbf2a0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2a6fb62f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@65e4cb84]
+16:49:59.352 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.353 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.395 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.395 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:49:59.395 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:49:59.396 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.example.EPAM_FARM.controller.MainControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:49:59.397 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.example.EPAM_FARM.controller.MainControllerTest], using SpringBootContextLoader
+16:49:59.398 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTest-context.xml] does not exist
+16:49:59.398 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.example.EPAM_FARM.controller.MainControllerTest]: class path resource [org/example/EPAM_FARM/controller/MainControllerTestContext.groovy] does not exist
+16:49:59.398 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.example.EPAM_FARM.controller.MainControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:49:59.398 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.EPAM_FARM.controller.MainControllerTest]: MainControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:49:59.403 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.403 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.EPAM_FARM.Application for test class org.example.EPAM_FARM.controller.MainControllerTest
+16:49:59.407 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.example.EPAM_FARM.controller.MainControllerTest]: using defaults.
+16:49:59.407 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:49:59.408 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/TransactionDefinition]
+16:49:59.408 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+16:49:59.409 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4ad896f7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@c318864, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7d61468c, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@45796b2a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4b98225c, org.springframework.test.context.event.EventPublishingTestExecutionListener@4beae1e3, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3c488b34, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@32e697ac, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3866c96e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@241fc278, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5c76fce4]
+16:49:59.409 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.409 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.498 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.498 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+[INFO] Running org.example.EPAM_FARM.controller.MainControllerTest
+16:49:59.505 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.505 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.506 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.506 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.514 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@63e70bf9 testClass = MainControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@402a69f testClass = MainControllerTest, locations = '{}', classes = '{class org.example.EPAM_FARM.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@419f0ea key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3d96fa9e, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@17143b3b, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@14a049f9, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6fa13e6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+16:49:59.520 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.521 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.example.EPAM_FARM.controller.MainControllerTest]
+16:49:59.571 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2020-02-11 16:50:00.195  INFO 555 --- [           main] o.e.E.controller.MainControllerTest      : Starting MainControllerTest on 16a3a46a87c1 with PID 555 (started by jenkins in /var/jenkins_home/workspace/main)
+2020-02-11 16:50:00.198  INFO 555 --- [           main] o.e.E.controller.MainControllerTest      : No active profile set, falling back to default profiles: default
+2020-02-11 16:50:02.113  INFO 555 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-11 16:50:02.267  INFO 555 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-11 16:50:02.556  INFO 555 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-11 16:50:02.556  INFO 555 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-11 16:50:02.574  INFO 555 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 18 ms
+2020-02-11 16:50:02.612  INFO 555 --- [           main] o.e.E.controller.MainControllerTest      : Started MainControllerTest in 3.017 seconds (JVM running for 5.169)
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.431 s - in org.example.EPAM_FARM.controller.MainControllerTest
+2020-02-11 16:50:03.989  INFO 555 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.3:report (default-report) @ EPAM_FARM ---
+[INFO] Loading execution data file /var/jenkins_home/workspace/main/target/jacoco.exec
+[INFO] Analyzed bundle 'EPAM_FARM' with 2 classes
+[INFO] 
+[INFO] --- maven-war-plugin:3.2.3:war (default-war) @ EPAM_FARM ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [EPAM_FARM] in [/var/jenkins_home/workspace/main/target/EPAM_FARM-1.6]
+[INFO] Processing war project
+[INFO] Webapp assembled in [65 msecs]
+[INFO] Building war: /var/jenkins_home/workspace/main/target/EPAM_FARM-1.6.war
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.2.1.RELEASE:repackage (repackage) @ EPAM_FARM ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] >>> maven-pmd-plugin:3.13.0:check (default) > :pmd @ EPAM_FARM >>>
+[INFO] 
+[INFO] --- maven-pmd-plugin:3.13.0:pmd (pmd) @ EPAM_FARM ---
+[WARNING] Unable to locate Source XRef to link to - DISABLED
+[WARNING] Unable to locate Source XRef to link to - DISABLED
+[WARNING] Unable to locate Source XRef to link to - DISABLED
+[WARNING] Unable to locate Source XRef to link to - DISABLED
+[INFO] 
+[INFO] <<< maven-pmd-plugin:3.13.0:check (default) < :pmd @ EPAM_FARM <<<
+[INFO] 
+[INFO] --- maven-pmd-plugin:3.13.0:check (default) @ EPAM_FARM ---
+[INFO] PMD version: 6.21.0
+[INFO] 
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (default) @ EPAM_FARM ---
+[INFO] There are 22 errors reported by Checkstyle 8.19 with config/checkstyle/checkstyle.xml ruleset.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[1] (misc) NewlineAtEndOfFile: File does not end with a newline.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[1] (javadoc) JavadocPackage: Missing package-info.java file.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[8] (javadoc) JavadocType: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[11,5] (javadoc) JavadocMethod: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[11,29] (misc) FinalParameters: Parameter args should be final.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[11,40] (misc) ArrayTypeStyle: Array brackets at illegal position.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[15,5] (design) DesignForExtension: Class 'Application' looks like designed for extension (can be subclassed), but the method 'configure' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Application' final or making the method 'configure' static/final/abstract/empty, or adding allowed annotation for the method.
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[16] (sizes) LineLength: Line is longer than 80 characters (found 84).
+[ERROR] src/main/java/org/example/EPAM_FARM/Application.java:[16,50] (misc) FinalParameters: Parameter builder should be final.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[1] (javadoc) JavadocPackage: Missing package-info.java file.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[9] (javadoc) JavadocType: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[13,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[16,5] (design) DesignForExtension: Class 'MainController' looks like designed for extension (can be subclassed), but the method 'getIndex' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'MainController' final or making the method 'getIndex' static/final/abstract/empty, or adding allowed annotation for the method.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[16,5] (javadoc) JavadocMethod: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[17,28] (whitespace) MethodParamPad: '(' is preceded with whitespace.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[17,29] (misc) FinalParameters: Parameter model should be final.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[18,35] (whitespace) WhitespaceAfter: ',' is not followed by whitespace.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[23,5] (design) DesignForExtension: Class 'MainController' looks like designed for extension (can be subclassed), but the method 'getPage' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'MainController' final or making the method 'getPage' static/final/abstract/empty, or adding allowed annotation for the method.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[23,5] (javadoc) JavadocMethod: Missing a Javadoc comment.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[24,27] (whitespace) MethodParamPad: '(' is preceded with whitespace.
+[ERROR] src/main/java/org/example/EPAM_FARM/controller/MainController.java:[24,28] (misc) FinalParameters: Parameter model should be final.
+[ERROR] src/main/resources/application.properties:[1] (misc) NewlineAtEndOfFile: File does not end with a newline.
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[INFO] 
+[INFO] >>> spotbugs-maven-plugin:3.1.12.2:check (default) > :spotbugs @ EPAM_FARM >>>
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:3.1.12.2:spotbugs (spotbugs) @ EPAM_FARM ---
+[INFO] Fork Value is true
+[INFO] Done SpotBugs Analysis....
+[INFO] 
+[INFO] <<< spotbugs-maven-plugin:3.1.12.2:check (default) < :spotbugs @ EPAM_FARM <<<
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:3.1.12.2:check (default) @ EPAM_FARM ---
+[INFO] BugInstance size is 0
+[INFO] Error size is 0
+[INFO] No errors/warnings found
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ EPAM_FARM ---
+[INFO] Installing /var/jenkins_home/workspace/main/target/EPAM_FARM-1.6.war to /var/jenkins_home/.m2/repository/org/example/EPAM_FARM/1.6/EPAM_FARM-1.6.war
+[INFO] Installing /var/jenkins_home/workspace/main/pom.xml to /var/jenkins_home/.m2/repository/org/example/EPAM_FARM/1.6/EPAM_FARM-1.6.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 19.677 s
+[INFO] Finished at: 2020-02-11T16:50:14+00:00
+[INFO] Final Memory: 69M/593M
+[INFO] ------------------------------------------------------------------------
+[8mha:////4CiMS0aZVMlheyzkXxB0wLT3OzxQDpr8tuZI6vjdoEqjAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCkKgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUO63n9qFNzevXxC+AAAA[0m[Pipeline] deploy
+[DeployPublisher][INFO] Attempting to deploy 1 war file(s)
+[DeployPublisher][INFO] Deploying /var/jenkins_home/workspace/main/target/EPAM_FARM-1.6.war to container Tomcat 8.x Remote with context null
+  [/var/jenkins_home/workspace/main/target/EPAM_FARM-1.6.war] is not deployed. Doing a fresh deployment.
+  Deploying [/var/jenkins_home/workspace/main/target/EPAM_FARM-1.6.war]
+[8mha:////4LGGOU9Sj/ldlkscbX39JPxtVAJVB96TyTX08El1U+GlAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKChKgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUO63n9qFN3aeRAm+AAAA[0m[Pipeline] sh
++ sleep 15
+[8mha:////4C7CSEo7L2m6qs82e/FdYthcg9skCCdGYgPuite4EcePAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCARWiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBrEIBUa+AAAA[0m[Pipeline] sh
++ curl -s -o /dev/null -w %{http_code} http://192.168.99.1:8087/EPAM_FARM-1.6/
+[8mha:////4E+bolxgDxaZ0KSoVlRtHgS+XzURRzmS1XOpLyb2uZXJAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCkwpR0VppeIFJjLFj3Tm2g1PxIr7GHwhEomKL1c4283zBOgY4ctBoFfWGYmvQu1HPCzOH/uo4o+ULtkyRncJG5YY7dVqw4aRgSVHCSsBGUes4GtIJtsLKu6ycJF2dU5i/g4DSdAM8oBCzOcmQvjAF2N3GLjL9PH8FMHmfoKzrT+3fHdcE1r4AAAA=[0m[Pipeline] }
+[8mha:////4J04pjFy3w3CWtPVk+ilMR6xK8YBrPFuHxmbgQVQTCVFAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSABJCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDu9rm2hw9WLFcwvgAAAA==[0m[Pipeline] // script
+[8mha:////4DD7cb1HHPmtLjjFyrU+nS39hkROS53RYzcS7VuZjGjtAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSgEBCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDu9rm2hw9lzwyMvgAAAA==[0m[Pipeline] }
+[8mha:////4EGGsQaSMY/a1QdshL5LinFzNtMZQoJM4I8mSvsLojG9AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSgEBCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDuDrm2+w8hYOXtvgAAAA==[0m[Pipeline] // stage
+[8mha:////4OoJBe+Rp8t4km5CUx4Bqq0gomUQZ13yzvp8zn+BbSdAAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiFBQIUaW10vACExvjxLoztkNS8SK+xh+wiETFFqudbeb1hnUMcOJgsNc0WIqdRe9GkxdOHIar4wl7vmDHFNlpbPXUstLNgi0nDUuKElYCNpo6x9GSSbAVvXzIykky1TmF/B0FlFbd4QmFyOYkQ/rCHGB3G1Vk+nn+CmD2PkG5P+Sq6w/04q2yvgAAAA==[0m[Pipeline] }
+[8mha:////4PEPz0ZKISyFrsFLAU3+qM9o9bvz484Txino2eJrJjWFAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOISGhpEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNn7BOWhzrWvPzeZTdO+AAAA[0m[Pipeline] // withEnv
+[8mha:////4DVEaTaTVQP3x4QLdnZhWiPMEAExqqBY6TViPKMvcIOtAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIREqJBVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5PutINt9AI0yIPK9AAAA[0m[Pipeline] }
+[8mha:////4P3K/yQZf8psBRgi4CzkyxLluF5aiGWolLla1OoWRqU/AAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKRQKJBVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5PutINt9AP7d5Cu9AAAA[0m[Pipeline] // node
+[8mha:////4Mdz9XuYAmlqB/JoyUPPSF5IN0dFJbTKMvGWOl6SUlwAAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKRQKJBVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5PudINt+ANjEg2G9AAAA[0m[Pipeline] End of Pipeline
+Finished: SUCCESS
