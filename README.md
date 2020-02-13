@@ -4,7 +4,7 @@
 
 ## Jenkins
 _localhost:8089_,  _jenkins.epam-farm.net_
-* username: `vladquinn`
+* username: `admin`
 * password: `admin`
 
 ## Sonarqube
