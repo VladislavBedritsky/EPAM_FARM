@@ -10,8 +10,8 @@ services:
     container_name: jenkins
     networks:
       - net
-    volumes:
-      - ./config/jenkins/jenkins_home:/var/jenkins_home
+#    volumes:
+#      - ./config/jenkins/jenkins_home:/var/jenkins_home
 
   tomcat:
     image: tomcat:8.5.16-jre8-alpine
