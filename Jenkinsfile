@@ -43,8 +43,9 @@ pipeline {
 
                     rtMaven.resolver server: artServer, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
                     rtMaven.deployer server: artServer, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
-                    artServer.publishBuildInfo buildInfo
-                    rtMaven.deployer.artifactDeploymentPatterns.addInclude("frog*").deployArtifacts buildInfo
+//                    artServer.publishBuildInfo buildInfo
+                    rtMaven.deployer.artifactDeploymentPatterns.addInclude("rest*")
+                    rtMaven.deployer.deployArtifacts buildInfo
                 }
             }
             post {
