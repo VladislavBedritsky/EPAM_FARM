@@ -7,7 +7,11 @@
     <groupId>org.example</groupId>
     <artifactId>EPAM_FARM</artifactId>
     <version>1.6</version>
-    <packaging>war</packaging>
+    <modules>
+        <module>model</module>
+        <module>dao</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
