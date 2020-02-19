@@ -43,8 +43,9 @@ pipeline {
 
                     rtMaven.resolver server: artServer, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
                     rtMaven.deployer server: artServer, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
-//                    artServer.publishBuildInfo buildInfo
-//                    rtMaven.deployer.artifactDeploymentPatterns.addExclude("*.jar")
+
+                    rtMaven.deployer.artifactDeploymentPatterns.addExclude("*.jar")
+                    artServer.publishBuildInfo buildInfo
                     rtMaven.deployer.deployArtifacts buildInfo
                 }
             }
