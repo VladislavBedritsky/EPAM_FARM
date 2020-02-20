@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
 
-                    def ret = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8081/artifactory/api/storage/libs-release-local/org/example/rest/1.8/rest-1.8.pom', returnStdout: true)
+                    def ret = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8081/artifactory/api/storage/libs-release-local/org/example/rest/1.9/rest-1.9.pom', returnStdout: true)
                     if (ret == "200") {
                         currentBuild.result = 'FAILURE'
                         error "release failed"
@@ -44,9 +44,9 @@ pipeline {
                     rtMaven.resolver server: artServer, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
                     rtMaven.deployer server: artServer, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
 
-                    rtMaven.deployer.artifactDeploymentPatterns.addExclude("*.jar")
+
                     artServer.publishBuildInfo buildInfo
-                    rtMaven.deployer.deployArtifacts buildInfo
+                    rtMaven.deployer.artifactDeploymentPatterns.addExclude("*.jar").deployArtifacts buildInfo
                 }
             }
             post {
@@ -66,7 +66,7 @@ pipeline {
 
                     sh 'sleep 10'
 
-                    def status = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8087/rest-1.8/', returnStdout: true)
+                    def status = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8087/rest-1.9/', returnStdout: true)
                     if (status != "200") {
                         currentBuild.result = 'FAILURE'
                         error "deploy failed"
