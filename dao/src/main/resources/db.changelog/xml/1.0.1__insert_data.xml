@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet context="legacy" author="author (generated)" id="2">
+        <sql>SET FOREIGN_KEY_CHECKS=0;</sql>
+        <insert tableName="departments">
+            <column name="id">1</column>
+            <column name="name">Marketing Department</column>
+        </insert>
+        <insert tableName="employees">
+            <column name="id">1</column>
+            <column name="name">Mike</column>
+            <column name="birthday">1992-12-24</column>
+            <column name="salary">150012.12</column>
+            <column name="department_id">1</column>
+        </insert>
+        <sql>SET FOREIGN_KEY_CHECKS=1;</sql>
+    </changeSet>
+
+</databaseChangeLog>
