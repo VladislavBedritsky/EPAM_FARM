@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
 
-                    def ret = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8081/artifactory/api/storage/libs-release-local/org/example/rest/1.9/rest-1.9.pom', returnStdout: true)
+                    def ret = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8081/artifactory/api/storage/libs-release-local/org/example/EPAM_FARM/1.9/EPAM_FARM-1.9.pom', returnStdout: true)
                     if (ret == "200") {
                         currentBuild.result = 'FAILURE'
                         error "release failed"
@@ -44,8 +44,6 @@ pipeline {
                     rtMaven.resolver server: artServer, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
                     rtMaven.deployer server: artServer, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
 
-
-                    rtMaven.deployer.artifactDeploymentPatterns.addInclude("rest*")
                     artServer.publishBuildInfo buildInfo
                     rtMaven.deployer.deployArtifacts buildInfo
                 }
