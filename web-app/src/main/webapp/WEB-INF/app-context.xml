@@ -57,4 +57,7 @@
         <property name="password" value="root"/>
     </bean>
 
+    <bean id="departmentDao" class="org.example.EPAM_FARM.dao.impl.DepartmentDaoImpl">
+        <constructor-arg name="dataSource" ref="dataSource" />
+    </bean>
 </beans>
