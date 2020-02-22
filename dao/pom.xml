@@ -17,31 +17,30 @@
             <groupId>org.example</groupId>
             <artifactId>model</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-        </dependency>
-
     </dependencies>
 
+   <build>
+       <plugins>
+           <plugin>
+               <groupId>org.liquibase</groupId>
+               <artifactId>liquibase-maven-plugin</artifactId>
+               <version>${liquibase-maven-plugin.version}</version>
+               <configuration>
+                   <changeLogFile>src/main/resources/db.changelog/db.changelog-master.xml</changeLogFile>
+                   <driver>com.mysql.cj.jdbc.Driver</driver>
+                   <url>jdbc:mysql://192.168.99.1:3308/farm</url>
+                   <username>root</username>
+                   <password>root</password>
+               </configuration>
+               <executions>
+                   <execution>
+                       <phase>process-resources</phase>
+                       <goals>
+                           <goal>update</goal>
+                       </goals>
+                   </execution>
+               </executions>
+           </plugin>
+       </plugins>
+   </build>
 </project>
