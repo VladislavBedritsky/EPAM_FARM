@@ -26,7 +26,8 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
     @Override
     public Integer save() {
-        String sql = "insert into departments (id, name) values (?, ?)";
-        return jdbcTemplate.update(sql, 3,"qq");
+        return null;
     }
+
+
 }
