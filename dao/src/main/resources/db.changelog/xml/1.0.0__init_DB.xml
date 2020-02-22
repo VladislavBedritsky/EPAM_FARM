@@ -24,11 +24,9 @@
         <createIndex tableName="employees" indexName="department_id">
             <column name="department_id" />
         </createIndex>
-        <addForeignKeyConstraint baseTableName="departments" baseColumnNames="id" constraintName="department_id"
-                                 onDelete="CASCADE"
-                                 onUpdate="RESTRICT"
-                                 referencedTableName="employees"
-                                 referencedColumnNames="department_id" />
+        <addForeignKeyConstraint baseTableName="employees" baseColumnNames="department_id" constraintName="department_id"
+                                 referencedTableName="departments"
+                                 referencedColumnNames="id" />
     </changeSet>
 
 </databaseChangeLog>
