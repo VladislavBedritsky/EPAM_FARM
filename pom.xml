@@ -28,6 +28,8 @@
         <liquibase-maven-plugin.version>3.4.1</liquibase-maven-plugin.version>
         <org.springframework.version>4.3.14.RELEASE</org.springframework.version>
         <junit.version>4.12</junit.version>
+        <mockito.version>2.23.4</mockito.version>
+        <servlet.version>4.0.0</servlet.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -136,14 +138,14 @@
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
-                <version>3.0.1</version>
+                <version>${servlet.version}</version>
                 <scope>provided</scope>
             </dependency>
 
             <dependency>
-                <groupId>commons-logging</groupId>
-                <artifactId>commons-logging</artifactId>
-                <version>1.2</version>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
                 <scope>test</scope>
             </dependency>
 
@@ -248,6 +250,9 @@
 
             </plugins>
         </pluginManagement>
+
     </build>
+
+
 
 </project>

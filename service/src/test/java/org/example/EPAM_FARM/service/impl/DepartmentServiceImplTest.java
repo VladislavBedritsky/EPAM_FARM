@@ -1,7 +1,7 @@
-package org.example.EPAM_FARM.dao.impl;
+package org.example.EPAM_FARM.service.impl;
 
-import org.example.EPAM_FARM.dao.DepartmentDao;
 import org.example.EPAM_FARM.model.Department;
+import org.example.EPAM_FARM.service.DepartmentService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,19 +11,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath*:test-db.xml"})
-public class DepartmentDaoImplTest {
+@ContextConfiguration(locations={"classpath*:test-service.xml"})
+public class DepartmentServiceImplTest {
 
     @Autowired
-    private DepartmentDao departmentDao;
+    private DepartmentService departmentService;
 
     @Test
-    public void findAllDepartments () {
-        List<Department> departments = departmentDao.findAll();
+    public void findAll() {
+        List<Department> departments = departmentService.findAll();
         Assert.assertNotNull(departments);
     }
-
-
 }
