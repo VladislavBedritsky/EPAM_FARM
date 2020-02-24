@@ -16,9 +16,8 @@
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="departmentDao" class="org.example.EPAM_FARM.dao.impl.DepartmentDaoImpl">
-        <constructor-arg name="dataSource" ref="dataSource" />
-    </bean>
+    <bean id="departmentDao" class="org.example.EPAM_FARM.dao.impl.DepartmentDaoImpl" />
+
 
     <bean id="departmentService" class="org.example.EPAM_FARM.service.impl.DepartmentServiceImpl" />
 

@@ -18,6 +18,7 @@ public class DepartmentServiceImplTest {
     @Autowired
     private DepartmentService departmentService;
 
+
     @Test
     public void findAll() {
         List<Department> departments = departmentService.findAll();

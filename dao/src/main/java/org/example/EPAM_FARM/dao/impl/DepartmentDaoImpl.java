@@ -21,10 +21,6 @@ public class DepartmentDaoImpl implements DepartmentDao {
         return jdbcTemplate.query(sql, new DepartmentMapper());
     }
 
-    @Override
-    public Integer save() {
-        return null;
-    }
 
 
 }

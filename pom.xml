@@ -8,11 +8,9 @@
     <artifactId>EPAM_FARM</artifactId>
     <version>1.9</version>
     <modules>
-        <module>model</module>
-        <module>dao</module>
         <module>rest</module>
         <module>web-app</module>
-        <module>service</module>
+        <module>backend</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -31,6 +29,7 @@
         <mockito.version>2.23.4</mockito.version>
         <servlet.version>4.0.0</servlet.version>
         <jackson-databind.version>2.9.8</jackson-databind.version>
+        <json-path.version>2.0.0</json-path.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -46,17 +45,7 @@
         <dependencies>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>model</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example</groupId>
-                <artifactId>dao</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example</groupId>
-                <artifactId>service</artifactId>
+                <artifactId>backend</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -165,7 +154,7 @@
             <dependency>
                 <groupId>com.jayway.jsonpath</groupId>
                 <artifactId>json-path</artifactId>
-                <version>2.0.0</version>
+                <version>${json-path.version}</version>
                 <scope>test</scope>
             </dependency>
 
