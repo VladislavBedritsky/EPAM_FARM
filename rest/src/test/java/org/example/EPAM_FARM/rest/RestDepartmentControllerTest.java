@@ -1,4 +1,4 @@
-package org.example.EPAM_FARM.controller;
+package org.example.EPAM_FARM.rest;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -20,11 +20,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath*:test-controller.xml"})
-public class MainControllerTest {
+@ContextConfiguration(locations={"classpath*:test-rest-controller.xml"})
+public class RestDepartmentControllerTest {
 
     @Autowired
-    private MainController mainController;
+    private RestDepartmentController restDepartmentController;
 
     @Autowired
     private WebApplicationContext wac;
@@ -37,22 +37,18 @@ public class MainControllerTest {
     }
 
     @Test
-    public void givenWac_whenServletContext_thenItProvidesGreetController() {
+    public void givenWac_whenServletContext_thenItProvidesRestDepartmentController() {
         ServletContext servletContext = wac.getServletContext();
 
         Assert.assertNotNull(servletContext);
         Assert.assertTrue(servletContext instanceof MockServletContext);
-        Assert.assertNotNull(wac.getBean("mainController"));
+        Assert.assertNotNull(wac.getBean("restDepartmentController"));
     }
 
     @Test
-    public void givenHomePageURI_whenMockMVC_thenReturnsIndexJSPViewName() throws Exception {
-        this.mockMvc.perform(get("/")).andExpect(view().name("index"));
-    }
-
-    @Test
-    public void getMainController() {
-        Assert.assertNotNull(mainController);
+    public void givenDepartmentURI_whenMockMVC_thenVerifyResponse() throws Exception {
+        this.mockMvc.perform(get("/")).andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"));
     }
 
 }
