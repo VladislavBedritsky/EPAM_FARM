@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet context="legacy" author="author (generated)" id="1">
+    <changeSet context="legacy" author="author (generated)" id="1" >
         <createTable tableName="departments">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints nullable="false" primaryKey="true" />
@@ -27,6 +27,11 @@
         <addForeignKeyConstraint baseTableName="employees" baseColumnNames="department_id" constraintName="department_id"
                                  referencedTableName="departments"
                                  referencedColumnNames="id" />
+
+        <rollback>
+            <dropTable tableName="employees"/>
+            <dropTable tableName="departments"/>
+        </rollback>
     </changeSet>
 
 </databaseChangeLog>

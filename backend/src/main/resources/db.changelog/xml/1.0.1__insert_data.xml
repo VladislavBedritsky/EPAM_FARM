@@ -18,6 +18,13 @@
             <column name="department_id">1</column>
         </insert>
         <sql>SET FOREIGN_KEY_CHECKS=1;</sql>
+
+        <rollback>
+            SET FOREIGN_KEY_CHECKS=0;
+            DELETE FROM employees WHERE id = 1;
+            DELETE FROM departments WHERE id = 1;
+        </rollback>
+
     </changeSet>
 
 </databaseChangeLog>
