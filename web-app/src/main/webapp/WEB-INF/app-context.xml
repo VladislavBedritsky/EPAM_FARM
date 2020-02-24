@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <import resource="classpath*:applicationContext.xml"/>
+    <import resource="classpath:beans.xml"/>
 
     <mvc:default-servlet-handler/>
 
@@ -50,14 +50,4 @@
         <property name="characterEncoding" value="UTF-8" />
     </bean>
 
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-<!--        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>-->                           <!-- production-->
-        <property name="url" value="jdbc:mysql://192.168.99.1:3308/farm"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
-    </bean>
-
-    <bean id="departmentDao" class="org.example.EPAM_FARM.dao.impl.DepartmentDaoImpl">
-        <constructor-arg name="dataSource" ref="dataSource" />
-    </bean>
 </beans>
