@@ -16,15 +16,15 @@ import org.springframework.web.context.WebApplicationContext;
 import javax.servlet.ServletContext;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath*:test-controller.xml"})
-public class MainControllerTest {
+public class DepartmentControllerTest {
 
     @Autowired
-    private MainController mainController;
+    private DepartmentController departmentController;
 
     @Autowired
     private WebApplicationContext wac;
@@ -37,22 +37,18 @@ public class MainControllerTest {
     }
 
     @Test
-    public void givenWac_whenServletContext_thenItProvidesGreetController() {
+    public void givenWac_whenServletContext_thenItProvidesDepartmentController() {
         ServletContext servletContext = wac.getServletContext();
 
         Assert.assertNotNull(servletContext);
         Assert.assertTrue(servletContext instanceof MockServletContext);
-        Assert.assertNotNull(wac.getBean("mainController"));
+        Assert.assertNotNull(wac.getBean("departmentController"));
+
     }
 
     @Test
-    public void givenHomePageURI_whenMockMVC_thenReturnsIndexJSPViewName() throws Exception {
-        this.mockMvc.perform(get("/")).andExpect(view().name("index"));
-    }
-
-    @Test
-    public void getMainController() {
-        Assert.assertNotNull(mainController);
+    public void givenHomePageURI_whenMockMVC_thenReturnsIndexViewName() throws Exception {
+        this.mockMvc.perform(get("/")).andExpect(view().name("departments"));
     }
 
 }

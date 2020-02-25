@@ -8,15 +8,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class MainController {
+public class DepartmentController {
 
     @Autowired
     private DepartmentService departmentService;
 
     @GetMapping("/")
-    public String getIndex (Model model) {
+    public String getDepartments (Model model) {
         model.addAttribute("q", departmentService.findAll());
-        return "index";
+        return "departments";
     }
 
 

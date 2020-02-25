@@ -19,7 +19,7 @@ public class RestDepartmentController {
 
     @ResponseBody
     @GetMapping
-    public List<Department> findAll() {
+    public List<Department> getDepartments() {
         return departmentService.findAll();
     }
 
