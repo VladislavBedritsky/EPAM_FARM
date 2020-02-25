@@ -10,10 +10,14 @@
     <tr>
         <th>id</th>
         <th>name</th>
+        <th>birthday</th>
+        <th>salary</th>
     </tr>
-    <tr th:each="a:${departments}">
+    <tr th:each="a:${employees}">
         <td th:text="${a.id}"></td>
         <td th:text="${a.name}"></td>
+        <td th:text="${a.birthday}"></td>
+        <td th:text="${a.salary}"></td>
     </tr>
 </table>
 

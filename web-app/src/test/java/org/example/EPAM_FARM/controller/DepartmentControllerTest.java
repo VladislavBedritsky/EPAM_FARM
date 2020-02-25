@@ -47,8 +47,8 @@ public class DepartmentControllerTest {
     }
 
     @Test
-    public void givenHomePageURI_whenMockMVC_thenReturnsIndexViewName() throws Exception {
-        this.mockMvc.perform(get("/")).andExpect(view().name("departments"));
+    public void givenDepartmentsPageURI_whenMockMVC_thenReturnsDepartmentsViewName() throws Exception {
+        this.mockMvc.perform(get("/departments/")).andExpect(view().name("departments"));
     }
 
 }

@@ -47,7 +47,7 @@ public class RestDepartmentControllerTest {
 
     @Test
     public void givenDepartmentURI_whenMockMVC_thenVerifyResponse() throws Exception {
-        this.mockMvc.perform(get("/")).andExpect(status().isOk())
+        this.mockMvc.perform(get("/departments")).andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"));
     }
 

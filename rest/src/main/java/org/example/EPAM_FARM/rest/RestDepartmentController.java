@@ -5,19 +5,17 @@ import org.example.EPAM_FARM.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/departments")
 public class RestDepartmentController {
 
     @Autowired
     private DepartmentService jdbcStorageService;
 
-    @ResponseBody
     @GetMapping
     public List<Department> getDepartments() {
         return jdbcStorageService.findAll();

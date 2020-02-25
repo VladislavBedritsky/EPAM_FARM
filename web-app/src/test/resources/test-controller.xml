@@ -39,4 +39,8 @@
 
     <bean id="departmentController" class="org.example.EPAM_FARM.controller.DepartmentController" />
 
+    <bean id="employeeDao" class="org.example.EPAM_FARM.dao.impl.EmployeeDaoImpl" />
+
+    <bean id="employeeService" class="org.example.EPAM_FARM.service.impl.EmployeeServiceImpl" />
+
 </beans>
