@@ -36,4 +36,8 @@
 
     <bean id="departmentService" class="org.example.EPAM_FARM.service.impl.DepartmentServiceImpl" />
 
+    <bean id="jdbcStorageDao" class="org.example.EPAM_FARM.dao.impl.DepartmentDaoImpl" />
+
+    <bean id="jdbcStorageService" class="org.example.EPAM_FARM.service.impl.DepartmentServiceImpl" />
+
 </beans>

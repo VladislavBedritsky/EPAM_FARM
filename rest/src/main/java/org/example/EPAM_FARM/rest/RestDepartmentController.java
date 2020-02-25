@@ -15,12 +15,12 @@ import java.util.List;
 public class RestDepartmentController {
 
     @Autowired
-    private DepartmentService departmentService;
+    private DepartmentService jdbcStorageService;
 
     @ResponseBody
     @GetMapping
     public List<Department> getDepartments() {
-        return departmentService.findAll();
+        return jdbcStorageService.findAll();
     }
 
 }
