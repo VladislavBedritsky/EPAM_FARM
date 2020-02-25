@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class DepartmentController {
 
     @Autowired
-    private DepartmentService departmentService;
+    private DepartmentService jdbcStorageService;
 
     @GetMapping("/")
     public String getDepartments (Model model) {
-        model.addAttribute("q", departmentService.findAll());
+        model.addAttribute("q", jdbcStorageService.findAll());
         return "departments";
     }
 
