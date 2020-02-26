@@ -2,24 +2,66 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>org.example.EPAM_FARM</title>
-</head>
-<body>
+    <title>Employees</title>
 
-<table>
-    <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>birthday</th>
-        <th>salary</th>
-    </tr>
-    <tr th:each="a:${employees}">
-        <td th:text="${a.id}"></td>
-        <td th:text="${a.name}"></td>
-        <td th:text="${a.birthday}"></td>
-        <td th:text="${a.salary}"></td>
-    </tr>
-</table>
+    <!-- совместимость со всеми устройствами -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/employees.css">
+</head>
+
+
+<body>
+<div class="container mt-5">
+    <div class="col ml-auto">
+
+        <div class="row">
+            <div class="col">
+                <h1 class="mx-auto">
+                    Employees
+                </h1>
+            </div>
+            <div class="col mt-3" align="right">
+                <a type="button" class="btn btn-secondary" id="main_page_button" href="/">
+                    Main page
+                </a>
+            </div>
+        </div>
+
+        <table class="table mt-2 mx-auto" >
+
+            <thead class="thead-dark">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>birthday</th>
+                <th>salary</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="a:${employees}">
+                <td th:text="${a.id}"></td>
+                <td><a th:text="${a.name}" th:href="@{/employees/{id}(id=${a.id})}"></a></td>
+                <td th:text="${a.birthday}"></td>
+                <td th:text="${a.salary}"></td>
+                <!--                <td>-->
+                <!--                    <a class="nav-link" th:href="@{/city_settings/delete_city/{id}(id=${city.id})}">-->
+                <!--                        <i class="fa fa-trash" style="font-size: 1.4em; color: #585858;"></i>-->
+                <!--                    </a>-->
+                <!--                </td>-->
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div th:replace="fragments/script :: scripts"></div>
 
 </body>
 </html>

@@ -1,0 +1,18 @@
+body {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHpWoBxbxcDmnVz1wjWsAP9YyKJjXhx9TUjcAFU3_0xxEGkduY&s') fixed;
+    background-size: cover;
+}
+
+#main_page_button  {
+    background-color: #2F4F4F;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    color:white;
+}
+
+#main_page_button:hover {
+    background-color: yellow;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-style: none;
+    color:black;
+}
+
