@@ -18,4 +18,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> findAll() {
         return employeeDao.findAll();
     }
+
+    @Override
+    public Employee findById(Integer id) {
+        return employeeDao.findById(id);
+    }
 }

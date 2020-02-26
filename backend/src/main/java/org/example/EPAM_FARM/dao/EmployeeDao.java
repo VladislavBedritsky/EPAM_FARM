@@ -7,4 +7,6 @@ import java.util.List;
 public interface EmployeeDao {
 
     List<Employee> findAll ();
+
+    Employee findById(Integer id);
 }

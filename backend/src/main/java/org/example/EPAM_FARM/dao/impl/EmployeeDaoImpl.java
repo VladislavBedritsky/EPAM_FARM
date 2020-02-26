@@ -22,8 +22,16 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Value("${employee.findAll}")
     private String FIND_ALL;
 
+    @Value("${employee.findById}")
+    private String FIND_BY_ID;
+
     @Override
     public List<Employee> findAll() {
         return jdbcTemplate.query(FIND_ALL, new EmployeeMapper());
+    }
+
+    @Override
+    public Employee findById(Integer id) {
+        return jdbcTemplate.queryForObject(FIND_BY_ID,new EmployeeMapper(),id);
     }
 }

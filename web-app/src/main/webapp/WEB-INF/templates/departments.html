@@ -44,7 +44,7 @@
             <tbody>
             <tr th:each="a:${departments}">
                 <td th:text="${a.id}"></td>
-                <td><a th:text="${a.name}" th:href="@{/departments/{id}(id=${a.id})}"></a></td>
+                <td><a th:text="${a.name}" th:href="@{/departments/{id}(id=${a.id})}" id="link_in_table1"></a></td>
 <!--                <td>-->
 <!--                    <a class="nav-link" th:href="@{/city_settings/delete_city/{id}(id=${city.id})}">-->
 <!--                        <i class="fa fa-trash" style="font-size: 1.4em; color: #585858;"></i>-->

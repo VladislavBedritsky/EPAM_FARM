@@ -15,3 +15,8 @@ body {
     border-style: none;
     color:black;
 }
+
+#link_in_table1:hover {
+    color: red;
+    text-decoration: none;
+}

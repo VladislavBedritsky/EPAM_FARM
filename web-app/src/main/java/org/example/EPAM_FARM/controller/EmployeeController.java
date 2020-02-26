@@ -26,7 +26,7 @@ public class EmployeeController {
             Model model,
             @PathVariable Integer id
     ) {
-        model.addAttribute("id",id);
+        model.addAttribute("employee",employeeService.findById(id));
         return "employee";
     }
 }

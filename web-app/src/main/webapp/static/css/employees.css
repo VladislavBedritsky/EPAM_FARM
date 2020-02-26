@@ -16,3 +16,7 @@ body {
     color:black;
 }
 
+#link_in_table1:hover, #link_in_table2:hover {
+    color: red;
+    text-decoration: none;
+}

@@ -39,6 +39,7 @@
                 <th>name</th>
                 <th>birthday</th>
                 <th>salary</th>
+                <th>department</th>
                 <th></th>
             </tr>
             </thead>
@@ -46,9 +47,10 @@
             <tbody>
             <tr th:each="a:${employees}">
                 <td th:text="${a.id}"></td>
-                <td><a th:text="${a.name}" th:href="@{/employees/{id}(id=${a.id})}"></a></td>
+                <td><a th:text="${a.name}" th:href="@{/employees/{id}(id=${a.id})}" id="link_in_table1"></a></td>
                 <td th:text="${a.birthday}"></td>
                 <td th:text="${a.salary}"></td>
+                <td><a th:text="${a.department.name}" th:href="@{/departments/{id}(id=${a.department.id})}" id="link_in_table2"></a></td>
                 <!--                <td>-->
                 <!--                    <a class="nav-link" th:href="@{/city_settings/delete_city/{id}(id=${city.id})}">-->
                 <!--                        <i class="fa fa-trash" style="font-size: 1.4em; color: #585858;"></i>-->
