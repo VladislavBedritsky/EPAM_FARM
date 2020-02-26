@@ -28,6 +28,9 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     @Value("${department.findAll}")
     private String FIND_ALL;
 
+    @Value("${employee.findById}")
+    private String FIND_BY_ID;
+
     @Override
     public List<Department> findAll() {
         List<Department> departments = new ArrayList<>();
@@ -53,7 +56,26 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
 
     @Override
     public Department findById(Integer id) {
-        return null;
+        Department department = new Department();
+
+        try {
+            this.connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(FIND_BY_ID);
+            preparedStatement.setInt(1,id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                department.setId(resultSet.getInt("id"));
+                department.setName(resultSet.getString("name"));
+            }
+
+                preparedStatement.close();
+                connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return department;
     }
 
 }

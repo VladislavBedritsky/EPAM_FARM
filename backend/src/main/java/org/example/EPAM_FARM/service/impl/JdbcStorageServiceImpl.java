@@ -21,6 +21,6 @@ public class JdbcStorageServiceImpl implements DepartmentService {
 
     @Override
     public Department findById(Integer id) {
-        return null;
+        return jdbcStorageDao.findById(id);
     }
 }

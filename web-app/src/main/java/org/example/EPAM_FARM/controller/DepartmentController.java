@@ -30,7 +30,7 @@ public class DepartmentController {
             Model model,
             @PathVariable Integer id) {
 
-        model.addAttribute("department", departmentService.findById(id));
+        model.addAttribute("department", jdbcStorageService.findById(id));
 
         return "department";
     }
