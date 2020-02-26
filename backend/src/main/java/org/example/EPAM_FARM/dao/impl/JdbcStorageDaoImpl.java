@@ -88,4 +88,9 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
 
     }
 
+    @Override
+    public void updateDepartment(Integer id, String name) {
+
+    }
+
 }

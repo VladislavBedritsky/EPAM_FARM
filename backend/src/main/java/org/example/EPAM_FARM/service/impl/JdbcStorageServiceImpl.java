@@ -33,4 +33,9 @@ public class JdbcStorageServiceImpl implements DepartmentService {
     public void deleteDepartment(Integer id) {
 
     }
+
+    @Override
+    public void updateDepartment(Integer id, String name) {
+
+    }
 }

@@ -40,24 +40,25 @@ body {
     letter-spacing: 4px;
 }
 
-#save_button {
+#save_button, #update_button {
     background-color: #2F4F4F;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
-#save_button:hover {
+#save_button:hover, #update_button:hover {
     background-color: yellow;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
     color:black;
     border-color: yellow;
 }
 
-#delete_icon {
+#delete_icon, #update_icon {
     font-size: 1.4em;
     color: #585858;
 }
 
-#delete_icon:hover {
+#delete_icon:hover, #update_icon:hover {
     font-size: 1.4em;
     color: yellow;
 }
+

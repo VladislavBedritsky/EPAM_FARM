@@ -30,6 +30,9 @@ public class DepartmentDaoImpl implements DepartmentDao {
     @Value("${department.deleteDepartment}")
     private String DELETE_DEPARTMENT;
 
+    @Value("${department.updateDepartment}")
+    private String UPDATE_DEPARTMENT;
+
     @Override
     public List<Department> findAll() {
         return jdbcTemplate.query(FIND_ALL, new DepartmentMapper());
@@ -48,6 +51,11 @@ public class DepartmentDaoImpl implements DepartmentDao {
     @Override
     public void deleteDepartment(Integer id) {
         jdbcTemplate.update(DELETE_DEPARTMENT, id);
+    }
+
+    @Override
+    public void updateDepartment(Integer id, String name) {
+        jdbcTemplate.update(UPDATE_DEPARTMENT,name,id);
     }
 
 }
