@@ -43,4 +43,6 @@
 
     <bean id="employeeService" class="org.example.EPAM_FARM.service.impl.EmployeeServiceImpl" />
 
+    <bean id="employeeController" class="org.example.EPAM_FARM.controller.EmployeeController" />
+
 </beans>

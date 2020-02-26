@@ -18,7 +18,6 @@ public class Employee {
     private LocalDate birthday;
 
     @JsonView(View.FullEmployeesWithoutDepartment.class)
-
     private Float salary;
     private Department department;
 
