@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>org.example.EPAM_FARM</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>birthday</th>
+        <th>salary</th>
+    </tr>
+    <tr th:each="a:${employees}">
+        <td th:text="${a.id}"></td>
+        <td th:text="${a.name}"></td>
+        <td th:text="${a.birthday}"></td>
+        <td th:text="${a.salary}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
