@@ -21,9 +21,17 @@ public class DepartmentDaoImpl implements DepartmentDao {
     @Value("${department.findAll}")
     private String FIND_ALL;
 
+    @Value("${department.findById}")
+    private String FIND_BY_ID;
+
     @Override
     public List<Department> findAll() {
         return jdbcTemplate.query(FIND_ALL, new DepartmentMapper());
+    }
+
+    @Override
+    public Department findById(Integer id) {
+        return jdbcTemplate.queryForObject(FIND_BY_ID, new DepartmentMapper(), id);
     }
 
 }

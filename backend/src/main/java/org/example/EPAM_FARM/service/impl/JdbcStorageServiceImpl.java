@@ -18,4 +18,9 @@ public class JdbcStorageServiceImpl implements DepartmentService {
     public List<Department> findAll() {
         return jdbcStorageDao.findAll();
     }
+
+    @Override
+    public Department findById(Integer id) {
+        return null;
+    }
 }

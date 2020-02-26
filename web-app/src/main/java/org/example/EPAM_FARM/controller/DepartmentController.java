@@ -16,6 +16,9 @@ public class DepartmentController {
     @Autowired
     private DepartmentService jdbcStorageService;
 
+    @Autowired
+    private DepartmentService departmentService;
+
     @GetMapping
     public String getDepartments (Model model) {
         model.addAttribute("departments", jdbcStorageService.findAll());
@@ -27,7 +30,7 @@ public class DepartmentController {
             Model model,
             @PathVariable Integer id) {
 
-        model.addAttribute("id",id);
+        model.addAttribute("department", departmentService.findById(id));
 
         return "department";
     }

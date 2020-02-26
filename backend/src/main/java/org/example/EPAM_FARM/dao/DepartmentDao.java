@@ -8,5 +8,5 @@ public interface DepartmentDao {
 
     List<Department> findAll();
 
-
+    Department findById(Integer id);
 }

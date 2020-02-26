@@ -51,4 +51,9 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
         return departments;
     }
 
+    @Override
+    public Department findById(Integer id) {
+        return null;
+    }
+
 }
