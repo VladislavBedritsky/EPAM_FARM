@@ -18,7 +18,6 @@ public class RestEmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-
     @GetMapping
     @JsonView(View.FullEmployeesWithoutDepartment.class)
     public List<Employee> getEmployees() {

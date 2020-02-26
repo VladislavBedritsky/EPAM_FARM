@@ -31,6 +31,15 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     @Value("${employee.findById}")
     private String FIND_BY_ID;
 
+    @Value("${department.saveDepartment}")
+    private String SAVE_DEPARTMENT;
+
+    @Value("${department.deleteDepartment}")
+    private String DELETE_DEPARTMENT;
+
+    @Value("${department.updateDepartment}")
+    private String UPDATE_DEPARTMENT;
+
     @Override
     public List<Department> findAll() {
         List<Department> departments = new ArrayList<>();
@@ -81,16 +90,56 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     @Override
     public void saveDepartment(Department department) {
 
+        try {
+            this.connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(SAVE_DEPARTMENT, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1,department.getName());
+            preparedStatement.executeUpdate();
+
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+
+            while (resultSet.next()) {
+                department.setName(resultSet.getString("name"));
+            }
+
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
     public void deleteDepartment(Integer id) {
+        try {
+            this.connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(DELETE_DEPARTMENT);
+            preparedStatement.setInt(1,id);
+            preparedStatement.executeUpdate();
 
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void updateDepartment(Integer id, String name) {
+        try {
+            this.connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(UPDATE_DEPARTMENT);
+            preparedStatement.setString(1,name);
+            preparedStatement.setInt(2,id);
 
+            preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

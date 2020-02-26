@@ -43,7 +43,7 @@ public class DepartmentController {
         Department department = new Department();
         department.setName(name);
 
-        departmentService.saveDepartment(department);
+        jdbcStorageService.saveDepartment(department);
 
         return "redirect:/departments";
     }
@@ -53,7 +53,7 @@ public class DepartmentController {
             @PathVariable Integer id
     ) {
 
-        departmentService.deleteDepartment(id);
+        jdbcStorageService.deleteDepartment(id);
 
         return "redirect:/departments";
     }
@@ -64,7 +64,7 @@ public class DepartmentController {
             @RequestParam String name
     ) {
 
-        departmentService.updateDepartment(id, name);
+        jdbcStorageService.updateDepartment(id, name);
 
         return "redirect:/departments";
     }

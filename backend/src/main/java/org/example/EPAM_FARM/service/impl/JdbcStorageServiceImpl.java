@@ -26,7 +26,7 @@ public class JdbcStorageServiceImpl implements DepartmentService {
 
     @Override
     public void saveDepartment(Department department) {
-
+        jdbcStorageDao.saveDepartment(department);
     }
 
     @Override
