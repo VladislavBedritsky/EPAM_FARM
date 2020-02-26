@@ -34,7 +34,7 @@
         <table class="table mt-2 mx-auto" >
 
             <thead class="thead-dark">
-            <tr >
+            <tr>
                 <th>id</th>
                 <th>name</th>
                 <th></th>
@@ -45,29 +45,39 @@
             <tr th:each="a:${departments}">
                 <td th:text="${a.id}"></td>
                 <td><a th:text="${a.name}" th:href="@{/departments/{id}(id=${a.id})}" id="link_in_table1"></a></td>
-<!--                <td>-->
-<!--                    <a class="nav-link" th:href="@{/city_settings/delete_city/{id}(id=${city.id})}">-->
-<!--                        <i class="fa fa-trash" style="font-size: 1.4em; color: #585858;"></i>-->
-<!--                    </a>-->
-<!--                </td>-->
+                <td>
+                    <a th:href="@{/departments/delete/{id}(id=${a.id})}">
+                        <i class="material-icons" id="delete_icon">
+                            delete
+                        </i>
+                    </a>
+                </td>
             </tr>
             </tbody>
         </table>
 
-<!--        <h3 class="mt-2">-->
-<!--            Add a new city-->
-<!--        </h3>-->
+        <form th:action="@{/departments}" method="post" class="form-horizontal" id="save_dep_form">
 
-<!--        <form method="post" th:action="@{/city_settings}" class="row">-->
-<!--            <div class="col">-->
-<!--                <input type="text" class="form-control mt-4" placeholder="City" name="name" required autofocus>-->
-<!--                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />-->
+            <h2>new department</h2>
+
+<!--            <div class="text-danger mt-2">-->
+<!--                <p th:text="${emptyFields}?${emptyFields}" align="center">-->
+<!--                </p>-->
+<!--                <p th:text="${diffPassw}?${diffPassw}" align="center">-->
+<!--                </p>-->
+<!--                <p th:text="${isExists}?${isExists}" align="center">-->
+<!--                </p>-->
 <!--            </div>-->
-<!--            <div class="col">-->
-<!--                <button class="btn btn-lg btn-secondary mt-3 ml-5" type="submit"-->
-<!--                        style="background-color: #2F4F4F; box-shadow: 0 0 5px rgba(0,0,0,0.5)">Save</button>-->
-<!--            </div>-->
-<!--        </form>-->
+            <div class="form-group mt-2">
+                <div class="col-sm-9 mx-auto">
+                    <input type="text" name="name" placeholder="Department name" class="form-control" autofocus>
+                </div>
+            </div>
+
+            <div class="form-group" align="center">
+                <button type="submit" class="btn btn-secondary btn-lg mt-2" id="save_button">SAVE</button>
+            </div>
+        </form>
     </div>
 </div>
 

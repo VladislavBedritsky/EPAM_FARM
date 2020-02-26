@@ -23,4 +23,14 @@ public class JdbcStorageServiceImpl implements DepartmentService {
     public Department findById(Integer id) {
         return jdbcStorageDao.findById(id);
     }
+
+    @Override
+    public void saveDepartment(Department department) {
+
+    }
+
+    @Override
+    public void deleteDepartment(Integer id) {
+
+    }
 }

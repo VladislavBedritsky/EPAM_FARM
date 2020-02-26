@@ -1,13 +1,12 @@
 package org.example.EPAM_FARM.controller;
 
 
+import org.example.EPAM_FARM.model.Department;
 import org.example.EPAM_FARM.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/departments")
@@ -35,5 +34,28 @@ public class DepartmentController {
         return "department";
     }
 
+    @PostMapping
+    public String saveDepartment (
+            @RequestParam String name,
+            Model model
+    ) {
+
+        Department department = new Department();
+        department.setName(name);
+
+        departmentService.saveDepartment(department);
+
+        return "redirect:/departments";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteDepartment (
+            @PathVariable Integer id
+    ) {
+
+        departmentService.deleteDepartment(id);
+
+        return "redirect:/departments";
+    }
 
 }

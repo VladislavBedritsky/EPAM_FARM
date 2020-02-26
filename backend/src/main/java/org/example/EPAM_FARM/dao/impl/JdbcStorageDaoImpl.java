@@ -78,4 +78,14 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
         return department;
     }
 
+    @Override
+    public void saveDepartment(Department department) {
+
+    }
+
+    @Override
+    public void deleteDepartment(Integer id) {
+
+    }
+
 }

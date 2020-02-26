@@ -24,6 +24,12 @@ public class DepartmentDaoImpl implements DepartmentDao {
     @Value("${department.findById}")
     private String FIND_BY_ID;
 
+    @Value("${department.saveDepartment}")
+    private String SAVE_DEPARTMENT;
+
+    @Value("${department.deleteDepartment}")
+    private String DELETE_DEPARTMENT;
+
     @Override
     public List<Department> findAll() {
         return jdbcTemplate.query(FIND_ALL, new DepartmentMapper());
@@ -32,6 +38,16 @@ public class DepartmentDaoImpl implements DepartmentDao {
     @Override
     public Department findById(Integer id) {
         return jdbcTemplate.queryForObject(FIND_BY_ID, new DepartmentMapper(), id);
+    }
+
+    @Override
+    public void saveDepartment(Department department) {
+        jdbcTemplate.update(SAVE_DEPARTMENT, department.getName());
+    }
+
+    @Override
+    public void deleteDepartment(Integer id) {
+        jdbcTemplate.update(DELETE_DEPARTMENT, id);
     }
 
 }
