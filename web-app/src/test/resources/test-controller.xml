@@ -45,4 +45,6 @@
 
     <bean id="employeeController" class="org.example.EPAM_FARM.controller.EmployeeController" />
 
+    <bean id="mainController" class="org.example.EPAM_FARM.controller.MainController" />
+
 </beans>
