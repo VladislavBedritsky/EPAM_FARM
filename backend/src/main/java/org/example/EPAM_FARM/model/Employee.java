@@ -1,5 +1,6 @@
 package org.example.EPAM_FARM.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.example.EPAM_FARM.json_view.View;
 
@@ -14,6 +15,7 @@ public class Employee {
     @JsonView(View.FullEmployeesWithoutDepartment.class)
     private String name;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonView(View.FullEmployeesWithoutDepartment.class)
     private LocalDate birthday;
 
