@@ -83,4 +83,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         return matcher.find();
     }
 
+    @Override
+    public void updateEmployee(Integer employeeId, Employee employee, String departmentName) {
+        employeeDao.updateEmployee(
+                employeeId,
+                employee,
+                departmentService.findDepartmentIdByDepartmentName(departmentName)
+        );
+    }
+
 }

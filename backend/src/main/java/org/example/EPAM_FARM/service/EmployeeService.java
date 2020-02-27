@@ -19,4 +19,6 @@ public interface EmployeeService {
     boolean isEmployeeNameAlreadyExists(String name);
 
     boolean isProperFloatValue(String salary);
+
+    void updateEmployee(Integer employeeId, Employee employee, String departmentName);
 }

@@ -55,7 +55,8 @@ public class EmployeeController {
 
 
         Employee employee = employeeService.returnNewEmployeeWithSetParameters(
-                name, birthday, salary);
+                name, birthday, salary
+        );
         employeeService.saveEmployee(employee, departmentName);
 
         return "redirect:/employees";
@@ -68,4 +69,21 @@ public class EmployeeController {
 
         return "redirect:/employees";
     }
+    @PostMapping("/update/{id}")
+    public String updateEmployee (
+            @PathVariable Integer id,
+            @RequestParam String name,
+            @RequestParam String birthday,
+            @RequestParam String salary,
+            @RequestParam String departmentName
+    ) {
+
+        Employee employee = employeeService.returnNewEmployeeWithSetParameters(
+                name,birthday,salary
+        );
+        employeeService.updateEmployee(id,employee,departmentName);
+
+        return "redirect:/employees";
+    }
+
 }

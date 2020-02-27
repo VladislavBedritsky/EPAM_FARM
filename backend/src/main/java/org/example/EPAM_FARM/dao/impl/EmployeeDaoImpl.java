@@ -73,8 +73,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
         jdbcTemplate.update(
                 UPDATE_EMPLOYEE,
                 employee.getName(),
-                employee.getSalary(),
                 employee.getBirthday(),
+                employee.getSalary(),
                 departmentId,
                 employeeId
         );
