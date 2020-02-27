@@ -17,4 +17,8 @@ public interface EmployeeDao {
     void deleteEmployee(Integer id);
 
     void updateEmployee(Integer employeeId, Employee employee, Integer departmentId);
+
+    void saveEmployeeForRestController(Employee employee);
+
+    void updateEmployeeForRestController(Employee employee, Integer id);
 }

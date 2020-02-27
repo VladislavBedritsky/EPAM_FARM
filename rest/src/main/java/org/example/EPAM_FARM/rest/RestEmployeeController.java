@@ -6,9 +6,7 @@ import org.example.EPAM_FARM.model.Employee;
 import org.example.EPAM_FARM.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +21,31 @@ public class RestEmployeeController {
     @JsonView(View.FullEmployeesWithoutDepartment.class)
     public List<Employee> getEmployees() {
         return employeeService.findAll();
+    }
+
+    @PostMapping
+    public Employee create(
+            @RequestBody Employee employee
+    ) {
+
+        employeeService.saveEmployeeForRestController(employee);
+        return employeeService.findAll().stream().reduce((first, second) -> second).orElse(null);
+    }
+
+    @PutMapping("/{id}")
+    public Employee update(
+            @PathVariable Integer id,
+            @RequestBody Employee employee
+    ) {
+
+        employeeService.updateEmployeeForRestController(employee,id);
+        return employee;
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(
+            @PathVariable Integer id
+    ) {
+        employeeService.deleteDepartment(id);
     }
 }

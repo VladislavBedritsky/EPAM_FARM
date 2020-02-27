@@ -20,7 +20,7 @@ public class EmployeeController {
 
     @GetMapping
     public String getEmployees(Model model) {
-        model.addAttribute("employees",employeeService.findAll());
+        model.addAttribute("employees", employeeService.findAll());
         model.addAttribute("departments", departmentService.findAll());
         return "employees";
     }
@@ -30,7 +30,7 @@ public class EmployeeController {
             Model model,
             @PathVariable Integer id
     ) {
-        model.addAttribute("employee",employeeService.findById(id));
+        model.addAttribute("employee", employeeService.findById(id));
         return "employee";
     }
 

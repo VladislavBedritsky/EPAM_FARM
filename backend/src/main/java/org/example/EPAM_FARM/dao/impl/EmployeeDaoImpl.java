@@ -37,6 +37,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Value("${employee.updateDepartment}")
     private String UPDATE_EMPLOYEE;
 
+    @Value("${employee.saveEmployeeForRestController}")
+    private String SAVE_EMPLOYEE_FOR_REST;
+
+    @Value("${employee.updateEmployeeForRestController}")
+    private String UPDATE_EMPLOYEE_FOR_REST;
+
     @Override
     public List<Employee> findAll() {
         return jdbcTemplate.query(FIND_ALL, new EmployeeMapper());
@@ -77,6 +83,27 @@ public class EmployeeDaoImpl implements EmployeeDao {
                 employee.getSalary(),
                 departmentId,
                 employeeId
+        );
+    }
+
+    @Override
+    public void saveEmployeeForRestController(Employee employee) {
+        jdbcTemplate.update(
+                SAVE_EMPLOYEE_FOR_REST,
+                employee.getName(),
+                employee.getBirthday(),
+                employee.getSalary()
+        );
+    }
+
+    @Override
+    public void updateEmployeeForRestController(Employee employee, Integer id) {
+        jdbcTemplate.update(
+                UPDATE_EMPLOYEE_FOR_REST,
+                employee.getName(),
+                employee.getBirthday(),
+                employee.getSalary(),
+                id
         );
     }
 }

@@ -92,4 +92,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         );
     }
 
+    @Override
+    public void saveEmployeeForRestController(Employee employee) {
+        employeeDao.saveEmployeeForRestController(employee);
+    }
+
+    @Override
+    public void updateEmployeeForRestController(Employee employee, Integer id) {
+        employeeDao.updateEmployeeForRestController(employee,id);
+    }
+
 }

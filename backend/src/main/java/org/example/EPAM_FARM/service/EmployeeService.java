@@ -21,4 +21,8 @@ public interface EmployeeService {
     boolean isProperFloatValue(String salary);
 
     void updateEmployee(Integer employeeId, Employee employee, String departmentName);
+
+    void saveEmployeeForRestController(Employee employee);
+
+    void updateEmployeeForRestController(Employee employee, Integer id);
 }
