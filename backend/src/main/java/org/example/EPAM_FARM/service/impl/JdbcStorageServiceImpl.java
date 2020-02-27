@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class JdbcStorageServiceImpl implements DepartmentService {
+public abstract class JdbcStorageServiceImpl  implements DepartmentService {
 
     @Autowired
     private DepartmentDao jdbcStorageDao;
@@ -31,11 +31,13 @@ public class JdbcStorageServiceImpl implements DepartmentService {
 
     @Override
     public void deleteDepartment(Integer id) {
-
+        jdbcStorageDao.deleteDepartment(id);
     }
 
     @Override
     public void updateDepartment(Integer id, String name) {
-
+        jdbcStorageDao.updateDepartment(id,name);
     }
+
+
 }

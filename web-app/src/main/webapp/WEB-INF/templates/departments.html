@@ -101,17 +101,14 @@
 
             <h2>new department</h2>
 
-<!--            <div class="text-danger mt-2">-->
-<!--                <p th:text="${emptyFields}?${emptyFields}" align="center">-->
-<!--                </p>-->
-<!--                <p th:text="${diffPassw}?${diffPassw}" align="center">-->
-<!--                </p>-->
-<!--                <p th:text="${isExists}?${isExists}" align="center">-->
-<!--                </p>-->
-<!--            </div>-->
+            <div class="text-danger mt-2">
+                <p th:text="${isExists}?${isExists}" align="center">
+                </p>
+            </div>
+
             <div class="form-group mt-2">
                 <div class="col-sm-9 mx-auto">
-                    <input type="text" name="name" placeholder="Department name" class="form-control" autofocus>
+                    <input type="text" name="name" placeholder="Department name" class="form-control" autofocus required>
                 </div>
             </div>
 

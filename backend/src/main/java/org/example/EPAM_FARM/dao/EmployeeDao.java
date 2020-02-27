@@ -9,4 +9,6 @@ public interface EmployeeDao {
     List<Employee> findAll ();
 
     Employee findById(Integer id);
+
+    List<Employee> findEmployeesByDepartmentId(Integer id);
 }

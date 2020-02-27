@@ -15,4 +15,5 @@ public interface DepartmentDao {
     void deleteDepartment(Integer id);
 
     void updateDepartment(Integer id, String name);
+
 }

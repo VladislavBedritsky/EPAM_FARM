@@ -25,6 +25,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Value("${employee.findById}")
     private String FIND_BY_ID;
 
+    @Value("${employee.findEmployeesByDepartmentId}")
+    private String FIND_EMPLOYEES_BY_DEPARTMENT_ID;
+
     @Override
     public List<Employee> findAll() {
         return jdbcTemplate.query(FIND_ALL, new EmployeeMapper());
@@ -33,5 +36,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public Employee findById(Integer id) {
         return jdbcTemplate.queryForObject(FIND_BY_ID,new EmployeeMapper(),id);
+    }
+
+    @Override
+    public List<Employee> findEmployeesByDepartmentId(Integer id) {
+        return jdbcTemplate.query(FIND_EMPLOYEES_BY_DEPARTMENT_ID, new EmployeeMapper(), id);
     }
 }

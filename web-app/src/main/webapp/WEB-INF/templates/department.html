@@ -10,13 +10,51 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <link rel="stylesheet" href="/static/css/department.css">
 </head>
 
 <body>
 
-<h3 th:text="${department.name}"></h3>
+<div class="container mt-5">
+    <div class="col ml-auto">
+
+        <div class="row">
+            <div class="col">
+                <h1 class="mx-auto" th:text="${department.name}"></h1>
+            </div>
+            <div class="col mt-3" align="right">
+                <a type="button" class="btn btn-secondary" id="main_page_button" href="/">
+                    Main page
+                </a>
+            </div>
+        </div>
+
+        <table class="table mt-2 mx-auto" >
+
+            <thead class="thead-dark">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>birthday</th>
+                <th>salary</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="a:${department_employees}">
+                <td th:text="${a.id}"></td>
+                <td><a th:text="${a.name}" th:href="@{/employees/{id}(id=${a.id})}" id="link_in_table1"></a></td>
+                <td th:text="${a.birthday}"></td>
+                <td th:text="${a.salary}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
 
 <div th:replace="fragments/script :: scripts"></div>
+
 
 </body>
 </html>

@@ -51,11 +51,6 @@
                 <td th:text="${a.birthday}"></td>
                 <td th:text="${a.salary}"></td>
                 <td><a th:text="${a.department.name}" th:href="@{/departments/{id}(id=${a.department.id})}" id="link_in_table2"></a></td>
-                <!--                <td>-->
-                <!--                    <a class="nav-link" th:href="@{/city_settings/delete_city/{id}(id=${city.id})}">-->
-                <!--                        <i class="fa fa-trash" style="font-size: 1.4em; color: #585858;"></i>-->
-                <!--                    </a>-->
-                <!--                </td>-->
             </tr>
             </tbody>
         </table>

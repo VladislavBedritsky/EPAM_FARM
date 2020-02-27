@@ -1,7 +1,6 @@
 package org.example.EPAM_FARM.controller;
 
 
-import org.example.EPAM_FARM.model.Department;
 import org.example.EPAM_FARM.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +19,9 @@ public class DepartmentController {
 
     @GetMapping
     public String getDepartments (Model model) {
+
         model.addAttribute("departments", jdbcStorageService.findAll());
+
         return "departments";
     }
 
@@ -30,6 +31,7 @@ public class DepartmentController {
             @PathVariable Integer id) {
 
         model.addAttribute("department", jdbcStorageService.findById(id));
+        model.addAttribute("department_employees", departmentService.findEmployeesByDepartmentId(id));
 
         return "department";
     }
@@ -40,10 +42,15 @@ public class DepartmentController {
             Model model
     ) {
 
-        Department department = new Department();
-        department.setName(name);
+        if (departmentService.isDepartmentNameAlreadyExists(name)) {
+            model.addAttribute("isExists","Such department is already exists!");
+            model.addAttribute("departments", jdbcStorageService.findAll());
+            return "departments";
+        }
 
-        jdbcStorageService.saveDepartment(department);
+        jdbcStorageService.saveDepartment(
+                departmentService.returnNewDepartmentWithName(name)
+        );
 
         return "redirect:/departments";
     }
