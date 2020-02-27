@@ -43,9 +43,19 @@ public class EmployeeController {
             Model model
             ) {
 
+        model.addAttribute("employees", employeeService.findAll());
+
+        if (employeeService.isEmployeeNameAlreadyExists(name)) {
+            model.addAttribute("isNameExists","Such employee is already exists!");
+            return "employees";
+        }else if(!employeeService.isProperFloatValue(salary)) {
+            model.addAttribute("wrongFloatValue","Salary value is wrong (e.g. 1034.09)") ;
+            return "employees";
+        }
+
+
         Employee employee = employeeService.returnNewEmployeeWithSetParameters(
                 name, birthday, salary);
-
         employeeService.saveEmployee(employee, departmentName);
 
         return "redirect:/employees";

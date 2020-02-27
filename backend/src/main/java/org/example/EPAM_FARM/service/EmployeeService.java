@@ -15,4 +15,8 @@ public interface EmployeeService {
     Employee returnNewEmployeeWithSetParameters (String name, String birthday, String salary);
 
     void deleteDepartment(Integer id);
+
+    boolean isEmployeeNameAlreadyExists(String name);
+
+    boolean isProperFloatValue(String salary);
 }

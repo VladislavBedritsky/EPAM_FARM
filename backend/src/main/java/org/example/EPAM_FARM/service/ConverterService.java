@@ -7,4 +7,5 @@ public interface ConverterService {
     Float convertFromStringToFloat(String name);
 
     LocalDate convertStringToLocalDate(String date);
+
 }

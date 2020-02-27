@@ -44,7 +44,6 @@ public class DepartmentController {
 
         if (departmentService.isDepartmentNameAlreadyExists(name)) {
             model.addAttribute("isExists","Such department is already exists!");
-            model.addAttribute("departments", jdbcStorageService.findAll());
             return "departments";
         }
 

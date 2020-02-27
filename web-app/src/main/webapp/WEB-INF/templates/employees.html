@@ -125,7 +125,14 @@
             <h2>new employee</h2>
 
             <div class="text-danger mt-2">
+                <p th:text="${isNameExists}?${isNameExists}" align="center">
+                </p>
+            </div>
+
+            <div class="text-danger mt-2">
                 <p th:text="${isExists}?${isExists}" align="center">
+                </p>
+                <p th:text="${wrongFloatValue}?${wrongFloatValue}" align="center">
                 </p>
             </div>
 
@@ -143,7 +150,7 @@
 
             <div class="form-group mt-2">
                 <div class="col-sm-9 mx-auto">
-                    <input type="text" name="salary" placeholder="Salary" class="form-control" autofocus required>
+                    <input type="text" name="salary" placeholder="Salary (e.g. 1034.09)" class="form-control" autofocus required>
                 </div>
             </div>
 

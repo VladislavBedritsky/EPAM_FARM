@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -55,6 +57,30 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void deleteDepartment(Integer id) {
         employeeDao.deleteEmployee(id);
+    }
+
+    @Override
+    public boolean isEmployeeNameAlreadyExists(String name) {
+
+        List<Employee> employees = findAll();
+        for (Employee temp:employees) {
+            if(name.equalsIgnoreCase(temp.getName())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean isProperFloatValue(String salary) {
+
+        String regex = "^\\d*\\.?\\d*$";
+
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(salary);
+
+        return matcher.find();
     }
 
 }
