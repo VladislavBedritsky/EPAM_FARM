@@ -10,4 +10,7 @@ public interface EmployeeService {
 
     Employee findById(Integer id);
 
+    void saveEmployee(Employee employee, String departmentName);
+
+    Employee returnNewEmployeeWithSetParameters (String name, String birthday, String salary);
 }

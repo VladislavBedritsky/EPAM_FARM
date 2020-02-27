@@ -70,5 +70,20 @@ public class DepartmentServiceImpl implements DepartmentService {
         return department;
     }
 
+    @Override
+    public Integer findDepartmentIdByDepartmentName(String name) {
+        List<Department> departments = findAll();
+        Integer departmentId = 1;
+
+        for (Department temp:departments) {
+            if(temp.getName().equalsIgnoreCase(name)) {
+                departmentId = temp.getId();
+            }
+        }
+
+        return departmentId;
+    }
+
+
 
 }

@@ -28,6 +28,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Value("${employee.findEmployeesByDepartmentId}")
     private String FIND_EMPLOYEES_BY_DEPARTMENT_ID;
 
+    @Value("${employee.saveEmployee}")
+    private String SAVE_EMPLOYEE;
+
     @Override
     public List<Employee> findAll() {
         return jdbcTemplate.query(FIND_ALL, new EmployeeMapper());
@@ -41,5 +44,16 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public List<Employee> findEmployeesByDepartmentId(Integer id) {
         return jdbcTemplate.query(FIND_EMPLOYEES_BY_DEPARTMENT_ID, new EmployeeMapper(), id);
+    }
+
+    @Override
+    public void saveEmployee(Employee employee, Integer departmentId) {
+        jdbcTemplate.update(
+                SAVE_EMPLOYEE,
+                employee.getName(),
+                employee.getBirthday(),
+                employee.getSalary(),
+                departmentId
+        );
     }
 }

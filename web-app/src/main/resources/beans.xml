@@ -27,4 +27,7 @@
     <bean id="employeeDao" class="org.example.EPAM_FARM.dao.impl.EmployeeDaoImpl" />
 
     <bean id="employeeService" class="org.example.EPAM_FARM.service.impl.EmployeeServiceImpl" />
+
+    <bean id="converterService" class="org.example.EPAM_FARM.service.impl.ConverterServiceImpl" />
+
 </beans>

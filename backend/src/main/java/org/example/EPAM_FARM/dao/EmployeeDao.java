@@ -11,4 +11,6 @@ public interface EmployeeDao {
     Employee findById(Integer id);
 
     List<Employee> findEmployeesByDepartmentId(Integer id);
+
+    void saveEmployee(Employee employee, Integer departmentId);
 }

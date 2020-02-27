@@ -40,7 +40,8 @@
                 <th>birthday</th>
                 <th>salary</th>
                 <th>department</th>
-                <th></th>
+                <th>update</th>
+                <th>delete</th>
             </tr>
             </thead>
 
@@ -51,9 +52,114 @@
                 <td th:text="${a.birthday}"></td>
                 <td th:text="${a.salary}"></td>
                 <td><a th:text="${a.department.name}" th:href="@{/departments/{id}(id=${a.department.id})}" id="link_in_table2"></a></td>
+
+                <td>
+                    <a href="" data-toggle="modal" th:attr="data-target='#exampleModal'+${a.id }">
+                        <i class="material-icons" id="update_icon">
+                            settings
+                        </i>
+                    </a>
+
+                    <!-- Modal -->
+                    <div class="modal fade bd-example-modal-xl" th:attr="id='exampleModal'+${a.id }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Update Department</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <form th:action="@{/employees/update/{id}(id=${a.id})}" method="post" class="form-horizontal">
+
+                                        <div class="form-group mt-2">
+                                            <div class="col-sm-9 mx-auto">
+                                                <input type="text" name="name" placeholder="Department name" class="form-control" autofocus >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mt-2">
+                                            <div class="col-sm-9 mx-auto">
+                                                <input type="date" name="birthday" placeholder="Date of birth" class="form-control" min="1900-01-01" max="2020-01-01" autofocus >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mt-2">
+                                            <div class="col-sm-9 mx-auto">
+                                                <input type="text" name="salary" placeholder="Salary" class="form-control" autofocus required>
+                                            </div>
+                                        </div>
+
+<!--                                        <div class="form-group mt-2">-->
+<!--                                            <div class="col-sm-9 mx-auto">-->
+<!--                                                <input type="text" name="department" placeholder="Department name" class="form-control" autofocus >-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+
+                                        <div class="form-group" align="center">
+                                            <button type="submit" class="btn btn-secondary btn-lg mt-2" id="update_button">UPDATE</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+
+                <td>
+                    <a th:href="@{/employees/delete/{id}(id=${a.id})}">
+                        <i class="material-icons" id="delete_icon">
+                            delete
+                        </i>
+                    </a>
+                </td>
             </tr>
             </tbody>
         </table>
+
+        <form th:action="@{/employees}" method="post" class="form-horizontal" id="save_empl_form">
+
+            <h2>new employee</h2>
+
+            <div class="text-danger mt-2">
+                <p th:text="${isExists}?${isExists}" align="center">
+                </p>
+            </div>
+
+            <div class="form-group mt-2">
+                <div class="col-sm-9 mx-auto">
+                    <input type="text" name="name" placeholder="Employee name" class="form-control" autofocus required>
+                </div>
+            </div>
+
+            <div class="form-group mt-2">
+                <div class="col-sm-9 mx-auto">
+                    <input type="date" name="birthday" placeholder="Date of birth" class="form-control" min="1900-01-01" max="2020-01-01" autofocus required>
+                </div>
+            </div>
+
+            <div class="form-group mt-2">
+                <div class="col-sm-9 mx-auto">
+                    <input type="text" name="salary" placeholder="Salary" class="form-control" autofocus required>
+                </div>
+            </div>
+
+            <div class="form-group mt-2">
+                <div class="col-sm-9 mx-auto">
+                    <input type="text" list="Departments" name="departmentName" placeholder="Departments" class="form-control" autofocus >
+                    <datalist id="Departments">
+                        <option th:each="a:${departments}" th:value="${a.name}">
+                    </datalist>
+                </div>
+            </div>
+
+            <div class="form-group" align="center">
+                <button type="submit" class="btn btn-secondary btn-lg mt-2" id="save_button">SAVE</button>
+            </div>
+        </form>
 
     </div>
 </div>

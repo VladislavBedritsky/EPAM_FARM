@@ -22,4 +22,6 @@ public interface DepartmentService {
     boolean isDepartmentNameAlreadyExists(String name);
 
     Department returnNewDepartmentWithName(String name);
+
+    Integer findDepartmentIdByDepartmentName(String name);
 }

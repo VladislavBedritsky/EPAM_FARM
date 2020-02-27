@@ -1,12 +1,12 @@
 package org.example.EPAM_FARM.controller;
 
+import org.example.EPAM_FARM.model.Employee;
+import org.example.EPAM_FARM.service.DepartmentService;
 import org.example.EPAM_FARM.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/employees")
@@ -15,9 +15,13 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    @Autowired
+    private DepartmentService departmentService;
+
     @GetMapping
     public String getEmployees(Model model) {
         model.addAttribute("employees",employeeService.findAll());
+        model.addAttribute("departments", departmentService.findAll());
         return "employees";
     }
 
@@ -28,5 +32,28 @@ public class EmployeeController {
     ) {
         model.addAttribute("employee",employeeService.findById(id));
         return "employee";
+    }
+
+    @PostMapping
+    public String saveEmployee(
+            @RequestParam String name,
+            @RequestParam String birthday,
+            @RequestParam String salary,
+            @RequestParam String departmentName,
+            Model model
+            ) {
+
+        Employee employee = employeeService.returnNewEmployeeWithSetParameters(
+                name, birthday, salary);
+
+        employeeService.saveEmployee(employee, departmentName);
+
+        return "redirect:/employees";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteEmployee(@PathVariable Integer id) {
+
+        return "redirect:/employees";
     }
 }

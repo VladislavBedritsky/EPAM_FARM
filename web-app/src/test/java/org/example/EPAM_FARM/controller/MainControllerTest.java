@@ -15,7 +15,6 @@ import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.ServletContext;
 
-import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
@@ -51,4 +50,5 @@ public class MainControllerTest {
     public void givenMainPageURI_whenMockMVC_thenReturnsMainViewName() throws Exception {
         this.mockMvc.perform(get("/")).andExpect(view().name("index"));
     }
+
 }
