@@ -52,4 +52,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employee;
     }
 
+    @Override
+    public void deleteDepartment(Integer id) {
+        employeeDao.deleteEmployee(id);
+    }
+
 }

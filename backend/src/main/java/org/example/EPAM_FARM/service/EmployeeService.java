@@ -13,4 +13,6 @@ public interface EmployeeService {
     void saveEmployee(Employee employee, String departmentName);
 
     Employee returnNewEmployeeWithSetParameters (String name, String birthday, String salary);
+
+    void deleteDepartment(Integer id);
 }
