@@ -4,9 +4,7 @@ import org.example.EPAM_FARM.model.Department;
 import org.example.EPAM_FARM.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,4 +20,37 @@ public class RestDepartmentController {
         return jdbcStorageService.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Department getDepartment(
+            @PathVariable Integer id
+    ) {
+        return jdbcStorageService.findById(id);
+    }
+
+    @PostMapping
+    public Department create(
+            @RequestBody Department department
+    ) {
+        jdbcStorageService.saveDepartment(department);
+
+        return jdbcStorageService.findAll().stream().reduce((first, second) -> second).orElse(null);
+    }
+
+    @PutMapping("/{id}")
+    public Department update(
+            @PathVariable Integer id,
+            @RequestBody Department department
+    ) {
+
+        jdbcStorageService.updateDepartment(id, department.getName());
+
+        return department;
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(
+            @PathVariable Integer id
+    ) {
+        jdbcStorageService.deleteDepartment(id);
+    }
 }

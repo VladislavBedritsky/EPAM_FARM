@@ -51,4 +51,5 @@ public class DepartmentControllerTest {
         this.mockMvc.perform(get("/departments/")).andExpect(view().name("departments"));
     }
 
+
 }
