@@ -102,4 +102,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeDao.updateEmployeeForRestController(employee,id);
     }
 
+    @Override
+    public Employee findEmployeeByName(String name) {
+        return employeeDao.findEmployeeByName(name);
+    }
+
 }

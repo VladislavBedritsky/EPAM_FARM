@@ -25,4 +25,6 @@ public interface EmployeeService {
     void saveEmployeeForRestController(Employee employee);
 
     void updateEmployeeForRestController(Employee employee, Integer id);
+
+    Employee findEmployeeByName(String name);
 }

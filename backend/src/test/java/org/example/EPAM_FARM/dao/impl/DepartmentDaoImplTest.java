@@ -56,4 +56,5 @@ public class DepartmentDaoImplTest {
         Assert.assertNotEquals(lastAfterUpdate.getId(),getLast.getId());
     }
 
+
 }

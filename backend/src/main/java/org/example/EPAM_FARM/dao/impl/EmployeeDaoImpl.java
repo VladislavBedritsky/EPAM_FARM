@@ -6,6 +6,7 @@ import org.example.EPAM_FARM.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -42,6 +43,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Value("${employee.updateEmployeeForRestController}")
     private String UPDATE_EMPLOYEE_FOR_REST;
+
+    @Value("${employee.findEmployeeByName}")
+    private String FIND_EMPLOYEE_BY_NAME;
 
     @Override
     public List<Employee> findAll() {
@@ -105,5 +109,16 @@ public class EmployeeDaoImpl implements EmployeeDao {
                 employee.getSalary(),
                 id
         );
+    }
+
+    @Override
+    public Employee findEmployeeByName(String name) {
+        Employee employee = new Employee();
+        try{
+            employee = jdbcTemplate.queryForObject(FIND_EMPLOYEE_BY_NAME, new EmployeeMapper(), name);
+        }catch (EmptyResultDataAccessException e) {
+            e.printStackTrace();
+        }
+        return employee;
     }
 }

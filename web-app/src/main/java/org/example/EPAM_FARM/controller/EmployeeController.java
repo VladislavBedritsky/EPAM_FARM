@@ -6,7 +6,10 @@ import org.example.EPAM_FARM.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/employees")
@@ -43,6 +46,7 @@ public class EmployeeController {
             Model model
             ) {
 
+
         model.addAttribute("employees", employeeService.findAll());
 
         if (employeeService.isEmployeeNameAlreadyExists(name)) {
@@ -75,13 +79,26 @@ public class EmployeeController {
             @RequestParam String name,
             @RequestParam String birthday,
             @RequestParam String salary,
-            @RequestParam String departmentName
+            @RequestParam String departmentName,
+            @Valid Employee employee,
+            BindingResult bindingResult,
+            Model model
     ) {
 
-        Employee employee = employeeService.returnNewEmployeeWithSetParameters(
+        model.addAttribute("employees", employeeService.findAll());
+
+        if (employeeService.isEmployeeNameAlreadyExists(name)) {
+            model.addAttribute("isNameExists","Such employee is already exists!");
+            return "employees";
+        }else if(!employeeService.isProperFloatValue(salary)) {
+            model.addAttribute("wrongFloatValue","Salary value is wrong (e.g. 1034.09)") ;
+            return "employees";
+        }
+
+        Employee getEmployee = employeeService.returnNewEmployeeWithSetParameters(
                 name,birthday,salary
         );
-        employeeService.updateEmployee(id,employee,departmentName);
+        employeeService.updateEmployee(id,getEmployee,departmentName);
 
         return "redirect:/employees";
     }
