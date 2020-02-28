@@ -24,4 +24,6 @@ public interface DepartmentService {
     Department returnNewDepartmentWithName(String name);
 
     Integer findDepartmentIdByDepartmentName(String name);
+
+    Float getAverageSalaryInDepartment(Integer id);
 }

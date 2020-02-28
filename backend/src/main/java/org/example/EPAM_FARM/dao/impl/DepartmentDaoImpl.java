@@ -33,6 +33,10 @@ public class DepartmentDaoImpl implements DepartmentDao {
     @Value("${department.updateDepartment}")
     private String UPDATE_DEPARTMENT;
 
+    @Value("${department.getAverageSalary}")
+    private String GET_AVERAGE_SALARY;
+
+
     @Override
     public List<Department> findAll() {
         return jdbcTemplate.query(FIND_ALL, new DepartmentMapper());
@@ -56,6 +60,11 @@ public class DepartmentDaoImpl implements DepartmentDao {
     @Override
     public void updateDepartment(Integer id, String name) {
         jdbcTemplate.update(UPDATE_DEPARTMENT,name,id);
+    }
+
+    @Override
+    public Float getAverageSalaryInDepartment(Integer id) {
+        return jdbcTemplate.queryForObject(GET_AVERAGE_SALARY, Float.class, id);
     }
 
 }

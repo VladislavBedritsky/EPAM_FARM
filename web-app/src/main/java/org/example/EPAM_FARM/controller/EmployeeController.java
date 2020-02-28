@@ -6,10 +6,7 @@ import org.example.EPAM_FARM.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/employees")
@@ -80,8 +77,6 @@ public class EmployeeController {
             @RequestParam String birthday,
             @RequestParam String salary,
             @RequestParam String departmentName,
-            @Valid Employee employee,
-            BindingResult bindingResult,
             Model model
     ) {
 

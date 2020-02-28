@@ -28,7 +28,7 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     @Value("${department.findAll}")
     private String FIND_ALL;
 
-    @Value("${employee.findById}")
+    @Value("${department.findById}")
     private String FIND_BY_ID;
 
     @Value("${department.saveDepartment}")
@@ -93,14 +93,8 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
         try {
             this.connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
             PreparedStatement preparedStatement = this.connection.prepareStatement(SAVE_DEPARTMENT, Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setString(1,department.getName());
+            preparedStatement.setString(1, department.getName());
             preparedStatement.executeUpdate();
-
-            ResultSet resultSet = preparedStatement.getGeneratedKeys();
-
-            while (resultSet.next()) {
-                department.setName(resultSet.getString("name"));
-            }
 
             preparedStatement.close();
             connection.close();
@@ -140,6 +134,11 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public Float getAverageSalaryInDepartment(Integer id) {
+        return null;
     }
 
 

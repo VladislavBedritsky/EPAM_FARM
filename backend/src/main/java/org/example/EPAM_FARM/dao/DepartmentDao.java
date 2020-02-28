@@ -16,4 +16,5 @@ public interface DepartmentDao {
 
     void updateDepartment(Integer id, String name);
 
+    Float getAverageSalaryInDepartment(Integer id);
 }

@@ -84,6 +84,9 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentId;
     }
 
-
+    @Override
+    public Float getAverageSalaryInDepartment(Integer id) {
+        return departmentDao.getAverageSalaryInDepartment(id);
+    }
 
 }

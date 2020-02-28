@@ -60,5 +60,10 @@ public class JdbcStorageServiceImpl  implements DepartmentService {
         return null;
     }
 
+    @Override
+    public Float getAverageSalaryInDepartment(Integer id) {
+        return null;
+    }
+
 
 }

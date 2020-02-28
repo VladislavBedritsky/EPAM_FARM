@@ -32,6 +32,7 @@ public class DepartmentController {
 
         model.addAttribute("department", jdbcStorageService.findById(id));
         model.addAttribute("department_employees", departmentService.findEmployeesByDepartmentId(id));
+        model.addAttribute("average_salary",departmentService.getAverageSalaryInDepartment(id));
 
         return "department";
     }
@@ -42,6 +43,7 @@ public class DepartmentController {
             Model model
     ) {
 
+        model.addAttribute("departments", jdbcStorageService.findAll());
         if (departmentService.isDepartmentNameAlreadyExists(name)) {
             model.addAttribute("isExists","Such department is already exists!");
             return "departments";
