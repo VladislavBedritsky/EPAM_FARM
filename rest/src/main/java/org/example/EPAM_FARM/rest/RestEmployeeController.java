@@ -46,6 +46,6 @@ public class RestEmployeeController {
     public void delete(
             @PathVariable Integer id
     ) {
-        employeeService.deleteDepartment(id);
+        employeeService.deleteEmployee(id);
     }
 }

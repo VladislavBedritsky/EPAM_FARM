@@ -36,6 +36,9 @@ public class DepartmentDaoImpl implements DepartmentDao {
     @Value("${department.getAverageSalary}")
     private String GET_AVERAGE_SALARY;
 
+    @Value("${department.setForeignKeys}")
+    private String SET_FOREIGN_KEYS;
+
 
     @Override
     public List<Department> findAll() {
@@ -54,7 +57,9 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
     @Override
     public void deleteDepartment(Integer id) {
+        jdbcTemplate.update(SET_FOREIGN_KEYS,0);
         jdbcTemplate.update(DELETE_DEPARTMENT, id);
+        jdbcTemplate.update(SET_FOREIGN_KEYS,1);
     }
 
     @Override

@@ -22,16 +22,22 @@
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
 
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
     <bean id="departmentDao" class="org.example.EPAM_FARM.dao.impl.DepartmentDaoImpl" />
 
     <bean id="departmentService" class="org.example.EPAM_FARM.service.impl.DepartmentServiceImpl" />
 
-    <bean id="jdbcStorageDao" class="org.example.EPAM_FARM.dao.impl.DepartmentDaoImpl" />
+    <bean id="jdbcStorageDao" class="org.example.EPAM_FARM.dao.impl.JdbcStorageDaoImpl" />
 
-    <bean id="jdbcStorageService" class="org.example.EPAM_FARM.service.impl.DepartmentServiceImpl" />
+    <bean id="jdbcStorageService" class="org.example.EPAM_FARM.service.impl.JdbcStorageServiceImpl" />
 
     <bean id="employeeDao" class="org.example.EPAM_FARM.dao.impl.EmployeeDaoImpl" />
 
     <bean id="employeeService" class="org.example.EPAM_FARM.service.impl.EmployeeServiceImpl" />
+
+    <bean id="converterService" class="org.example.EPAM_FARM.service.impl.ConverterServiceImpl" />
 
 </beans>

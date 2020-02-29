@@ -1,7 +1,7 @@
 package org.example.EPAM_FARM.dao.impl;
 
 import org.example.EPAM_FARM.dao.EmployeeDao;
-import org.example.EPAM_FARM.dao.mapper.EmployeeMapper;
+import org.example.EPAM_FARM.dao.mapper.EmployeeWithDepartmentMapper;
 import org.example.EPAM_FARM.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -49,17 +49,17 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public List<Employee> findAll() {
-        return jdbcTemplate.query(FIND_ALL, new EmployeeMapper());
+        return jdbcTemplate.query(FIND_ALL, new EmployeeWithDepartmentMapper());
     }
 
     @Override
     public Employee findById(Integer id) {
-        return jdbcTemplate.queryForObject(FIND_BY_ID,new EmployeeMapper(),id);
+        return jdbcTemplate.queryForObject(FIND_BY_ID,new EmployeeWithDepartmentMapper(),id);
     }
 
     @Override
     public List<Employee> findEmployeesByDepartmentId(Integer id) {
-        return jdbcTemplate.query(FIND_EMPLOYEES_BY_DEPARTMENT_ID, new EmployeeMapper(), id);
+        return jdbcTemplate.query(FIND_EMPLOYEES_BY_DEPARTMENT_ID, new EmployeeWithDepartmentMapper(), id);
     }
 
     @Override
@@ -115,7 +115,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public Employee findEmployeeByName(String name) {
         Employee employee = new Employee();
         try{
-            employee = jdbcTemplate.queryForObject(FIND_EMPLOYEE_BY_NAME, new EmployeeMapper(), name);
+            employee = jdbcTemplate.queryForObject(FIND_EMPLOYEE_BY_NAME, new EmployeeWithDepartmentMapper(), name);
         }catch (EmptyResultDataAccessException e) {
             e.printStackTrace();
         }

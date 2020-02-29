@@ -3,6 +3,7 @@ package org.example.EPAM_FARM.service.impl;
 import org.example.EPAM_FARM.model.Department;
 import org.example.EPAM_FARM.service.DepartmentService;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,32 @@ public class DepartmentServiceImplTest {
     @Autowired
     private DepartmentService departmentService;
 
+    private Department getLast;
+
+    @Before
+    public void setUp() {
+        getLast = departmentService.findAll().stream().reduce((first,second) -> second).orElse(null);
+    }
+
     @Test
     public void findAll() {
         List<Department> departments = departmentService.findAll();
         Assert.assertNotNull(departments);
+    }
+
+    @Test
+    public void isDepartmentNameAlreadyExists() {
+        Assert.assertTrue(departmentService.isDepartmentNameAlreadyExists(getLast.getName()));
+    }
+
+    @Test
+    public void findDepartmentIdByDepartmentName() {
+        Assert.assertNotNull(departmentService.findDepartmentIdByDepartmentName(getLast.getName()));
+    }
+
+    @Test
+    public void getAverageSalaryInDepartment() {
+        Assert.assertNotNull(departmentService.getAverageSalaryInDepartment(getLast.getId()));
     }
 
 }

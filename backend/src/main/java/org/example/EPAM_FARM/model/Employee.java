@@ -2,7 +2,6 @@ package org.example.EPAM_FARM.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
-import com.sun.istack.internal.NotNull;
 import org.example.EPAM_FARM.json_view.View;
 
 import java.time.LocalDate;
@@ -13,7 +12,6 @@ public class Employee {
     @JsonView(View.Id.class)
     private Integer id;
 
-    @NotNull
     @JsonView(View.FullEmployeesWithoutDepartment.class)
     private String name;
 

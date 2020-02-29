@@ -1,6 +1,7 @@
 package org.example.EPAM_FARM.controller;
 
 
+import org.example.EPAM_FARM.model.Department;
 import org.example.EPAM_FARM.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,9 +50,8 @@ public class DepartmentController {
             return "departments";
         }
 
-        jdbcStorageService.saveDepartment(
-                departmentService.returnNewDepartmentWithName(name)
-        );
+        Department department = departmentService.returnNewDepartmentWithName(name);
+        jdbcStorageService.saveDepartment(department);
 
         return "redirect:/departments";
     }
