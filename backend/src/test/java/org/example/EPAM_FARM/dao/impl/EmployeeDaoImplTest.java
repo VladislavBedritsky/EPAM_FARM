@@ -78,6 +78,7 @@ public class EmployeeDaoImplTest {
         Employee lastAfterUpdate = employeeDao.findAll().stream().reduce((first, second) -> second).orElse(null);
 
         Assert.assertNotNull(lastAfterUpdate);
+        Assert.assertEquals(lastAfterUpdate.getName(), employee.getName());
         Assert.assertNotEquals(lastAfterUpdate.getName(), getLast.getName());
         Assert.assertEquals(lastAfterUpdate.getId(), getLast.getId());
     }

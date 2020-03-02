@@ -23,6 +23,12 @@ public class RestEmployeeController {
         return employeeService.findAll();
     }
 
+    @GetMapping("/{id}")
+    @JsonView(View.FullEmployeesWithoutDepartment.class)
+    public Employee getEmployee(@PathVariable Integer id) {
+        return employeeService.findById(id);
+    }
+
     @PostMapping
     public Employee create(
             @RequestBody Employee employee

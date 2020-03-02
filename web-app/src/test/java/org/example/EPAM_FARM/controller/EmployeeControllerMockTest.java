@@ -53,6 +53,10 @@ public class EmployeeControllerMockTest {
 
         Mockito.verify(employeeService,Mockito.times(1))
                 .findAll();
+        Mockito.verify(employeeService,Mockito.times(1))
+                .isEmployeeNameAlreadyExists(isA(String.class));
+        Mockito.verify(employeeService,Mockito.times(1))
+                .isProperFloatValue(isA(String.class));
 
     }
 

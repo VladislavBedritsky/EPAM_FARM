@@ -47,6 +47,9 @@ public class DepartmentControllerMockTest {
         Mockito.verify(departmentService,Mockito.times(1))
                 .returnNewDepartmentWithName(isA(String.class));
 
+        Mockito.verify(jdbcStorageService,Mockito.times(1))
+                .saveDepartment(null);
+
     }
 
     @Test
