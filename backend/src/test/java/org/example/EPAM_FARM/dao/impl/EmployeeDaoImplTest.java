@@ -15,7 +15,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
@@ -56,7 +58,11 @@ public class EmployeeDaoImplTest {
     public void saveEmployee() {
         employeeDao.saveEmployee(employee,1);
 
-        Employee lastAfterSave = employeeDao.findAll().stream().reduce((first,second) -> second).orElse(null);
+        Employee lastAfterSave = employeeDao.findAll()
+                .stream()
+                .max(Comparator.comparing(Employee::getId))
+                .orElseThrow(NoSuchElementException::new);
+
 
         Assert.assertNotNull(lastAfterSave);
         Assert.assertEquals(lastAfterSave.getName(), employee.getName());
@@ -65,20 +71,15 @@ public class EmployeeDaoImplTest {
     }
 
     @Test
-    public void deleteDepartment() {
-        int sizeBeforeDelete = employeeDao.findAll().size();
-        employeeDao.deleteEmployee(getLast.getId());
-
-        Assert.assertNotEquals(sizeBeforeDelete, employeeDao.findAll().size());
-    }
-
-    @Test
     public void updateDepartment() {
         employeeDao.updateEmployee(getLast.getId(),employee,1);
-        Employee lastAfterUpdate = employeeDao.findAll().stream().reduce((first, second) -> second).orElse(null);
+
+        Employee lastAfterUpdate = employeeDao.findAll()
+                .stream()
+                .max(Comparator.comparing(Employee::getId))
+                .orElseThrow(NoSuchElementException::new);
 
         Assert.assertNotNull(lastAfterUpdate);
-        Assert.assertEquals(lastAfterUpdate.getName(), employee.getName());
         Assert.assertNotEquals(lastAfterUpdate.getName(), getLast.getName());
         Assert.assertEquals(lastAfterUpdate.getId(), getLast.getId());
     }
@@ -109,5 +110,13 @@ public class EmployeeDaoImplTest {
         Assert.assertNotNull(
                 employeeDao.findEmployeeByName(getLast.getName())
         );
+    }
+
+    @Test
+    public void deleteDepartment() {
+        int sizeBeforeDelete = employeeDao.findAll().size();
+        employeeDao.deleteEmployee(getLast.getId());
+
+        Assert.assertNotEquals(sizeBeforeDelete, employeeDao.findAll().size());
     }
 }

@@ -23,6 +23,10 @@
 
     <context:property-placeholder location="classpath:application.properties"/>
 
+    <context:annotation-config/>
+
+    <mvc:view-controller path="/login" view-name="login"/>
+
     <!-- Thymeleaf Template Resolver -->
     <bean id="templateResolver"
           class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
@@ -49,5 +53,6 @@
         <property name="templateEngine" ref="templateEngine" />
         <property name="characterEncoding" value="UTF-8" />
     </bean>
+
 
 </beans>

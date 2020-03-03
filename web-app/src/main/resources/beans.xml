@@ -30,4 +30,9 @@
 
     <bean id="converterService" class="org.example.EPAM_FARM.service.impl.ConverterServiceImpl" />
 
+    <bean id="userDao" class="org.example.EPAM_FARM.dao.impl.UserDaoImpl" />
+
+    <bean id="userService" class="org.example.EPAM_FARM.service.impl.UserServiceImpl" />
+
+
 </beans>
