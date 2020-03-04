@@ -2,8 +2,11 @@ package org.example.EPAM_FARM.controller;
 
 
 import org.example.EPAM_FARM.model.Department;
+import org.example.EPAM_FARM.model.User;
 import org.example.EPAM_FARM.service.DepartmentService;
+import org.example.EPAM_FARM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,9 +21,16 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
-    @GetMapping
-    public String getDepartments (Model model) {
+    @Autowired
+    private UserService userService;
 
+    @GetMapping
+    public String getDepartments (
+            @AuthenticationPrincipal User user,
+            Model model) {
+
+        model.addAttribute("isAdmin", userService.isUserHasAdminRole(user.getUsername()));
+        model.addAttribute("authUser", user);
         model.addAttribute("departments", jdbcStorageService.findAll());
 
         return "departments";
@@ -28,9 +38,11 @@ public class DepartmentController {
 
     @GetMapping("/{id}")
     public String getDepartmentView (
+            @AuthenticationPrincipal User user,
             Model model,
             @PathVariable Integer id) {
 
+        model.addAttribute("authUser", user);
         model.addAttribute("department", jdbcStorageService.findById(id));
         model.addAttribute("department_employees", departmentService.findEmployeesByDepartmentId(id));
         model.addAttribute("average_salary",departmentService.getAverageSalaryInDepartment(id));

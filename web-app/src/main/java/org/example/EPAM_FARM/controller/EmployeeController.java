@@ -1,9 +1,12 @@
 package org.example.EPAM_FARM.controller;
 
 import org.example.EPAM_FARM.model.Employee;
+import org.example.EPAM_FARM.model.User;
 import org.example.EPAM_FARM.service.DepartmentService;
 import org.example.EPAM_FARM.service.EmployeeService;
+import org.example.EPAM_FARM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +21,16 @@ public class EmployeeController {
     @Autowired
     private DepartmentService departmentService;
 
+    @Autowired
+    private UserService userService;
+
     @GetMapping
-    public String getEmployees(Model model) {
+    public String getEmployees(
+            @AuthenticationPrincipal User user,
+            Model model) {
+
+        model.addAttribute("isAdmin", userService.isUserHasAdminRole(user.getUsername()));
+        model.addAttribute("authUser", user);
         model.addAttribute("employees", employeeService.findAll());
         model.addAttribute("departments", departmentService.findAll());
         return "employees";
@@ -27,9 +38,11 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     public String getEmployeeView(
+            @AuthenticationPrincipal User user,
             Model model,
             @PathVariable Integer id
     ) {
+        model.addAttribute("authUser", user);
         model.addAttribute("employee", employeeService.findById(id));
         return "employee";
     }

@@ -13,4 +13,6 @@ public interface UserService extends UserDetailsService {
     UserDetails loadUserByUsername(String username);
 
     List<Role> findUserRolesByUsername(String username);
+
+    boolean isUserHasAdminRole(String username);
 }

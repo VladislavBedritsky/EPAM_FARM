@@ -1,5 +1,6 @@
 package org.example.EPAM_FARM.controller;
 
+import org.example.EPAM_FARM.model.User;
 import org.example.EPAM_FARM.service.DepartmentService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,7 +31,7 @@ public class DepartmentControllerMockTest {
 
     @Test
     public void getDepartments() {
-        departmentController.getDepartments(model);
+        departmentController.getDepartments(new User(),model);
 
         Mockito.verify(jdbcStorageService,Mockito.times(1))
                 .findAll();
@@ -54,7 +55,7 @@ public class DepartmentControllerMockTest {
 
     @Test
     public void getDepartmentView() {
-        departmentController.getDepartmentView(model,1);
+        departmentController.getDepartmentView(new User(),model,1);
 
         Mockito.verify(jdbcStorageService,Mockito.times(1))
                 .findById(isA(Integer.class));

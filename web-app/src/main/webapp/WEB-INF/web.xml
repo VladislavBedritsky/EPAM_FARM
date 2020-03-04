@@ -49,6 +49,10 @@
     </filter-mapping>
 
 
+    <error-page>
+        <error-code>403</error-code>
+        <location>/WEB-INF/templates/denied.html</location>
+    </error-page>
 
 
 </web-app>

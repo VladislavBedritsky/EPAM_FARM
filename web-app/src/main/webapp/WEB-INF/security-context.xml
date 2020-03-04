@@ -10,9 +10,11 @@
         <intercept-url pattern="/login" access="permitAll" />
         <intercept-url pattern="/logout" access="permitAll" />
         <intercept-url pattern="/" access="permitAll" />
-        <intercept-url pattern="/**" access="hasAuthority('ADMIN')" />
-        <form-login login-page="/login" default-target-url="/" authentication-failure-url="/" />
-        <logout logout-success-url="/logout" />
+        <intercept-url pattern="/*" access="authenticated"/>
+        <intercept-url pattern="/*/delete/*" access="hasAuthority('ADMIN')" />
+        <intercept-url pattern="/*/update/*" access="hasAuthority('ADMIN')" />
+        <form-login login-page="/login" />
+        <logout logout-success-url="/" />
     </http>
 
     <authentication-manager alias="authenticationManager">

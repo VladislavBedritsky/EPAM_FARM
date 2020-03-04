@@ -11,9 +11,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="/static/css/department.css">
+    <link rel="stylesheet" href="/static/css/navbar.css">
 </head>
 
 <body>
+<div th:replace="fragments/navbar :: navbar"></div>
 
 <div class="container mt-5">
     <div class="col ml-auto">
@@ -22,11 +24,8 @@
             <div class="col">
                 <h1 class="mx-auto" th:text="${department.name}"></h1>
             </div>
-            <i th:text="'(average salary = '+${average_salary}+')'" class="mt-3 pr-5"></i>
             <div class="col mt-3" align="right">
-                <a type="button" class="btn btn-secondary" id="main_page_button" href="/">
-                    Main page
-                </a>
+                <i th:text="'Average salary = '+${average_salary}" ></i>
             </div>
         </div>
 

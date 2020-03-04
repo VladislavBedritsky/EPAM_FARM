@@ -30,7 +30,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public boolean isUserHasAdminRole(String username) {
+        return findUserRolesByUsername(username).contains(Role.ADMIN);
+    }
+
+    @Override
     public List<User> findAll () {
         return userDao.findAll();
     }
+
 }

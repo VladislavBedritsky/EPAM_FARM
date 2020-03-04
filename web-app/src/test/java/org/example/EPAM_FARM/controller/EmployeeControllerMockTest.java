@@ -1,5 +1,6 @@
 package org.example.EPAM_FARM.controller;
 
+import org.example.EPAM_FARM.model.User;
 import org.example.EPAM_FARM.service.DepartmentService;
 import org.example.EPAM_FARM.service.EmployeeService;
 import org.junit.Test;
@@ -31,7 +32,7 @@ public class EmployeeControllerMockTest {
 
     @Test
     public  void getEmployees() {
-        employeeController.getEmployees(model);
+        employeeController.getEmployees(new User(),model);
 
         Mockito.verify(employeeService,Mockito.times(1))
                 .findAll();
@@ -41,7 +42,7 @@ public class EmployeeControllerMockTest {
 
     @Test
     public void getEmployeeView() {
-        employeeController.getEmployeeView(model,1);
+        employeeController.getEmployeeView(new User(),model,1);
 
         Mockito.verify(employeeService,Mockito.times(1))
                 .findById(isA(Integer.class));

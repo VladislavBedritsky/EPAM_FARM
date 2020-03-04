@@ -12,9 +12,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="/static/css/departments.css">
+    <link rel="stylesheet" href="/static/css/navbar.css">
 </head>
 
 <body>
+<div th:replace="fragments/navbar :: navbar"></div>
+
 <div class="container mt-5">
     <div class="col ml-auto">
 
@@ -25,9 +28,9 @@
                 </h1>
             </div>
             <div class="col mt-3" align="right">
-                <a type="button" class="btn btn-secondary" id="main_page_button" href="/">
-                    Main page
-                </a>
+<!--                <a type="button" class="btn btn-secondary" id="main_page_button" href="/">-->
+<!--                    Main page-->
+<!--                </a>-->
             </div>
         </div>
 
@@ -38,8 +41,8 @@
             <tr>
                 <th>id</th>
                 <th>name</th>
-                <th>update</th>
-                <th>delete</th>
+                <th th:if="${isAdmin}">update</th>
+                <th th:if="${isAdmin}">delete</th>
             </tr>
             </thead>
 
@@ -48,8 +51,7 @@
                 <td th:text="${a.id}"></td>
                 <td><a th:text="${a.name}" th:href="@{/departments/{id}(id=${a.id})}" id="link_in_table1"></a></td>
 
-                <td>
-
+                <td th:if="${isAdmin}">
                     <a href="" data-toggle="modal" th:attr="data-target='#exampleModal'+${a.id }">
                         <i class="material-icons" id="update_icon">
                             settings
@@ -87,7 +89,7 @@
                     </div>
                 </td>
 
-                <td>
+                <td th:if="${isAdmin}">
                     <a th:href="@{/departments/delete/{id}(id=${a.id})}">
                         <i class="material-icons" id="delete_icon">
                             delete
@@ -98,7 +100,7 @@
             </tbody>
         </table>
 
-        <form th:action="@{/departments}" method="post" class="form-horizontal" id="save_dep_form">
+        <form th:if="${isAdmin}" th:action="@{/departments}" method="post" class="form-horizontal" id="save_dep_form">
 
             <h2>new department</h2>
 
