@@ -1,6 +1,5 @@
 package org.example.EPAM_FARM.controller;
 
-
 import org.example.EPAM_FARM.model.Department;
 import org.example.EPAM_FARM.model.User;
 import org.example.EPAM_FARM.service.DepartmentService;
@@ -29,7 +28,9 @@ public class DepartmentController {
             @AuthenticationPrincipal User user,
             Model model) {
 
-        model.addAttribute("isAdmin", userService.isUserHasAdminRole(user.getUsername()));
+        if (user != null) {
+            model.addAttribute("isAdmin", userService.isUserHasAdminRole(user.getUsername()));
+        }
         model.addAttribute("authUser", user);
         model.addAttribute("departments", jdbcStorageService.findAll());
 

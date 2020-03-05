@@ -32,6 +32,9 @@
         <json-path.version>2.0.0</json-path.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
         <spring.security.version>4.2.0.RELEASE</spring.security.version>
+        <apacheds-all.version>1.5.7</apacheds-all.version>
+        <shared-ldap.version>0.9.15</shared-ldap.version>
+        <spring-ldap-core.version>2.3.2.RELEASE</spring-ldap-core.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -139,6 +142,18 @@
             </dependency>
 
             <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-ldap</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.ldap</groupId>
+                <artifactId>spring-ldap-core</artifactId>
+                <version>${spring-ldap-core.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.thymeleaf</groupId>
                 <artifactId>thymeleaf-spring5</artifactId>
                 <version>${thymeleaf-spring5.version}</version>
@@ -190,11 +205,16 @@
                 <scope>test</scope>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
             <dependency>
                 <groupId>javax.validation</groupId>
                 <artifactId>validation-api</artifactId>
                 <version>${validation-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.directory.server</groupId>
+                <artifactId>apacheds-server-jndi</artifactId>
+                <version>${apacheds-all.version}</version>
             </dependency>
 
         </dependencies>
