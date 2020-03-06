@@ -10,6 +10,7 @@
         <security:intercept-url pattern="/login" access="permitAll" />
         <security:intercept-url pattern="/logout" access="permitAll" />
         <security:intercept-url pattern="/" access="permitAll" />
+        <security:intercept-url pattern="/departments" access="permitAll" />
         <security:intercept-url pattern="/static/**" access="permitAll"/>
         <security:intercept-url pattern="/**" access="isAuthenticated()"/>
         <security:form-login login-page="/login" />
