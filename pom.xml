@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>EPAM_FARM</artifactId>
-    <version>1.92</version>
+    <version>1.93</version>
     <modules>
         <module>rest</module>
         <module>web-app</module>
