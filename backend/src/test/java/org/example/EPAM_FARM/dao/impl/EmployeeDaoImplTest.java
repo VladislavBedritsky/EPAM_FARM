@@ -72,7 +72,7 @@ public class EmployeeDaoImplTest {
     }
 
     @Test
-    public void updateDepartment() {
+    public void updateEmployee() {
         Employee getLast = employeeDao.findAll().stream().reduce((first,second) -> second).orElse(null);
         Assert.assertNotNull(getLast);
         employeeDao.updateEmployee(getLast.getId(),employee,1);
@@ -121,7 +121,7 @@ public class EmployeeDaoImplTest {
     }
 
     @Test
-    public void deleteDepartment() {
+    public void deleteEmployee() {
         int sizeBeforeDelete = employeeDao.findAll().size();
 
         Employee getLast = employeeDao.findAll().stream().reduce((first,second) -> second).orElse(null);

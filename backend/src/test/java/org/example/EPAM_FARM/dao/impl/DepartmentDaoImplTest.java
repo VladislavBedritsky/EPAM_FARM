@@ -3,7 +3,6 @@ package org.example.EPAM_FARM.dao.impl;
 import org.example.EPAM_FARM.dao.DepartmentDao;
 import org.example.EPAM_FARM.model.Department;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +18,6 @@ public class DepartmentDaoImplTest {
 
     @Autowired
     private DepartmentDao departmentDao;
-
-    private Department getLast;
-
-    @Before
-    public void setUp() {
-        getLast = departmentDao.findAll().stream().reduce((first,second) -> second).orElse(null);
-    }
 
     @Test
     public void findAllDepartments () {
@@ -53,6 +45,9 @@ public class DepartmentDaoImplTest {
 
     @Test
     public void deleteDepartment() {
+        Department getLast = departmentDao.findAll().stream().reduce((first,second) -> second).orElse(null);
+        Assert.assertNotNull(getLast);
+
         int sizeBeforeDelete = departmentDao.findAll().size();
         departmentDao.deleteDepartment(getLast.getId());
 
@@ -61,6 +56,9 @@ public class DepartmentDaoImplTest {
 
     @Test
     public void updateDepartment() {
+        Department getLast = departmentDao.findAll().stream().reduce((first,second) -> second).orElse(null);
+        Assert.assertNotNull(getLast);
+
         departmentDao.updateDepartment(getLast.getId(), "newDepartment");
         Department lastAfterUpdate = departmentDao.findAll().stream().reduce((first,second) -> second).orElse(null);
 
