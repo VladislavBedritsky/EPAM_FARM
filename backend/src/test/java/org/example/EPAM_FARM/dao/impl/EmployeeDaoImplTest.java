@@ -30,7 +30,6 @@ public class EmployeeDaoImplTest {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    private Employee getLast;
     private Employee employee;
 
     @Before
@@ -39,7 +38,6 @@ public class EmployeeDaoImplTest {
         employee.setName("Employee");
         employee.setSalary(123.01f);
         employee.setBirthday(LocalDate.of(2012, Month.APRIL,12));
-        getLast = employeeDao.findAll().stream().reduce((first,second) -> second).orElse(null);
     }
 
     @Test
@@ -50,6 +48,9 @@ public class EmployeeDaoImplTest {
 
     @Test
     public void findById() {
+        Employee getLast = employeeDao.findAll().stream().reduce((first,second) -> second).orElse(null);
+        Assert.assertNotNull(getLast);
+
         Employee employee = employeeDao.findById(getLast.getId());
         Assert.assertNotNull(employee);
     }
@@ -72,6 +73,8 @@ public class EmployeeDaoImplTest {
 
     @Test
     public void updateDepartment() {
+        Employee getLast = employeeDao.findAll().stream().reduce((first,second) -> second).orElse(null);
+        Assert.assertNotNull(getLast);
         employeeDao.updateEmployee(getLast.getId(),employee,1);
 
         Employee lastAfterUpdate = employeeDao.findAll()
@@ -97,6 +100,9 @@ public class EmployeeDaoImplTest {
 
     @Test
     public void updateEmployeeForRestController() {
+        Employee getLast = employeeDao.findAll().stream().reduce((first,second) -> second).orElse(null);
+        Assert.assertNotNull(getLast);
+
         employeeDao.updateEmployeeForRestController(employee, getLast.getId());
         Employee lastAfterUpdate = employeeDao.findAll().stream().reduce((first, second) -> second).orElse(null);
 
@@ -107,6 +113,8 @@ public class EmployeeDaoImplTest {
 
     @Test
     public void findEmployeeByName() {
+        Employee getLast = employeeDao.findAll().stream().reduce((first,second) -> second).orElse(null);
+        Assert.assertNotNull(getLast);
         Assert.assertNotNull(
                 employeeDao.findEmployeeByName(getLast.getName())
         );
@@ -115,6 +123,10 @@ public class EmployeeDaoImplTest {
     @Test
     public void deleteDepartment() {
         int sizeBeforeDelete = employeeDao.findAll().size();
+
+        Employee getLast = employeeDao.findAll().stream().reduce((first,second) -> second).orElse(null);
+        Assert.assertNotNull(getLast);
+
         employeeDao.deleteEmployee(getLast.getId());
 
         Assert.assertNotEquals(sizeBeforeDelete, employeeDao.findAll().size());
