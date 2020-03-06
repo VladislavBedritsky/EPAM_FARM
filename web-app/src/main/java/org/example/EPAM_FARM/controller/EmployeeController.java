@@ -7,6 +7,7 @@ import org.example.EPAM_FARM.service.DepartmentService;
 import org.example.EPAM_FARM.service.EmployeeService;
 import org.example.EPAM_FARM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -76,6 +77,7 @@ public class EmployeeController {
         return "redirect:/employees";
     }
 
+    @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @GetMapping("/delete/{id}")
     public String deleteEmployee(@PathVariable Integer id) {
 
@@ -83,6 +85,8 @@ public class EmployeeController {
 
         return "redirect:/employees";
     }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping("/update/{id}")
     public String updateEmployee (
             @PathVariable Integer id,

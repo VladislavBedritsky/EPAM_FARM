@@ -5,6 +5,7 @@ import org.example.EPAM_FARM.model.User;
 import org.example.EPAM_FARM.service.DepartmentService;
 import org.example.EPAM_FARM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,6 +67,7 @@ public class DepartmentController {
         return "redirect:/departments";
     }
 
+    @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @GetMapping("/delete/{id}")
     public String deleteDepartment (
             @PathVariable Integer id
@@ -76,6 +78,7 @@ public class DepartmentController {
         return "redirect:/departments";
     }
 
+    @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping("/update/{id}")
     public String updateDepartment (
             @PathVariable Integer id,
