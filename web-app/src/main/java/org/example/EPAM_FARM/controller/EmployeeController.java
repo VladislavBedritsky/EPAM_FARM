@@ -30,20 +30,7 @@ public class EmployeeController {
             @AuthenticationPrincipal User user,
             Model model) {
 
-//        UsernamePasswordAuthenticationToken authentication =
-//                (UsernamePasswordAuthenticationToken)
-//                        SecurityContextHolder.getContext().getAuthentication();
-//
-//        LdapUserDetailsImpl principal = (LdapUserDetailsImpl) authentication.getPrincipal();
-//
-//        System.out.println("authentication: " + authentication);
-//        Object role = "ROLE_ADMIN";
-//        System.out.println("principal: " + authentication.getAuthorities().stream().filter(line -> line.toString()).collect(Collectors.toList()).noneMatch(line -> "ROLE_ADMIN".equalsIgnoreCase(line));
-
-        if (user != null) {
-            model.addAttribute("isAdmin", userService.isUserHasAdminRole(user.getUsername()));
-        }
-        model.addAttribute("authUser", user);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model,user);
         model.addAttribute("employees", employeeService.findAll());
         model.addAttribute("departments", departmentService.findAll());
         return "employees";
@@ -55,7 +42,7 @@ public class EmployeeController {
             Model model,
             @PathVariable Integer id
     ) {
-        model.addAttribute("authUser", user);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model,user);
         model.addAttribute("employee", employeeService.findById(id));
         return "employee";
     }

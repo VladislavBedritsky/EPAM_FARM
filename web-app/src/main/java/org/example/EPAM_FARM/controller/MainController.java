@@ -1,7 +1,7 @@
 package org.example.EPAM_FARM.controller;
 
-import org.example.EPAM_FARM.model.User;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     @GetMapping
-    public String getIndex(
-            @AuthenticationPrincipal User user,
-                            Model model) {
-        model.addAttribute("authUser", user);
+    public String getIndex(Model model) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (!authentication.getName().equals("anonymousUser")) {
+            model.addAttribute("authUser", true);
+        }
         return "index";
     }
 

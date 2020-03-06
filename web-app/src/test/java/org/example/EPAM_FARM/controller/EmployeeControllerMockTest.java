@@ -3,6 +3,7 @@ package org.example.EPAM_FARM.controller;
 import org.example.EPAM_FARM.model.User;
 import org.example.EPAM_FARM.service.DepartmentService;
 import org.example.EPAM_FARM.service.EmployeeService;
+import org.example.EPAM_FARM.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -28,6 +29,9 @@ public class EmployeeControllerMockTest {
     private DepartmentService departmentService;
 
     @Mock
+    private UserService userService;
+
+    @Mock
     private Model model;
 
     @Test
@@ -38,6 +42,8 @@ public class EmployeeControllerMockTest {
                 .findAll();
         Mockito.verify(departmentService,Mockito.times(1))
                 .findAll();
+        Mockito.verify(userService,Mockito.times(1))
+                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class),isA(User.class));
     }
 
     @Test
@@ -46,6 +52,8 @@ public class EmployeeControllerMockTest {
 
         Mockito.verify(employeeService,Mockito.times(1))
                 .findById(isA(Integer.class));
+        Mockito.verify(userService,Mockito.times(1))
+                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class),isA(User.class));
     }
 
     @Test

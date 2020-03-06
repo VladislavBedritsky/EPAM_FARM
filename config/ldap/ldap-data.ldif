@@ -31,3 +31,20 @@ objectclass: groupOfNames
 cn: users
 ou: user
 member: uid=qq,ou=people,dc=example,dc=org
+
+dn: uid=java,ou=people,dc=example,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Java bean
+sn: bean
+uid: java
+userPassword: q
+
+dn: cn=users,ou=groups,dc=example,dc=org
+objectclass: top
+objectclass: groupOfNames
+cn: users
+ou: user
+member: uid=java,ou=people,dc=example,dc=org

@@ -28,10 +28,7 @@ public class DepartmentController {
             @AuthenticationPrincipal User user,
             Model model) {
 
-        if (user != null) {
-            model.addAttribute("isAdmin", userService.isUserHasAdminRole(user.getUsername()));
-        }
-        model.addAttribute("authUser", user);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model,user);
         model.addAttribute("departments", jdbcStorageService.findAll());
 
         return "departments";
@@ -43,7 +40,7 @@ public class DepartmentController {
             Model model,
             @PathVariable Integer id) {
 
-        model.addAttribute("authUser", user);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model,user);
         model.addAttribute("department", jdbcStorageService.findById(id));
         model.addAttribute("department_employees", departmentService.findEmployeesByDepartmentId(id));
         model.addAttribute("average_salary",departmentService.getAverageSalaryInDepartment(id));
