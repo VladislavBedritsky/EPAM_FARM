@@ -10,7 +10,6 @@
         <security:intercept-url pattern="/login" access="permitAll" />
         <security:intercept-url pattern="/logout" access="permitAll" />
         <security:intercept-url pattern="/" access="permitAll" />
-        <security:intercept-url pattern="/departments" access="permitAll" />
         <security:intercept-url pattern="/static/**" access="permitAll"/>
         <security:intercept-url pattern="/**" access="isAuthenticated()"/>
         <security:form-login login-page="/login" />
@@ -34,7 +33,7 @@
     </security:authentication-manager>
 
     <security:ldap-server
-            url="ldap://192.168.99.1:389/dc=example,dc=org"
+            url="ldap://192.168.99.100:389/dc=example,dc=org"
             manager-dn="cn=admin,dc=example,dc=org" manager-password="admin"/>
 
     <security:global-method-security pre-post-annotations="enabled"/>
