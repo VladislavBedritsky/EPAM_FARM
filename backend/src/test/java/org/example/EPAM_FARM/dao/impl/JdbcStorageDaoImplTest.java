@@ -18,9 +18,19 @@ public class JdbcStorageDaoImplTest {
     @Autowired
     private DepartmentDao jdbcStorageDao;
 
+    private Department getLast;
+    private List<Department> departments;
+
+
     @Test
     public void findAll() {
-        List<Department> departments = jdbcStorageDao.findAll();
-        Assert.assertNotNull(departments);
+        Assert.assertNotNull(jdbcStorageDao.findAll());
     }
+
+    @Test
+    public void findById() {
+        Department department = jdbcStorageDao.findById(1);
+        Assert.assertNotNull(department);
+    }
+
 }

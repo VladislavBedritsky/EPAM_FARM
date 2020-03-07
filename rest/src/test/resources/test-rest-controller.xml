@@ -33,9 +33,9 @@
 
     <bean id="departmentService" class="org.example.EPAM_FARM.service.impl.DepartmentServiceImpl" />
 
-    <bean id="jdbcStorageDao" class="org.example.EPAM_FARM.dao.impl.DepartmentDaoImpl" />
+    <bean id="jdbcStorageDao" class="org.example.EPAM_FARM.dao.impl.JdbcStorageDaoImpl" />
 
-    <bean id="jdbcStorageService" class="org.example.EPAM_FARM.service.impl.DepartmentServiceImpl" />
+    <bean id="jdbcStorageService" class="org.example.EPAM_FARM.service.impl.JdbcStorageServiceImpl" />
 
     <bean id="restDepartmentController" class="org.example.EPAM_FARM.rest.RestDepartmentController" />
 
@@ -45,4 +45,9 @@
 
     <bean id="restEmployeeController" class="org.example.EPAM_FARM.rest.RestEmployeeController" />
 
+    <bean id="converterService" class="org.example.EPAM_FARM.service.impl.ConverterServiceImpl" />
+
+    <bean id="userDao" class="org.example.EPAM_FARM.dao.impl.UserDaoImpl" />
+
+    <bean id="userService" class="org.example.EPAM_FARM.service.impl.UserServiceImpl" />
 </beans>

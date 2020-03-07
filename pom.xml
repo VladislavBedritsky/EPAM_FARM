@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>EPAM_FARM</artifactId>
-    <version>1.9</version>
+    <version>1.94</version>
     <modules>
         <module>rest</module>
         <module>web-app</module>
@@ -27,9 +27,14 @@
         <org.springframework.version>4.3.14.RELEASE</org.springframework.version>
         <junit.version>4.12</junit.version>
         <mockito.version>2.23.4</mockito.version>
-        <servlet.version>4.0.0</servlet.version>
+        <servlet.version>3.1.0</servlet.version>
         <jackson-databind.version>2.10.1</jackson-databind.version>
         <json-path.version>2.0.0</json-path.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
+        <spring.security.version>4.2.0.RELEASE</spring.security.version>
+        <apacheds-all.version>1.5.7</apacheds-all.version>
+        <shared-ldap.version>0.9.15</shared-ldap.version>
+        <spring-ldap-core.version>2.3.2.RELEASE</spring-ldap-core.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -113,6 +118,42 @@
             </dependency>
 
             <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-core</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-taglibs</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-ldap</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.ldap</groupId>
+                <artifactId>spring-ldap-core</artifactId>
+                <version>${spring-ldap-core.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.thymeleaf</groupId>
                 <artifactId>thymeleaf-spring5</artifactId>
                 <version>${thymeleaf-spring5.version}</version>
@@ -122,7 +163,7 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet.version}</version>
-                <scope>provided</scope>
+                <scope>compile</scope>
             </dependency>
 
             <dependency>
@@ -152,10 +193,28 @@
             </dependency>
 
             <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${jackson-databind.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>com.jayway.jsonpath</groupId>
                 <artifactId>json-path</artifactId>
                 <version>${json-path.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${validation-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.directory.server</groupId>
+                <artifactId>apacheds-server-jndi</artifactId>
+                <version>${apacheds-all.version}</version>
             </dependency>
 
         </dependencies>
@@ -177,11 +236,27 @@
                     </configuration>
                 </plugin>
 
-                <plugin>
-                    <groupId>org.liquibase</groupId>
-                    <artifactId>liquibase-maven-plugin</artifactId>
-                    <version>${liquibase-maven-plugin.version}</version>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>org.liquibase</groupId>-->
+<!--                    <artifactId>liquibase-maven-plugin</artifactId>-->
+<!--                    <version>${liquibase-maven-plugin.version}</version>-->
+<!--                    <configuration>-->
+<!--                        <propertyFile>src/main/resources/liquibase.properties</propertyFile>-->
+<!--                        <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>-->
+<!--                    </configuration>-->
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <phase>process-sources</phase>-->
+<!--                            <configuration>-->
+<!--                                <tag>${project.version}</tag>-->
+<!--                            </configuration>-->
+<!--                            <goals>-->
+<!--                                <goal>update</goal>-->
+<!--                                <goal>tag</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
+<!--                </plugin>-->
 
                 <plugin>
                     <groupId>org.jacoco</groupId>
@@ -229,7 +304,7 @@
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${maven-checkstyle-plugin.version}</version>
                     <configuration>
-                        <configLocation>config/checkstyle/checkstyle.xml</configLocation>
+                        <configLocation>web-app/config/checkstyle/checkstyle.xml</configLocation>
                         <failOnViolation>false</failOnViolation>
                     </configuration>
                     <executions>

@@ -21,6 +21,7 @@ public class Employee {
 
     @JsonView(View.FullEmployeesWithoutDepartment.class)
     private Float salary;
+
     private Department department;
 
     public Integer getId() {

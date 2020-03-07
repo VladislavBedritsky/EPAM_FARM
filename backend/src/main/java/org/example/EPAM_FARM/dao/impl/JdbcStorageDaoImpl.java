@@ -28,6 +28,18 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     @Value("${department.findAll}")
     private String FIND_ALL;
 
+    @Value("${department.findById}")
+    private String FIND_BY_ID;
+
+    @Value("${department.saveDepartment}")
+    private String SAVE_DEPARTMENT;
+
+    @Value("${department.deleteDepartment}")
+    private String DELETE_DEPARTMENT;
+
+    @Value("${department.updateDepartment}")
+    private String UPDATE_DEPARTMENT;
+
     @Override
     public List<Department> findAll() {
         List<Department> departments = new ArrayList<>();
@@ -50,5 +62,84 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
         }
         return departments;
     }
+
+    @Override
+    public Department findById(Integer id) {
+        Department department = new Department();
+
+        try {
+            this.connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(FIND_BY_ID);
+            preparedStatement.setInt(1,id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                department.setId(resultSet.getInt("id"));
+                department.setName(resultSet.getString("name"));
+            }
+
+                preparedStatement.close();
+                connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return department;
+    }
+
+    @Override
+    public void saveDepartment(Department department) {
+
+        try {
+            this.connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(SAVE_DEPARTMENT, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, department.getName());
+            preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void deleteDepartment(Integer id) {
+        try {
+            this.connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(DELETE_DEPARTMENT);
+            preparedStatement.setInt(1,id);
+            preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateDepartment(Integer id, String name) {
+        try {
+            this.connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(UPDATE_DEPARTMENT);
+            preparedStatement.setString(1,name);
+            preparedStatement.setInt(2,id);
+
+            preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public Float getAverageSalaryInDepartment(Integer id) {
+        return null;
+    }
+
 
 }

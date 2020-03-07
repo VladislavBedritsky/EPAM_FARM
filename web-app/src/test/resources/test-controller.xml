@@ -47,4 +47,8 @@
 
     <bean id="mainController" class="org.example.EPAM_FARM.controller.MainController" />
 
+    <bean id="userDao" class="org.example.EPAM_FARM.dao.impl.UserDaoImpl" />
+
+    <bean id="userService" class="org.example.EPAM_FARM.service.impl.UserServiceImpl" />
+
 </beans>

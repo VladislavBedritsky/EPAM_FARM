@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
 
-                    def ret = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8081/artifactory/api/storage/libs-release-local/org/example/org.example.EPAM_FARM/1.9/org.example.EPAM_FARM-1.9.pom', returnStdout: true)
+                    def ret = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8081/artifactory/api/storage/libs-release-local/org/example/org.example.EPAM_FARM/1.94/org.example.EPAM_FARM-1.94.pom', returnStdout: true)
                     if (ret == "200") {
                         currentBuild.result = 'FAILURE'
                         error "release failed"
@@ -60,13 +60,19 @@ pipeline {
         stage('DEPLOY') {
             steps {
                 script {
-                    sh 'mvn clean install'
+                    sh 'mvn clean install -Dmaven.test.failure.ignore=true'
                     deploy adapters: [tomcat8(credentialsId: 'cd34afab-d0bd-4e08-949e-d2f2ebf703ef', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'rest/target/*.war'
-
+                    deploy adapters: [tomcat8(credentialsId: 'cd34afab-d0bd-4e08-949e-d2f2ebf703ef', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'web-app/target/*.war'
                     sh 'sleep 10'
 
-                    def status = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8087/rest-1.9/', returnStdout: true)
-                    if (status != "200") {
+                    def statusRest = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8087/rest-1.94/employees/', returnStdout: true)
+                    if (statusRest != "200") {
+                        currentBuild.result = 'FAILURE'
+                        error "deploy failed"
+                    }
+
+                    def statusWebApp = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://192.168.99.1:8087/web-app-1.94/', returnStdout: true)
+                    if (statusWebApp != "200") {
                         currentBuild.result = 'FAILURE'
                         error "deploy failed"
                     }

@@ -1,0 +1,64 @@
+body {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHpWoBxbxcDmnVz1wjWsAP9YyKJjXhx9TUjcAFU3_0xxEGkduY&s') fixed;
+    background-size: cover;
+}
+
+#main_page_button  {
+    background-color: #2F4F4F;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    color:white;
+}
+
+#main_page_button:hover {
+    background-color: yellow;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-color: yellow;
+    color:black;
+}
+
+#link_in_table1:hover {
+    color: red;
+    text-decoration: none;
+}
+
+#save_dep_form {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    background-color: #f2f2f2;
+}
+
+#save_dep_form h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+#save_button, #update_button {
+    background-color: #2F4F4F;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+#save_button:hover, #update_button:hover {
+    background-color: yellow;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    color:black;
+    border-color: yellow;
+}
+
+#delete_icon, #update_icon {
+    font-size: 1.4em;
+    color: #585858;
+}
+
+#delete_icon:hover, #update_icon:hover {
+    font-size: 1.4em;
+    color: yellow;
+}
+
