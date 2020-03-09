@@ -23,6 +23,7 @@ services:
     volumes:
       - ./config/tomcat/context.xml:/usr/local/tomcat/webapps/manager/META-INF/context.xml
       - ./config/tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+      - ./config/tomcat/server.xml:/usr/local/tomcat/conf/server.xml
     restart: on-failure
 
   sonarqube:
