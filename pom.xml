@@ -236,27 +236,27 @@
                     </configuration>
                 </plugin>
 
-<!--                <plugin>-->
-<!--                    <groupId>org.liquibase</groupId>-->
-<!--                    <artifactId>liquibase-maven-plugin</artifactId>-->
-<!--                    <version>${liquibase-maven-plugin.version}</version>-->
-<!--                    <configuration>-->
-<!--                        <propertyFile>src/main/resources/liquibase.properties</propertyFile>-->
-<!--                        <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>-->
-<!--                    </configuration>-->
-<!--                    <executions>-->
-<!--                        <execution>-->
-<!--                            <phase>process-sources</phase>-->
-<!--                            <configuration>-->
-<!--                                <tag>${project.version}</tag>-->
-<!--                            </configuration>-->
-<!--                            <goals>-->
-<!--                                <goal>update</goal>-->
-<!--                                <goal>tag</goal>-->
-<!--                            </goals>-->
-<!--                        </execution>-->
-<!--                    </executions>-->
-<!--                </plugin>-->
+                <plugin>
+                    <groupId>org.liquibase</groupId>
+                    <artifactId>liquibase-maven-plugin</artifactId>
+                    <version>${liquibase-maven-plugin.version}</version>
+                    <configuration>
+                        <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+                        <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>process-sources</phase>
+                            <configuration>
+                                <tag>${project.version}</tag>
+                            </configuration>
+                            <goals>
+                                <goal>update</goal>
+                                <goal>tag</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
 
                 <plugin>
                     <groupId>org.jacoco</groupId>
