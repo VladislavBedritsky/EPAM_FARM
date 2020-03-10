@@ -35,6 +35,7 @@
         <apacheds-all.version>1.5.7</apacheds-all.version>
         <shared-ldap.version>0.9.15</shared-ldap.version>
         <spring-ldap-core.version>2.3.2.RELEASE</spring-ldap-core.version>
+        <org.springframework.cloud.version>2.2.1.RELEASE</org.springframework.cloud.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -217,6 +218,11 @@
                 <version>${apacheds-all.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config-client</artifactId>
+                <version>${org.springframework.cloud.version}</version>
+            </dependency>
         </dependencies>
 
     <build>

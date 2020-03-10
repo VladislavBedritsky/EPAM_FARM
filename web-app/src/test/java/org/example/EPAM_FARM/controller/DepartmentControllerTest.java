@@ -24,9 +24,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class DepartmentControllerTest {
 
     @Autowired
-    private DepartmentController departmentController;
-
-    @Autowired
     private WebApplicationContext wac;
 
     private MockMvc mockMvc;

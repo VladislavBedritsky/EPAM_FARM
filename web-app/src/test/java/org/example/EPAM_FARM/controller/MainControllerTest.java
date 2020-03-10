@@ -15,19 +15,18 @@ import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.ServletContext;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath*:test-controller.xml"})
 public class MainControllerTest {
 
     @Autowired
-    private MainController mainController;
-
-    @Autowired
     private WebApplicationContext wac;
 
     private MockMvc mockMvc;
-
 
     @Before
     public void setup() throws Exception {
@@ -48,15 +47,15 @@ public class MainControllerTest {
 //    public void givenMainPageURI_whenMockMVC_whenUserIsAuthenticated_thenReturnsMainViewName() throws Exception {
 //        this.mockMvc.perform(get("/")).andExpect(view().name("index"));
 //    }
-
+//
 //    @Test
 //    public void givenLoginPageURI_whenMockMVC_thenReturnsLoginViewName() throws Exception {
 //        this.mockMvc.perform(get("/login")).andExpect(view().name("login"));
 //    }
 
-//    @Test
-//    public void givenAccessDeniedPageURI_whenMockMVC_thenReturnsAccessDeniedViewName() throws Exception {
-//        this.mockMvc.perform(get("/accessdenied")).andExpect(view().name("denied"));
-//    }
+    @Test
+    public void givenAccessDeniedPageURI_whenMockMVC_thenReturnsAccessDeniedViewName() throws Exception {
+        this.mockMvc.perform(get("/accessdenied")).andExpect(view().name("denied"));
+    }
 
 }

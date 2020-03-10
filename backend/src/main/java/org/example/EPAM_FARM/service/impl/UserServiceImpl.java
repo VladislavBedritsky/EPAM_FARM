@@ -65,4 +65,13 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+    @Override
+    public void checkIfUserIsNotAnonymous(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (!authentication.getName().equals("anonymousUser")) {
+            model.addAttribute("authUser", true);
+        }
+    }
+
 }

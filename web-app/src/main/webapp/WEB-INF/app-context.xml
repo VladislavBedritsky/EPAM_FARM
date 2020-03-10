@@ -4,16 +4,25 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <import resource="classpath:beans.xml"/>
+    <import resource="beans.xml"/>
 
+    <context:component-scan base-package="org.example.*"/>
+    <context:property-placeholder location="classpath:application.properties"/>
+    <context:annotation-config/>
+
+    <mvc:resources mapping="/static/**" location="/static/"/>
     <mvc:default-servlet-handler/>
+    <!--    <mvc:view-controller path="/login" view-name="login"/>-->
 
     <mvc:annotation-driven>
         <mvc:argument-resolvers>
@@ -21,15 +30,12 @@
         </mvc:argument-resolvers>
     </mvc:annotation-driven>
 
-    <context:component-scan base-package="org.example.*"/>
-
-    <mvc:resources mapping="/static/**" location="/static/"/>
-
-    <context:property-placeholder location="classpath:application.properties"/>
-
-    <context:annotation-config/>
-
-<!--    <mvc:view-controller path="/login" view-name="login"/>-->
+    <!--      SPRING-CLOUD_CONFIG -->
+    <util:properties id="home" location="http://localhost:8980/rest-home.properties" />
+    <context:property-placeholder properties-ref="home"
+                                  ignore-resource-not-found="true"
+                                  ignore-unresolvable="true"
+                                  order="0" />
 
     <!-- Thymeleaf Template Resolver -->
     <bean id="templateResolver"

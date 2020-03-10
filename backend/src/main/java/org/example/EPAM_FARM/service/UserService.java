@@ -22,4 +22,5 @@ public interface UserService extends UserDetailsService {
 
     boolean isUserFromLdapHasAdminRole(Authentication authentication);
 
+    void checkIfUserIsNotAnonymous(Model model);
 }
