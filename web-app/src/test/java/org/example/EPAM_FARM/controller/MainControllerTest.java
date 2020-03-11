@@ -15,13 +15,13 @@ import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.ServletContext;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath*:test-controller.xml"})
 public class MainControllerTest {
-
-    @Autowired
-    private MainController mainController;
 
     @Autowired
     private WebApplicationContext wac;
@@ -54,9 +54,9 @@ public class MainControllerTest {
 //        this.mockMvc.perform(get("/login")).andExpect(view().name("login"));
 //    }
 
-//    @Test
-//    public void givenAccessDeniedPageURI_whenMockMVC_thenReturnsAccessDeniedViewName() throws Exception {
-//        this.mockMvc.perform(get("/accessdenied")).andExpect(view().name("denied"));
-//    }
+    @Test
+    public void givenAccessDeniedPageURI_whenMockMVC_thenReturnsAccessDeniedViewName() throws Exception {
+        this.mockMvc.perform(get("/accessdenied")).andExpect(view().name("denied"));
+    }
 
 }
