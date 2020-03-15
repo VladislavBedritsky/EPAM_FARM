@@ -35,6 +35,9 @@
         <apacheds-all.version>1.5.7</apacheds-all.version>
         <shared-ldap.version>0.9.15</shared-ldap.version>
         <spring-ldap-core.version>2.3.2.RELEASE</spring-ldap-core.version>
+        <org.springframework.cloud.version>2.2.1.RELEASE</org.springframework.cloud.version>
+        <thymeleaf.extras-security4.version>3.0.2.RELEASE</thymeleaf.extras-security4.version>
+        <thymeleaf-spring5.version>3.0.9.RELEASE</thymeleaf-spring5.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -42,7 +45,6 @@
         <maven-pmd-plugin.version>3.13.0</maven-pmd-plugin.version>
         <maven-checkstyle-plugin.version>3.1.0</maven-checkstyle-plugin.version>
         <spotbugs-maven-plugin.version>3.1.12.2</spotbugs-maven-plugin.version>
-        <thymeleaf-spring5.version>3.0.9.RELEASE</thymeleaf-spring5.version>
 
     </properties>
 
@@ -160,6 +162,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.thymeleaf.extras</groupId>
+                <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+                <version>${thymeleaf.extras-security4.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet.version}</version>
@@ -217,6 +225,11 @@
                 <version>${apacheds-all.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-oauth2</artifactId>
+                <version>${org.springframework.cloud.version}</version>
+            </dependency>
         </dependencies>
 
     <build>

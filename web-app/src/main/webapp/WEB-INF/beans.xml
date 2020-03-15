@@ -34,5 +34,4 @@
 
     <bean id="userService" class="org.example.EPAM_FARM.service.impl.UserServiceImpl" />
 
-
 </beans>
