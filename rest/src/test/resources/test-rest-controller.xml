@@ -29,25 +29,25 @@
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="departmentDao" class="org.example.EPAM_FARM.dao.impl.DepartmentDaoImpl" />
+    <bean id="departmentDao" class="org.example.EPAM_FARM.backend.dao.impl.DepartmentDaoImpl" />
 
-    <bean id="departmentService" class="org.example.EPAM_FARM.service.impl.DepartmentServiceImpl" />
+    <bean id="departmentService" class="org.example.EPAM_FARM.backend.service.impl.DepartmentServiceImpl" />
 
-    <bean id="jdbcStorageDao" class="org.example.EPAM_FARM.dao.impl.JdbcStorageDaoImpl" />
+    <bean id="jdbcStorageDao" class="org.example.EPAM_FARM.backend.dao.impl.JdbcStorageDaoImpl" />
 
-    <bean id="jdbcStorageService" class="org.example.EPAM_FARM.service.impl.JdbcStorageServiceImpl" />
+    <bean id="jdbcStorageService" class="org.example.EPAM_FARM.backend.service.impl.JdbcStorageServiceImpl" />
 
-    <bean id="restDepartmentController" class="org.example.EPAM_FARM.rest.RestDepartmentController" />
+    <bean id="restDepartmentController" class="org.example.EPAM_FARM.rest.controller.RestDepartmentController" />
 
-    <bean id="employeeDao" class="org.example.EPAM_FARM.dao.impl.EmployeeDaoImpl" />
+    <bean id="employeeDao" class="org.example.EPAM_FARM.backend.dao.impl.EmployeeDaoImpl" />
 
-    <bean id="employeeService" class="org.example.EPAM_FARM.service.impl.EmployeeServiceImpl" />
+    <bean id="employeeService" class="org.example.EPAM_FARM.backend.service.impl.EmployeeServiceImpl" />
 
-    <bean id="restEmployeeController" class="org.example.EPAM_FARM.rest.RestEmployeeController" />
+    <bean id="restEmployeeController" class="org.example.EPAM_FARM.rest.controller.RestEmployeeController" />
 
-    <bean id="converterService" class="org.example.EPAM_FARM.service.impl.ConverterServiceImpl" />
+    <bean id="converterService" class="org.example.EPAM_FARM.backend.service.impl.ConverterServiceImpl" />
 
-    <bean id="userDao" class="org.example.EPAM_FARM.dao.impl.UserDaoImpl" />
+    <bean id="userDao" class="org.example.EPAM_FARM.backend.dao.impl.UserDaoImpl" />
 
-    <bean id="userService" class="org.example.EPAM_FARM.service.impl.UserServiceImpl" />
+    <bean id="userService" class="org.example.EPAM_FARM.backend.service.impl.UserServiceImpl" />
 </beans>

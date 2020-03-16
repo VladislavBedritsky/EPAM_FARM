@@ -1,12 +1,10 @@
-package org.example.EPAM_FARM.rest;
+package org.example.EPAM_FARM.web_app.controller;
 
-import org.example.EPAM_FARM.rest.controller.RestDepartmentController;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockServletContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -18,15 +16,12 @@ import org.springframework.web.context.WebApplicationContext;
 import javax.servlet.ServletContext;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath*:test-rest-controller.xml"})
-public class RestDepartmentControllerTest {
-
-    @Autowired
-    private RestDepartmentController restDepartmentController;
+@ContextConfiguration(locations={"classpath*:test-controller.xml"})
+public class DepartmentControllerTest {
 
     @Autowired
     private WebApplicationContext wac;
@@ -39,20 +34,19 @@ public class RestDepartmentControllerTest {
     }
 
     @Test
-    public void givenWac_whenServletContext_thenItProvidesRestDepartmentController() {
+    public void givenWac_whenServletContext_thenItProvidesDepartmentController() {
         ServletContext servletContext = wac.getServletContext();
 
         Assert.assertNotNull(servletContext);
         Assert.assertTrue(servletContext instanceof MockServletContext);
-        Assert.assertNotNull(wac.getBean("restDepartmentController"));
+        Assert.assertNotNull(wac.getBean("departmentController"));
+
     }
 
     @Test
-    public void givenDepartmentURI_whenMockMVC_thenVerifyResponse() throws Exception {
-        this.mockMvc.perform(get("/departments")).andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
+    public void givenDepartmentsPageURI_whenMockMVC_thenReturnsDepartmentsViewName() throws Exception {
+        this.mockMvc.perform(get("/departments/")).andExpect(view().name("departments"));
     }
-
 
 
 }

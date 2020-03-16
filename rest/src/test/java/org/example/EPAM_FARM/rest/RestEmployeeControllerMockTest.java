@@ -1,7 +1,8 @@
 package org.example.EPAM_FARM.rest;
 
-import org.example.EPAM_FARM.model.Employee;
-import org.example.EPAM_FARM.service.EmployeeService;
+import org.example.EPAM_FARM.backend.model.Employee;
+import org.example.EPAM_FARM.backend.service.EmployeeService;
+import org.example.EPAM_FARM.rest.controller.RestEmployeeController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

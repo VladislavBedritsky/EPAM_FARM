@@ -29,16 +29,16 @@
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="departmentDao" class="org.example.EPAM_FARM.dao.impl.DepartmentDaoImpl" />
+    <bean id="departmentDao" class="org.example.EPAM_FARM.backend.dao.impl.DepartmentDaoImpl" />
 
-    <bean id="departmentService" class="org.example.EPAM_FARM.service.impl.DepartmentServiceImpl" />
+    <bean id="departmentService" class="org.example.EPAM_FARM.backend.service.impl.DepartmentServiceImpl" />
 
-    <bean id="jdbcStorageDao" class="org.example.EPAM_FARM.dao.impl.DepartmentDaoImpl" />
+    <bean id="jdbcStorageDao" class="org.example.EPAM_FARM.backend.dao.impl.DepartmentDaoImpl" />
 
-    <bean id="jdbcStorageService" class="org.example.EPAM_FARM.service.impl.DepartmentServiceImpl" />
+    <bean id="jdbcStorageService" class="org.example.EPAM_FARM.backend.service.impl.DepartmentServiceImpl" />
 
-    <bean id="employeeDao" class="org.example.EPAM_FARM.dao.impl.EmployeeDaoImpl" />
+    <bean id="employeeDao" class="org.example.EPAM_FARM.backend.dao.impl.EmployeeDaoImpl" />
 
-    <bean id="employeeService" class="org.example.EPAM_FARM.service.impl.EmployeeServiceImpl" />
+    <bean id="employeeService" class="org.example.EPAM_FARM.backend.service.impl.EmployeeServiceImpl" />
 
 </beans>

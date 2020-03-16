@@ -1,7 +1,8 @@
 package org.example.EPAM_FARM.rest;
 
-import org.example.EPAM_FARM.model.Department;
-import org.example.EPAM_FARM.service.DepartmentService;
+import org.example.EPAM_FARM.backend.model.Department;
+import org.example.EPAM_FARM.backend.service.DepartmentService;
+import org.example.EPAM_FARM.rest.controller.RestDepartmentController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
