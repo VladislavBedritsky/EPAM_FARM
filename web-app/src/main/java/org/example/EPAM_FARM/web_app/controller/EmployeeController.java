@@ -2,13 +2,11 @@ package org.example.EPAM_FARM.web_app.controller;
 
 
 import org.example.EPAM_FARM.backend.model.Employee;
-import org.example.EPAM_FARM.backend.model.User;
 import org.example.EPAM_FARM.backend.service.DepartmentService;
 import org.example.EPAM_FARM.backend.service.EmployeeService;
 import org.example.EPAM_FARM.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -28,22 +26,21 @@ public class EmployeeController {
 
     @GetMapping
     public String getEmployees(
-            @AuthenticationPrincipal User user,
             Model model) {
 
-        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model,user);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
         model.addAttribute("employees", employeeService.findAll());
         model.addAttribute("departments", departmentService.findAll());
+
         return "employees";
     }
 
     @GetMapping("/{id}")
     public String getEmployeeView(
-            @AuthenticationPrincipal User user,
             Model model,
             @PathVariable Integer id
     ) {
-        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model,user);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
         model.addAttribute("employee", employeeService.findById(id));
         return "employee";
     }

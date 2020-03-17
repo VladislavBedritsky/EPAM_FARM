@@ -35,12 +35,12 @@ public class DepartmentControllerMockTest {
 
     @Test
     public void getDepartments() {
-        departmentController.getDepartments(new User(),model);
+        departmentController.getDepartments(model);
 
         Mockito.verify(jdbcStorageService,Mockito.times(1))
                 .findAll();
         Mockito.verify(userService,Mockito.times(1))
-                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class),isA(User.class));
+                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class));
     }
 
     @Test
@@ -61,7 +61,7 @@ public class DepartmentControllerMockTest {
 
     @Test
     public void getDepartmentView() {
-        departmentController.getDepartmentView(new User(),model,1);
+        departmentController.getDepartmentView(model,1);
 
         Mockito.verify(jdbcStorageService,Mockito.times(1))
                 .findById(isA(Integer.class));
@@ -70,7 +70,7 @@ public class DepartmentControllerMockTest {
         Mockito.verify(departmentService,Mockito.times(1))
                 .getAverageSalaryInDepartment(isA(Integer.class));
         Mockito.verify(userService,Mockito.times(1))
-                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class),isA(User.class));
+                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class));
     }
 
     @Test

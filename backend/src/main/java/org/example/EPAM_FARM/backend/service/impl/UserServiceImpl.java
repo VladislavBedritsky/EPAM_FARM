@@ -33,8 +33,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean isUserHasAdminRole(String username) {
-        return findUserRolesByUsername(username).contains(Role.ADMIN);
+    public boolean isUserHasAdminRole(Authentication authentication) {
+
+        for (int i = 0; i < authentication.getAuthorities().size(); i++) {
+            if (authentication.getAuthorities().toArray()[i].toString().equalsIgnoreCase(Role.ADMIN.toString())) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     @Override
@@ -42,17 +49,15 @@ public class UserServiceImpl implements UserService {
         return userDao.findAll();
     }
 
-    public void checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(Model model, User user) {
+    public void checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(Model model) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        if(user != null ) {
-            model.addAttribute("isAdmin", isUserHasAdminRole(user.getUsername()));
-            model.addAttribute("authUser", user);
-        } else {
-            model.addAttribute("isAdmin",isUserFromLdapHasAdminRole(authentication));
-            model.addAttribute("authUser",true);
+        model.addAttribute("isAdmin", isUserHasAdminRole(authentication));
+        if (!authentication.getName().equals("anonymousUser")) {
+            model.addAttribute("authUser", true);
         }
+
     }
 
     @Override

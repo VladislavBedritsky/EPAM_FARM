@@ -25,10 +25,28 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private BCryptPasswordEncoder passwordEncoder;
 
     @Value("${config.oauth2.privateKey}")
-    private String privateKey;
+    private String PRIVATE_KEY;
 
     @Value("${config.oauth2.publicKey}")
-    private String publicKey;
+    private String PUBLIC_KEY;
+
+    @Value("${config.oauth2.redirectUri1}")
+    private String URI_1;
+
+    @Value("${config.oauth2.redirectUri2}")
+    private String URI_2;
+
+    @Value("${config.oauth2.clientId}")
+    private String CLIENT_ID;
+
+    @Value("${config.oauth2.secret}")
+    private String SECRET;
+
+    @Value("${config.oauth2.grantTypes}")
+    private String GRANT_TYPES;
+
+    @Value("${config.oauth2.scope}")
+    private String SCOPE;
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
@@ -37,18 +55,17 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .checkTokenAccess("isAuthenticated()");
     }
 
-
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients
                 .inMemory()
-                .withClient("ClientId")
-                .secret(passwordEncoder.encode("secret"))
-                .authorizedGrantTypes("authorization_code")
-                .scopes("user_info")
+                .withClient(CLIENT_ID)
+                .secret(passwordEncoder.encode(SECRET))
+                .authorizedGrantTypes(GRANT_TYPES)
+                .scopes(SCOPE)
                 .autoApprove(true)
                 .redirectUris(
-                        "http://localhost:8982/ui/login","http://localhost:8080/login")
+                        URI_1,URI_2)
                 .accessTokenValiditySeconds(20000)
                 .refreshTokenValiditySeconds(20000);
     }
@@ -64,8 +81,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Bean
     public JwtAccessTokenConverter tokenEnhancer() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setSigningKey(privateKey);
-        converter.setVerifierKey(publicKey);
+        converter.setSigningKey(PRIVATE_KEY);
+        converter.setVerifierKey(PUBLIC_KEY);
         return converter;
     }
 

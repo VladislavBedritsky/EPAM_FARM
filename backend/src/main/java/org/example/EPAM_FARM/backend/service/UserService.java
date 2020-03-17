@@ -16,9 +16,9 @@ public interface UserService extends UserDetailsService {
 
     List<Role> findUserRolesByUsername(String username);
 
-    boolean isUserHasAdminRole(String username);
+    boolean isUserHasAdminRole(Authentication authentication);
 
-    void checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(Model model, User user);
+    void checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(Model model);
 
     boolean isUserFromLdapHasAdminRole(Authentication authentication);
 

@@ -26,10 +26,9 @@ public class DepartmentController {
 
     @GetMapping
     public String getDepartments (
-            @AuthenticationPrincipal User user,
             Model model) {
 
-        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model,user);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
         model.addAttribute("departments", jdbcStorageService.findAll());
 
         return "departments";
@@ -37,11 +36,10 @@ public class DepartmentController {
 
     @GetMapping("/{id}")
     public String getDepartmentView (
-            @AuthenticationPrincipal User user,
             Model model,
             @PathVariable Integer id) {
 
-        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model,user);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
         model.addAttribute("department", jdbcStorageService.findById(id));
         model.addAttribute("department_employees", departmentService.findEmployeesByDepartmentId(id));
         model.addAttribute("average_salary",departmentService.getAverageSalaryInDepartment(id));

@@ -36,24 +36,24 @@ public class EmployeeControllerMockTest {
 
     @Test
     public  void getEmployees() {
-        employeeController.getEmployees(new User(),model);
+        employeeController.getEmployees(model);
 
         Mockito.verify(employeeService,Mockito.times(1))
                 .findAll();
         Mockito.verify(departmentService,Mockito.times(1))
                 .findAll();
         Mockito.verify(userService,Mockito.times(1))
-                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class),isA(User.class));
+                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class));
     }
 
     @Test
     public void getEmployeeView() {
-        employeeController.getEmployeeView(new User(),model,1);
+        employeeController.getEmployeeView(model,1);
 
         Mockito.verify(employeeService,Mockito.times(1))
                 .findById(isA(Integer.class));
         Mockito.verify(userService,Mockito.times(1))
-                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class),isA(User.class));
+                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class));
     }
 
     @Test
