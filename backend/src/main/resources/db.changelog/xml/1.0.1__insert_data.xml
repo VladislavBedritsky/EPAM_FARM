@@ -23,6 +23,7 @@
             SET FOREIGN_KEY_CHECKS=0;
             DELETE FROM employees WHERE id = 1;
             DELETE FROM departments WHERE id = 1;
+            SET FOREIGN_KEY_CHECKS=1;
         </rollback>
 
     </changeSet>
