@@ -23,4 +23,5 @@ public interface EmployeeDao {
     void updateEmployeeForRestController(Employee employee, Integer id);
 
     Employee findEmployeeByName(String name);
+
 }

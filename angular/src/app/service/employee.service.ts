@@ -16,5 +16,12 @@ export class EmployeeService {
   getEmployees(): Observable<Employee[]> {
     return this.httpClient.get<Employee[]>(this.baseUrl);
   }
+
+  getEmployeesByDepartmentId(categoryId: number): Observable<Employee[]> {
+
+    const searchUrl = `${this.baseUrl}/byDepartmentId/${categoryId}`
+
+    return this.httpClient.get<Employee[]>(searchUrl);
+  }
 }
 

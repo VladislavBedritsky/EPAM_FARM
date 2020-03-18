@@ -1,22 +1,163 @@
-<table class="table mt-2 mx-auto">
-  <thead class="thead-dark">
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Birthday</th>
-    <th>Salary</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let emp of employees">
-    <td>{{ emp.id }}</td>
-    <td>{{ emp.name }}</td>
-    <td>{{ emp.birthday }}</td>
-    <td>{{ emp.salary | currency: 'USD' }}</td>
-  </tr>
-  </tbody>
-</table>
 
+<div id="body">
+<app-navbar></app-navbar>
+
+  <div class="container mt-5" >
+    <div class="col ml-auto">
+
+      <div class="row">
+        <div class="col">
+          <h1 class="mx-auto">
+            Employees
+          </h1>
+        </div>
+        <div class="col mt-3" align="right">
+          <!--                <a type="button" class="btn btn-secondary" id="main_page_button" href="/">-->
+          <!--                    Main page-->
+          <!--                </a>-->
+        </div>
+      </div>
+
+      <table class="table mt-2 mx-auto"  >
+
+        <thead class="thead-dark">
+        <tr >
+          <th>id</th>
+          <th>name</th>
+          <th>birthday</th>
+          <th>salary</th>
+          <th>department</th>
+<!--          <th th:if="${isAdmin}">update</th>-->
+<!--          <th th:if="${isAdmin}">delete</th>-->
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let emp of employees" style="color: white;">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.birthday }}</td>
+          <td>{{ emp.salary | currency: 'USD' }}</td>
+          <td>{{ emp.department.name }}</td>
+
+<!--          <td th:if="${isAdmin}">-->
+<!--            <a href="" data-toggle="modal" th:attr="data-target='#exampleModal'+${a.id }">-->
+<!--              <i class="material-icons" id="update_icon">-->
+<!--                settings-->
+<!--              </i>-->
+<!--            </a>-->
+
+<!--            &lt;!&ndash; Modal &ndash;&gt;-->
+<!--            <div class="modal fade bd-example-modal-xl" th:attr="id='exampleModal'+${a.id }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--              <div class="modal-dialog modal-xl" role="document">-->
+<!--                <div class="modal-content">-->
+<!--                  <div class="modal-header">-->
+<!--                    <h5 class="modal-title" id="exampleModalLabel">Update Department</h5>-->
+<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                      <span aria-hidden="true">&times;</span>-->
+<!--                    </button>-->
+<!--                  </div>-->
+<!--                  <div class="modal-body">-->
+
+<!--                    <form th:action="@{/employees/update/{id}(id=${a.id})}" method="post" class="form-horizontal" >-->
+
+<!--                      <div class="form-group mt-2">-->
+<!--                        <div class="col-sm-9 mx-auto">-->
+<!--                          <input type="text" name="name" placeholder="Employee name" class="form-control" required autofocus>-->
+<!--                        </div>-->
+<!--                      </div>-->
+
+<!--                      <div class="form-group mt-2">-->
+<!--                        <div class="col-sm-9 mx-auto">-->
+<!--                          <input type="date" name="birthday" placeholder="Date of birth" class="form-control" min="1900-01-01" max="2020-01-01" required autofocus>-->
+<!--                        </div>-->
+<!--                      </div>-->
+
+<!--                      <div class="form-group mt-2">-->
+<!--                        <div class="col-sm-9 mx-auto">-->
+<!--                          <input type="text" name="salary" placeholder="Salary (e.g. 1024.08)" class="form-control" autofocus required>-->
+<!--                          &lt;!&ndash;                                                       pattern="^\d*\.?\d*$" oninput="this.setCustomValidity('e.g. 1024.08')" &ndash;&gt;-->
+<!--                        </div>-->
+<!--                      </div>-->
+
+<!--                      <div class="form-group mt-2">-->
+<!--                        <div class="col-sm-9 mx-auto">-->
+<!--                          <input type="text" list="DepartmentsList" name="departmentName" placeholder="Departments" class="form-control" autofocus required>-->
+<!--                          <datalist id="DepartmentsList">-->
+<!--                            <option th:each="department:${departments}" th:value="${department.name}">-->
+<!--                          </datalist>-->
+<!--                        </div>-->
+<!--                      </div>-->
+
+<!--                      <div class="form-group" align="center">-->
+<!--                        <button type="submit" class="btn btn-secondary btn-lg mt-2" id="update_button">UPDATE</button>-->
+<!--                      </div>-->
+<!--                    </form>-->
+
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </td>-->
+
+<!--          <td th:if="${isAdmin}">-->
+<!--            <a th:href="@{/employees/delete/{id}(id=${a.id})}">-->
+<!--              <i class="material-icons" id="delete_icon">-->
+<!--                delete-->
+<!--              </i>-->
+<!--            </a>-->
+<!--          </td>-->
+        </tr>
+        </tbody>
+      </table>
+
+<!--      <form th:if="${isAdmin}" th:action="@{/employees}" method="post" class="form-horizontal" id="save_empl_form">-->
+
+<!--        <h2>new employee</h2>-->
+
+<!--        <div class="text-danger mt-2">-->
+<!--          <p th:text="${isNameExists}?${isNameExists}" align="center">-->
+<!--          </p>-->
+<!--          <p th:text="${wrongFloatValue}?${wrongFloatValue}" align="center">-->
+<!--          </p>-->
+<!--        </div>-->
+
+<!--        <div class="form-group mt-2">-->
+<!--          <div class="col-sm-9 mx-auto">-->
+<!--            <input type="text" name="name" placeholder="Employee name" class="form-control" autofocus required>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="form-group mt-2">-->
+<!--          <div class="col-sm-9 mx-auto">-->
+<!--            <input type="date" name="birthday" placeholder="Date of birth" class="form-control" min="1900-01-01" max="2020-01-01" autofocus required>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="form-group mt-2">-->
+<!--          <div class="col-sm-9 mx-auto">-->
+<!--            <input type="text" name="salary" placeholder="Salary (e.g. 1024.08)" class="form-control" autofocus required>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="form-group mt-2">-->
+<!--          <div class="col-sm-9 mx-auto">-->
+<!--            <input type="text" list="Departments" name="departmentName" placeholder="Departments" class="form-control" autofocus >-->
+<!--            <datalist id="Departments">-->
+<!--              <option th:each="a:${departments}" th:value="${a.name}">-->
+<!--            </datalist>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="form-group" align="center">-->
+<!--          <button type="submit" class="btn btn-secondary btn-lg mt-2" id="save_button">SAVE</button>-->
+<!--        </div>-->
+<!--      </form>-->
+
+    </div>
+  </div>
+<app-footer></app-footer>
+</div>
 <!--    <th>-->
 <!--      <img src="http://placehold.it/250x300" height="50"/>-->
 <!--    </th>-->

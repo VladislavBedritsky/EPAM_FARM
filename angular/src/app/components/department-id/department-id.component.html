@@ -1,0 +1,47 @@
+<div id="body">
+  <app-navbar></app-navbar>
+
+  <div class="container mt-5" >
+    <div class="col ml-auto">
+
+      <div class="row">
+        <div class="col">
+          <h1 class="mx-auto">
+            q
+          </h1>
+        </div>
+        <div class="col mt-3" align="right">
+          <!--                <a type="button" class="btn btn-secondary" id="main_page_button" href="/">-->
+          <!--                    Main page-->
+          <!--                </a>-->
+        </div>
+      </div>
+
+      <table class="table mt-2 mx-auto"  >
+
+        <thead class="thead-dark">
+        <tr >
+          <th>id</th>
+          <th>name</th>
+          <th>birthday</th>
+          <th>salary</th>
+          <!--          <th th:if="${isAdmin}">update</th>-->
+          <!--          <th th:if="${isAdmin}">delete</th>-->
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let emp of employees" style="color: white;">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.birthday }}</td>
+          <td>{{ emp.salary | currency: 'USD' }}</td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+

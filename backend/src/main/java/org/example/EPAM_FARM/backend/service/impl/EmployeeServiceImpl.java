@@ -107,4 +107,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeDao.findEmployeeByName(name);
     }
 
+    @Override
+    public List<Employee> findEmployeesByDepartmentId(Integer id) {
+        return employeeDao.findEmployeesByDepartmentId(id);
+    }
+
 }

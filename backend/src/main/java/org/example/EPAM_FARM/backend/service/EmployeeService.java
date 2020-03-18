@@ -27,4 +27,6 @@ public interface EmployeeService {
     void updateEmployeeForRestController(Employee employee, Integer id);
 
     Employee findEmployeeByName(String name);
+
+    List<Employee> findEmployeesByDepartmentId(Integer id);
 }

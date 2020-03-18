@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/departments", produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/departments", produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
 public class RestDepartmentController {
 
     @Autowired

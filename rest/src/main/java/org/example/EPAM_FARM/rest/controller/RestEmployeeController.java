@@ -11,22 +11,27 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/employees", produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(value = "/employees", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 public class RestEmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
 
     @GetMapping
-    @JsonView(View.FullEmployeesWithoutDepartment.class)
+//    @JsonView(View.FullEmployeesWithoutDepartment.class)
     public List<Employee> getEmployees() {
         return employeeService.findAll();
     }
 
     @GetMapping("/{id}")
-    @JsonView(View.FullEmployeesWithoutDepartment.class)
+//    @JsonView(View.FullEmployeesWithoutDepartment.class)
     public Employee getEmployee(@PathVariable Integer id) {
         return employeeService.findById(id);
+    }
+
+    @GetMapping("/byDepartmentId/{id}")
+    public List<Employee> getEmployeesByDepartmentId(@PathVariable Integer id) {
+        return employeeService.findEmployeesByDepartmentId(id);
     }
 
     @PostMapping
