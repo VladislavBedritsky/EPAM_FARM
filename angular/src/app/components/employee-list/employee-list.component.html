@@ -1,11 +1,10 @@
-<table border="1">
-  <thead>
+<table class="table mt-2 mx-auto">
+  <thead class="thead-dark">
   <tr>
     <th>Id</th>
     <th>Name</th>
     <th>Birthday</th>
     <th>Salary</th>
-    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -14,9 +13,10 @@
     <td>{{ emp.name }}</td>
     <td>{{ emp.birthday }}</td>
     <td>{{ emp.salary | currency: 'USD' }}</td>
-    <th>
-      <img src="http://placehold.it/250x300" height="50"/>
-    </th>
   </tr>
   </tbody>
 </table>
+
+<!--    <th>-->
+<!--      <img src="http://placehold.it/250x300" height="50"/>-->
+<!--    </th>-->
