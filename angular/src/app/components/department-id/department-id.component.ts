@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DepartmentIdComponent implements OnInit {
 
   employees: Employee[];
-  department: Department;
+  departmentName: string;
   currentDepartmentId: number;
 
   constructor(private _employeeService: EmployeeService,
@@ -30,7 +30,6 @@ export class DepartmentIdComponent implements OnInit {
   }
 
   listEmployees() {
-
     this._employeeService.getEmployeesByDepartmentId(this.currentDepartmentId).subscribe(
       data => this.employees = data
     )
@@ -39,8 +38,11 @@ export class DepartmentIdComponent implements OnInit {
   getDepartment() {
 
     this._departmentService.getDepartmentById(this.currentDepartmentId).subscribe(
-      data => this.department = data
+      data => {
+        this.departmentName = data['name'];
+      }
     )
+
   }
 
 }

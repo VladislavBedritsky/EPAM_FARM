@@ -47,4 +47,5 @@
 
     <bean id="employeeService" class="org.example.EPAM_FARM.backend.service.impl.EmployeeServiceImpl" />
 
+    <bean id="userService" class="org.example.EPAM_FARM.backend.service.impl.UserServiceImpl" />
 </beans>
