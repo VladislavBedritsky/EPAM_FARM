@@ -10,28 +10,27 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username: string;
-  password: string;
-  message: any
+  username = ''
+  password = ''
+  invalidLogin = false
 
   constructor(private _appService: AppService,
-              private router: Router) { }
+              private router: Router,
+              private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  doLogin() {
-    let response = this._appService.login(this.username, this.password);
-    response.subscribe(
+  login() {
+    this._appService.authenticate(this.username, this.password).subscribe(
       data => {
-        this.message = data;
-        this.router.navigate(["/main"])
+        this.router.navigate(['']);
+        this.invalidLogin = false
+      },
+      error => {
+        this.invalidLogin = true
       }
-    )
-  }
-
-  getUsername() {
-    return this.username;
+    );
   }
 
 }

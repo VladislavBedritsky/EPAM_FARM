@@ -1,5 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
+
+export class User{
+  constructor(
+    public status:string,
+     ) {}
+
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +18,18 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string) {
+  authenticate(username: string, password: string) {
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username+":"+password)})
-    return this.http.get("http://localhost:8080/user", {headers, responseType:'text' as 'json'});
+    return this.http.get<User>("http://localhost:8080/user", {headers}).pipe(
+      map(
+        data => {
+          sessionStorage.setItem('username',username);
+          let authString = 'Basic ' + btoa(username+":"+password);
+          sessionStorage.setItem('basicauth',authString);
+          return data;
+        }
+      )
+    );
   }
 
-  getUsers() {
-    let username = "q";
-    let password = "q";
-    const headers = new HttpHeaders({Authorization: 'Basic '+ btoa(username+":"+password)});
-    return this.http.get("http://localhost:8080/user",{headers});
-  }
 }
