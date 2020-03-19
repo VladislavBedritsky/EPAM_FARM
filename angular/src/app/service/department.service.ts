@@ -13,7 +13,14 @@ export class DepartmentService {
 
   constructor(private httpClient: HttpClient) { }
 
-    getDepartments(): Observable<Department[]> {
-      return this.httpClient.get<Department[]>(this.baseUrl);
-    }
+  getDepartments(): Observable<Department[]> {
+    return this.httpClient.get<Department[]>(this.baseUrl);
+  }
+
+  getDepartmentById(id: number): Observable<Department> {
+
+    const url = `${this.baseUrl}/${id}`
+
+    return this.httpClient.get<Department>(url);
+  }
 }

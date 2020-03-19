@@ -7,14 +7,11 @@
 
       <div class="row">
         <div class="col">
-          <h1 class="mx-auto">
+          <h1 class="mx-auto" style="color: #00FFFF">
             Employees
           </h1>
         </div>
         <div class="col mt-3" align="right">
-          <!--                <a type="button" class="btn btn-secondary" id="main_page_button" href="/">-->
-          <!--                    Main page-->
-          <!--                </a>-->
         </div>
       </div>
 
@@ -38,7 +35,11 @@
           <td>{{ emp.name }}</td>
           <td>{{ emp.birthday }}</td>
           <td>{{ emp.salary | currency: 'USD' }}</td>
-          <td>{{ emp.department.name }}</td>
+          <td>
+            <a routerLink="/departments/{{ emp.department.id }}" routerLinkActive="active" id="link_in_table2">
+              {{ emp.department.name }}
+            </a>
+          </td>
 
 <!--          <td th:if="${isAdmin}">-->
 <!--            <a href="" data-toggle="modal" th:attr="data-target='#exampleModal'+${a.id }">-->

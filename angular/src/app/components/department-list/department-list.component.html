@@ -6,7 +6,7 @@
 
       <div class="row">
         <div class="col">
-          <h1 class="mx-auto">
+          <h1 class="mx-auto" style="color: #00FFFF">
             Departments
           </h1>
         </div>
@@ -31,7 +31,11 @@
         <tbody>
         <tr *ngFor="let dep of departments" style="color: white;">
           <td>{{ dep.id }}</td>
-          <td>{{ dep.name }}</td>
+          <td>
+            <a routerLink="/departments/{{ dep.id }}" routerLinkActive="active" id="link_in_table2">
+              {{ dep.name }}
+            </a>
+          </td>
 
           <!--          <td th:if="${isAdmin}">-->
           <!--            <a href="" data-toggle="modal" th:attr="data-target='#exampleModal'+${a.id }">-->

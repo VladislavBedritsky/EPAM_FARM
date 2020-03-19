@@ -21,8 +21,12 @@
     color:black;
 }
 
+#link_in_table1, #link_in_table2 {
+    color: white;
+}
+
 #link_in_table1:hover, #link_in_table2:hover {
-    color: red;
+    color: blue;
     text-decoration: none;
 }
 
