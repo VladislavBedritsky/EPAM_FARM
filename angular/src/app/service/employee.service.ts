@@ -21,5 +21,15 @@ export class EmployeeService {
     const searchUrl = `${this.baseUrl}/byDepartmentId/${categoryId}`;
     return this.httpClient.get<Employee[]>(searchUrl);
   }
+
+  saveEmployee(employee) {
+    return this.httpClient.post(this.baseUrl, employee);
+  }
+
+  deleteEmployee(employee) {
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('q' + ':' + 'q') });
+    const searchUrl = `${this.baseUrl}/${employee.id}`;
+    return this.httpClient.delete<Employee>(searchUrl, {headers});
+  }
 }
 

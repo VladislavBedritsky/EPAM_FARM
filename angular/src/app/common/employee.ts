@@ -3,10 +3,9 @@ export class Employee {
     id: number;
     name: string;
     birthday: string;
-    salary: number;
+    salary: string;
 
-  constructor(id:number, name:string, birthday:string, salary:number) {
-    this.id = id;
+  constructor(name:string, birthday:string, salary:string) {
     this.name = name;
     this.birthday = birthday;
     this.salary = salary;

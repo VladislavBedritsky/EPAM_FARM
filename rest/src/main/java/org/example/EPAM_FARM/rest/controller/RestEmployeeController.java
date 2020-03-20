@@ -1,7 +1,5 @@
 package org.example.EPAM_FARM.rest.controller;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import org.example.EPAM_FARM.backend.json_view.View;
 import org.example.EPAM_FARM.backend.model.Employee;
 import org.example.EPAM_FARM.backend.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +37,7 @@ public class RestEmployeeController {
             @RequestBody Employee employee
     ) {
 
-        employeeService.saveEmployeeForRestController(employee);
+        employeeService.saveEmployee(employee, employee.getDepartment().getName());
         return employeeService.findAll().stream().reduce((first, second) -> second).orElse(null);
     }
 
