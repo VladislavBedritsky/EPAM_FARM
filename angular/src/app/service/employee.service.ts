@@ -10,20 +10,16 @@ import { Employee } from 'src/app/common/employee'
 export class EmployeeService {
 
   private baseUrl = "http://localhost:8080/employees"
-  private username = "q";
-  private password = "q";
 
   constructor(private httpClient: HttpClient) { }
 
   getEmployees(): Observable<Employee[]> {
-    const headers = new HttpHeaders({Authorization: 'Basic '+ btoa(this.username+":"+this.password)});
-    return this.httpClient.get<Employee[]>(this.baseUrl,{headers});
+    return this.httpClient.get<Employee[]>(this.baseUrl);
   }
 
   getEmployeesByDepartmentId(categoryId: number): Observable<Employee[]> {
-    const headers = new HttpHeaders({Authorization: 'Basic '+ btoa(this.username+":"+this.password)});
     const searchUrl = `${this.baseUrl}/byDepartmentId/${categoryId}`;
-    return this.httpClient.get<Employee[]>(searchUrl,{headers});
+    return this.httpClient.get<Employee[]>(searchUrl);
   }
 }
 

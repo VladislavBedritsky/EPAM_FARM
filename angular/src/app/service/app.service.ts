@@ -1,4 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
+export class User{
+  constructor(
+    public status:string,
+     ) {}
+
+}
 
 
 @Injectable({
@@ -6,15 +15,20 @@ import { Injectable } from '@angular/core';
 })
 export class AppService {
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 
   authenticate(username, password) {
-    if (username === "q" && password === "q") {
-      sessionStorage.setItem('username', username)
-      return true;
-    } else {
-      return false;
-    }
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.httpClient.get<User>('http://localhost:8080/user',{headers}).pipe(
+     map(
+       userData => {
+        sessionStorage.setItem('username',username);
+        let authString = 'Basic ' + btoa(username + ':' + password);
+        sessionStorage.setItem('basicAuth', authString);
+        return userData;
+       }
+     )
+    );
   }
 
   isUserLoggedIn() {

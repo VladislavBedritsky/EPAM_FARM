@@ -1,4 +1,6 @@
-
+<div class="alert alert-danger" *ngIf="invalidLogin">
+  There was a problem logging in. Please try again.
+</div>
 <div class="container">
   <div>
     User Name : <input type="text" name="username" [(ngModel)]="username">

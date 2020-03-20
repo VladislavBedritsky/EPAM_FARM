@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username = 'q'
+  username = ''
   password = ''
   invalidLogin = false
 
@@ -20,12 +20,17 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
-    if (this._appService.authenticate(this.username, this.password)
-    ) {
-      this.router.navigate([''])
-      this.invalidLogin = false
-    } else
-      this.invalidLogin = true
+    this._appService.authenticate(this.username, this.password).subscribe(
+      data => {
+        this.router.navigate([''])
+        this.invalidLogin = false
+      },
+      error => {
+        this.invalidLogin = true
+
+      }
+    );
+
   }
 
 }

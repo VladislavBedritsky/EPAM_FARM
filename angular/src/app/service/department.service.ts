@@ -10,20 +10,16 @@ import { Department } from 'src/app/common/department'
 export class DepartmentService {
 
   private baseUrl = "http://localhost:8080/departments";
-  private username = "q";
-  private password = "q";
 
   constructor(private httpClient: HttpClient) { }
 
   getDepartments(): Observable<Department[]> {
-    const headers = new HttpHeaders({Authorization: 'Basic '+ btoa(this.username+":"+this.password)});
-    return this.httpClient.get<Department[]>(this.baseUrl, {headers});
+    return this.httpClient.get<Department[]>(this.baseUrl);
   }
 
   getDepartmentById(id: number) {
 
     const url = `${this.baseUrl}/${id}`;
-    const headers = new HttpHeaders({Authorization: 'Basic '+ btoa(this.username+":"+this.password)});
-    return this.httpClient.get(url,{headers});
+    return this.httpClient.get(url);
   }
 }
