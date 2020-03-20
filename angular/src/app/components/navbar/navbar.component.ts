@@ -9,11 +9,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private _appService: AppService,
-              private http: HttpClient) {
+  constructor(private _appService: AppService) {
   }
 
   ngOnInit(): void {
+
+  }
+
+  isUserLoggedIn() {
+    return this._appService.isUserLoggedIn();
   }
 
 }

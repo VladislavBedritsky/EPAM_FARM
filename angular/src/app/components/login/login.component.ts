@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/service/app.service';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,27 +9,23 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username = ''
+  username = 'q'
   password = ''
   invalidLogin = false
 
   constructor(private _appService: AppService,
-              private router: Router,
-              private http: HttpClient) { }
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  login() {
-    this._appService.authenticate(this.username, this.password).subscribe(
-      data => {
-        this.router.navigate(['']);
-        this.invalidLogin = false
-      },
-      error => {
-        this.invalidLogin = true
-      }
-    );
+  checkLogin() {
+    if (this._appService.authenticate(this.username, this.password)
+    ) {
+      this.router.navigate([''])
+      this.invalidLogin = false
+    } else
+      this.invalidLogin = true
   }
 
 }

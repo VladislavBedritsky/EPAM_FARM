@@ -16,15 +16,18 @@ import { DepartmentListComponent } from './components/department-list/department
 import { DepartmentIdComponent } from './components/department-id/department-id.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppService } from './service/app.service';
+import { LogoutComponent } from './components/logout/logout.component';
+import { AuthGuardService } from 'src/app/service/auth-guard.service';
 
 const routes: Routes = [
-  {path: 'employees', component: EmployeeListComponent },
-  {path: 'departments', component: DepartmentListComponent },
-  {path: 'departments/:id', component: DepartmentIdComponent },
+  {path: 'employees', component: EmployeeListComponent, canActivate:[AuthGuardService] },
+  {path: 'departments', component: DepartmentListComponent, canActivate:[AuthGuardService] },
+  {path: 'departments/:id', component: DepartmentIdComponent,canActivate:[AuthGuardService] },
   {path: 'login', component: LoginComponent },
+  {path: 'logout', component: LogoutComponent, canActivate:[AuthGuardService]},
   {path: 'main', component: MainComponent },
   {path: '', redirectTo: '/main', pathMatch: 'full'},
-  {path: '**', component: PageNotFoundComponent },
+  {path: '**', component: PageNotFoundComponent }
 ]
 
 @NgModule({
@@ -37,7 +40,8 @@ const routes: Routes = [
     MainComponent,
     DepartmentListComponent,
     DepartmentIdComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ const routes: Routes = [
   providers: [
     EmployeeService,
     DepartmentService,
-    AppService
+    AppService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

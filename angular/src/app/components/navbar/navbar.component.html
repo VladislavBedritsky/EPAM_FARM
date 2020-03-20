@@ -30,15 +30,17 @@
   </div>
 
   <!-- Button trigger modal -->
-  <div >
-    <button type="button" class="" id="button_login" data-toggle="modal" data-target="#loginModal">
-      <i class="material-icons">
-        account_circle
-      </i>
-    </button>
+  <div *ngIf="!isUserLoggedIn()">
+    <a routerLink="/login" routerLinkActive="active">
+      <button type="button" class="" id="button_login" data-toggle="modal" data-target="#loginModal">
+        <i class="material-icons">
+          account_circle
+        </i>
+      </button>
+    </a>
   </div>
-  <div >
-    <a>
+  <div *ngIf="isUserLoggedIn()">
+    <a routerLink="/logout" routerLinkActive="active">
       <button  type="submit" id="button_login1">
         <i class="material-icons">
           input
