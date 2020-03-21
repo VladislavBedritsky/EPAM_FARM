@@ -4,6 +4,7 @@ import org.example.EPAM_FARM.backend.model.Employee;
 import org.example.EPAM_FARM.backend.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +33,7 @@ public class RestEmployeeController {
         return employeeService.findEmployeesByDepartmentId(id);
     }
 
+    @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
     public Employee create(
             @RequestBody Employee employee
@@ -41,6 +43,7 @@ public class RestEmployeeController {
         return employeeService.findAll().stream().reduce((first, second) -> second).orElse(null);
     }
 
+    @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PutMapping("/{id}")
     public Employee update(
             @PathVariable Integer id,
@@ -51,6 +54,7 @@ public class RestEmployeeController {
         return employee;
     }
 
+    @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @DeleteMapping("/{id}")
     public void delete(
             @PathVariable Integer id

@@ -16,6 +16,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AuthGuardService } from 'src/app/service/auth-guard.service';
 import { BasicAuthHttpInterceptorService } from 'src/app/service/basic-auth-http-interceptor.service';
+import { ValidatorDirective } from './directive/validator.directive';
 
 const routes: Routes = [
   {path: 'employees', component: EmployeeListComponent, canActivate:[AuthGuardService] },
@@ -39,7 +40,8 @@ const routes: Routes = [
     DepartmentListComponent,
     DepartmentIdComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    ValidatorDirective
   ],
   imports: [
     BrowserModule,
