@@ -12,6 +12,7 @@
         <module>web-app</module>
         <module>backend</module>
         <module>oauth</module>
+        <module>consumer-currency</module>
     </modules>
     <packaging>pom</packaging>
 

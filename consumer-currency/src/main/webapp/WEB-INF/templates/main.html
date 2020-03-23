@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table mt-2 mx-auto" >
+
+    <thead class="thead-dark">
+    <tr>
+        <th>abbreviation</th>
+        <th>scale</th>
+        <th>last_update</th>
+        <th>official rate</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="c:${currencies}">
+        <td th:text="${c.abbreviation}"></td>
+        <td th:text="${c.scale}+' '+${c.name}"></td>
+        <td th:text="${c.date}"></td>
+        <td th:text="${c.officialRate}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
