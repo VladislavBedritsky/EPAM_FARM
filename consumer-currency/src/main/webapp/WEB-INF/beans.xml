@@ -4,6 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="jsonService" class="org.example.consumer_currency.service.JSONService" />
-
+<!--    <bean id="JSONService" class="org.example.consumer_currency.service.JSONService" />-->
+<!--    <bean id="messageSender" class="org.example.consumer_currency.service.MessageSender"/>-->
+<!--    <bean id="messageReceiver" class="org.example.consumer_currency.service.MessageReceiver"/>-->
 </beans>

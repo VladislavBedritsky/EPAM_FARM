@@ -1,9 +1,8 @@
 package org.example.consumer_currency.model;
 
-import java.io.Serializable;
 import java.util.Objects;
 
-public class Currency implements Serializable {
+public class Currency {
 
     private String date;
     private String abbreviation;
