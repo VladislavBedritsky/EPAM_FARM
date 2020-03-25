@@ -4,7 +4,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--    <bean id="JSONService" class="org.example.consumer_currency.service.JSONService" />-->
-<!--    <bean id="messageSender" class="org.example.consumer_currency.service.MessageSender"/>-->
-<!--    <bean id="messageReceiver" class="org.example.consumer_currency.service.MessageReceiver"/>-->
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://localhost:8161" />
+        <property name="password" value="admin" />
+        <property name="userName" value="admin" />
+    </bean>
+
+    <bean id="producerCurrencyRoute" class="org.example.consumer_currency.routes.ProducerCurrencyRoute"/>
+    <bean id="consumerCurrencyRoute" class="org.example.consumer_currency.routes.ConsumerCurrencyRoute" />
+    <bean id="currencyProducerConsumer" class="org.example.consumer_currency.service.CurrencyProducerConsumer" />
+    <bean id="currencyService" class="org.example.consumer_currency.service.CurrencyService" />
+
 </beans>
