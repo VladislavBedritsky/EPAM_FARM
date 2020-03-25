@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+          http://camel.apache.org/schema/spring
+          http://camel.apache.org/schema/spring/camel-spring.xsd
+          http://www.springframework.org/schema/util
+          http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+    <camel:camelContext>
+        <camel:routeBuilder ref="producerCurrencyRoute" />
+        <camel:routeBuilder ref="consumerCurrencyRoute" />
+
+        <camel:route id="producerCurrencyRoute">
+            <camel:from uri="direct:start"/>
+            <camel:to uri="activemq:queue:first_queue" />
+        </camel:route>
+
+        <camel:route id="consumerCurrencyRoute">
+            <camel:from uri="activemq:queue:first_queue"/>
+            <camel:to uri="seda:end" />
+        </camel:route>
+    </camel:camelContext>
+
+
+</beans>

@@ -18,7 +18,7 @@ import java.util.List;
 public class CurrencyService {
 
     @Autowired
-    private CurrencyProducerConsumer currencyProducerConsumer;
+    private ProducerConsumerService producerConsumerService;
 
     private String urlRub = "http://www.nbrb.by/api/exrates/rates/rub?parammode=2";
     private String urlUsd = "http://www.nbrb.by/api/exrates/rates/usd?parammode=2";
@@ -77,13 +77,13 @@ public class CurrencyService {
 
     public List<String> getListFromActiveMQ() {
         try {
-            currencyProducerConsumer.produceJsonArrayOfCurrenciesToActiveMQ(getArrayForActiveMQ());
+            producerConsumerService.produceJsonArrayOfCurrenciesToActiveMQ(getArrayForActiveMQ());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         return new ArrayList<>(Arrays.asList(
-                currencyProducerConsumer.consumeJsonArrayOfCurrenciesFromActiveMQ()
+                producerConsumerService.consumeJsonArrayOfCurrenciesFromActiveMQ()
         ));
     }
 
@@ -100,4 +100,5 @@ public class CurrencyService {
 
         return currencyList;
     }
+
 }
