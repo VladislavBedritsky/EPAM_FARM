@@ -77,6 +77,11 @@
             <artifactId>jaxb-runtime</artifactId>
             <version>${jaxb-runtime.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

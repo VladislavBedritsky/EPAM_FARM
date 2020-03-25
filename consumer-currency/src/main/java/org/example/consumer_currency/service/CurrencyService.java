@@ -3,6 +3,9 @@ package org.example.consumer_currency.service;
 import org.example.consumer_currency.model.Currency;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -15,14 +18,18 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
+@PropertySource("classpath:application.properties")
 public class CurrencyService {
 
     @Autowired
     private CurrencyProducerConsumer currencyProducerConsumer;
 
-    private String urlRub = "http://www.nbrb.by/api/exrates/rates/rub?parammode=2";
-    private String urlUsd = "http://www.nbrb.by/api/exrates/rates/usd?parammode=2";
-    private String urlEur = "http://www.nbrb.by/api/exrates/rates/eur?parammode=2";
+    @Value("${rest.url.rub}")
+    private String URL_RUB;
+    @Value("${rest.url.usd}")
+    private String URL_USD;
+    @Value("${rest.url.eur}")
+    private String URL_EUR;
 
 
     public String getJsonFromRestUrl(String url) throws IOException {
@@ -46,12 +53,12 @@ public class CurrencyService {
         return response.toString();
     }
 
-    public String[] getArrayForActiveMQ () throws Exception {
+    public String[] getArrayForActiveMQ (String date) throws Exception {
         String[] arrayForActiveMQ = new String[0];
 
-        String currencyRUB = getJsonFromRestUrl(urlRub);
-        String currencyUSD = getJsonFromRestUrl(urlUsd);
-        String currencyEUR = getJsonFromRestUrl(urlEur);
+        String currencyRUB = getJsonFromRestUrl(URL_RUB+date);
+        String currencyUSD = getJsonFromRestUrl(URL_USD+date);
+        String currencyEUR = getJsonFromRestUrl(URL_EUR+date);
 
         arrayForActiveMQ = new String[] {
                     currencyRUB,
@@ -75,9 +82,12 @@ public class CurrencyService {
         return currency;
     }
 
-    public List<String> getListFromActiveMQ() {
+    public List<String> getListFromActiveMQ(String date) {
         try {
-            currencyProducerConsumer.produceJsonArrayOfCurrenciesToActiveMQ(getArrayForActiveMQ());
+            currencyProducerConsumer.produceJsonArrayOfCurrenciesToActiveMQ(
+                    getArrayForActiveMQ(
+                            date
+            ));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -87,10 +97,10 @@ public class CurrencyService {
         ));
     }
 
-    public List<Currency> getAllCurrencies() {
+    public List<Currency> getAllCurrencies(String date) {
         List<Currency> currencyList = new ArrayList<>();
 
-        for (String temp : getListFromActiveMQ()) {
+        for (String temp : getListFromActiveMQ(date)) {
             currencyList.add(
                     setCurrency(
                             convertStringToJsonObject(temp)
