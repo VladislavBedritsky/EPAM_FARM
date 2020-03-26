@@ -1,5 +1,6 @@
 package org.example.EPAM_FARM.rest;
 
+import org.example.EPAM_FARM.backend.model.Department;
 import org.example.EPAM_FARM.backend.model.Employee;
 import org.example.EPAM_FARM.backend.service.EmployeeService;
 import org.example.EPAM_FARM.rest.controller.RestEmployeeController;
@@ -12,6 +13,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.test.context.ContextConfiguration;
 
 import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.ArgumentMatchers.same;
 
 @RunWith(MockitoJUnitRunner.class)
 @ContextConfiguration(locations={"classpath*:test.xml"})
@@ -41,10 +43,14 @@ public class RestEmployeeControllerMockTest {
 
     @Test
     public void create() {
-        restEmployeeController.create(new Employee());
+        Department department = new Department();
+        department.setName("department");
+        Employee employee = new Employee();
+        employee.setDepartment(department);
 
+        restEmployeeController.saveEmployee(employee);
         Mockito.verify(employeeService,Mockito.times(1))
-                .saveEmployeeForRestController(isA(Employee.class));
+                .saveEmployee(isA(Employee.class),isA(String.class));
         Mockito.verify(employeeService,Mockito.times(1))
                 .findAll();
     }

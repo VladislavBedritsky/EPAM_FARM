@@ -1,6 +1,5 @@
 package org.example.EPAM_FARM.web_app.controller;
 
-import org.example.EPAM_FARM.backend.model.User;
 import org.example.EPAM_FARM.backend.service.DepartmentService;
 import org.example.EPAM_FARM.backend.service.UserService;
 import org.junit.Test;
@@ -41,6 +40,7 @@ public class DepartmentControllerMockTest {
                 .findAll();
         Mockito.verify(userService,Mockito.times(1))
                 .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class));
+
     }
 
     @Test

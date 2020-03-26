@@ -1,6 +1,5 @@
 package org.example.EPAM_FARM.web_app.controller;
 
-import org.example.EPAM_FARM.backend.model.User;
 import org.example.EPAM_FARM.backend.service.DepartmentService;
 import org.example.EPAM_FARM.backend.service.EmployeeService;
 import org.example.EPAM_FARM.backend.service.UserService;

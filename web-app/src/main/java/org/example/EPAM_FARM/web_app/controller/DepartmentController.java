@@ -1,12 +1,10 @@
 package org.example.EPAM_FARM.web_app.controller;
 
 import org.example.EPAM_FARM.backend.model.Department;
-import org.example.EPAM_FARM.backend.model.User;
 import org.example.EPAM_FARM.backend.service.DepartmentService;
 import org.example.EPAM_FARM.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -82,6 +80,7 @@ public class DepartmentController {
             @PathVariable Integer id,
             @RequestParam String name
     ) {
+
 
         jdbcStorageService.updateDepartment(id, name);
 

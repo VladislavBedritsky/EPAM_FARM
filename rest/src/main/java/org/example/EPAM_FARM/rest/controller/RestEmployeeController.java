@@ -35,7 +35,7 @@ public class RestEmployeeController {
 
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
-    public Employee create(
+    public Employee saveEmployee(
             @RequestBody Employee employee
     ) {
 
