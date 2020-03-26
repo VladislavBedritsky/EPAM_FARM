@@ -49,9 +49,9 @@ public class CurrencyService {
     public String[] getArrayForActiveMQ (String date) throws Exception {
         String[] arrayForActiveMQ = new String[0];
 
-        String currencyRUB = getJsonFromRestUrl(urlRub)+date;
-        String currencyUSD = getJsonFromRestUrl(urlUsd)+date;
-        String currencyEUR = getJsonFromRestUrl(urlEur)+date;
+        String currencyRUB = getJsonFromRestUrl(urlRub+date);
+        String currencyUSD = getJsonFromRestUrl(urlUsd+date);
+        String currencyEUR = getJsonFromRestUrl(urlEur+date);
 
         arrayForActiveMQ = new String[] {
                     currencyRUB,
