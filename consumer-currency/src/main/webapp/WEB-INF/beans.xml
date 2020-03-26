@@ -14,5 +14,6 @@
     <bean id="consumerCurrencyRoute" class="org.example.consumer_currency.routes.ConsumerCurrencyRoute" />
     <bean id="currencyProducerConsumer" class="org.example.consumer_currency.service.CurrencyProducerConsumer" />
     <bean id="currencyService" class="org.example.consumer_currency.service.CurrencyService" />
+    <bean id="currencyDynamicsService" class="org.example.consumer_currency.service.CurrencyDynamicsService" />
 
 </beans>

@@ -32,6 +32,7 @@ public class CurrencyService {
     private String URL_EUR;
 
 
+
     public String getJsonFromRestUrl(String url) throws IOException {
         URL obj = new URL(url);
         HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
@@ -110,4 +111,6 @@ public class CurrencyService {
 
         return currencyList;
     }
+
+
 }
