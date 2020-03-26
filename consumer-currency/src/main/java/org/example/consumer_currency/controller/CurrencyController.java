@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 
 @Controller
 @PropertySource("classpath:application.properties")
@@ -29,7 +28,6 @@ public class CurrencyController {
     @Value("${rest.url.eur_dynamics}")
     private String EUR_DYNAMICS;
 
-    private static final String today = LocalDate.now().toString();
 
     @GetMapping("/currency")
     public String getMain(
@@ -39,14 +37,13 @@ public class CurrencyController {
             @RequestParam(required = false) String endDate) throws Exception {
 
         if(startDate == null || endDate == null) {
-            endDate = today;
+            endDate = LocalDate.now().toString();
             startDate = LocalDate.now().minusDays(30).toString();
         }
 
-
         model.addAttribute("endDate",endDate);
         model.addAttribute("startDate", startDate);
-        model.addAttribute("today", today);
+        model.addAttribute("today", LocalDate.now().toString());
         model.addAttribute("currencies", currencyService.getAllCurrencies(date));
         model.addAttribute("RubDynamics", currencyDynamicsService
                 .getDynamicsFromStartDateToEndDate(RUB_DYNAMICS,startDate, endDate));
@@ -54,7 +51,7 @@ public class CurrencyController {
                 .getDynamicsFromStartDateToEndDate(USD_DYNAMICS,startDate, endDate));
         model.addAttribute("EurDynamics", currencyDynamicsService
                 .getDynamicsFromStartDateToEndDate(EUR_DYNAMICS,startDate, endDate));
-        model.addAttribute("dateArrays", currencyDynamicsService.getDateArray(startDate,endDate));
+        model.addAttribute("datesArray", currencyDynamicsService.getDatesBetweenStartDateAndEndDate(startDate,endDate));
 
         return "main";
     }

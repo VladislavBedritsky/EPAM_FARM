@@ -7,7 +7,12 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class CurrencyDynamicsService {
@@ -39,7 +44,17 @@ public class CurrencyDynamicsService {
         return result;
     }
 
-//    public String[] getDateArray(String startDate, String endDate) {
-//
-//    }
+    public List<String> getDatesBetweenStartDateAndEndDate(String startDate, String endDate) {
+
+        LocalDate st = LocalDate.parse(startDate);
+        LocalDate ed = LocalDate.parse(endDate);
+
+        List<String> dates = Stream.iterate(st, amount -> amount.plusDays(1))
+                .limit(ChronoUnit.DAYS.between(st,ed))
+                .map(LocalDate::toString)
+                .collect(Collectors.toList());
+
+        return dates;
+    }
+
 }

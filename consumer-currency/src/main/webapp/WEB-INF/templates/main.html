@@ -76,6 +76,7 @@ var usd = [[${UsdDynamics}]];
 var eur = [[${EurDynamics}]];
 var startDate = [[${startDate}]];
 var endDate = [[${endDate}]];
+var datesArray = [[${datesArray}]];
 
 var chartName = startDate+' : '+endDate ;
 var chart1;
@@ -90,7 +91,7 @@ $(document).ready(function(){
         {data: eur, name: 'EUR', color: 'brown'}
     ],
     xAxis: {
-        categories: ['1','2','5']
+        categories: datesArray
     }
   });
 });
