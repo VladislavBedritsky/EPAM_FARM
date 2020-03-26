@@ -13,10 +13,9 @@ public class CurrencyController {
     @Autowired
     private CurrencyService currencyService;
 
-    @GetMapping("/")
+    @GetMapping("/currency")
     public String getMain(Model model,
-                          @RequestParam String date) throws Exception {
-        System.out.println(date);
+                          @RequestParam(required = false) String date) throws Exception {
         model.addAttribute("currencies", currencyService.getAllCurrencies(date));
         return "main";
     }
