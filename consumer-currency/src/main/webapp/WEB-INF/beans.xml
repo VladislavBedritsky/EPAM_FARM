@@ -4,14 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-        <property name="brokerURL" value="tcp://localhost:8161" />
-        <property name="password" value="admin" />
-        <property name="userName" value="admin" />
-    </bean>
 
-    <bean id="producerCurrencyRoute" class="org.example.consumer_currency.routes.ProducerCurrencyRoute"/>
-    <bean id="consumerCurrencyRoute" class="org.example.consumer_currency.routes.ConsumerCurrencyRoute" />
     <bean id="currencyProducerConsumer" class="org.example.consumer_currency.service.CurrencyProducerConsumer" />
     <bean id="currencyService" class="org.example.consumer_currency.service.CurrencyService" />
     <bean id="currencyDynamicsService" class="org.example.consumer_currency.service.CurrencyDynamicsService" />
