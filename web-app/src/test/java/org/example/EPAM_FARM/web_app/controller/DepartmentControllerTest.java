@@ -1,34 +1,54 @@
 package org.example.EPAM_FARM.web_app.controller;
 
-import org.junit.Assert;
+import org.example.EPAM_FARM.backend.service.DepartmentService;
+import org.example.EPAM_FARM.backend.service.UserService;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mock.web.MockServletContext;
+import org.mockito.ArgumentMatchers;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.security.core.Authentication;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.web.context.WebApplicationContext;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import javax.servlet.ServletContext;
+import java.util.ArrayList;
 
-@WebAppConfiguration
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 @ContextConfiguration(locations={"classpath*:test-controller.xml"})
 public class DepartmentControllerTest {
 
+    @InjectMocks
+    private DepartmentController departmentController;
+    @Mock
+    private UserService userService;
+    @Mock
+    private DepartmentService jdbcStorageService;
 
-    @Autowired
-    private WebApplicationContext wac;
+    private MockMvc mockMvc;
+
+    @Before
+    public void setup() throws Exception {
+        this.mockMvc = MockMvcBuilders.standaloneSetup(this.departmentController).build();
+    }
+
 
     @Test
-    public void givenWac_whenServletContext_thenItProvidesDepartmentController() {
-        ServletContext servletContext = wac.getServletContext();
+    public void givenDepartmentsPageURI_whenMockMVC_thenReturnsDepartmentsViewName() throws Exception {
 
-        Assert.assertNotNull(servletContext);
-        Assert.assertTrue(servletContext instanceof MockServletContext);
-        Assert.assertNotNull(wac.getBean("departmentController"));
+        Mockito.lenient().doReturn(true).when(userService).isUserHasAdminRole(ArgumentMatchers.isA(Authentication.class));
+        Mockito.doReturn(new ArrayList<>()).when(jdbcStorageService).findAll();
 
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/departments/"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name("departments"));
+
+        Mockito.verify(jdbcStorageService,Mockito.times(1)).findAll();
     }
 
 }

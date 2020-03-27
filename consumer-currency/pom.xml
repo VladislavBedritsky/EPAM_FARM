@@ -12,33 +12,20 @@
     <artifactId>consumer-currency</artifactId>
     <packaging>jar</packaging>
 
-    <properties>
-        <jaxb-api.version>2.3.0</jaxb-api.version>
-        <jaxb-runtime.version>2.3.2</jaxb-runtime.version>
-        <env.camel.version>2.25.0</env.camel.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20160810</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
-            <version>${env.camel.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.apache.camel</groupId>-->
-<!--            <artifactId>camel-spring</artifactId>-->
-<!--            <version>${env.camel.version}</version>-->
-<!--        </dependency>-->
 
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-camel</artifactId>
-            <version>5.15.7</version>
         </dependency>
 
         <dependency>
@@ -69,13 +56,11 @@
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
-            <version>${jaxb-api.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>${jaxb-runtime.version}</version>
         </dependency>
 
         <dependency>

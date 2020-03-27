@@ -1,7 +1,5 @@
 package org.example.EPAM_FARM.web_app.controller;
 
-import org.example.EPAM_FARM.backend.service.DepartmentService;
-import org.example.EPAM_FARM.backend.service.EmployeeService;
 import org.example.EPAM_FARM.backend.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,18 +16,13 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.util.ArrayList;
 
 @RunWith(MockitoJUnitRunner.class)
 @ContextConfiguration(locations={"classpath*:test-controller.xml"})
-public class EmployeeControllerTest {
+public class MainControllerTest {
 
     @InjectMocks
-    private EmployeeController employeeController;
-    @Mock
-    private EmployeeService employeeService;
-    @Mock
-    private DepartmentService departmentService;
+    private MainController mainController;
     @Mock
     private UserService userService;
 
@@ -37,23 +30,32 @@ public class EmployeeControllerTest {
 
     @Before
     public void setup() throws Exception {
-        this.mockMvc = MockMvcBuilders.standaloneSetup(this.employeeController).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(this.mainController).build();
     }
-
 
     @Test
-    public void givenEmployeesPageURI_whenMockMVC_thenReturnsEmployeesViewName() throws Exception {
+    public void givenMainPageURI_whenMockMVC_thenReturnsIndexViewName() throws Exception {
 
         Mockito.lenient().doReturn(true).when(userService).isUserHasAdminRole(ArgumentMatchers.isA(Authentication.class));
-        Mockito.doReturn(new ArrayList<>()).when(employeeService).findAll();
-        Mockito.doReturn(new ArrayList<>()).when(departmentService).findAll();
 
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/employees/"))
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.view().name("employees"));
-
-        Mockito.verify(employeeService,Mockito.times(1)).findAll();
-        Mockito.verify(departmentService,Mockito.times(1)).findAll();
+                .andExpect(MockMvcResultMatchers.view().name("index"));
     }
 
+    @Test
+    public void givenLoginPageURI_whenMockMVC_thenReturnsLoginViewName() throws Exception {
+
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/login/"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name("login"));
+    }
+
+    @Test
+    public void givenAccessDeniedPageURI_whenMockMVC_thenReturnsAccessDeniedViewName() throws Exception {
+
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/accessdenied/"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name("denied"));
+    }
 }

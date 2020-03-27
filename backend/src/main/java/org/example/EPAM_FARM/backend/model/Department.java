@@ -1,8 +1,5 @@
 package org.example.EPAM_FARM.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import org.example.EPAM_FARM.backend.json_view.View;
-
 import java.util.Objects;
 
 public class Department {

@@ -49,6 +49,7 @@ public class UserServiceImpl implements UserService {
         return userDao.findAll();
     }
 
+    @Override
     public void checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(Model model) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
