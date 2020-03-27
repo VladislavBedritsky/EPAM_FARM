@@ -35,3 +35,27 @@ _localhost:80_,  _nginx.epam-farm.net_
 2. Linux - `/etc/hosts`
  
 **E.g.** `config/nginx/hosts`
+
+## Oauth2-server
+_localhost:8981_
+   
+Location: `./oauth`
+
+## Config-server
+_localhost:8980_
+   
+ Location: `https://github.com/VladislavBedritsky/server-config`
+ 
+## Oauth2-server
+_localhost:8981_
+   
+Location: `./oauth`
+
+## Angular-app
+_localhost:4200_
+   
+ Location: `./angular`
+ 
+ Command to start: `ng serve`
+ 
+ 
