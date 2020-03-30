@@ -44,13 +44,8 @@ Location: `./oauth`
 ## Config-server
 _localhost:8980_
    
- Location: `https://github.com/VladislavBedritsky/server-config`
+Location: `https://github.com/VladislavBedritsky/server-config`
  
-## Oauth2-server
-_localhost:8981_
-   
-Location: `./oauth`
-
 ## Angular-app
 _localhost:4200_
    
