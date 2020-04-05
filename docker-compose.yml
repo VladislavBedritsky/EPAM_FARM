@@ -27,7 +27,7 @@ services:
     restart: on-failure
 
   sonarqube:
-    image: library/sonarqube:latest
+    image: vladquinn/sonarqube:latest
     ports:
       - 9000:9000
     container_name: sonarqube
@@ -38,7 +38,7 @@ services:
     restart: on-failure
 
   artifactory:
-    image: docker.bintray.io/jfrog/artifactory-oss:latest
+    image: docker.bintray.io/jfrog/artifactory-oss:6.17.0
     ports:
       - 8081:8081
     container_name: artifactory
