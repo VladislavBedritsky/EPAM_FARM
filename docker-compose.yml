@@ -60,7 +60,7 @@ services:
     restart: on-failure
 
   mysql:
-    image: mysql:latest
+    image: mysql:8.0
     networks:
       - net
     environment:
