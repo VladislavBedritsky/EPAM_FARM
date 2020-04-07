@@ -27,7 +27,10 @@ services:
     restart: on-failure
 
   sonarqube:
-    image: sonarqube:7.9-community
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vladquinn/sonarqube:latest
     ports:
       - 9000:9000
     container_name: sonarqube
