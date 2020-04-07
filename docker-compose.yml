@@ -27,7 +27,7 @@ services:
     restart: on-failure
 
   sonarqube:
-    image: vladquinn/sonarqube:latest
+    image: sonarqube:7.9.3-community
     ports:
       - 9000:9000
     container_name: sonarqube
