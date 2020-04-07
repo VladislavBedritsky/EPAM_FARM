@@ -27,13 +27,13 @@ services:
     restart: on-failure
 
   sonarqube:
-    user: root
     image: sonarqube:7.9.3-community
     ports:
       - 9000:9000
     container_name: sonarqube
     networks:
       - net
+    user: root
     volumes:
       - ./config/sonarqube/data/sonar.h2.db:/opt/sonarqube/data/sonar.h2.db
     restart: on-failure
