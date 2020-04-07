@@ -33,7 +33,6 @@ services:
     container_name: sonarqube
     networks:
       - net
-    user: root
     volumes:
       - ./config/sonarqube/data/sonar.h2.db:/opt/sonarqube/data/sonar.h2.db
     restart: on-failure
