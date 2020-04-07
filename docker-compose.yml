@@ -27,14 +27,12 @@ services:
     restart: on-failure
 
   sonarqube:
-    image: sonarqube:7.9-community
+    image: vladquinn/sonarqube:latest
     ports:
       - 9000:9000
     container_name: sonarqube
     networks:
       - net
-    volumes:
-      - ./config/sonarqube/sonar.h2.db:/opt/sonarqube/data/sonar.h2.db
     restart: on-failure
 
   artifactory:
