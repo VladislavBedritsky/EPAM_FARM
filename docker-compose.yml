@@ -27,6 +27,7 @@ services:
     restart: on-failure
 
   sonarqube:
+    user: root
     image: sonarqube:7.9.3-community
     ports:
       - 9000:9000
