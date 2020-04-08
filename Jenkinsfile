@@ -5,7 +5,7 @@ pipeline {
             steps {
 
                 withSonarQubeEnv('Sonarqube') {
-                    sh 'mvn clean install -Dmaven.test.failure.ignore=true sonar:sonar'
+                    sh 'mvn clean install -Dmaven.test.failure.ignore=true -Dliquibase.should.run=false sonar:sonar'
                 }
 
                 timeout(time: 1, unit: 'HOURS') {
@@ -22,6 +22,11 @@ pipeline {
                 always {
                     junit '**/surefire-reports/*.xml'
                     recordIssues(tools: [checkStyle(), pmdParser(), spotBugs(useRankAsPriority: true)])
+                }
+                failure {
+                    script {
+                        mail bcc: '', body: 'Snapshot stage failed.', cc: '', from: '', replyTo: '', subject: 'SNAPSHOT FAILED', to: 'uladzislau_biadrytski@epam.com'
+                    }
                 }
             }
         }
