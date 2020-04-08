@@ -87,7 +87,7 @@ services:
       dockerfile: Dockerfile
     image: oauth-server
     ports:
-      - 8980:8980
+      - 8981:8981
     container_name: oauth-server
 
 networks:
