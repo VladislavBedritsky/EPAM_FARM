@@ -4,12 +4,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
 
     <mvc:default-servlet-handler/>
     <mvc:resources mapping="/resources/**" location="/resources/"/>
@@ -22,13 +25,21 @@
     </mvc:cors>
 
     <context:component-scan base-package="org.example.*"/>
-    <context:property-placeholder location="classpath:rest.properties"/>
+
+    <!--      SPRING-CLOUD_CONFIG -->
+    <util:properties id="home" location="http://18.185.120.99:8980/rest-home.properties" />
+    <util:properties id="epam" location="http://18.185.120.99:8980/rest-epam.properties" />
+    <util:properties id="prod" location="http://18.185.120.99:8980/rest-prod.properties" />
+    <context:property-placeholder properties-ref="prod"
+                                  ignore-resource-not-found="true"
+                                  ignore-unresolvable="true"
+                                  order="0" />
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-                <property name="driverClassName" value="${jdbc.driverClassName}"/>
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
+                <property name="driverClassName" value="${db.driver}"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
     </bean>
 
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-@PropertySource({"classpath:sql_department.properties", "classpath:db.properties"})
+@PropertySource({"classpath:sql_department.properties"})
 public class JdbcStorageDaoImpl implements DepartmentDao {
 
     private Connection connection;
