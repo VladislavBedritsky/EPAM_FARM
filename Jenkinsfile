@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
 
-                    def ret = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" http://192.168.99.101:8081/artifactory/api/storage/libs-release-local/org/example/EPAM_FARM/1.96/EPAM_FARM-1.96.pom', returnStdout: true)
+                    def ret = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8081/artifactory/api/storage/libs-release-local/org/example/EPAM_FARM/1.96/EPAM_FARM-1.96.pom', returnStdout: true)
                     if (ret == "200") {
                         currentBuild.result = 'FAILURE'
                         error "release failed"
@@ -65,13 +65,13 @@ pipeline {
                     deploy adapters: [tomcat8(credentialsId: 'cd34afab-d0bd-4e08-949e-d2f2ebf703ef', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'web-app/target/*.war'
                     sh 'sleep 10'
 
-                    def statusRest = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://18.185.120.99:8087/rest-1.96/employees/', returnStdout: true)
+                    def statusRest = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8087/rest-1.96/employees/', returnStdout: true)
                     if (statusRest != "200") {
                         currentBuild.result = 'FAILURE'
                         error "deploy failed"
                     }
 
-                    def statusWebApp = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://18.185.120.99:8087/web-app-1.96/', returnStdout: true)
+                    def statusWebApp = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8087/web-app-1.96/', returnStdout: true)
                     if (statusWebApp != "200") {
                         currentBuild.result = 'FAILURE'
                         error "deploy failed"
