@@ -81,6 +81,15 @@ services:
       - ./config/ldap/ldap-data.ldif:/my/ldap-data.ldif
     restart: on-failure
 
+  oauth-server:
+    build:
+      context: ./oauth/
+      dockerfile: Dockerfile
+    image: oauth-server
+    ports:
+      - 8980:8980
+    container_name: oauth-server
+
 networks:
   net:
     driver: bridge
