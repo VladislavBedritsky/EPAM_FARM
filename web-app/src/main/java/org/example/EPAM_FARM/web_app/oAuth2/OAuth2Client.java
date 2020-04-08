@@ -1,7 +1,9 @@
 package org.example.EPAM_FARM.web_app.oAuth2;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestOperations;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
@@ -15,16 +17,25 @@ import javax.annotation.Resource;
 @EnableOAuth2Client
 public class OAuth2Client {
 
+    @Value("${security.oauth2.client.clientId}")
+    private String CLIENT_ID;
+    @Value("${security.oauth2.client.clientSecret}")
+    private String CLIENT_SECRET;
+    @Value("${security.oauth2.client.accessTokenUri}")
+    private String ACCESS_TOKEN_URI;
+    @Value("${security.oauth2.client.userAuthorizationUri}")
+    private String USER_AUTHORIZATION_URI;
+
     @Resource
     private OAuth2ClientContext oAuth2ClientContext;
 
     @Bean
     public OAuth2ProtectedResourceDetails resourceDetails() {
         AuthorizationCodeResourceDetails resource = new AuthorizationCodeResourceDetails();
-        resource.setClientId("ClientId");
-        resource.setClientSecret("secret");
-        resource.setAccessTokenUri("http://localhost:8981/auth/oauth/token");
-        resource.setUserAuthorizationUri("http://localhost:8981/auth/oauth/authorize");
+        resource.setClientId(CLIENT_ID);
+        resource.setClientSecret(CLIENT_SECRET);
+        resource.setAccessTokenUri(ACCESS_TOKEN_URI);
+        resource.setUserAuthorizationUri(USER_AUTHORIZATION_URI);
 
         return resource;
     }

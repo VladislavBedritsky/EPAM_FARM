@@ -1,6 +1,7 @@
 package org.example.EPAM_FARM.web_app.oAuth2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +25,12 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
     @Autowired
     private OAuth2RestOperations oAuth2RestTemplate;
 
-    private static final String LOGIN_URL = "/login";
+    @Value("${security.oauth2.client.clientId}")
+    private String CLIENT_ID;
+    @Value("${security.oauth2.resource.userInfoUri}")
+    private String USER_INFO_URI;
+
+    private String LOGIN_URL = "/login";
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -58,8 +64,8 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
 
         oAuth2Filter.setRestTemplate(oAuth2RestTemplate);
 
-        oAuth2Filter.setTokenServices(new UserInfoTokenServices("http://localhost:8981/auth/rest/user",
-                "ClientId"));
+        oAuth2Filter.setTokenServices(new UserInfoTokenServices(
+                USER_INFO_URI, CLIENT_ID));
 
         return oAuth2Filter;
     }

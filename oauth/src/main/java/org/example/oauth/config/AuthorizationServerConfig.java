@@ -36,6 +36,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Value("${config.oauth2.redirectUri2}")
     private String URI_2;
 
+    @Value("${config.oauth2.redirectUri3}")
+    private String URI_3;
+
     @Value("${config.oauth2.clientId}")
     private String CLIENT_ID;
 
@@ -65,7 +68,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .scopes(SCOPE)
                 .autoApprove(true)
                 .redirectUris(
-                        URI_1,URI_2)
+                        URI_1,URI_2,URI_3)
                 .accessTokenValiditySeconds(20000)
                 .refreshTokenValiditySeconds(20000);
     }
