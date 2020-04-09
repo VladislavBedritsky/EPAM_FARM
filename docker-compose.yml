@@ -89,6 +89,21 @@ services:
     ports:
       - 8981:8981
     container_name: oauth-server
+    networks:
+      - net
+    restart: on-failure
+
+  angular:
+    build:
+      context: ./angular/
+      dockerfile: Dockerfile
+    image: angular
+    ports:
+      - 4200:4200
+    container_name: angular
+    networks:
+      - net
+    restart: on-failure
 
 networks:
   net:

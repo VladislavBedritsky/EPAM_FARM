@@ -43,7 +43,7 @@
             <tbody>
             <tr th:each="a:${department_employees}">
                 <td th:text="${a.id}"></td>
-                <td><a th:text="${a.name}" th:href="@{/{q}/employees/{id}(q=${artifact_name})(id=${a.id})}" id="link_in_table1"></a></td>
+                <td><a th:text="${a.name}" th:href="@{/employees/{id}(id=${a.id})}" id="link_in_table1"></a></td>
                 <td th:text="${a.birthday}"></td>
                 <td th:text="${a.salary}"></td>
             </tr>

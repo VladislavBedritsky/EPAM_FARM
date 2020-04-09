@@ -6,7 +6,6 @@ import org.example.EPAM_FARM.backend.service.DepartmentService;
 import org.example.EPAM_FARM.backend.service.EmployeeService;
 import org.example.EPAM_FARM.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,9 +24,6 @@ public class EmployeeController {
     @Autowired
     private UserService userService;
 
-    @Value("${project.web-app.name}")
-    private String ARTIFACT_NAME;
-
     @GetMapping
     public String getEmployees(
             Model model) {
@@ -35,7 +31,6 @@ public class EmployeeController {
         userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
         model.addAttribute("employees", employeeService.findAll());
         model.addAttribute("departments", departmentService.findAll());
-        model.addAttribute("artifact_name",ARTIFACT_NAME);
 
         return "employees";
     }
@@ -47,8 +42,6 @@ public class EmployeeController {
     ) {
         userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
         model.addAttribute("employee", employeeService.findById(id));
-        model.addAttribute("artifact_name",ARTIFACT_NAME);
-
         return "employee";
     }
 
