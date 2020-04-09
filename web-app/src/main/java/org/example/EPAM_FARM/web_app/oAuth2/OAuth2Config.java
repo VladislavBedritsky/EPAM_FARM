@@ -42,7 +42,7 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint())
                 .and()
                 .authorizeRequests()
-                .antMatchers("/","/login**","/web-app-1.01").permitAll()
+                .antMatchers("/","/login**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/").deleteCookies("JSESSIONID");
@@ -52,7 +52,7 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/static/**");
+                .antMatchers("/resources/**");
     }
 
     @Bean

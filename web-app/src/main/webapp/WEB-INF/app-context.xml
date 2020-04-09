@@ -17,8 +17,7 @@
     <import resource="beans.xml"/>
 
     <mvc:default-servlet-handler/>
-    <mvc:resources mapping="/static/**" location="/static/"/>
-    <!--    <mvc:view-controller path="/login" view-name="login"/>-->
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
     <mvc:annotation-driven>
         <mvc:argument-resolvers>
             <bean class="org.springframework.security.web.method.annotation.AuthenticationPrincipalArgumentResolver" />
