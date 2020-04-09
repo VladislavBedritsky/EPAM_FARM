@@ -4,6 +4,7 @@ import org.example.EPAM_FARM.backend.model.Department;
 import org.example.EPAM_FARM.backend.service.DepartmentService;
 import org.example.EPAM_FARM.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,12 +23,16 @@ public class DepartmentController {
     @Autowired
     private UserService userService;
 
+    @Value("${project.web-app.name}")
+    private String ARTIFACT_NAME;
+
     @GetMapping
     public String getDepartments (
             Model model) {
 
         userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
         model.addAttribute("departments", jdbcStorageService.findAll());
+        model.addAttribute("artifact_name",ARTIFACT_NAME);
 
         return "departments";
     }
@@ -41,7 +46,7 @@ public class DepartmentController {
         model.addAttribute("department", jdbcStorageService.findById(id));
         model.addAttribute("department_employees", departmentService.findEmployeesByDepartmentId(id));
         model.addAttribute("average_salary",departmentService.getAverageSalaryInDepartment(id));
-
+        model.addAttribute("artifact_name",ARTIFACT_NAME);
         return "department";
     }
 

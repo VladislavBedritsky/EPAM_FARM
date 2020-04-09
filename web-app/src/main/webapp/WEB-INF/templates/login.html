@@ -23,7 +23,7 @@
                 <div align="center">
                     <img  class="profile-img align-self-start rounded-circle"  src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120">
                 </div>
-                <form class="form-signin" th:action="@{/login}" method="post">
+                <form class="form-signin" th:action="@{/{q}/login(q=${artifact_name})}" method="post">
                     <input type="text" class="form-control mt-4" placeholder="Username" name="username" required autofocus>
                     <input type="password" class="form-control mt-2" placeholder="Password" name="password" required>
                     <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">
@@ -35,7 +35,7 @@
                         <input type="checkbox" value="remember-me">
                         Remember me
                     </label>
-                    <a href="/" class="pull-right mt-4">
+                    <a th:href="@{/{q}(q=${artifact_name})}" class="pull-right mt-4">
                         Main page
                     </a>
                 </form>
