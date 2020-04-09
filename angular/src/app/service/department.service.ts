@@ -9,7 +9,7 @@ import { Department } from 'src/app/common/department'
 })
 export class DepartmentService {
 
-  private baseUrl = "http://localhost:8080/departments";
+  private baseUrl = "http://35.239.53.104:8087/rest-1.01/departments";
 
   constructor(private httpClient: HttpClient) { }
 

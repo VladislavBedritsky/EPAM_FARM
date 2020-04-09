@@ -15,11 +15,13 @@ export class User{
 })
 export class AppService {
 
+  private baseUrl = "http://35.239.53.104:8087/rest-1.01/user"
+
   constructor(private httpClient:HttpClient) { }
 
   authenticate(username, password) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.httpClient.get<User>('http://localhost:8080/user',{headers}).pipe(
+    return this.httpClient.get<User>(this.baseUrl,{headers}).pipe(
      map(
        userData => {
         sessionStorage.setItem('username',username);
