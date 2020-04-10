@@ -28,9 +28,13 @@ public class CurrencyController {
     @Value("${rest.url.eur_dynamics}")
     private String EUR_DYNAMICS;
 
+    @GetMapping("/")
+    public String main() {
+        return "ind";
+    }
 
     @GetMapping("/currency")
-    public String getMain(
+    public String getCurrency(
             Model model,
             @RequestParam(required = false) String date,
             @RequestParam(required = false) String startDate,

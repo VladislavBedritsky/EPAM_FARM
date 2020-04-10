@@ -1,13 +1,22 @@
-### EPAM_FARM_PROJECT
+## EPAM_FARM PROJECT
 
-`App in progress`
+_**App in progress**_
 
+ ## Tomcat 
+ _http://35.239.53.104:8087/_
+ * username: `jenkins`
+ * password: `jenkins`
+
+You can find here 3 apps:
+ * `./web-app`
+ * `./rest`
+ * `./consumer-currency`
+ 
 ## Angular-app
 _http://35.239.53.104:4200/_
    
  Location: `./angular/`
  
-
 ## Jenkins
 _http://35.239.53.104:8089/_
 * username: `admin`
@@ -18,10 +27,7 @@ _http://35.239.53.104:9000/_
 * username: `admin`
 * password: `admin`
 
-## Tomcat 
-_http://35.239.53.104:8087/_
-* username: `jenkins`
-* password: `jenkins`
+
 
 ## Artifactory
 _http://35.239.53.104:8081/_
@@ -32,6 +38,11 @@ _http://35.239.53.104:8081/_
 3. Skip step "Configure a Proxy Server"
 4. Create Maven repository in step "Create Repositories"
 5. Finish
+
+## ActiveMQ
+_http://35.239.53.104:8161/_
+* username: `admin`
+* password: `admin`
 
 ## Nginx 
 _http://35.239.53.104:80/_

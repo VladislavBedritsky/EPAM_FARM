@@ -68,6 +68,7 @@ pipeline {
                     sh 'mvn clean install -Dmaven.test.skip=true -Dliquibase.should.run=false'
                     deploy adapters: [tomcat8(credentialsId: 'cd34afab-d0bd-4e08-949e-d2f2ebf703ef', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'rest/target/*.war'
                     deploy adapters: [tomcat8(credentialsId: 'cd34afab-d0bd-4e08-949e-d2f2ebf703ef', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'web-app/target/*.war'
+                    deploy adapters: [tomcat8(credentialsId: 'cd34afab-d0bd-4e08-949e-d2f2ebf703ef', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'consumer-currency/target/*.war'
                     sh 'sleep 10'
 
                     def statusRest = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8087/rest-1.01/employees/', returnStdout: true)
@@ -78,6 +79,12 @@ pipeline {
 
                     def statusWebApp = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8087/web-app-1.01/', returnStdout: true)
                     if (statusWebApp != "200") {
+                        currentBuild.result = 'FAILURE'
+                        error "deploy failed"
+                    }
+
+                    def statusConsumer = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8087/consumer-currency-1.01/currency/', returnStdout: true)
+                    if (statusConsumer != "200") {
                         currentBuild.result = 'FAILURE'
                         error "deploy failed"
                     }
