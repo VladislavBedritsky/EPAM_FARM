@@ -2,23 +2,29 @@
 
 `App in progress`
 
+## Angular-app
+_http://35.239.53.104:4200/_
+   
+ Location: `./angular/`
+ 
+
 ## Jenkins
-_localhost:8089_,  _jenkins.epam-farm.net_
+_http://35.239.53.104:8089/_
 * username: `admin`
 * password: `admin`
 
 ## Sonarqube
-_localhost:9000_,  _sonarqube.epam-farm.net_
+_http://35.239.53.104:9000/_
 * username: `admin`
 * password: `admin`
 
 ## Tomcat 
-_localhost:8087_,  _tomcat.epam-farm.net_
+_http://35.239.53.104:8087/_
 * username: `jenkins`
 * password: `jenkins`
 
 ## Artifactory
-_localhost:8081_,  _artifactory.epam-farm.net_
+_http://35.239.53.104:8081/_
 
 **Steps for sign in:**
 1. Username: `admin`; Password: `password`;
@@ -28,29 +34,17 @@ _localhost:8081_,  _artifactory.epam-farm.net_
 5. Finish
 
 ## Nginx 
-_localhost:80_,  _nginx.epam-farm.net_
-
-**To configure subdomains you have to update folder `hosts`**
-1. In Windows10 - `C:\Windows\System32\drivers\etc\hosts`
-2. Linux - `/etc/hosts`
- 
-**E.g.** `config/nginx/hosts`
+_http://35.239.53.104:80/_
 
 ## Oauth2-server
-_localhost:8981_
+_http://18.185.120.99:8981/auth/rest/user_
    
-Location: `./oauth`
+Location: `./oauth/`
 
 ## Config-server
-_localhost:8980_
+_http://18.185.120.99:8980/rest-prod.properties/_
    
 Location: `https://github.com/VladislavBedritsky/server-config`
- 
-## Angular-app
-_localhost:4200_
-   
- Location: `./angular`
- 
- Command to start: `ng serve`
+
  
  
