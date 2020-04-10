@@ -108,6 +108,7 @@ services:
 
   activemq:
     image: webcenter/activemq:5.15.2
+    container_name: angular
     ports:
       - 8161:8161
       - 61616:61616
@@ -115,6 +116,9 @@ services:
     environment:
       ACTIVEMQ_ADMIN_LOGIN: admin
       ACTIVEMQ_ADMIN_PASSWORD: admin
+    networks:
+      - net
+    restart: on-failure
 
 networks:
   net:
