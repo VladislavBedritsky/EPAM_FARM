@@ -119,18 +119,6 @@ services:
       - net
     restart: on-failure
 
-  consumer-currency:
-    build:
-      context: ./consumer-currency/
-      dockerfile: Dockerfile
-    image: consumer
-    ports:
-      - 8162:8080
-    networks:
-      - net
-    container_name: consumer
-    restart: on-failure
-
 networks:
   net:
     driver: bridge

@@ -27,8 +27,6 @@ _http://35.239.53.104:9000/_
 * username: `admin`
 * password: `admin`
 
-
-
 ## Artifactory
 _http://35.239.53.104:8081/_
 
