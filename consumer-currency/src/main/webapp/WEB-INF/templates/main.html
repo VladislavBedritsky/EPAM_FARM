@@ -12,7 +12,16 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script th:inline="javascript">
+        var rub = [[${RubDynamics}]];
+        var usd = [[${UsdDynamics}]];
+        var eur = [[${EurDynamics}]];
+        var startDate = [[${startDate}]];
+        var endDate = [[${endDate}]];
+        var datesArray = [[${datesArray}]];
+    </script>
 
+    <link rel="stylesheet" th:href="@{/resources/static/css/main.css}">
 </head>
 <body>
 
@@ -67,36 +76,8 @@
     </div>
 </form>
 
-<div id="container1" style="margin-top: 10px; width: 700px; height: 400px "></div>
-
-
-<script type="text/javascript" th:inline="javascript">
-
-var rub = [[${RubDynamics}]];
-var usd = [[${UsdDynamics}]];
-var eur = [[${EurDynamics}]];
-var startDate = [[${startDate}]];
-var endDate = [[${endDate}]];
-var datesArray = [[${datesArray}]];
-
-var chartName = startDate+' : '+endDate ;
-var chart1;
-
-$(document).ready(function(){
-  chart1 = new Highcharts.Chart({
-    chart: {renderTo: 'container1'},
-    title: {text: chartName},
-    series: [
-        {data: rub, name: 'RUB'},
-        {data: usd, name: 'USD', color: 'green'},
-        {data: eur, name: 'EUR', color: 'brown'}
-    ],
-    xAxis: {
-        categories: datesArray
-    }
-  });
-});
-
+<div id="container1"></div>
+<script type="text/javascript" th:src="@{/resources/static/js/chart.js}">
 </script>
 
 
@@ -104,7 +85,6 @@ $(document).ready(function(){
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 <script src="https://use.fontawesome.com/3108c34e76.js"></script>
 
 </body>
