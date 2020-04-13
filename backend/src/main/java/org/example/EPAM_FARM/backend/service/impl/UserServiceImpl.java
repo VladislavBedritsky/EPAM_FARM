@@ -1,7 +1,6 @@
 package org.example.EPAM_FARM.backend.service.impl;
 
 import org.example.EPAM_FARM.backend.dao.UserDao;
-import org.example.EPAM_FARM.backend.model.Employee;
 import org.example.EPAM_FARM.backend.model.Role;
 import org.example.EPAM_FARM.backend.model.User;
 import org.example.EPAM_FARM.backend.service.UserService;
@@ -14,7 +13,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import java.util.Collections;
 import java.util.List;
 
 @Service
