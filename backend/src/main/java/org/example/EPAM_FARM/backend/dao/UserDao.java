@@ -12,4 +12,8 @@ public interface UserDao {
     User findByUsername(String username);
 
     List<Role> findUserRolesByUsername(String username);
+
+    void saveUser(User registrationUser);
+
+    void setUserRole(Integer userId);
 }

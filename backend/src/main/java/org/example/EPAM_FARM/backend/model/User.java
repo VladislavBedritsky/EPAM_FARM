@@ -22,6 +22,15 @@ public class User implements UserDetails {
 
     private List<Role> roles;
 
+    public User (){}
+    public User (String firstName, String lastName, String username, String password, String email, String birthday) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.birthday = LocalDate.parse(birthday);
+    }
 
     public Integer getId() {
         return id;

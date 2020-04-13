@@ -1,10 +1,12 @@
 package org.example.EPAM_FARM.backend.service.impl;
 
 import org.example.EPAM_FARM.backend.dao.UserDao;
+import org.example.EPAM_FARM.backend.model.Employee;
 import org.example.EPAM_FARM.backend.model.Role;
 import org.example.EPAM_FARM.backend.model.User;
 import org.example.EPAM_FARM.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -69,6 +72,27 @@ public class UserServiceImpl implements UserService {
             }
         }
         return false;
+    }
+
+    @Override
+    public boolean saveUser(User registrationUser) {
+
+        try {
+            User userFromDB = userDao.findByUsername(registrationUser.getUsername());
+        } catch (EmptyResultDataAccessException e) {
+            registrationUser.setActive(true);
+            userDao.saveUser(registrationUser);
+            userDao.setUserRole(getLastUserId());
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public Integer getLastUserId() {
+        User getLast = userDao.findAll().stream().reduce((first, second) -> second).orElse(null);
+        return getLast.getId();
     }
 
 }
