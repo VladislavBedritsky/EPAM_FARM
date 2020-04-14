@@ -36,7 +36,7 @@
     </changeSet>
 
     <changeSet context="legacy" author="author (generated)" id="4">
-        <sql>SET FOREIGN_KEY_CHECKS=0;</sql>
+
         <insert tableName="users">
             <column name="id">1</column>
             <column name="username">q</column>
@@ -51,10 +51,10 @@
             <column name="user_id">1</column>
             <column name="role">ADMIN</column>
         </insert>
-        <sql>SET FOREIGN_KEY_CHECKS=1;</sql>
 
         <rollback>
-            SET FOREIGN_KEY_CHECKS=0;
+            ALTER TABLE users DISABLE TRIGGER ALL;
+            ALTER TABLE roles DISABLE TRIGGER ALL;
             DELETE FROM roles WHERE user_id = 1;
             DELETE FROM users WHERE id = 1;
         </rollback>
