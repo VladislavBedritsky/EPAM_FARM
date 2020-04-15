@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet context="legacy" author="author (generated)" id="6">
-        <sql>SET FOREIGN_KEY_CHECKS=0;</sql>
+
         <insert tableName="departments">
             <column name="id">2</column>
             <column name="name">Finance Department</column>
@@ -49,10 +49,8 @@
             <column name="salary">3990.2</column>
             <column name="department_id">3</column>
         </insert>
-        <sql>SET FOREIGN_KEY_CHECKS=1;</sql>
 
         <rollback>
-            SET FOREIGN_KEY_CHECKS=0;
             DELETE FROM employees WHERE id = 2;
             DELETE FROM employees WHERE id = 3;
             DELETE FROM employees WHERE id = 4;
@@ -60,7 +58,6 @@
             DELETE FROM employees WHERE id = 6;
             DELETE FROM departments WHERE id = 2;
             DELETE FROM departments WHERE id = 3;
-            SET FOREIGN_KEY_CHECKS=1;
         </rollback>
 
     </changeSet>

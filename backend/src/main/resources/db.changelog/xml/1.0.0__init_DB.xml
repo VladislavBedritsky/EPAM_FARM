@@ -26,7 +26,7 @@
         </createIndex>
         <addForeignKeyConstraint baseTableName="employees" baseColumnNames="department_id" constraintName="department_id"
                                  referencedTableName="departments"
-                                 referencedColumnNames="id" />
+                                 referencedColumnNames="id" onDelete="CASCADE" onUpdate="CASCADE"/>
 
         <rollback>
             <dropTable tableName="employees"/>

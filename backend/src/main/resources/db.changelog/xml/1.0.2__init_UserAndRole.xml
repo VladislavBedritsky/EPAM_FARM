@@ -27,7 +27,7 @@
         </createIndex>
         <addForeignKeyConstraint baseTableName="roles" baseColumnNames="user_id" constraintName="user_id"
                                  referencedTableName="users"
-                                 referencedColumnNames="id" />
+                                 referencedColumnNames="id" onDelete="CASCADE" onUpdate="CASCADE"/>
 
         <rollback>
             <dropTable tableName="roles"/>
@@ -36,11 +36,16 @@
     </changeSet>
 
     <changeSet context="legacy" author="author (generated)" id="4">
-        <sql>SET FOREIGN_KEY_CHECKS=0;</sql>
         <insert tableName="users">
             <column name="id">1</column>
             <column name="username">q</column>
             <column name="password">q</column>
+            <column name="active">1</column>
+        </insert>
+        <insert tableName="users">
+            <column name="id">2</column>
+            <column name="username">qw</column>
+            <column name="password">qw</column>
             <column name="active">1</column>
         </insert>
         <insert tableName="roles">
@@ -51,12 +56,16 @@
             <column name="user_id">1</column>
             <column name="role">ADMIN</column>
         </insert>
-        <sql>SET FOREIGN_KEY_CHECKS=1;</sql>
+        <insert tableName="roles">
+            <column name="user_id">2</column>
+            <column name="role">USER</column>
+        </insert>
 
         <rollback>
-            SET FOREIGN_KEY_CHECKS=0;
             DELETE FROM roles WHERE user_id = 1;
+            DELETE FROM roles WHERE user_id = 2;
             DELETE FROM users WHERE id = 1;
+            DELETE FROM users WHERE id = 2;
         </rollback>
 
     </changeSet>
