@@ -1,5 +1,7 @@
 package org.example.consumerCurrency.service;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,9 +17,10 @@ import java.util.stream.Stream;
 @Service
 public class CurrencyDynamicsService {
 
+    private static Logger LOGGER = LogManager.getLogger(CurrencyDynamicsService.class);
+
     @Autowired
     private CurrencyService currencyService;
-
 
     public Double[] getDynamicsFromStartDateToEndDate(String typeOfCurrencyUrl, String startDate, String endDate) {
         String url=typeOfCurrencyUrl+startDate+"&endDate="+endDate;
@@ -27,7 +30,7 @@ public class CurrencyDynamicsService {
         try {
             json = currencyService.getJsonFromRestUrl(url);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
 
         JSONArray arr = new JSONArray(json);

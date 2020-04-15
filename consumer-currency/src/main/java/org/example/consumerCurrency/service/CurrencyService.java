@@ -1,5 +1,8 @@
 package org.example.consumerCurrency.service;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.consumerCurrency.model.Currency;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +23,8 @@ import java.util.List;
 @PropertySource("classpath:application.properties")
 public class CurrencyService {
 
+    private static Logger LOGGER = LogManager.getLogger(CurrencyService.class);
+
     @Autowired
     private CurrencyProducerConsumer currencyProducerConsumer;
 
@@ -31,7 +36,7 @@ public class CurrencyService {
     private String URL_EUR;
 
 
-
+    @SuppressFBWarnings("DM_DEFAULT_ENCODING")
     public String getJsonFromRestUrl(String url) throws IOException {
         URL obj = new URL(url);
         HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
@@ -53,8 +58,9 @@ public class CurrencyService {
         return response.toString();
     }
 
+
     public String[] getArrayForActiveMQ (String date) throws Exception {
-        String[] arrayForActiveMQ = new String[0];
+        String[] arrayForActiveMQ;
 
         String currencyRUB = getJsonFromRestUrl(URL_RUB+date);
         String currencyUSD = getJsonFromRestUrl(URL_USD+date);
@@ -89,7 +95,7 @@ public class CurrencyService {
                             date
             ));
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
 
         return new ArrayList<>(Arrays.asList(

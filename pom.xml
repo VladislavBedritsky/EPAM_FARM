@@ -45,6 +45,8 @@
         <env.camel.version>2.25.0</env.camel.version>
         <org.json.version>20160810</org.json.version>
         <org.springframework.cloud.version>2.2.1.RELEASE</org.springframework.cloud.version>
+        <com.google.code.findbugs.annotations.version>2.0.1</com.google.code.findbugs.annotations.version>
+        <org.apache.logging.log4j.log4j-api.version>2.12.1</org.apache.logging.log4j.log4j-api.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -255,6 +257,17 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
             <version>${org.springframework.cloud.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>annotations</artifactId>
+            <version>${com.google.code.findbugs.annotations.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${org.apache.logging.log4j.log4j-api.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

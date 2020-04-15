@@ -1,6 +1,5 @@
 package org.example.epamFarm.rest;
 
-import org.example.epamFarm.rest.controller.RestDepartmentController;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,15 +17,13 @@ import org.springframework.web.context.WebApplicationContext;
 import javax.servlet.ServletContext;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath*:test-rest-controller.xml"})
 public class RestDepartmentControllerTest {
-
-    @Autowired
-    private RestDepartmentController restDepartmentController;
 
     @Autowired
     private WebApplicationContext wac;

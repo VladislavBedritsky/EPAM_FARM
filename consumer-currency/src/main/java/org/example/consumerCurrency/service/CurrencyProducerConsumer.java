@@ -3,11 +3,15 @@ package org.example.consumerCurrency.service;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ConsumerTemplate;
 import org.apache.camel.ProducerTemplate;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CurrencyProducerConsumer {
+
+    private static Logger LOGGER = LogManager.getLogger(CurrencyProducerConsumer.class);
 
     @Autowired
     private CamelContext producerCamelContext;
@@ -23,7 +27,7 @@ public class CurrencyProducerConsumer {
             producerTemplate.sendBody("direct:start", objectToActiveMQ);
             producerCamelContext.stop();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
     }
 
@@ -36,7 +40,7 @@ public class CurrencyProducerConsumer {
             currencies = consumerTemplate.receiveBody("seda:end", String[].class);
             consumerCamelContext.stop();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
 
         return currencies;

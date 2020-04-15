@@ -75,9 +75,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean saveUser(User registrationUser) {
-
         try {
-            User userFromDB = userDao.findByUsername(registrationUser.getUsername());
+            /*
+             * User userFromDB = userDao.findByUsername(registrationUser.getUsername());
+             */
+            userDao.findByUsername(registrationUser.getUsername());
         } catch (EmptyResultDataAccessException e) {
             registrationUser.setPassword(BCrypt.hashpw(registrationUser.getPassword(),BCrypt.gensalt(12)));
             registrationUser.setActive(true);

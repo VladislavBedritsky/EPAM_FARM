@@ -1,6 +1,5 @@
 package org.example.epamFarm.rest;
 
-import org.example.epamFarm.rest.controller.RestEmployeeController;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,9 +23,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath*:test-rest-controller.xml"})
 public class RestEmployeeControllerTest {
-
-    @Autowired
-    private RestEmployeeController restEmployeeController;
 
     @Autowired
     private WebApplicationContext wac;

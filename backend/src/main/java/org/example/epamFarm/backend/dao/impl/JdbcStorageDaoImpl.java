@@ -1,5 +1,8 @@
 package org.example.epamFarm.backend.dao.impl;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.epamFarm.backend.dao.DepartmentDao;
 import org.example.epamFarm.backend.model.Department;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +16,8 @@ import java.util.List;
 @Repository
 @PropertySource({"classpath:sql_department.properties"})
 public class JdbcStorageDaoImpl implements DepartmentDao {
+
+    private static Logger LOGGER = LogManager.getLogger(JdbcStorageDaoImpl.class);
 
     private Connection connection;
 
@@ -41,6 +46,7 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     private String UPDATE_DEPARTMENT;
 
     @Override
+    @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public List<Department> findAll() {
         List<Department> departments = new ArrayList<>();
         PreparedStatement preparedStatement = null;
@@ -61,12 +67,13 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
             preparedStatement.close();
             connection.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
         return departments;
     }
 
     @Override
+    @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public Department findById(Integer id) {
         Department department = new Department();
 
@@ -84,13 +91,14 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
                 preparedStatement.close();
                 connection.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
 
         return department;
     }
 
     @Override
+    @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public void saveDepartment(Department department) {
 
         try {
@@ -102,12 +110,13 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
             preparedStatement.close();
             connection.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
 
     }
 
     @Override
+    @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public void deleteDepartment(Integer id) {
         try {
             this.connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
@@ -118,11 +127,12 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
             preparedStatement.close();
             connection.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
     }
 
     @Override
+    @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public void updateDepartment(Integer id, String name) {
         try {
             this.connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
@@ -135,7 +145,7 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
             preparedStatement.close();
             connection.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
     }
 

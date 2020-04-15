@@ -4,6 +4,9 @@ import org.example.epamFarm.backend.dao.UserDao;
 import org.example.epamFarm.backend.model.Role;
 import org.example.epamFarm.backend.model.User;
 import org.example.epamFarm.backend.service.UserService;
+import org.hamcrest.core.Is;
+import org.hamcrest.core.IsNull;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -13,15 +16,9 @@ import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.security.core.Authentication;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.ui.Model;
 
 import java.util.ArrayList;
 
-import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsNull.notNullValue;
-import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.isA;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 @ContextConfiguration(locations={"classpath*:test.xml"})
@@ -37,21 +34,18 @@ public class UserServiceImplTest {
     @Mock
     private Authentication authentication;
 
-    @Mock
-    private Model model;
-
     @Test
     public void loadUserByUsername() {
 
-        when(userDao.findByUsername("username")).thenReturn(new User());
-        when(userDao.findUserRolesByUsername("username")).thenReturn(new ArrayList<Role>());
+        Mockito.when(userDao.findByUsername("username")).thenReturn(new User());
+        Mockito.when(userDao.findUserRolesByUsername("username")).thenReturn(new ArrayList<Role>());
 
-        assertThat(userService.loadUserByUsername("username"), is(notNullValue()));
+        Assert.assertThat(userService.loadUserByUsername("username"), Is.is(IsNull.notNullValue()));
 
         Mockito.verify(userDao,Mockito.times(1))
-                .findByUsername(isA(String.class));
+                .findByUsername(Mockito.isA(String.class));
         Mockito.verify(userDao,Mockito.times(1))
-                .findUserRolesByUsername(isA(String.class));
+                .findUserRolesByUsername(Mockito.isA(String.class));
 
     }
 
@@ -59,7 +53,7 @@ public class UserServiceImplTest {
     public void findUserRolesByUsername() {
         userService.findUserRolesByUsername("username");
         Mockito.verify(userDao,Mockito.times(1))
-                .findUserRolesByUsername(isA(String.class));
+                .findUserRolesByUsername(Mockito.isA(String.class));
     }
 
 
@@ -73,8 +67,8 @@ public class UserServiceImplTest {
 
     @Test
     public void checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel() {
-        when(authentication.getAuthorities()).thenReturn(new ArrayList<>());
-        assertThat(userService.isUserHasAdminRole(authentication), is(notNullValue()));
+        Mockito.when(authentication.getAuthorities()).thenReturn(new ArrayList<>());
+        Assert.assertThat(userService.isUserHasAdminRole(authentication), Is.is(IsNull.notNullValue()));
 
     }
 

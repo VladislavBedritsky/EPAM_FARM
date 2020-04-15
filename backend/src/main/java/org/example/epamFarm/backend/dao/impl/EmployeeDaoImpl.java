@@ -1,5 +1,7 @@
 package org.example.epamFarm.backend.dao.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.epamFarm.backend.dao.EmployeeDao;
 import org.example.epamFarm.backend.dao.mapper.EmployeeWithDepartmentMapper;
 import org.example.epamFarm.backend.model.Employee;
@@ -16,6 +18,8 @@ import java.util.List;
 @Repository
 @PropertySource("classpath:sql_employee.properties")
 public class EmployeeDaoImpl implements EmployeeDao {
+
+    private static Logger LOGGER = LogManager.getLogger(EmployeeDaoImpl.class);
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -117,7 +121,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         try{
             employee = jdbcTemplate.queryForObject(FIND_EMPLOYEE_BY_NAME, new EmployeeWithDepartmentMapper(), name);
         }catch (EmptyResultDataAccessException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
         return employee;
     }
