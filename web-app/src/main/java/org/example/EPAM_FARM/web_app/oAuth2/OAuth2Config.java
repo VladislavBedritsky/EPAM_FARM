@@ -42,14 +42,14 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint())
                 .and()
                 .authorizeRequests()
-                .antMatchers("/","/login**").permitAll()
+                .antMatchers("/","/login**","/registration").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/").deleteCookies("JSESSIONID");
     }
 
     @Override
-    public void configure(WebSecurity web) throws Exception {
+    public void configure(WebSecurity web) {
         web
                 .ignoring()
                 .antMatchers("/resources/**");

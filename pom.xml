@@ -247,7 +247,6 @@
                 <artifactId>activemq-camel</artifactId>
                 <version>${activemq-camel.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

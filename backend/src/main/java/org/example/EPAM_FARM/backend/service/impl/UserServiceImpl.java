@@ -10,6 +10,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
@@ -78,6 +79,7 @@ public class UserServiceImpl implements UserService {
         try {
             User userFromDB = userDao.findByUsername(registrationUser.getUsername());
         } catch (EmptyResultDataAccessException e) {
+            registrationUser.setPassword(BCrypt.hashpw(registrationUser.getPassword(),BCrypt.gensalt(12)));
             registrationUser.setActive(true);
             userDao.saveUser(registrationUser);
             userDao.setUserRole(getLastUserId());

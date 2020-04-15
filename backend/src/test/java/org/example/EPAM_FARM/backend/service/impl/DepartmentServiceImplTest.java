@@ -23,7 +23,7 @@ public class DepartmentServiceImplTest {
 
     @Before
     public void setUp() {
-        getLast = departmentService.findAll().stream().reduce((first,second) -> second).orElse(null);
+        getLast = departmentService.findAll().stream().reduce((first, second) -> second).orElse(null);
     }
 
     @Test

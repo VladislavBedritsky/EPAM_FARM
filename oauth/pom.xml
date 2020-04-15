@@ -94,6 +94,10 @@
             <artifactId>jaxb-runtime</artifactId>
             <version>${jaxb-runtime.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
 
     </dependencies>
 
