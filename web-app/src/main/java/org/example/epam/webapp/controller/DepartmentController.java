@@ -21,10 +21,8 @@ public class DepartmentController {
 
     @Autowired
     private DepartmentService jdbcStorageService;
-
     @Autowired
     private DepartmentService departmentService;
-
     @Autowired
     private UserService userService;
 

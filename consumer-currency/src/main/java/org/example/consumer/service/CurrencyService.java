@@ -30,16 +30,14 @@ import java.util.List;
 public class CurrencyService {
 
     private static Logger LOGGER = LogManager.getLogger(CurrencyService.class);
-
     @Autowired
     private CurrencyProducerConsumer currencyProducerConsumer;
-
     @Value("${rest.url.rub}")
-    private String URL_RUB;
+    private String urlRUB;
     @Value("${rest.url.usd}")
-    private String URL_USD;
+    private String urlUSD;
     @Value("${rest.url.eur}")
-    private String URL_EUR;
+    private String urlEUR;
 
     /**
      * Get JSON in String type from REST with specified URL.
@@ -78,9 +76,9 @@ public class CurrencyService {
     public String[] getArrayForActiveMQ (String date) throws IOException {
         String[] arrayForActiveMQ;
 
-        String currencyRUB = getJsonFromRestUrl(URL_RUB+date);
-        String currencyUSD = getJsonFromRestUrl(URL_USD+date);
-        String currencyEUR = getJsonFromRestUrl(URL_EUR+date);
+        String currencyRUB = getJsonFromRestUrl(urlRUB+date);
+        String currencyUSD = getJsonFromRestUrl(urlUSD+date);
+        String currencyEUR = getJsonFromRestUrl(urlEUR+date);
 
         arrayForActiveMQ = new String[] {
                     currencyRUB,

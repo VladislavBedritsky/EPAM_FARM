@@ -26,36 +26,26 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Autowired
     private AuthenticationManager authenticationManager;
-
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
-
     @Value("${config.oauth2.privateKey}")
-    private String PRIVATE_KEY;
-
+    private String privateKey;
     @Value("${config.oauth2.publicKey}")
-    private String PUBLIC_KEY;
-
+    private String publicKey;
     @Value("${config.oauth2.redirectUri1}")
-    private String URI_1;
-
+    private String uri1;
     @Value("${config.oauth2.redirectUri2}")
-    private String URI_2;
-
+    private String uri2;
     @Value("${config.oauth2.redirectUri3}")
-    private String URI_3;
-
+    private String uri3;
     @Value("${config.oauth2.clientId}")
-    private String CLIENT_ID;
-
+    private String clientId;
     @Value("${config.oauth2.secret}")
-    private String SECRET;
-
+    private String secret;
     @Value("${config.oauth2.grantTypes}")
-    private String GRANT_TYPES;
-
+    private String grantTypes;
     @Value("${config.oauth2.scope}")
-    private String SCOPE;
+    private String scope;
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
@@ -68,13 +58,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients
                 .inMemory()
-                .withClient(CLIENT_ID)
-                .secret(passwordEncoder.encode(SECRET))
-                .authorizedGrantTypes(GRANT_TYPES)
-                .scopes(SCOPE)
+                .withClient(clientId)
+                .secret(passwordEncoder.encode(secret))
+                .authorizedGrantTypes(grantTypes)
+                .scopes(scope)
                 .autoApprove(true)
                 .redirectUris(
-                        URI_1,URI_2,URI_3)
+                        uri1, uri2, uri3)
                 .accessTokenValiditySeconds(20000)
                 .refreshTokenValiditySeconds(20000);
     }
@@ -90,8 +80,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Bean
     public JwtAccessTokenConverter tokenEnhancer() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setSigningKey(PRIVATE_KEY);
-        converter.setVerifierKey(PUBLIC_KEY);
+        converter.setSigningKey(privateKey);
+        converter.setVerifierKey(publicKey);
         return converter;
     }
 

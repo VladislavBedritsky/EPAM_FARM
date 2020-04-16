@@ -23,59 +23,51 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
     @Value("${department.findAll}")
-    private String FIND_ALL;
-
+    private String findAll;
     @Value("${department.findById}")
-    private String FIND_BY_ID;
-
+    private String findById;
     @Value("${department.saveDepartment}")
-    private String SAVE_DEPARTMENT;
-
+    private String saveDepartment;
     @Value("${department.deleteDepartment}")
-    private String DELETE_DEPARTMENT;
-
+    private String deleteDepartment;
     @Value("${department.updateDepartment}")
-    private String UPDATE_DEPARTMENT;
-
+    private String updateDepartment;
     @Value("${department.getAverageSalary}")
-    private String GET_AVERAGE_SALARY;
-
+    private String getAverageSalary;
     @Value("${department.setForeignKeys}")
-    private String SET_FOREIGN_KEYS;
-
+    private String setForeignKeys;
 
     @Override
     public List<Department> findAll() {
-        return jdbcTemplate.query(FIND_ALL, new DepartmentMapper());
+        return jdbcTemplate.query(findAll, new DepartmentMapper());
     }
 
     @Override
     public Department findById(Integer id) {
-        return jdbcTemplate.queryForObject(FIND_BY_ID, new DepartmentMapper(), id);
+        return jdbcTemplate.queryForObject(findById, new DepartmentMapper(), id);
     }
 
     @Override
     public void saveDepartment(Department department) {
-        jdbcTemplate.update(SAVE_DEPARTMENT, department.getName());
+        jdbcTemplate.update(saveDepartment, department.getName());
     }
 
     @Override
     public void deleteDepartment(Integer id) {
-        jdbcTemplate.update(SET_FOREIGN_KEYS,0);
-        jdbcTemplate.update(DELETE_DEPARTMENT, id);
-        jdbcTemplate.update(SET_FOREIGN_KEYS,1);
+        jdbcTemplate.update(setForeignKeys,0);
+        jdbcTemplate.update(deleteDepartment, id);
+        jdbcTemplate.update(setForeignKeys,1);
     }
 
     @Override
     public void updateDepartment(Integer id, String name) {
-        jdbcTemplate.update(UPDATE_DEPARTMENT,name,id);
+        jdbcTemplate.update(updateDepartment, name, id);
     }
 
     @Override
     public Float getAverageSalaryInDepartment(Integer id) {
-        return jdbcTemplate.queryForObject(GET_AVERAGE_SALARY, Float.class, id);
+        return jdbcTemplate.queryForObject(getAverageSalary, Float.class, id);
     }
 
 }

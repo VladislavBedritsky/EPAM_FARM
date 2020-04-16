@@ -23,10 +23,8 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
-
     @Autowired
     private DepartmentService departmentService;
-
     @Autowired
     private UserService userService;
 

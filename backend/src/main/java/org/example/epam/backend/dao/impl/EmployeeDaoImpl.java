@@ -25,56 +25,46 @@ import java.util.List;
 public class EmployeeDaoImpl implements EmployeeDao {
 
     private static Logger LOGGER = LogManager.getLogger(EmployeeDaoImpl.class);
-
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
     @Value("${employee.findAll}")
-    private String FIND_ALL;
-
+    private String findAll;
     @Value("${employee.findById}")
-    private String FIND_BY_ID;
-
+    private String findById;
     @Value("${employee.findEmployeesByDepartmentId}")
-    private String FIND_EMPLOYEES_BY_DEPARTMENT_ID;
-
+    private String findEmployeesByDepartmentId;
     @Value("${employee.saveEmployee}")
-    private String SAVE_EMPLOYEE;
-
+    private String saveEmployee;
     @Value("${employee.deleteEmployee}")
-    private String DELETE_EMPLOYEE;
-
+    private String deleteEmployee;
     @Value("${employee.updateDepartment}")
-    private String UPDATE_EMPLOYEE;
-
+    private String updateEmployee;
     @Value("${employee.saveEmployeeForRestController}")
-    private String SAVE_EMPLOYEE_FOR_REST;
-
+    private String saveEmployeeForRest;
     @Value("${employee.updateEmployeeForRestController}")
-    private String UPDATE_EMPLOYEE_FOR_REST;
-
+    private String updateEmployeeForRest;
     @Value("${employee.findEmployeeByName}")
-    private String FIND_EMPLOYEE_BY_NAME;
+    private String findEmployeeByName;
 
     @Override
     public List<Employee> findAll() {
-        return jdbcTemplate.query(FIND_ALL, new EmployeeWithDepartmentMapper());
+        return jdbcTemplate.query(findAll, new EmployeeWithDepartmentMapper());
     }
 
     @Override
     public Employee findById(Integer id) {
-        return jdbcTemplate.queryForObject(FIND_BY_ID,new EmployeeWithDepartmentMapper(),id);
+        return jdbcTemplate.queryForObject(findById,new EmployeeWithDepartmentMapper(),id);
     }
 
     @Override
     public List<Employee> findEmployeesByDepartmentId(Integer id) {
-        return jdbcTemplate.query(FIND_EMPLOYEES_BY_DEPARTMENT_ID, new EmployeeWithDepartmentMapper(), id);
+        return jdbcTemplate.query(findEmployeesByDepartmentId, new EmployeeWithDepartmentMapper(), id);
     }
 
     @Override
     public void saveEmployee(Employee employee, Integer departmentId) {
         jdbcTemplate.update(
-                SAVE_EMPLOYEE,
+                saveEmployee,
                 employee.getName(),
                 employee.getBirthday(),
                 employee.getSalary(),
@@ -84,13 +74,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public void deleteEmployee(Integer id) {
-        jdbcTemplate.update(DELETE_EMPLOYEE,id);
+        jdbcTemplate.update(deleteEmployee, id);
     }
 
     @Override
     public void updateEmployee(Integer employeeId, Employee employee, Integer departmentId) {
         jdbcTemplate.update(
-                UPDATE_EMPLOYEE,
+                updateEmployee,
                 employee.getName(),
                 employee.getBirthday(),
                 employee.getSalary(),
@@ -102,7 +92,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public void saveEmployeeForRestController(Employee employee) {
         jdbcTemplate.update(
-                SAVE_EMPLOYEE_FOR_REST,
+                saveEmployeeForRest,
                 employee.getName(),
                 employee.getBirthday(),
                 employee.getSalary()
@@ -112,7 +102,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public void updateEmployeeForRestController(Employee employee, Integer id) {
         jdbcTemplate.update(
-                UPDATE_EMPLOYEE_FOR_REST,
+                updateEmployeeForRest,
                 employee.getName(),
                 employee.getBirthday(),
                 employee.getSalary(),
@@ -124,7 +114,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public Employee findEmployeeByName(String name) {
         Employee employee = new Employee();
         try{
-            employee = jdbcTemplate.queryForObject(FIND_EMPLOYEE_BY_NAME, new EmployeeWithDepartmentMapper(), name);
+            employee = jdbcTemplate.queryForObject(findEmployeeByName, new EmployeeWithDepartmentMapper(), name);
         }catch (EmptyResultDataAccessException e) {
             LOGGER.error(e);
         }

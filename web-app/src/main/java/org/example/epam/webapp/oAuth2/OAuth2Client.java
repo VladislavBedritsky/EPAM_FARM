@@ -17,13 +17,13 @@ import javax.annotation.Resource;
 public class OAuth2Client {
 
     @Value("${security.oauth2.client.clientId}")
-    private String CLIENT_ID;
+    private String clientId;
     @Value("${security.oauth2.client.clientSecret}")
-    private String CLIENT_SECRET;
+    private String clientSecret;
     @Value("${security.oauth2.client.accessTokenUri}")
-    private String ACCESS_TOKEN_URI;
+    private String accessTokenUri;
     @Value("${security.oauth2.client.userAuthorizationUri}")
-    private String USER_AUTHORIZATION_URI;
+    private String userAuthorizationUri;
 
     @Resource
     private OAuth2ClientContext oAuth2ClientContext;
@@ -31,17 +31,17 @@ public class OAuth2Client {
     @Bean
     public OAuth2ProtectedResourceDetails resourceDetails() {
         AuthorizationCodeResourceDetails resource = new AuthorizationCodeResourceDetails();
-        resource.setClientId(CLIENT_ID);
-        resource.setClientSecret(CLIENT_SECRET);
-        resource.setAccessTokenUri(ACCESS_TOKEN_URI);
-        resource.setUserAuthorizationUri(USER_AUTHORIZATION_URI);
+        resource.setClientId(clientId);
+        resource.setClientSecret(clientSecret);
+        resource.setAccessTokenUri(accessTokenUri);
+        resource.setUserAuthorizationUri(userAuthorizationUri);
 
         return resource;
     }
 
     @Bean
     public OAuth2RestOperations oAuth2RestTemplate() {
-        return new OAuth2RestTemplate(resourceDetails(),oAuth2ClientContext);
+        return new OAuth2RestTemplate(resourceDetails(), oAuth2ClientContext);
     }
 
 }

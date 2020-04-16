@@ -24,38 +24,30 @@ import java.util.List;
 public class JdbcStorageDaoImpl implements DepartmentDao {
 
     private static Logger LOGGER = LogManager.getLogger(JdbcStorageDaoImpl.class);
-
     @Value("${db.username}")
-    private String USERNAME;
-
+    private String username;
     @Value("${db.password}")
-    private String PASSWORD;
-
+    private String password;
     @Value("${db.url}")
-    private String URL;
-
+    private String url;
     @Value("${department.findAll}")
-    private String FIND_ALL;
-
+    private String findAll;
     @Value("${department.findById}")
-    private String FIND_BY_ID;
-
+    private String findById;
     @Value("${department.saveDepartment}")
-    private String SAVE_DEPARTMENT;
-
+    private String saveDepartment;
     @Value("${department.deleteDepartment}")
-    private String DELETE_DEPARTMENT;
-
+    private String deleteDepartment;
     @Value("${department.updateDepartment}")
-    private String UPDATE_DEPARTMENT;
+    private String updateDepartment;
 
     @Override
     @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public List<Department> findAll() {
         List<Department> departments = new ArrayList<>();
 
-        try ( Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
-              PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL);
+        try ( Connection connection = DriverManager.getConnection(url, username, password);
+              PreparedStatement preparedStatement = connection.prepareStatement(findAll);
               ResultSet resultSet = preparedStatement.executeQuery();
         ) {
 
@@ -77,8 +69,8 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     public Department findById(Integer id) {
         Department department = new Department();
 
-        try ( Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
-              PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_ID);
+        try ( Connection connection = DriverManager.getConnection(url, username, password);
+              PreparedStatement preparedStatement = connection.prepareStatement(findById);
               ResultSet resultSet = preparedStatement.executeQuery();
               ) {
 
@@ -100,8 +92,8 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public void saveDepartment(Department department) {
 
-        try ( Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
-              PreparedStatement preparedStatement = connection.prepareStatement(SAVE_DEPARTMENT, Statement.RETURN_GENERATED_KEYS);
+        try ( Connection connection = DriverManager.getConnection(url, username, password);
+              PreparedStatement preparedStatement = connection.prepareStatement(saveDepartment, Statement.RETURN_GENERATED_KEYS);
               ) {
 
             preparedStatement.setString(1, department.getName());
@@ -116,8 +108,8 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     @Override
     @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public void deleteDepartment(Integer id) {
-        try ( Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
-              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_DEPARTMENT);
+        try ( Connection connection = DriverManager.getConnection(url, username, password);
+              PreparedStatement preparedStatement = connection.prepareStatement(deleteDepartment);
                 ) {
 
             preparedStatement.setInt(1,id);
@@ -131,8 +123,8 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     @Override
     @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public void updateDepartment(Integer id, String name) {
-        try (Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
-             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_DEPARTMENT);
+        try (Connection connection = DriverManager.getConnection(url, username, password);
+             PreparedStatement preparedStatement = connection.prepareStatement(updateDepartment);
                 ) {
 
             preparedStatement.setString(1,name);

@@ -28,11 +28,11 @@ public class CurrencyController {
     private CurrencyDynamicsService currencyDynamicsService;
 
     @Value("${rest.url.rub_dynamics}")
-    private String RUB_DYNAMICS;
+    private String rubDynamics;
     @Value("${rest.url.usd_dynamics}")
-    private String USD_DYNAMICS;
+    private String usdDynamics;
     @Value("${rest.url.eur_dynamics}")
-    private String EUR_DYNAMICS;
+    private String eurDynamics;
 
     /**
      * Get view "ind"
@@ -69,12 +69,13 @@ public class CurrencyController {
         model.addAttribute("today", LocalDate.now().toString());
         model.addAttribute("currencies", currencyService.getAllCurrencies(date));
         model.addAttribute("RubDynamics", currencyDynamicsService
-                .getDynamicsFromStartDateToEndDate(RUB_DYNAMICS,startDate, endDate));
+                .getDynamicsFromStartDateToEndDate(rubDynamics, startDate, endDate));
         model.addAttribute("UsdDynamics", currencyDynamicsService
-                .getDynamicsFromStartDateToEndDate(USD_DYNAMICS,startDate, endDate));
+                .getDynamicsFromStartDateToEndDate(usdDynamics, startDate, endDate));
         model.addAttribute("EurDynamics", currencyDynamicsService
-                .getDynamicsFromStartDateToEndDate(EUR_DYNAMICS,startDate, endDate));
-        model.addAttribute("datesArray", currencyDynamicsService.getDatesBetweenStartDateAndEndDate(startDate,endDate));
+                .getDynamicsFromStartDateToEndDate(eurDynamics, startDate, endDate));
+        model.addAttribute("datesArray", currencyDynamicsService
+                .getDatesBetweenStartDateAndEndDate(startDate, endDate));
 
         return "main";
     }

@@ -24,7 +24,6 @@ import java.util.stream.Stream;
 public class CurrencyDynamicsService {
 
     private static Logger LOGGER = LogManager.getLogger(CurrencyDynamicsService.class);
-
     @Autowired
     private CurrencyService currencyService;
 

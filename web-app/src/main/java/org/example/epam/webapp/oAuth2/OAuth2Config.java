@@ -25,13 +25,10 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private OAuth2RestOperations oAuth2RestTemplate;
-
     @Value("${security.oauth2.client.clientId}")
-    private String CLIENT_ID;
+    private String clientId;
     @Value("${security.oauth2.resource.userInfoUri}")
-    private String USER_INFO_URI;
-
-    private String LOGIN_URL = "/login";
+    private String userInfoUri;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -62,18 +59,18 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
 
     @Bean
     public AuthenticationEntryPoint authenticationEntryPoint() {
-        return new LoginUrlAuthenticationEntryPoint(LOGIN_URL);
+        return new LoginUrlAuthenticationEntryPoint("/login");
     }
 
     @Bean
     public OAuth2ClientAuthenticationProcessingFilter filter() {
 
-        OAuth2ClientAuthenticationProcessingFilter oAuth2Filter = new OAuth2ClientAuthenticationProcessingFilter(LOGIN_URL);
+        OAuth2ClientAuthenticationProcessingFilter oAuth2Filter = new OAuth2ClientAuthenticationProcessingFilter("/login");
 
         oAuth2Filter.setRestTemplate(oAuth2RestTemplate);
 
         oAuth2Filter.setTokenServices(new UserInfoTokenServices(
-                USER_INFO_URI, CLIENT_ID));
+                userInfoUri, clientId));
 
         return oAuth2Filter;
     }

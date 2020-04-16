@@ -25,37 +25,36 @@ public class UserDaoImpl implements UserDao {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
     @Value("${user.findByUsername}")
-    private String FIND_BY_USERNAME;
+    private String findByUsername;
     @Value("${user.findAll}")
-    private String FIND_ALL;
+    private String findAll;
     @Value("${user.findUserRolesByUsername}")
-    private String FIND_USER_ROLES_BY_USERNAME;
+    private String findUserRolesByUsername;
     @Value("${user.saveUser}")
-    private String SAVE_USER;
+    private String saveUser;
     @Value("${user.saveUserRole}")
-    private String SAVE_USER_ROLE;
+    private String saveUserRole;
 
     @Override
     public List<User> findAll() {
-        return jdbcTemplate.query(FIND_ALL, new UserMapper());
+        return jdbcTemplate.query(findAll, new UserMapper());
     }
 
     @Override
     public User findByUsername(String username) {
-        return jdbcTemplate.queryForObject(FIND_BY_USERNAME, new UserMapper(), username);
+        return jdbcTemplate.queryForObject(findByUsername, new UserMapper(), username);
     }
 
     @Override
     public List<Role> findUserRolesByUsername(String username) {
-        return jdbcTemplate.query(FIND_USER_ROLES_BY_USERNAME, new UserRoleMapper(),username);
+        return jdbcTemplate.query(findUserRolesByUsername, new UserRoleMapper(),username);
     }
 
     @Override
     public void saveUser(User registrationUser) {
         jdbcTemplate.update(
-                SAVE_USER,
+                saveUser,
                 registrationUser.getFirstName(),
                 registrationUser.getLastName(),
                 registrationUser.getUsername(),
@@ -69,9 +68,9 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void setUserRole(Integer userId) {
         jdbcTemplate.update(
-                SAVE_USER_ROLE,
+                saveUserRole,
                 userId,
-                "USER"
+                Role.USER.toString()
         );
     }
 }

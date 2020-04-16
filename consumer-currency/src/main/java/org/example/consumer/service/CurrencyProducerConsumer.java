@@ -18,10 +18,8 @@ import org.springframework.stereotype.Service;
 public class CurrencyProducerConsumer {
 
     private static Logger LOGGER = LogManager.getLogger(CurrencyProducerConsumer.class);
-
     @Autowired
     private CamelContext producerCamelContext;
-
     @Autowired
     private CamelContext consumerCamelContext;
 
