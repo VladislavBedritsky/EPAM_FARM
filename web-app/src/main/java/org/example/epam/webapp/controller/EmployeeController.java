@@ -11,6 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * class EmployeeController
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Controller
 @RequestMapping("/employees")
 public class EmployeeController {
@@ -24,6 +30,12 @@ public class EmployeeController {
     @Autowired
     private UserService userService;
 
+    /**
+     * Get all employees
+     *
+     * @param model Model
+     * @return employees.html
+     */
     @GetMapping
     public String getEmployees(
             Model model) {
@@ -35,6 +47,13 @@ public class EmployeeController {
         return "employees";
     }
 
+    /**
+     * Get employee with specified employee's id
+     *
+     * @param model Model
+     * @param id Employee's id
+     * @return employee.html
+     */
     @GetMapping("/{id}")
     public String getEmployeeView(
             Model model,
@@ -45,6 +64,16 @@ public class EmployeeController {
         return "employee";
     }
 
+    /**
+     * Create employee with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param name Employee's name
+     * @param birthday Employee's birthday
+     * @param salary Employee's salary
+     * @param departmentName Department's name
+     * @return employees.html
+     */
+    @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
     public String saveEmployee(
             @RequestParam String name,
@@ -74,6 +103,12 @@ public class EmployeeController {
         return "redirect:/employees";
     }
 
+    /**
+     * Delete employee with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param id Employee's id
+     * @return employees.html
+     */
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @GetMapping("/delete/{id}")
     public String deleteEmployee(@PathVariable Integer id) {
@@ -83,6 +118,16 @@ public class EmployeeController {
         return "redirect:/employees";
     }
 
+    /**
+     * Update employee with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param id Employee's id
+     * @param name Employee's name
+     * @param birthday Employee's birthday
+     * @param salary Employee's birthday
+     * @param departmentName Department's name
+     * @return employees.html
+     */
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping("/update/{id}")
     public String updateEmployee (

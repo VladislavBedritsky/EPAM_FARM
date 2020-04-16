@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 
+/**
+ * class CurrencyController
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Controller
 @PropertySource("classpath:application.properties")
 public class CurrencyController {
@@ -28,17 +34,30 @@ public class CurrencyController {
     @Value("${rest.url.eur_dynamics}")
     private String EUR_DYNAMICS;
 
+    /**
+     * Get view "ind"
+     *
+     * @return ind.html
+     */
     @GetMapping("/")
     public String main() {
         return "ind";
     }
 
+    /**
+     * Get view "main"
+     *
+     * @param date To find currency on this date
+     * @param startDate To find currency dynamics from this date
+     * @param endDate To find currency dynamics to this date
+     * @return main.html
+     */
     @GetMapping("/currency")
     public String getCurrency(
             Model model,
             @RequestParam(required = false) String date,
             @RequestParam(required = false) String startDate,
-            @RequestParam(required = false) String endDate) throws Exception {
+            @RequestParam(required = false) String endDate) {
 
         if(startDate == null || endDate == null) {
             endDate = LocalDate.now().toString();

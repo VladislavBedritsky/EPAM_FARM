@@ -5,6 +5,12 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
+/**
+ * ConvertService interface implementation
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Service
 public class ConverterServiceImpl implements ConverterService {
 

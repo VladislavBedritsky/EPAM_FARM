@@ -10,6 +10,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * DepartmentService interface implementation
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
 

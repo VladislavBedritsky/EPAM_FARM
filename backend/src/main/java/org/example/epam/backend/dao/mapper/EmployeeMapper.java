@@ -6,6 +6,12 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * RowMapper interface implementation
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 public class EmployeeMapper implements RowMapper<Employee> {
     @Override
     public Employee mapRow(ResultSet resultSet, int i) throws SQLException {

@@ -26,7 +26,7 @@ public class EmployeeTest {
         employee.setId(1);
 
         Assert.assertNotNull(employee);
-        Assert.assertEquals(employee.getId(), EMPLOYEE_ID);
+        Assert.assertEquals(EMPLOYEE_ID, employee.getId());
     }
 
     @Test
@@ -34,7 +34,7 @@ public class EmployeeTest {
         employee.setName("Jack Wolf");
 
         Assert.assertNotNull(employee);
-        Assert.assertEquals(employee.getName(), EMPLOYEE_NAME);
+        Assert.assertEquals(EMPLOYEE_NAME, employee.getName());
     }
 
     @Test
@@ -42,7 +42,7 @@ public class EmployeeTest {
         employee.setBirthday(LocalDate.of(2014, Month.APRIL,1));
 
         Assert.assertNotNull(employee);
-        Assert.assertEquals(employee.getBirthday(), EMPLOYEE_BIRTHDAY);
+        Assert.assertEquals(EMPLOYEE_BIRTHDAY, employee.getBirthday());
     }
 
     @Test
@@ -50,7 +50,7 @@ public class EmployeeTest {
         employee.setSalary(15003.1234F);
 
         Assert.assertNotNull(employee);
-        Assert.assertEquals(employee.getSalary(), EMPLOYEE_SALARY);
+        Assert.assertEquals(EMPLOYEE_SALARY, employee.getSalary());
     }
 
     @Test
@@ -59,7 +59,7 @@ public class EmployeeTest {
         employee.setDepartment(department);
 
         Assert.assertNotNull(employee);
-        Assert.assertEquals(employee.getDepartment(), DEPARTMENT);
+        Assert.assertEquals(DEPARTMENT, employee.getDepartment());
     }
 
 }

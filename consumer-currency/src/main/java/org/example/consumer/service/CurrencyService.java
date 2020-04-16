@@ -19,6 +19,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * class CurrencyService
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Service
 @PropertySource("classpath:application.properties")
 public class CurrencyService {
@@ -35,7 +41,12 @@ public class CurrencyService {
     @Value("${rest.url.eur}")
     private String URL_EUR;
 
-
+    /**
+     * Get JSON in String type from REST with specified URL.
+     *
+     * @param url URL
+     * @return JSON in String type
+     */
     @SuppressFBWarnings("DM_DEFAULT_ENCODING")
     public String getJsonFromRestUrl(String url) throws IOException {
         URL obj = new URL(url);
@@ -58,8 +69,13 @@ public class CurrencyService {
         return response.toString();
     }
 
-
-    public String[] getArrayForActiveMQ (String date) throws Exception {
+    /**
+     * Get Array with JSON of currencies in String type with specified date.
+     *
+     * @param date Date from UI
+     * @return array of currencies
+     */
+    public String[] getArrayForActiveMQ (String date) throws IOException {
         String[] arrayForActiveMQ;
 
         String currencyRUB = getJsonFromRestUrl(URL_RUB+date);
@@ -74,10 +90,22 @@ public class CurrencyService {
         return arrayForActiveMQ;
     }
 
+    /**
+     * Get JSONObject with specified JSON of currency in String type.
+     *
+     * @param json JSON in String type
+     * @return JSONObject with currency
+     */
     public JSONObject convertStringToJsonObject(String json) {
         return new JSONObject(json);
     }
 
+    /**
+     * Get Currency from specified JSONObject.
+     *
+     * @param jsonObject JSONObject with currency
+     * @return JSONObject with currency
+     */
     public Currency setCurrency(JSONObject jsonObject) {
         Currency currency = new Currency();
         currency.setAbbreviation(jsonObject.getString("Cur_Abbreviation"));
@@ -88,6 +116,13 @@ public class CurrencyService {
         return currency;
     }
 
+    /**
+     * Get list of currencies in String type with specified date
+     * from ActiveMQ.
+     *
+     * @param date Specified date
+     * @return list of currencies in String type
+     */
     public List<String> getListFromActiveMQ(String date) {
         try {
             currencyProducerConsumer.produceJsonArrayOfCurrenciesToActiveMQ(
@@ -103,6 +138,12 @@ public class CurrencyService {
         ));
     }
 
+    /**
+     * Get list of currencies with specified date.
+     *
+     * @param date Specified date
+     * @return list of currencies
+     */
     public List<Currency> getAllCurrencies(String date) {
         List<Currency> currencyList = new ArrayList<>();
 

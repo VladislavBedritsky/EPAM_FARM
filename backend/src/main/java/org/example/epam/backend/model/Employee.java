@@ -7,6 +7,12 @@ import org.example.epam.backend.json_view.View;
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * POJO Employee
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 public class Employee {
 
     @JsonView(View.Id.class)

@@ -7,6 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * class MainController
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Controller
 @RequestMapping("/")
 public class MainController {
@@ -14,17 +20,33 @@ public class MainController {
     @Autowired
     private UserService userService;
 
+    /**
+     * Get view "index"
+     *
+     * @param model Model
+     * @return index.html
+     */
     @GetMapping
     public String getIndex(Model model) {
         userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
         return "index";
     }
 
+    /**
+     * Get view "login"
+     *
+     * @return login.html
+     */
     @GetMapping("/login")
     public String login() {
         return "login";
     }
 
+    /**
+     * Get view "denied"
+     *
+     * @return denied.html
+     */
     @GetMapping("/accessdenied")
     public String accessdenied() {
         return "denied";

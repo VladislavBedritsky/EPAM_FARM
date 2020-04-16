@@ -7,8 +7,15 @@ import org.example.epam.backend.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * DepartmentService interface implementation
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Service
 public class JdbcStorageServiceImpl  implements DepartmentService {
 
@@ -42,7 +49,7 @@ public class JdbcStorageServiceImpl  implements DepartmentService {
 
     @Override
     public List<Employee> findEmployeesByDepartmentId(Integer id) {
-        return null;
+        return new ArrayList<>();
     }
 
     @Override
@@ -52,7 +59,7 @@ public class JdbcStorageServiceImpl  implements DepartmentService {
 
     @Override
     public Department returnNewDepartmentWithName(String name) {
-        return null;
+        return new Department();
     }
 
     @Override

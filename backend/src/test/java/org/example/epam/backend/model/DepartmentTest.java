@@ -21,7 +21,7 @@ public class DepartmentTest {
         department.setId(1);
 
         Assert.assertNotNull(department);
-        Assert.assertEquals(department.getId(),DEPARTMENT_ID);
+        Assert.assertEquals(DEPARTMENT_ID, department.getId());
     }
 
     @Test
@@ -30,6 +30,6 @@ public class DepartmentTest {
         department.setName("Marketing");
 
         Assert.assertNotNull(department);
-        Assert.assertEquals(department.getName(),DEPARTMENT_NAME);
+        Assert.assertEquals(DEPARTMENT_NAME, department.getName());
     }
 }

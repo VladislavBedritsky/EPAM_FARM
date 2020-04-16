@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * class RestEmployeeController
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @RestController
 @RequestMapping(value = "/employees", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 public class RestEmployeeController {
@@ -16,23 +22,44 @@ public class RestEmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    /**
+     * Get all employees
+     *
+     * @return list of employees
+     */
     @GetMapping
-//    @JsonView(View.FullEmployeesWithoutDepartment.class)
     public List<Employee> getEmployees() {
         return employeeService.findAll();
     }
 
+    /**
+     * Get employee with specified employee's id
+     *
+     * @param id Employee's id
+     * @return employee
+     */
     @GetMapping("/{id}")
-//    @JsonView(View.FullEmployeesWithoutDepartment.class)
     public Employee getEmployee(@PathVariable Integer id) {
         return employeeService.findById(id);
     }
 
+    /**
+     * Get list of employees with specified department's id
+     *
+     * @param id Department's id
+     * @return list of employees
+     */
     @GetMapping("/byDepartmentId/{id}")
     public List<Employee> getEmployeesByDepartmentId(@PathVariable Integer id) {
         return employeeService.findEmployeesByDepartmentId(id);
     }
 
+    /**
+     * Create employee with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param employee Employee
+     * @return last employee in DB
+     */
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
     public Employee saveEmployee(
@@ -43,6 +70,13 @@ public class RestEmployeeController {
         return employeeService.findAll().stream().reduce((first, second) -> second).orElse(null);
     }
 
+    /**
+     * Update employee with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param id Employee's id
+     * @param employee Employee
+     * @return employee
+     */
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PutMapping("/{id}")
     public Employee update(
@@ -54,6 +88,11 @@ public class RestEmployeeController {
         return employee;
     }
 
+    /**
+     * Delete employee with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param id Employee's id
+     */
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @DeleteMapping("/{id}")
     public void delete(

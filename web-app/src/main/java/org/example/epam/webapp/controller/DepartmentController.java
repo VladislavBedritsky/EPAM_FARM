@@ -9,6 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * class DepartmentController
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Controller
 @RequestMapping("/departments")
 public class DepartmentController {
@@ -22,6 +28,12 @@ public class DepartmentController {
     @Autowired
     private UserService userService;
 
+    /**
+     * Get all departments
+     *
+     * @param model Model
+     * @return departments.html
+     */
     @GetMapping
     public String getDepartments (
             Model model) {
@@ -32,6 +44,13 @@ public class DepartmentController {
         return "departments";
     }
 
+    /**
+     * Get department with specified department's id
+     *
+     * @param model Model
+     * @param id Department's id
+     * @return department.html
+     */
     @GetMapping("/{id}")
     public String getDepartmentView (
             Model model,
@@ -45,6 +64,14 @@ public class DepartmentController {
         return "department";
     }
 
+    /**
+     * Create department with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param name Department's name
+     * @param model Model
+     * @return departments.html
+     */
+    @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
     public String saveDepartment (
             @RequestParam String name,
@@ -63,6 +90,12 @@ public class DepartmentController {
         return "redirect:/departments";
     }
 
+    /**
+     * Delete department with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param id Department's id
+     * @return departments.html
+     */
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @GetMapping("/delete/{id}")
     public String deleteDepartment (
@@ -74,6 +107,14 @@ public class DepartmentController {
         return "redirect:/departments";
     }
 
+
+    /**
+     * Update department with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param id Department's id
+     * @param name Department's name
+     * @return departments.html
+     */
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping("/update/{id}")
     public String updateDepartment (

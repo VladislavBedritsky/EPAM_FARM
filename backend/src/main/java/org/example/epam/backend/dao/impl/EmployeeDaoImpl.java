@@ -14,7 +14,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
+/**
+ * EmployeeDao interface implementation
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Repository
 @PropertySource("classpath:sql_employee.properties")
 public class EmployeeDaoImpl implements EmployeeDao {

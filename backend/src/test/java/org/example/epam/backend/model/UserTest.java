@@ -35,7 +35,7 @@ public class UserTest {
         user.setId(1);
 
         Assert.assertNotNull(user);
-        Assert.assertEquals(user.getId(),USER_ID);
+        Assert.assertEquals(USER_ID, user.getId());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class UserTest {
         user.setFirstName("MIKE");
 
         Assert.assertNotNull(user);
-        Assert.assertEquals(user.getFirstName(),USER_FIRSTNAME);
+        Assert.assertEquals(USER_FIRSTNAME, user.getFirstName());
     }
 
     @Test
@@ -51,7 +51,7 @@ public class UserTest {
         user.setLastName("BLACK");
 
         Assert.assertNotNull(user);
-        Assert.assertEquals(user.getLastName(),USER_LASTNAME);
+        Assert.assertEquals(USER_LASTNAME, user.getLastName());
     }
 
     @Test
@@ -59,7 +59,7 @@ public class UserTest {
         user.setUsername("QQ");
 
         Assert.assertNotNull(user);
-        Assert.assertEquals(user.getUsername(),USER_USENAME);
+        Assert.assertEquals(USER_USENAME, user.getUsername());
     }
 
     @Test
@@ -67,7 +67,7 @@ public class UserTest {
         user.setPassword("QW");
 
         Assert.assertNotNull(user);
-        Assert.assertEquals(user.getPassword(),USER_PASSWORD);
+        Assert.assertEquals(USER_PASSWORD, user.getPassword());
     }
 
     @Test
@@ -75,7 +75,7 @@ public class UserTest {
         user.setEmail("mike@mail.ru");
 
         Assert.assertNotNull(user);
-        Assert.assertEquals(user.getEmail(), USER_EMAIL);
+        Assert.assertEquals(USER_EMAIL, user.getEmail());
     }
 
     @Test
@@ -83,7 +83,7 @@ public class UserTest {
         user.setBirthday(LocalDate.of(2014, Month.APRIL,1));
 
         Assert.assertNotNull(user);
-        Assert.assertEquals(user.getBirthday(), USER_BIRTHDAY);
+        Assert.assertEquals(USER_BIRTHDAY, user.getBirthday());
     }
 
     @Test
@@ -92,7 +92,7 @@ public class UserTest {
 
         Assert.assertNotNull(user);
         Assert.assertTrue(user.isActive());
-        Assert.assertEquals(user.isActive(),USER_ACTIVE);
+        Assert.assertEquals(USER_ACTIVE, user.isActive());
     }
 
     @Test

@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * class RestDepartmentController
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @RestController
 @RequestMapping(path = "/departments", produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
 public class RestDepartmentController {
@@ -16,11 +22,22 @@ public class RestDepartmentController {
     @Autowired
     private DepartmentService jdbcStorageService;
 
+    /**
+     * Get all departments
+     *
+     * @return list of departments
+     */
     @GetMapping
     public List<Department> getDepartments() {
         return jdbcStorageService.findAll();
     }
 
+    /**
+     * Get department with specified department's id
+     *
+     * @param id Department's id
+     * @return department
+     */
     @GetMapping("/{id}")
     public Department getDepartment(
             @PathVariable Integer id
@@ -28,6 +45,12 @@ public class RestDepartmentController {
         return jdbcStorageService.findById(id);
     }
 
+    /**
+     * Create department with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param department Department
+     * @return last department in DB
+     */
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
     public Department create(
@@ -38,6 +61,13 @@ public class RestDepartmentController {
         return jdbcStorageService.findAll().stream().reduce((first, second) -> second).orElse(null);
     }
 
+    /**
+     * Update department with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param id Department's id
+     * @param department Department
+     * @return department
+     */
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PutMapping("/{id}")
     public Department update(
@@ -50,6 +80,11 @@ public class RestDepartmentController {
         return department;
     }
 
+    /**
+     * Delete department with authorities ADMIN or ROLE_ADMINS
+     *
+     * @param id Department's id
+     */
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @DeleteMapping("/{id}")
     public void delete(

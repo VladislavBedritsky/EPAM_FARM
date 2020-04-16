@@ -6,6 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
+/**
+ * class MainController
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @RestController
 @RequestMapping("/rest")
 public class MainController {

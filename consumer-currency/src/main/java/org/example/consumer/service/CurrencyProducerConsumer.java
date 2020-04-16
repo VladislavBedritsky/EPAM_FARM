@@ -8,6 +8,12 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * class CurrencyProducerConsumer
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Service
 public class CurrencyProducerConsumer {
 
@@ -19,6 +25,11 @@ public class CurrencyProducerConsumer {
     @Autowired
     private CamelContext consumerCamelContext;
 
+    /**
+     * Produce array with JSON of currencies to ActiveMQ.
+     *
+     * @param objectToActiveMQ Array of JSON in String type
+     */
     public void produceJsonArrayOfCurrenciesToActiveMQ(String...objectToActiveMQ) {
         try {
             producerCamelContext.start();
@@ -31,6 +42,11 @@ public class CurrencyProducerConsumer {
         }
     }
 
+    /**
+     * Consume array with JSON of currencies from ActiveMQ.
+     *
+     * @return Array of JSON in String type
+     */
     public String[] consumeJsonArrayOfCurrenciesFromActiveMQ() {
         String[] currencies = new String[0];
         try {

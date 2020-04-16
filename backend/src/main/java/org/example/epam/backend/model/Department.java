@@ -2,6 +2,12 @@ package org.example.epam.backend.model;
 
 import java.util.Objects;
 
+/**
+ * POJO Department
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 public class Department {
 
     private Integer id;

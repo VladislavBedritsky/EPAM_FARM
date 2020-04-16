@@ -1,7 +1,5 @@
 package org.example.epam.backend.service.impl;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.example.epam.backend.dao.UserDao;
 import org.example.epam.backend.model.Role;
 import org.example.epam.backend.model.User;
@@ -17,11 +15,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import java.util.List;
+import java.util.Objects;
 
+/**
+ * UserService interface implementation
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Service
 public class UserServiceImpl implements UserService {
-
-    private static Logger LOGGER = LogManager.getLogger(UserServiceImpl.class);
 
     @Autowired
     private UserDao userDao;
@@ -94,13 +97,7 @@ public class UserServiceImpl implements UserService {
     }
 
     private Integer getLastUserId() {
-        Integer getLastUsersId = null;
-        try {
-            getLastUsersId = userDao.findAll().stream().reduce((first, second) -> second).orElse(null).getId();
-        } catch (NullPointerException e) {
-            LOGGER.error(e);
-        }
-        return getLastUsersId;
+        return Objects.requireNonNull(userDao.findAll().stream().reduce((first, second) -> second).orElse(null)).getId();
     }
 
 }

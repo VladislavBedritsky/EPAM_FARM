@@ -7,7 +7,12 @@ import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * POJO User
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 public class User implements UserDetails {
 
     private Integer id;

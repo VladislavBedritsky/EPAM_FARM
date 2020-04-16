@@ -14,6 +14,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * class CurrencyDynamicsService
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Service
 public class CurrencyDynamicsService {
 
@@ -22,6 +28,15 @@ public class CurrencyDynamicsService {
     @Autowired
     private CurrencyService currencyService;
 
+    /**
+     * Get array with currency dynamics between two dates
+     * with specified currency url.
+     *
+     * @param typeOfCurrencyUrl Currencies url
+     * @param startDate Date from
+     * @param endDate Date to
+     * @return array with specific currency
+     */
     public Double[] getDynamicsFromStartDateToEndDate(String typeOfCurrencyUrl, String startDate, String endDate) {
         String url=typeOfCurrencyUrl+startDate+"&endDate="+endDate;
         ArrayList<Double> list = new ArrayList<>();
@@ -45,6 +60,13 @@ public class CurrencyDynamicsService {
         return result;
     }
 
+    /**
+     * Get list of dates between two dates.
+     *
+     * @param startDate Date from
+     * @param endDate Date to
+     * @return list of dates
+     */
     public List<String> getDatesBetweenStartDateAndEndDate(String startDate, String endDate) {
 
         LocalDate st = LocalDate.parse(startDate);

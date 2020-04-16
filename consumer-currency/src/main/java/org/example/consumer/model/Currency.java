@@ -2,6 +2,12 @@ package org.example.consumer.model;
 
 import java.util.Objects;
 
+/**
+ * POJO Currency
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 public class Currency {
 
     private String date;

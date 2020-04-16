@@ -13,6 +13,12 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * DepartmentDao interface implementation
+ *
+ * @version 1.01 02 Feb 2020
+ * @author Uladzislau Biadrytski
+ */
 @Repository
 @PropertySource({"classpath:sql_department.properties"})
 public class JdbcStorageDaoImpl implements DepartmentDao {
