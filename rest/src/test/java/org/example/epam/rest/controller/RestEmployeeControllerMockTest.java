@@ -3,7 +3,6 @@ package org.example.epam.rest.controller;
 import org.example.epam.backend.model.Department;
 import org.example.epam.backend.model.Employee;
 import org.example.epam.backend.service.EmployeeService;
-import org.example.epam.rest.controller.RestEmployeeController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -15,7 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import static org.mockito.ArgumentMatchers.isA;
 
 @RunWith(MockitoJUnitRunner.class)
-@ContextConfiguration(locations={"classpath*:test.xml"})
+@ContextConfiguration(locations={"classpath*:test-rest-controller.xml"})
 public class RestEmployeeControllerMockTest {
 
     @InjectMocks

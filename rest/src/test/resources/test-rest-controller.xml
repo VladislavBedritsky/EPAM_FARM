@@ -49,13 +49,13 @@
 
     <bean id="jdbcStorageService" class="org.example.epam.backend.service.impl.JdbcStorageServiceImpl" />
 
-    <bean id="restDepartmentController" class="org.example.epam.rest.org.example.epam.rest.controller.RestDepartmentController" />
+    <bean id="restDepartmentController" class="org.example.epam.rest.controller.RestDepartmentController" />
 
     <bean id="employeeDao" class="org.example.epam.backend.dao.impl.EmployeeDaoImpl" />
 
     <bean id="employeeService" class="org.example.epam.backend.service.impl.EmployeeServiceImpl" />
 
-    <bean id="restEmployeeController" class="org.example.epam.rest.org.example.epam.rest.controller.RestEmployeeController" />
+    <bean id="restEmployeeController" class="org.example.epam.rest.controller.RestEmployeeController" />
 
     <bean id="converterService" class="org.example.epam.backend.service.impl.ConverterServiceImpl" />
 

@@ -2,7 +2,6 @@ package org.example.epam.rest.controller;
 
 import org.example.epam.backend.model.Department;
 import org.example.epam.backend.service.DepartmentService;
-import org.example.epam.rest.controller.RestDepartmentController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -15,7 +14,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isA;
 
 @RunWith(MockitoJUnitRunner.class)
-@ContextConfiguration(locations={"classpath*:test.xml"})
+@ContextConfiguration(locations={"classpath*:test-rest-controller.xml"})
 public class RestDepartmentControllerMockTest {
 
     @InjectMocks

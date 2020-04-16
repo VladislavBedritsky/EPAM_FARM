@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath*:test-rest-org.example.epam.rest.controller.xml"})
+@ContextConfiguration(locations={"classpath*:test-rest-controller.xml"})
 public class RestEmployeeControllerTest {
 
     @Autowired
