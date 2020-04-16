@@ -11,9 +11,14 @@ You can find here 3 apps:
  * `./web-app`
  * `./rest`
  * `./consumer-currency`
- 
+
+    * username: q - ADMIN  
+    * password: q
+
 ## Angular-app
 _http://35.239.53.104:4200/_
+ * username: `q`
+ * password: `q`
    
  Location: `./angular/`
  
