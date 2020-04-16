@@ -15,7 +15,7 @@ import java.util.List;
 
 @Repository
 @PropertySource({"classpath:sql_department.properties"})
-public abstract class JdbcStorageDaoImpl implements DepartmentDao {
+public class JdbcStorageDaoImpl implements DepartmentDao {
 
     private static Logger LOGGER = LogManager.getLogger(JdbcStorageDaoImpl.class);
 
@@ -137,6 +137,11 @@ public abstract class JdbcStorageDaoImpl implements DepartmentDao {
         } catch (SQLException e) {
             LOGGER.error(e);
         }
+    }
+
+    @Override
+    public Float getAverageSalaryInDepartment(Integer id) {
+        return null;
     }
 
 }
