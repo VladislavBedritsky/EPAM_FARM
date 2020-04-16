@@ -1,4 +1,5 @@
-<html xmlns:th="https://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light" id="navbar">
     <a class="navbar-brand" th:href="@{/}">EPAM_FARM</a>
@@ -30,18 +31,18 @@
     <div th:unless="${authUser}" >
         <a th:href="@{/login}">
             <button type="button"  id="button_login">
-                <i class="material-icons">
+                <em class="material-icons">
                     account_circle
-                </i>
+                </em>
             </button>
         </a>
     </div>
     <div th:if="${authUser}" >
         <form th:action="@{/logout}" method="post">
             <button  type="submit" id="button_login1">
-                <i class="material-icons">
+                <em class="material-icons">
                     input
-                </i>
+                </em>
             </button>
         </form>
     </div>

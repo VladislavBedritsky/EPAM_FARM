@@ -38,21 +38,21 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="departmentDao" class="org.example.epamFarm.backend.dao.impl.DepartmentDaoImpl" />
+    <bean id="departmentDao" class="org.example.epam.backend.dao.impl.DepartmentDaoImpl" />
 
-    <bean id="departmentService" class="org.example.epamFarm.backend.service.impl.DepartmentServiceImpl" />
+    <bean id="departmentService" class="org.example.epam.backend.service.impl.DepartmentServiceImpl" />
 
-    <bean id="jdbcStorageDao" class="org.example.epamFarm.backend.dao.impl.JdbcStorageDaoImpl" />
+    <bean id="jdbcStorageDao" class="org.example.epam.backend.dao.impl.JdbcStorageDaoImpl" />
 
-    <bean id="jdbcStorageService" class="org.example.epamFarm.backend.service.impl.JdbcStorageServiceImpl" />
+    <bean id="jdbcStorageService" class="org.example.epam.backend.service.impl.JdbcStorageServiceImpl" />
 
-    <bean id="employeeDao" class="org.example.epamFarm.backend.dao.impl.EmployeeDaoImpl" />
+    <bean id="employeeDao" class="org.example.epam.backend.dao.impl.EmployeeDaoImpl" />
 
-    <bean id="employeeService" class="org.example.epamFarm.backend.service.impl.EmployeeServiceImpl" />
+    <bean id="employeeService" class="org.example.epam.backend.service.impl.EmployeeServiceImpl" />
 
-    <bean id="converterService" class="org.example.epamFarm.backend.service.impl.ConverterServiceImpl" />
+    <bean id="converterService" class="org.example.epam.backend.service.impl.ConverterServiceImpl" />
 
-    <bean id="userDao" class="org.example.epamFarm.backend.dao.impl.UserDaoImpl" />
+    <bean id="userDao" class="org.example.epam.backend.dao.impl.UserDaoImpl" />
 
-    <bean id="userService" class="org.example.epamFarm.backend.service.impl.UserServiceImpl" />
+    <bean id="userService" class="org.example.epam.backend.service.impl.UserServiceImpl" />
 </beans>

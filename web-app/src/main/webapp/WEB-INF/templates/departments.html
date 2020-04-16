@@ -53,9 +53,9 @@
 
                 <td th:if="${isAdmin}">
                     <a href="" data-toggle="modal" th:attr="data-target='#exampleModal'+${a.id }">
-                        <i class="material-icons" id="update_icon">
+                        <em class="material-icons" id="update_icon">
                             settings
-                        </i>
+                        </em>
                     </a>
 
                     <!-- Modal -->
@@ -91,9 +91,9 @@
 
                 <td th:if="${isAdmin}">
                     <a th:href="@{/departments/delete/{id}(id=${a.id})}">
-                        <i class="material-icons" id="delete_icon">
+                        <em class="material-icons" id="delete_icon">
                             delete
-                        </i>
+                        </em>
                     </a>
                 </td>
             </tr>
