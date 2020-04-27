@@ -27,8 +27,13 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
     private OAuth2RestOperations oAuth2RestTemplate;
     @Value("${security.oauth2.client.clientId}")
     private String clientId;
-    @Value("${security.oauth2.resource.userInfoUri}")
-    private String userInfoUri;
+
+    /**
+     *
+     *     @Value("${security.oauth2.resource.userInfoUri}")
+     *     private String userInfoUri;
+     *
+     */
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -70,7 +75,7 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
         oAuth2Filter.setRestTemplate(oAuth2RestTemplate);
 
         oAuth2Filter.setTokenServices(new UserInfoTokenServices(
-                userInfoUri, clientId));
+                "http://3.121.199.219:8981/auth/rest/user", clientId));
 
         return oAuth2Filter;
     }

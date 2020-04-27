@@ -20,10 +20,12 @@ public class OAuth2Client {
     private String clientId;
     @Value("${security.oauth2.client.clientSecret}")
     private String clientSecret;
-    @Value("${security.oauth2.client.accessTokenUri}")
-    private String accessTokenUri;
-    @Value("${security.oauth2.client.userAuthorizationUri}")
-    private String userAuthorizationUri;
+/**
+  *  @Value("${security.oauth2.client.accessTokenUri}")
+  *  private String accessTokenUri;
+  *  @Value("${security.oauth2.client.userAuthorizationUri}")
+  *  private String userAuthorizationUri;
+  */
 
     @Resource
     private OAuth2ClientContext oAuth2ClientContext;
@@ -33,8 +35,8 @@ public class OAuth2Client {
         AuthorizationCodeResourceDetails resource = new AuthorizationCodeResourceDetails();
         resource.setClientId(clientId);
         resource.setClientSecret(clientSecret);
-        resource.setAccessTokenUri(accessTokenUri);
-        resource.setUserAuthorizationUri(userAuthorizationUri);
+        resource.setAccessTokenUri("http://3.121.199.219:8981/auth/oauth/token");
+        resource.setUserAuthorizationUri("http://3.121.199.219:8981/auth/oauth/authorize");
 
         return resource;
     }

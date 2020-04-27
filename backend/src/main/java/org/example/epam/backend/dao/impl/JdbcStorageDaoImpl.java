@@ -65,16 +65,16 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     }
 
     @Override
-    @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
+    @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION")
     public Department findById(Integer id) {
         Department department = new Department();
 
         try ( Connection connection = DriverManager.getConnection(url, username, password);
-              PreparedStatement preparedStatement = connection.prepareStatement(findById);
-              ResultSet resultSet = preparedStatement.executeQuery();
+              PreparedStatement preparedStatement = connection.prepareStatement(findById)
               ) {
 
-            preparedStatement.setInt(1,id);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
                 department.setId(resultSet.getInt("id"));

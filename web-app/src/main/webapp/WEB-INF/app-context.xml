@@ -28,9 +28,9 @@
     <context:annotation-config/>
 
     <!--      SPRING-CLOUD_CONFIG -->
-    <util:properties id="home" location="http://18.184.34.234:8980/rest-home.properties" />
-    <util:properties id="epam" location="http://18.184.34.234:8980/rest-epam.properties" />
-    <util:properties id="prod" location="http://18.184.34.234:8980/rest-prod.properties" />
+    <util:properties id="home" location="http://3.121.199.219:8980/rest-home.properties" />
+    <util:properties id="epam" location="http://3.121.199.219:8980/rest-epam.properties" />
+    <util:properties id="prod" location="http://3.121.199.219:8980/rest-prod.properties" />
     <context:property-placeholder properties-ref="prod"
                                   ignore-resource-not-found="true"
                                   ignore-unresolvable="true"

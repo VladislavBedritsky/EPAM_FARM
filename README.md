@@ -51,12 +51,12 @@ _http://35.239.53.104:8161/_
 _http://35.239.53.104:80/_
 
 ## Oauth2-server
-_http://18.184.34.234:8981/auth/rest/user_
+_http://3.121.199.219:8981/auth/rest/user_
    
 Location: `./oauth/`
 
 ## Config-server
-_http://18.184.34.234:8980/rest-prod.properties/_
+_http://3.121.199.219:8980/rest-prod.properties/_
    
 Location: `https://github.com/VladislavBedritsky/server-config`
 
