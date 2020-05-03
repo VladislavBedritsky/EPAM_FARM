@@ -49,8 +49,6 @@ public class RestEmployeeControllerMockTest {
         restEmployeeController.saveEmployee(employee);
         Mockito.verify(employeeService,Mockito.times(1))
                 .saveEmployee(isA(Employee.class),isA(String.class));
-        Mockito.verify(employeeService,Mockito.times(1))
-                .findAll();
     }
 
     @Test

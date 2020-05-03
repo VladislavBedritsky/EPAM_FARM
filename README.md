@@ -43,9 +43,6 @@ _http://35.239.53.104:8161/_
 * username: `admin`
 * password: `admin`
 
-## Nginx 
-_http://35.239.53.104:80/_
-
 ## Oauth2-server
 _http://3.121.199.219:8981/auth/rest/user_
    
