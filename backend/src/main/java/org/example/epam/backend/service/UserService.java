@@ -1,6 +1,7 @@
 package org.example.epam.backend.service;
 
 import org.example.epam.backend.model.Role;
+import org.example.epam.backend.model.Session;
 import org.example.epam.backend.model.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -70,4 +71,6 @@ public interface UserService extends UserDetailsService {
      * @param registrationUser User
      */
     boolean saveUser(User registrationUser);
+
+    void saveSession(Session session);
 }

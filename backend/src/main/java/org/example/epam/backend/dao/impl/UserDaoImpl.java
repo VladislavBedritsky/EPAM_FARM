@@ -4,6 +4,7 @@ import org.example.epam.backend.dao.UserDao;
 import org.example.epam.backend.dao.mapper.UserMapper;
 import org.example.epam.backend.dao.mapper.UserRoleMapper;
 import org.example.epam.backend.model.Role;
+import org.example.epam.backend.model.Session;
 import org.example.epam.backend.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,6 +36,8 @@ public class UserDaoImpl implements UserDao {
     private String saveUser;
     @Value("${user.saveUserRole}")
     private String saveUserRole;
+    @Value("${session.saveSession}")
+    private String saveSession;
 
     @Override
     public List<User> findAll() {
@@ -72,5 +75,10 @@ public class UserDaoImpl implements UserDao {
                 userId,
                 Role.USER.toString()
         );
+    }
+
+    @Override
+    public void saveSession(Session session) {
+        jdbcTemplate.update(saveSession, session.getTime(), session.getPage());
     }
 }

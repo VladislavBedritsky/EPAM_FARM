@@ -68,7 +68,8 @@ export class EmployeeListComponent implements OnInit {
     const body = {id: 1,name:this.q1, birthday:this.q2, salary:this.q3, department: {name:this.q4}};
     this._employeeService.saveEmployee(body).subscribe(
       data => {
-        this.employees.push(body);
+        const receivedBody = {id: data['id'], name:this.q1, birthday:this.q2, salary:this.q3, department: {name:this.q4}};
+        this.employees.push(receivedBody);
       }
     )
   }

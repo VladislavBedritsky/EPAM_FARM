@@ -1,11 +1,15 @@
 package org.example.epam.webapp.controller;
 
+import org.example.epam.backend.model.Session;
 import org.example.epam.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * class MainController
@@ -29,6 +33,11 @@ public class MainController {
     @GetMapping
     public String getIndex(Model model) {
         userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
+        Session session = new Session(
+                LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME),
+                "web-app"
+        );
+        userService.saveSession(session);
         return "index";
     }
 

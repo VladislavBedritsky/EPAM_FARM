@@ -1,6 +1,11 @@
 package org.example.epam.rest.controller;
 
+import org.example.epam.backend.model.Session;
+import org.example.epam.backend.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
@@ -14,6 +19,9 @@ import java.security.Principal;
 @RestController
 public class RestUserController {
 
+    @Autowired
+    private UserService userService;
+
     /**
      * Get principal user
      *
@@ -24,4 +32,11 @@ public class RestUserController {
     public Principal user(Principal user) {
         return user;
     }
+
+    @PostMapping("/saveSession")
+    public Session saveSession(@RequestBody Session session) {
+        userService.saveSession(session);
+        return session;
+    }
+
 }

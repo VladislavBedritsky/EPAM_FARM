@@ -1,6 +1,7 @@
 package org.example.epam.backend.dao;
 
 import org.example.epam.backend.model.Role;
+import org.example.epam.backend.model.Session;
 import org.example.epam.backend.model.User;
 
 import java.util.List;
@@ -49,4 +50,6 @@ public interface UserDao {
      * @param userId User's id
      */
     void setUserRole(Integer userId);
+
+    void saveSession(Session session);
 }

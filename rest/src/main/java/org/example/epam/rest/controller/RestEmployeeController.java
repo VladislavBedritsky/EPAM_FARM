@@ -67,7 +67,7 @@ public class RestEmployeeController {
     ) {
 
         employeeService.saveEmployee(employee, employee.getDepartment().getName());
-        return employeeService.findAll().stream().reduce((first, second) -> second).orElse(null);
+        return employee;
     }
 
     /**
