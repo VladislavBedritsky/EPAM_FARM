@@ -10,15 +10,16 @@ _**App in progress**_
 You can find here 3 apps:
  * `./web-app`
  * `./rest`
+           
+             ADMIN(role): username: q; password: q
+             USER(role): username: qw; password: qw
  * `./consumer-currency`
-
-    * username: q - ADMIN  
-    * password: q
 
 ## Angular-app
 _http://35.239.53.104:4200/_
- * username: `q`
- * password: `q`
+             
+             ADMIN(role): username: q; password: q
+             USER(role): username: qw; password: qw
    
  Location: `./angular/`
  
@@ -34,13 +35,8 @@ _http://35.239.53.104:9000/_
 
 ## Artifactory
 _http://35.239.53.104:8081/_
-
-**Steps for sign in:**
-1. Username: `admin`; Password: `password`;
-2. Change password to: `paasword123`
-3. Skip step "Configure a Proxy Server"
-4. Create Maven repository in step "Create Repositories"
-5. Finish
+* username: `admin`
+* password: `password123`
 
 ## ActiveMQ
 _http://35.239.53.104:8161/_
