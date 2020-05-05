@@ -24,7 +24,7 @@
     <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
         <property name="connectionFactory">
             <bean class="org.apache.activemq.ActiveMQConnectionFactory">
-                <property name="brokerURL" value="tcp://35.239.53.104:61616"/>
+                <property name="brokerURL" value="tcp://35.226.148.166:61616"/>
                 <property name="password" value="admin" />
                 <property name="userName" value="admin" />
             </bean>
