@@ -1,6 +1,6 @@
-package org.example.epam.service.impl;
+package org.example.epam.mail.service.impl;
 
-import org.example.epam.service.MailSender;
+import org.example.epam.mail.service.MailSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @author Uladzislau Biadrytski
  */
 @Service
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:mail.properties")
 public class MailSenderImpl implements MailSender {
 
     @Autowired

@@ -1,4 +1,4 @@
-package org.example.epam.service;
+package org.example.epam.mail.service;
 
 /**
  * MailSender Service

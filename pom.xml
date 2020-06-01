@@ -48,6 +48,7 @@
         <org.springframework.cloud.version>2.2.1.RELEASE</org.springframework.cloud.version>
         <com.google.code.findbugs.annotations.version>2.0.1</com.google.code.findbugs.annotations.version>
         <org.apache.logging.log4j.log4j-api.version>2.12.1</org.apache.logging.log4j.log4j-api.version>
+        <javax.mail.version>1.4.7</javax.mail.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -259,6 +260,12 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context-support</artifactId>
                 <version>${org.springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>mail</artifactId>
+                <version>${javax.mail.version}</version>
             </dependency>
         </dependencies>
 
