@@ -63,4 +63,23 @@
 
     <bean id="userService" class="org.example.epam.backend.service.impl.UserServiceImpl" />
 
+    <bean id="emailSender" class="org.example.epam.mail.service.impl.MailSenderImpl" />
+
+    <bean id="mailService" class="org.example.epam.backend.service.impl.MailServiceImpl" />
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <!-- SMTP settings -->
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="465" />
+        <property name="username" value="vladquinn2020@gmail.com" />
+        <property name="password" value="Testvladquinn2020" />
+
+        <property name="javaMailProperties">
+            <!-- additional properties specific to JavaMail -->
+            <props>
+                <prop key="mail.transport.protocol">smtps</prop>
+            </props>
+        </property>
+    </bean>
+
 </beans>
