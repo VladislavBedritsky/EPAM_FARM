@@ -11,7 +11,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.security.core.Authentication;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -20,7 +19,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.ArrayList;
 
 @RunWith(MockitoJUnitRunner.class)
-@ContextConfiguration(locations={"classpath*:test-org.example.epam.rest.controller.xml"})
 public class DepartmentControllerTest {
 
     @InjectMocks

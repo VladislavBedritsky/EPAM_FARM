@@ -24,6 +24,7 @@ import java.util.List;
 public class JdbcStorageDaoImpl implements DepartmentDao {
 
     private static Logger LOGGER = LogManager.getLogger(JdbcStorageDaoImpl.class);
+
     @Value("${db.username}")
     private String username;
     @Value("${db.password}")

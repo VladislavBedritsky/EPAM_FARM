@@ -15,6 +15,7 @@
         <module>consumer-currency</module>
         <module>mail</module>
         <module>aspect</module>
+        <module>test-db</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -87,6 +88,11 @@
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>aspect</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>test-db</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

@@ -4,15 +4,21 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/util
-        http://www.springframework.org/schema/util/spring-util.xsd">
+        http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="org.example.*"/>
     <context:annotation-config />
+
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
 
     <!--      SPRING-CLOUD_CONFIG -->
     <util:properties id="home" location="http://3.121.199.219:8980/rest-home.properties" />
@@ -75,4 +81,7 @@
     <bean id="emailSender" class="org.example.epam.mail.service.impl.MailSenderImpl" />
 
     <bean id="mailService" class="org.example.epam.backend.service.impl.MailServiceImpl" />
+
+    <bean id="restDepartmentController" class="org.example.epam.rest.controller.RestDepartmentController" />
+    <bean id="restEmployeeController" class="org.example.epam.rest.controller.RestEmployeeController" />
 </beans>

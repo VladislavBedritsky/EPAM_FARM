@@ -8,13 +8,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.ui.Model;
 
 import static org.mockito.ArgumentMatchers.isA;
 
 @RunWith(MockitoJUnitRunner.class)
-@ContextConfiguration(locations={"classpath*:test.xml"})
 public class DepartmentControllerMockTest {
 
     @InjectMocks
