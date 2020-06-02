@@ -9,12 +9,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.test.context.ContextConfiguration;
 
 import static org.mockito.ArgumentMatchers.isA;
 
 @RunWith(MockitoJUnitRunner.class)
-@ContextConfiguration(locations={"classpath*:test-rest-controller.xml"})
 public class RestEmployeeControllerMockTest {
 
     @InjectMocks

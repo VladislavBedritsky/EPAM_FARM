@@ -15,7 +15,7 @@
         <module>consumer-currency</module>
         <module>mail</module>
         <module>aspect</module>
-        <module>test-db</module>
+        <module>test</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -92,7 +92,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>test-db</artifactId>
+                <artifactId>test</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

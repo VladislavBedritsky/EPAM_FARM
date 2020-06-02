@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:*test.xml"})
+@ContextConfiguration(locations={"classpath*:test-rest.xml"})
 public class RestDepartmentControllerTest {
 
     @Autowired
