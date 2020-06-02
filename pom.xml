@@ -14,6 +14,7 @@
         <module>oauth</module>
         <module>consumer-currency</module>
         <module>mail</module>
+        <module>aspect</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -49,6 +50,7 @@
         <com.google.code.findbugs.annotations.version>2.0.1</com.google.code.findbugs.annotations.version>
         <org.apache.logging.log4j.log4j-api.version>2.12.1</org.apache.logging.log4j.log4j-api.version>
         <javax.mail.version>1.4.7</javax.mail.version>
+        <apectj.version>1.9.1</apectj.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -80,6 +82,11 @@
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>mail</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>aspect</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -267,6 +274,19 @@
                 <artifactId>mail</artifactId>
                 <version>${javax.mail.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>${apectj.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${apectj.version}</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>
