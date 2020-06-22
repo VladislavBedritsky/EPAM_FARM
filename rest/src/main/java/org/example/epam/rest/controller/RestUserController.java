@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 /**
- * class RestUserController
+ * REST Controller that handle requests about users
+ * and also save session
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski
@@ -33,6 +34,12 @@ public class RestUserController {
         return user;
     }
 
+    /**
+     * Save session from start page in angular app
+     *
+     * @param session Session
+     * @return session
+     */
     @PostMapping("/saveSession")
     public Session saveSession(@RequestBody Session session) {
         userService.saveSession(session);

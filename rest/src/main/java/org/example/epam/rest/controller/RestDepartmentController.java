@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * class RestDepartmentController
+ * REST Controller that handle requests about departments
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski
  */
 @RestController
-@RequestMapping(path = "/departments", produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
+@RequestMapping(path = "/departments",
+        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 public class RestDepartmentController {
 
     @Autowired

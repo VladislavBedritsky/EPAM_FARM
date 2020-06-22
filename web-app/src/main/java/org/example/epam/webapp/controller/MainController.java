@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * class MainController
+ * Controller that handle requests on "/", "/login",
+ * "/accessdenied"
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski
@@ -32,7 +33,7 @@ public class MainController {
      */
     @GetMapping
     public String getIndex(Model model) {
-        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseThanAddToModel(model);
         Session session = new Session(
                 LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME),
                 "web-app"

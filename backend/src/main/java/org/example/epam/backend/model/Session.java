@@ -2,6 +2,12 @@ package org.example.epam.backend.model;
 
 import java.util.Objects;
 
+/**
+ * POJO Session
+ *
+ * @version 1.01 05 May 2020
+ * @author Uladzislau Biadrytski
+ */
 public class Session {
 
     private Integer id;
@@ -52,5 +58,14 @@ public class Session {
     @Override
     public int hashCode() {
         return Objects.hash(id, time, page);
+    }
+
+    @Override
+    public String toString() {
+        return "Session{" +
+                "id=" + id +
+                ", time='" + time + '\'' +
+                ", page='" + page + '\'' +
+                '}';
     }
 }

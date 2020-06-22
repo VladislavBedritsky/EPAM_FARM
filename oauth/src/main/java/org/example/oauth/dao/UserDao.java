@@ -18,6 +18,12 @@ import java.util.List;
  */
 @Repository
 public class UserDao {
+
+    private static final String FIND_BY_USERNAME =
+            "SELECT * FROM users WHERE username=?";
+    private static final String FIND_ROLES_BY_USERNAME =
+            "SELECT r.role  FROM users u JOIN roles r ON u.id=r.user_id WHERE u.username=?";
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -28,8 +34,10 @@ public class UserDao {
      * @return user
      */
     public User findByUserName(String username) {
-        String sql = "SELECT * FROM users WHERE username=?";
-        return jdbcTemplate.queryForObject(sql,new UserMapper(),username);
+        return jdbcTemplate.queryForObject(
+                FIND_BY_USERNAME,
+                new UserMapper(),
+                username);
     }
 
     /**
@@ -39,7 +47,9 @@ public class UserDao {
      * @return list of roles
      */
     public List<Role> findUserRolesByUsername(String username) {
-        String sql = "SELECT r.role  FROM users u JOIN roles r ON u.id=r.user_id WHERE u.username=? ";
-        return jdbcTemplate.query(sql, new UserRoleMapper(),username);
+        return jdbcTemplate.query(
+                FIND_ROLES_BY_USERNAME,
+                new UserRoleMapper(),
+                username);
     }
 }

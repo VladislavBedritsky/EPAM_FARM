@@ -1,5 +1,7 @@
 package org.example.epam.backend.dao.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.epam.backend.dao.UserDao;
 import org.example.epam.backend.dao.mapper.UserMapper;
 import org.example.epam.backend.dao.mapper.UserRoleMapper;
@@ -9,9 +11,11 @@ import org.example.epam.backend.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,6 +28,7 @@ import java.util.List;
 @PropertySource("classpath:sql_user.properties")
 public class UserDaoImpl implements UserDao {
 
+    private static Logger LOGGER = LogManager.getLogger(UserDaoImpl.class);
     @Autowired
     private JdbcTemplate jdbcTemplate;
     @Value("${user.findByUsername}")
@@ -41,17 +46,44 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> findAll() {
-        return jdbcTemplate.query(findAll, new UserMapper());
+        List<User> users = new ArrayList<>();
+        try {
+            users = jdbcTemplate.query(findAll, new UserMapper());
+
+        } catch (EmptyResultDataAccessException e) {
+            LOGGER.error(e);
+        }
+        return users;
     }
 
     @Override
     public User findByUsername(String username) {
-        return jdbcTemplate.queryForObject(findByUsername, new UserMapper(), username);
+        User user = new User();
+        try {
+            user = jdbcTemplate.queryForObject(
+                    findByUsername,
+                    new UserMapper(),
+                    username);
+
+        } catch (EmptyResultDataAccessException e) {
+            LOGGER.error(e);
+        }
+        return user;
     }
 
     @Override
     public List<Role> findUserRolesByUsername(String username) {
-        return jdbcTemplate.query(findUserRolesByUsername, new UserRoleMapper(),username);
+        List<Role> roles = new ArrayList<>();
+        try {
+            roles = jdbcTemplate.query(
+                    findUserRolesByUsername,
+                    new UserRoleMapper(),
+                    username);
+
+        } catch (EmptyResultDataAccessException e) {
+            LOGGER.error(e);
+        }
+        return roles;
     }
 
     @Override

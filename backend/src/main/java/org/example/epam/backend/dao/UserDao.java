@@ -51,5 +51,10 @@ public interface UserDao {
      */
     void setUserRole(Integer userId);
 
+    /**
+     * Save session.
+     *
+     * @param session Session
+     */
     void saveSession(Session session);
 }

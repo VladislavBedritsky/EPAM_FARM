@@ -41,8 +41,7 @@
     </bean>
 
     <!-- Thymeleaf Template Engine (Spring5-specific version) -->
-    <bean id="templateEngine"
-          class="org.thymeleaf.spring5.SpringTemplateEngine">
+    <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
         <property name="templateResolvers">
             <set>
                 <ref bean="templateResolver" />

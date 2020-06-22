@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * UserDetails interface implementation
+ * User POJO
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski

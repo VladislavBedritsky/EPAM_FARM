@@ -40,7 +40,7 @@ public class EmployeeControllerMockTest {
         Mockito.verify(departmentService,Mockito.times(1))
                 .findAll();
         Mockito.verify(userService,Mockito.times(1))
-                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class));
+                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseThanAddToModel(isA(Model.class));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class EmployeeControllerMockTest {
         Mockito.verify(employeeService,Mockito.times(1))
                 .findById(isA(Integer.class));
         Mockito.verify(userService,Mockito.times(1))
-                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class));
+                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseThanAddToModel(isA(Model.class));
     }
 
     @Test

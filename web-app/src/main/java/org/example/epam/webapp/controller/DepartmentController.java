@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * class DepartmentController
+ * Controller that handle requests about departments
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski
@@ -36,7 +36,7 @@ public class DepartmentController {
     public String getDepartments (
             Model model) {
 
-        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseThanAddToModel(model);
         model.addAttribute("departments", jdbcStorageService.findAll());
 
         return "departments";
@@ -54,10 +54,13 @@ public class DepartmentController {
             Model model,
             @PathVariable Integer id) {
 
-        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
-        model.addAttribute("department", jdbcStorageService.findById(id));
-        model.addAttribute("department_employees", departmentService.findEmployeesByDepartmentId(id));
-        model.addAttribute("average_salary",departmentService.getAverageSalaryInDepartment(id));
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseThanAddToModel(model);
+        model.addAttribute("department",
+                jdbcStorageService.findById(id));
+        model.addAttribute("department_employees",
+                departmentService.findEmployeesByDepartmentId(id));
+        model.addAttribute("average_salary",
+                departmentService.getAverageSalaryInDepartment(id));
 
         return "department";
     }
@@ -119,7 +122,6 @@ public class DepartmentController {
             @PathVariable Integer id,
             @RequestParam String name
     ) {
-
 
         jdbcStorageService.updateDepartment(id, name);
 

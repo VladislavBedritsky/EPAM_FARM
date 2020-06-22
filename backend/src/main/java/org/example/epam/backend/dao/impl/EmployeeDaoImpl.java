@@ -12,6 +12,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,17 +49,46 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public List<Employee> findAll() {
-        return jdbcTemplate.query(findAll, new EmployeeWithDepartmentMapper());
+       List<Employee> employees = new ArrayList<>();
+        try {
+            employees = jdbcTemplate.query(
+                    findAll,
+                    new EmployeeWithDepartmentMapper());
+
+        } catch (EmptyResultDataAccessException e) {
+            LOGGER.error(e);
+        }
+        return employees;
     }
 
     @Override
     public Employee findById(Integer id) {
-        return jdbcTemplate.queryForObject(findById,new EmployeeWithDepartmentMapper(),id);
+        Employee employee = new Employee();
+        try {
+            employee = jdbcTemplate.queryForObject(
+                    findById,
+                    new EmployeeWithDepartmentMapper(),
+                    id);
+
+        } catch (EmptyResultDataAccessException e) {
+            LOGGER.error(e);
+        }
+        return employee;
     }
 
     @Override
     public List<Employee> findEmployeesByDepartmentId(Integer id) {
-        return jdbcTemplate.query(findEmployeesByDepartmentId, new EmployeeWithDepartmentMapper(), id);
+        List<Employee> employees = new ArrayList<>();
+        try {
+            employees = jdbcTemplate.query(
+                    findEmployeesByDepartmentId,
+                    new EmployeeWithDepartmentMapper(),
+                    id);
+
+        } catch (EmptyResultDataAccessException e) {
+            LOGGER.error(e);
+        }
+        return employees;
     }
 
     @Override
@@ -113,9 +143,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public Employee findEmployeeByName(String name) {
         Employee employee = new Employee();
-        try{
-            employee = jdbcTemplate.queryForObject(findEmployeeByName, new EmployeeWithDepartmentMapper(), name);
-        }catch (EmptyResultDataAccessException e) {
+        try {
+            employee = jdbcTemplate.queryForObject(
+                    findEmployeeByName,
+                    new EmployeeWithDepartmentMapper(),
+                    name);
+
+        } catch (EmptyResultDataAccessException e) {
             LOGGER.error(e);
         }
         return employee;

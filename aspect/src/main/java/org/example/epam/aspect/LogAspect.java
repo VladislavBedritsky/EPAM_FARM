@@ -7,7 +7,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.stereotype.Component;
 
 /**
- * Aspect with logging logic
+ * Aspect which used for logging service layer
  *
  * @version 1.01 02 Jun 2020
  * @author Uladzislau Biadrytski

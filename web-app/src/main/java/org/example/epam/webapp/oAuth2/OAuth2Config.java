@@ -23,17 +23,13 @@ import org.springframework.security.web.authentication.preauth.AbstractPreAuthen
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class OAuth2Config extends WebSecurityConfigurerAdapter {
 
+    private static final String USER_INFO_URI = "http://3.121.199.219:8981/auth/rest/user";
+    private static final String LOGIN_URI  = "/login";
+
     @Autowired
     private OAuth2RestOperations oAuth2RestTemplate;
     @Value("${security.oauth2.client.clientId}")
     private String clientId;
-
-    /**
-     *
-     *     @Value("${security.oauth2.resource.userInfoUri}")
-     *     private String userInfoUri;
-     *
-     */
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -64,18 +60,21 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
 
     @Bean
     public AuthenticationEntryPoint authenticationEntryPoint() {
-        return new LoginUrlAuthenticationEntryPoint("/login");
+        return new LoginUrlAuthenticationEntryPoint(LOGIN_URI);
     }
 
     @Bean
     public OAuth2ClientAuthenticationProcessingFilter filter() {
 
-        OAuth2ClientAuthenticationProcessingFilter oAuth2Filter = new OAuth2ClientAuthenticationProcessingFilter("/login");
+        OAuth2ClientAuthenticationProcessingFilter oAuth2Filter =
+                new OAuth2ClientAuthenticationProcessingFilter(LOGIN_URI);
 
         oAuth2Filter.setRestTemplate(oAuth2RestTemplate);
 
-        oAuth2Filter.setTokenServices(new UserInfoTokenServices(
-                "http://3.121.199.219:8981/auth/rest/user", clientId));
+        oAuth2Filter.setTokenServices(
+                new UserInfoTokenServices(
+                        USER_INFO_URI,
+                        clientId));
 
         return oAuth2Filter;
     }

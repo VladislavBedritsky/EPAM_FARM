@@ -37,7 +37,7 @@ public class DepartmentControllerMockTest {
         Mockito.verify(jdbcStorageService,Mockito.times(1))
                 .findAll();
         Mockito.verify(userService,Mockito.times(1))
-                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class));
+                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseThanAddToModel(isA(Model.class));
 
     }
 
@@ -68,7 +68,7 @@ public class DepartmentControllerMockTest {
         Mockito.verify(departmentService,Mockito.times(1))
                 .getAverageSalaryInDepartment(isA(Integer.class));
         Mockito.verify(userService,Mockito.times(1))
-                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(isA(Model.class));
+                .checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseThanAddToModel(isA(Model.class));
     }
 
     @Test

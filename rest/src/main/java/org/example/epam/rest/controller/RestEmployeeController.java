@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * class RestEmployeeController
+ * REST Controller that handle requests about employees
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski
  */
 @RestController
-@RequestMapping(value = "/employees", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+@RequestMapping(value = "/employees",
+        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 public class RestEmployeeController {
 
     @Autowired

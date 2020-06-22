@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 /**
- * class MainController
+ * REST Controller which handle requests on "/rest"
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski

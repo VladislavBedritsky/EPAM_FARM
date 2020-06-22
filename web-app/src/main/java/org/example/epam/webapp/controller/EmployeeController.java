@@ -12,7 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * class EmployeeController
+ * Controller that handle requests about employees
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski
@@ -38,7 +38,7 @@ public class EmployeeController {
     public String getEmployees(
             Model model) {
 
-        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseThanAddToModel(model);
         model.addAttribute("employees", employeeService.findAll());
         model.addAttribute("departments", departmentService.findAll());
 
@@ -57,7 +57,7 @@ public class EmployeeController {
             Model model,
             @PathVariable Integer id
     ) {
-        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(model);
+        userService.checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseThanAddToModel(model);
         model.addAttribute("employee", employeeService.findById(id));
         return "employee";
     }

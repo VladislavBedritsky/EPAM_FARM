@@ -399,7 +399,7 @@
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${maven-checkstyle-plugin.version}</version>
                     <configuration>
-                        <configLocation>web-app/config/checkstyle/checkstyle.xml</configLocation>
+                        <configLocation>config/checkstyle/checkstyle.xml</configLocation>
                         <failOnViolation>false</failOnViolation>
                     </configuration>
                     <executions>

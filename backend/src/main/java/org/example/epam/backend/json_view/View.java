@@ -1,6 +1,6 @@
 package org.example.epam.backend.json_view;
 /**
- * class View is used for POJO
+ * class View is used for POJO Employee
  * to display them in special JSON view in REST
  *
  * @version 1.01 02 Feb 2020

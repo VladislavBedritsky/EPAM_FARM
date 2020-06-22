@@ -70,8 +70,10 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     public Department findById(Integer id) {
         Department department = new Department();
 
-        try ( Connection connection = DriverManager.getConnection(url, username, password);
-              PreparedStatement preparedStatement = connection.prepareStatement(findById)
+        try ( Connection connection = DriverManager
+                .getConnection(url, username, password);
+              PreparedStatement preparedStatement = connection
+                      .prepareStatement(findById)
               ) {
 
             preparedStatement.setInt(1, id);
@@ -93,8 +95,10 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public void saveDepartment(Department department) {
 
-        try ( Connection connection = DriverManager.getConnection(url, username, password);
-              PreparedStatement preparedStatement = connection.prepareStatement(saveDepartment, Statement.RETURN_GENERATED_KEYS);
+        try ( Connection connection = DriverManager
+                .getConnection(url, username, password);
+              PreparedStatement preparedStatement = connection
+                      .prepareStatement(saveDepartment, Statement.RETURN_GENERATED_KEYS);
               ) {
 
             preparedStatement.setString(1, department.getName());
@@ -109,8 +113,10 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     @Override
     @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public void deleteDepartment(Integer id) {
-        try ( Connection connection = DriverManager.getConnection(url, username, password);
-              PreparedStatement preparedStatement = connection.prepareStatement(deleteDepartment);
+        try ( Connection connection = DriverManager
+                .getConnection(url, username, password);
+              PreparedStatement preparedStatement = connection
+                      .prepareStatement(deleteDepartment);
                 ) {
 
             preparedStatement.setInt(1,id);
@@ -124,8 +130,10 @@ public class JdbcStorageDaoImpl implements DepartmentDao {
     @Override
     @SuppressFBWarnings("OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE")
     public void updateDepartment(Integer id, String name) {
-        try (Connection connection = DriverManager.getConnection(url, username, password);
-             PreparedStatement preparedStatement = connection.prepareStatement(updateDepartment);
+        try (Connection connection = DriverManager
+                .getConnection(url, username, password);
+             PreparedStatement preparedStatement = connection
+                     .prepareStatement(updateDepartment);
                 ) {
 
             preparedStatement.setString(1,name);

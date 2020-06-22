@@ -16,7 +16,6 @@ import java.util.Objects;
 public class User implements UserDetails {
 
     private Integer id;
-
     private String firstName;
     private String lastName;
     private String username;

@@ -19,8 +19,6 @@
     </security:http>
 
     <security:authentication-manager alias="authenticationManager">
-
-
         <security:authentication-provider >
             <security:user-service>
                 <security:user name="q"
@@ -31,7 +29,6 @@
                       authorities="USER" />
             </security:user-service>
         </security:authentication-provider>
-
     </security:authentication-manager>
 
     <security:global-method-security pre-post-annotations="enabled"/>

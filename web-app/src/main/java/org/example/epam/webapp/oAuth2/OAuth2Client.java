@@ -16,16 +16,13 @@ import javax.annotation.Resource;
 @EnableOAuth2Client
 public class OAuth2Client {
 
+    private static final String ACCESS_TOKEN_URI = "http://3.121.199.219:8981/auth/oauth/token";
+    private static final String USER_AUTH_URI = "http://3.121.199.219:8981/auth/oauth/authorize";
+
     @Value("${security.oauth2.client.clientId}")
     private String clientId;
     @Value("${security.oauth2.client.clientSecret}")
     private String clientSecret;
-/**
-  *  @Value("${security.oauth2.client.accessTokenUri}")
-  *  private String accessTokenUri;
-  *  @Value("${security.oauth2.client.userAuthorizationUri}")
-  *  private String userAuthorizationUri;
-  */
 
     @Resource
     private OAuth2ClientContext oAuth2ClientContext;
@@ -35,8 +32,8 @@ public class OAuth2Client {
         AuthorizationCodeResourceDetails resource = new AuthorizationCodeResourceDetails();
         resource.setClientId(clientId);
         resource.setClientSecret(clientSecret);
-        resource.setAccessTokenUri("http://3.121.199.219:8981/auth/oauth/token");
-        resource.setUserAuthorizationUri("http://3.121.199.219:8981/auth/oauth/authorize");
+        resource.setAccessTokenUri(ACCESS_TOKEN_URI);
+        resource.setUserAuthorizationUri(USER_AUTH_URI);
 
         return resource;
     }

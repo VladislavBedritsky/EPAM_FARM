@@ -7,7 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * RowMapper interface implementation
+ * This class is responsible for mapping fields from db
+ * on Department object
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski

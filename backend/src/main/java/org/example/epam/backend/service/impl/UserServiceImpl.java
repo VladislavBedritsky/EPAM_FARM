@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(Model model) {
+    public void checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseThanAddToModel(Model model) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 

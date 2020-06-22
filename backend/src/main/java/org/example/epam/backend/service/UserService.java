@@ -55,7 +55,7 @@ public interface UserService extends UserDetailsService {
      *
      * @param model Model
      */
-    void checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseWhenAddToModel(Model model);
+    void checkIfUserAuthenticatedAndHasRoleAdminInLdapAndDatabaseThanAddToModel(Model model);
 
     /**
      * Check if user has role ADMIN.
