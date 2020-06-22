@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup, } from '@angular/forms';
+import { FormControl, Validators, FormGroup,  } from '@angular/forms';
 
 import { Employee } from 'src/app/common/employee';
 import { Department } from 'src/app/common/department';
@@ -23,15 +23,19 @@ export class EmployeeListComponent implements OnInit {
     userAuthorities: any;
     isAdmin = false;
 
+    isUserNameAlreadyExists = false;
+    filteredEmployees = [];
+
     employeeForm: FormGroup = new FormGroup({
       name: new FormControl('', [
-        Validators.required
+        Validators.required,
       ]),
       date: new FormControl('', [
         Validators.required
       ]),
       salary: new FormControl('', [
-        Validators.required
+        Validators.required,
+        Validators.pattern("[+-]?([0-9]*[.])?[0-9]+")
       ]),
       departmentId: new FormControl('', [
         Validators.required
@@ -99,6 +103,21 @@ export class EmployeeListComponent implements OnInit {
       this._departmentService.getDepartments().subscribe(
         data => this.departments = data
       )
+  }
+
+  filterNames() {
+    this.filteredEmployees = this.employees.filter(
+      item => {
+        if(item.name.toLowerCase() === this.employeeForm.controls['name'].value.toLowerCase()) {
+          return item;
+        }
+    })
+    console.log(this.filteredEmployees)
+    if (this.filteredEmployees.length === 0) {
+      this.isUserNameAlreadyExists = false
+    } else {
+      this.isUserNameAlreadyExists = true
+    }
   }
 
 }

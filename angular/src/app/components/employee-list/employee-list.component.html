@@ -53,28 +53,19 @@
 
         <h2>new employee</h2>
 
-        <div class="alert alert-danger"
-             *ngIf="employeeForm.controls['name'].invalid && employeeForm.controls['name'].touched">
-          Не указано имя
-        </div>
-        <div class="alert alert-danger"
-             *ngIf="employeeForm.controls['salary'].invalid && employeeForm.controls['salary'].touched">
-          Не указано zp
-        </div>
-        <div class="alert alert-danger"
-             *ngIf="employeeForm.controls['date'].invalid && employeeForm.controls['date'].touched">
-          Не указано date
-        </div>
-        <div class="alert alert-danger"
-             *ngIf="employeeForm.controls['departmentId'].invalid && employeeForm.controls['departmentId'].touched">
-          Не указано departmentId
-        </div>
-
         <div class="form-group mt-2">
           <div class="col-sm-9 mx-auto">
             <input type="text"
                    placeholder="Employee name" class="form-control"
-                   formControlName="name" >
+                   formControlName="name"
+                   (input)="filterNames()">
+            <p *ngIf="employeeForm.controls['name'].errors?.required &&
+                  employeeForm.controls['name'].touched">
+              Name is empty
+            </p>
+            <p *ngIf="isUserNameAlreadyExists">
+              Such name is already exists
+            </p>
           </div>
         </div>
 
@@ -82,6 +73,10 @@
           <div class="col-sm-9 mx-auto">
             <input type="date" name="birthday" placeholder="Date of birth" class="form-control"
                    formControlName="date">
+            <p *ngIf="employeeForm.controls['date'].invalid &&
+                  employeeForm.controls['date'].touched">
+              Date is empty
+            </p>
           </div>
         </div>
 
@@ -89,6 +84,14 @@
           <div class="col-sm-9 mx-auto">
             <input type="text"  name="salary" placeholder="Salary (e.g. 1024.08)" class="form-control"
                    formControlName="salary">
+            <p *ngIf="employeeForm.controls['salary'].errors?.required &&
+                  employeeForm.controls['salary'].touched">
+              Salary is empty
+            </p>
+            <p *ngIf="employeeForm.controls['salary'].errors?.pattern &&
+                  employeeForm.controls['salary'].touched">
+              Don't match (e.g. 1024.08)
+            </p>
           </div>
         </div>
 
@@ -99,12 +102,17 @@
             <datalist id="Departments">
               <option *ngFor="let dep of departments" [value]="dep.name">
             </datalist>
+            <p *ngIf="employeeForm.controls['departmentId'].invalid &&
+                employeeForm.controls['departmentId'].touched">
+              Department is empty
+            </p>
           </div>
         </div>
 
         <div class="form-group" align="center">
           <button type="submit" class="btn btn-secondary btn-lg mt-2" id="save_button"
-                  (click)="saveEmployee()" [disabled]="!employeeForm.valid">
+                  (click)="saveEmployee()" [disabled]="!employeeForm.valid ||
+                   (isUserNameAlreadyExists)">
             SAVE
           </button>
         </div>
@@ -114,6 +122,4 @@
   </div>
 <app-footer></app-footer>
 </div>
-<!--    <th>-->
-<!--      <img src="http://placehold.it/250x300" height="50"/>-->
-<!--    </th>-->
+

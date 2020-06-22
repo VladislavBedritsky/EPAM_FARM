@@ -71,3 +71,8 @@
     font-size: 1.4em;
     color: yellow;
 }
+
+.form-horizontal p {
+  color: red;
+  margin-left: 5px;
+}
