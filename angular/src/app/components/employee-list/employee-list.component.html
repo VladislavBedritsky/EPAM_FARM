@@ -48,38 +48,54 @@
         </tbody>
       </table>
 
-      <form *ngIf="isAdmin" method="post" class="form-horizontal" id="save_empl_form">
+      <form *ngIf="isAdmin" method="post" class="form-horizontal" id="save_empl_form"
+        novalidate [formGroup]="employeeForm">
 
         <h2>new employee</h2>
 
-<!--        <div class="text-danger mt-2">-->
-<!--          <p th:text="${isNameExists}?${isNameExists}" align="center">-->
-<!--          </p>-->
-<!--          <p th:text="${wrongFloatValue}?${wrongFloatValue}" align="center">-->
-<!--          </p>-->
-<!--        </div>-->
+        <div class="alert alert-danger"
+             *ngIf="employeeForm.controls['name'].invalid && employeeForm.controls['name'].touched">
+          Не указано имя
+        </div>
+        <div class="alert alert-danger"
+             *ngIf="employeeForm.controls['salary'].invalid && employeeForm.controls['salary'].touched">
+          Не указано zp
+        </div>
+        <div class="alert alert-danger"
+             *ngIf="employeeForm.controls['date'].invalid && employeeForm.controls['date'].touched">
+          Не указано date
+        </div>
+        <div class="alert alert-danger"
+             *ngIf="employeeForm.controls['departmentId'].invalid && employeeForm.controls['departmentId'].touched">
+          Не указано departmentId
+        </div>
 
         <div class="form-group mt-2">
           <div class="col-sm-9 mx-auto">
-            <input type="text" [(ngModel)]="q1" #q1var="ngModel" name="name" placeholder="Employee name" class="form-control" autofocus required>
+            <input type="text"
+                   placeholder="Employee name" class="form-control"
+                   formControlName="name" >
           </div>
         </div>
 
         <div class="form-group mt-2">
           <div class="col-sm-9 mx-auto">
-            <input type="date" [(ngModel)]="q2" name="birthday" placeholder="Date of birth" class="form-control" min="1900-01-01" max="2020-01-01" autofocus required>
+            <input type="date" name="birthday" placeholder="Date of birth" class="form-control"
+                   formControlName="date">
           </div>
         </div>
 
         <div class="form-group mt-2">
           <div class="col-sm-9 mx-auto">
-            <input type="text" [(ngModel)]="q3" name="salary" placeholder="Salary (e.g. 1024.08)" class="form-control" autofocus  required>
+            <input type="text"  name="salary" placeholder="Salary (e.g. 1024.08)" class="form-control"
+                   formControlName="salary">
           </div>
         </div>
 
         <div class="form-group mt-2">
           <div class="col-sm-9 mx-auto">
-            <input type="text" list="Departments" [(ngModel)]="q4" name="departmentName" placeholder="Departments" class="form-control" autocomplete="off" autofocus required >
+            <input type="text" list="Departments" name="departmentName" placeholder="Departments" class="form-control" autocomplete="off"
+                   formControlName="departmentId">
             <datalist id="Departments">
               <option *ngFor="let dep of departments" [value]="dep.name">
             </datalist>
@@ -87,7 +103,10 @@
         </div>
 
         <div class="form-group" align="center">
-          <button type="submit" class="btn btn-secondary btn-lg mt-2" id="save_button" (click)="saveEmployee()">SAVE</button>
+          <button type="submit" class="btn btn-secondary btn-lg mt-2" id="save_button"
+                  (click)="saveEmployee()" [disabled]="!employeeForm.valid">
+            SAVE
+          </button>
         </div>
       </form>
 

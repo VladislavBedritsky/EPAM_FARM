@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Department } from 'src/app/common/department';
 import { DepartmentService } from 'src/app/service/department.service'
 

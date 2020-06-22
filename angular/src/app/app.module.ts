@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
@@ -16,7 +17,6 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AuthGuardService } from 'src/app/service/auth-guard.service';
 import { BasicAuthHttpInterceptorService } from 'src/app/service/basic-auth-http-interceptor.service';
-import { ValidatorDirective } from './directive/validator.directive';
 
 const routes: Routes = [
   {path: 'employees', component: EmployeeListComponent, canActivate:[AuthGuardService] },
@@ -40,14 +40,14 @@ const routes: Routes = [
     DepartmentListComponent,
     DepartmentIdComponent,
     LoginComponent,
-    LogoutComponent,
-    ValidatorDirective
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

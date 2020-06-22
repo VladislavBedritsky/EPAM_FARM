@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormGroup, } from '@angular/forms';
+
 import { Employee } from 'src/app/common/employee';
 import { Department } from 'src/app/common/department';
 import { EmployeeService } from 'src/app/service/employee.service';
 import { DepartmentService } from 'src/app/service/department.service';
 import { UserService } from 'src/app/service/user.service';
-
 
 export class UserAuthorities {
   authority: string;
@@ -21,7 +22,21 @@ export class EmployeeListComponent implements OnInit {
     departments: Department[];
     userAuthorities: any;
     isAdmin = false;
-    q1 = ""; q2 = ""; q3 = ""; q4 = "";
+
+    employeeForm: FormGroup = new FormGroup({
+      name: new FormControl('', [
+        Validators.required
+      ]),
+      date: new FormControl('', [
+        Validators.required
+      ]),
+      salary: new FormControl('', [
+        Validators.required
+      ]),
+      departmentId: new FormControl('', [
+        Validators.required
+      ]),
+    })
 
   constructor(private _employeeService: EmployeeService,
               private _departmentService: DepartmentService,
@@ -65,11 +80,17 @@ export class EmployeeListComponent implements OnInit {
   }
 
   saveEmployee(): void {
-    const body = {id: 1,name:this.q1, birthday:this.q2, salary:this.q3, department: {name:this.q4}};
+    const body = {
+      id: 1,
+      name: this.employeeForm.controls['name'].value,
+      birthday: this.employeeForm.controls['date'].value,
+      salary: this.employeeForm.controls['salary'].value,
+      department: { name: this.employeeForm.controls['departmentId'].value}
+      };
+
     this._employeeService.saveEmployee(body).subscribe(
       data => {
-        const receivedBody = {id: data['id'], name:this.q1, birthday:this.q2, salary:this.q3, department: {name:this.q4}};
-        this.employees.push(receivedBody);
+        this.employees.push(body);
       }
     )
   }
