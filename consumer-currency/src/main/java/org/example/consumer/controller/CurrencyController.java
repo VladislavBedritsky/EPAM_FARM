@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.time.LocalDate;
 
 /**
- * class CurrencyController
+ * Controller which handle requests about currencies
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski

@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * class CurrencyService
+ * Currency service
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski

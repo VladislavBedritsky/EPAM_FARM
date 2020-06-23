@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * class CurrencyDynamicsService
+ * Service which responsible for dynamics currency logic
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski

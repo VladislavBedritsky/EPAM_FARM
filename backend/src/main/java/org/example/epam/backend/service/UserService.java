@@ -72,5 +72,10 @@ public interface UserService extends UserDetailsService {
      */
     boolean saveUser(User registrationUser);
 
+    /**
+     * Save session.
+     *
+     * @param session Session
+     */
     void saveSession(Session session);
 }

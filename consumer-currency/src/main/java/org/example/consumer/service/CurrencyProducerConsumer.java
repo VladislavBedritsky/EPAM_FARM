@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * class CurrencyProducerConsumer
+ * Service which responsible for Camel producers and consumers logic
  *
  * @version 1.01 02 Feb 2020
  * @author Uladzislau Biadrytski

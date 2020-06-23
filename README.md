@@ -1,6 +1,27 @@
-## EPAM_FARM PROJECT
+# EPAM_FARM PROJECT
 
-_**App in progress**_
+_**App in progress...**_
+
+## Instruction to run app locally:
+   1) `git clone  https://github.com/VladislavBedritsky/EPAM_FARM.git`
+   2) To start Web App:
+      * `cd web-app`
+      * `mvn jetty:run`
+      * http://localhost:8080/web-app-1.01
+   3) To start REST App:
+      * `cd rest`
+      * `mvn jetty:run`
+      * http://localhost:8080/rest-1.01/departments   
+   4) To start Currency App:
+      * `cd consumer-currency`
+      * `mvn jetty:run`
+      * http://localhost:8080/consumer-currency-1.01
+   5) To start Angular App:
+      * `cd angular`
+      * `npm install`
+      * `ng serve` 
+      *  http://localhost:4200/ 
+ ## Or you can find all services remotely on links below :  
 
  ## Tomcat 
  _http://35.239.53.104:8087/_

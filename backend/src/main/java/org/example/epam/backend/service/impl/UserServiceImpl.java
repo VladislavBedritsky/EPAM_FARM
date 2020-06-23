@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * UserService interface implementation
@@ -106,10 +105,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void saveSession(Session session) {
         userDao.saveSession(session);
-    }
-
-    private Integer getLastUserId() {
-        return Objects.requireNonNull(userDao.findAll().stream().reduce((first, second) -> second).orElse(null)).getId();
     }
 
 }
