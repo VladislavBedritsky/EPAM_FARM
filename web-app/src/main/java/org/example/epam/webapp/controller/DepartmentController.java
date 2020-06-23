@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * Controller that handle requests about departments
  *
@@ -75,7 +77,7 @@ public class DepartmentController {
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
     public String saveDepartment (
-            @RequestParam String name,
+            @RequestParam @NotNull String name,
             Model model
     ) {
 
@@ -120,7 +122,7 @@ public class DepartmentController {
     @PostMapping("/update/{id}")
     public String updateDepartment (
             @PathVariable Integer id,
-            @RequestParam String name
+            @RequestParam @NotNull String name
     ) {
 
         jdbcStorageService.updateDepartment(id, name);

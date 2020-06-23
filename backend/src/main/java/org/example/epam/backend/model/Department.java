@@ -1,5 +1,7 @@
 package org.example.epam.backend.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 /**
@@ -11,6 +13,8 @@ import java.util.Objects;
 public class Department {
 
     private Integer id;
+    @NotNull(message = "Department name cannot be null")
+    @Size(min=2)
     private String name;
 
     public Department() {}

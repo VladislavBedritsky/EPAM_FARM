@@ -52,6 +52,7 @@
         <org.apache.logging.log4j.log4j-api.version>2.12.1</org.apache.logging.log4j.log4j-api.version>
         <javax.mail.version>1.4.7</javax.mail.version>
         <apectj.version>1.9.1</apectj.version>
+        <javax.validation.version>2.0.0.Final</javax.validation.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -293,6 +294,11 @@
                 <version>${apectj.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${javax.validation.version}</version>
+            </dependency>
         </dependencies>
 
     </dependencyManagement>

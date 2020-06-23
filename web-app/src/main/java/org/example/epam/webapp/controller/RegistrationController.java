@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 /**
  * Controller that handle requests about registration
  *
@@ -30,13 +34,13 @@ public class RegistrationController {
 
     @PostMapping
     public String saveUser(
-            @RequestParam String firstName,
-            @RequestParam String lastName,
-            @RequestParam String username,
-            @RequestParam String password,
-            @RequestParam String confirmPassword,
-            @RequestParam String email,
-            @RequestParam String birthday,
+            @RequestParam @NotNull String firstName,
+            @RequestParam @NotNull String lastName,
+            @RequestParam @NotNull String username,
+            @RequestParam @NotNull String password,
+            @RequestParam @NotNull String confirmPassword,
+            @RequestParam @NotNull @Email String email,
+            @RequestParam @NotNull String birthday,
             Model model
 
     ) {

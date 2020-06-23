@@ -83,13 +83,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean saveUser(User registrationUser) {
+
         try {
             userDao.findByUsername(registrationUser.getUsername());
         } catch (EmptyResultDataAccessException e) {
-            registrationUser.setPassword(BCrypt.hashpw(registrationUser.getPassword(),BCrypt.gensalt(12)));
+            registrationUser.setPassword(
+                    BCrypt.hashpw(
+                            registrationUser.getPassword(),
+                            BCrypt.gensalt(12)));
             registrationUser.setActive(true);
             userDao.saveUser(registrationUser);
-            userDao.setUserRole(getLastUserId());
+            userDao.setUserRole(
+                    userDao.findByUsername(registrationUser.getUsername()).getId()
+            );
 
             return true;
         }

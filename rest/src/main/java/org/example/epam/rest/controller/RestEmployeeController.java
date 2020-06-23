@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -64,7 +65,7 @@ public class RestEmployeeController {
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
     public Employee saveEmployee(
-            @RequestBody Employee employee
+            @RequestBody @Valid Employee employee
     ) {
 
         employeeService.saveEmployee(employee, employee.getDepartment().getName());
@@ -82,7 +83,7 @@ public class RestEmployeeController {
     @PutMapping("/{id}")
     public Employee update(
             @PathVariable Integer id,
-            @RequestBody Employee employee
+            @RequestBody @Valid Employee employee
     ) {
 
         employeeService.updateEmployeeForRestController(employee,id);

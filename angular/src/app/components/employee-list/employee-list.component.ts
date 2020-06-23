@@ -25,6 +25,7 @@ export class EmployeeListComponent implements OnInit {
 
     isUserNameAlreadyExists = false;
     filteredEmployees = [];
+    employeesId: number;
 
     employeeForm: FormGroup = new FormGroup({
       name: new FormControl('', [
@@ -77,15 +78,16 @@ export class EmployeeListComponent implements OnInit {
     this._employeeService.deleteEmployee(employee).subscribe(
       data => {
         this.employees = this.employees.filter(
-          u => u !== employee
+          item => item !== employee
         );
       }
     )
   }
 
   saveEmployee(): void {
+
     const body = {
-      id: 1,
+      id: null,
       name: this.employeeForm.controls['name'].value,
       birthday: this.employeeForm.controls['date'].value,
       salary: this.employeeForm.controls['salary'].value,
@@ -112,12 +114,27 @@ export class EmployeeListComponent implements OnInit {
           return item;
         }
     })
-    console.log(this.filteredEmployees)
+
     if (this.filteredEmployees.length === 0) {
       this.isUserNameAlreadyExists = false
     } else {
       this.isUserNameAlreadyExists = true
     }
+  }
+
+  findEmployeesIdByName(userName: string) {
+
+    this._employeeService.getEmployees().subscribe(
+      data => {
+           for (let i = 0; i < data.length; i++) {
+             if (data[i]['name'] === userName) {
+               this.employeesId = data[i]['id'];
+               console.log(this.employeesId)
+               console.log(data[i]['id']+' -data[id]')
+             }
+           }
+      }
+    );
   }
 
 }

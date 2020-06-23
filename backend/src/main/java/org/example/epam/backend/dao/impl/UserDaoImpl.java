@@ -58,17 +58,10 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User findByUsername(String username) {
-        User user = new User();
-        try {
-            user = jdbcTemplate.queryForObject(
-                    findByUsername,
-                    new UserMapper(),
-                    username);
-
-        } catch (EmptyResultDataAccessException e) {
-            LOGGER.error(e);
-        }
-        return user;
+        return jdbcTemplate.queryForObject(
+                findByUsername,
+                new UserMapper(),
+                username);
     }
 
     @Override

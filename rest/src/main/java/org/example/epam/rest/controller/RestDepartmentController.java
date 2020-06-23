@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -55,7 +56,7 @@ public class RestDepartmentController {
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
     public Department create(
-            @RequestBody Department department
+            @RequestBody @Valid Department department
     ) {
         jdbcStorageService.saveDepartment(department);
 
@@ -73,7 +74,7 @@ public class RestDepartmentController {
     @PutMapping("/{id}")
     public Department update(
             @PathVariable Integer id,
-            @RequestBody Department department
+            @RequestBody @Valid Department department
     ) {
 
         jdbcStorageService.updateDepartment(id, department.getName());

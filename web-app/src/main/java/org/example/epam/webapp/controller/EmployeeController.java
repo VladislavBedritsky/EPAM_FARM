@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * Controller that handle requests about employees
  *
@@ -74,10 +76,10 @@ public class EmployeeController {
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
     public String saveEmployee(
-            @RequestParam String name,
-            @RequestParam String birthday,
-            @RequestParam String salary,
-            @RequestParam String departmentName,
+            @RequestParam @NotNull String name,
+            @RequestParam @NotNull String birthday,
+            @RequestParam @NotNull String salary,
+            @RequestParam @NotNull String departmentName,
             Model model
             ) {
 
@@ -130,10 +132,10 @@ public class EmployeeController {
     @PostMapping("/update/{id}")
     public String updateEmployee (
             @PathVariable Integer id,
-            @RequestParam String name,
-            @RequestParam String birthday,
-            @RequestParam String salary,
-            @RequestParam String departmentName,
+            @RequestParam @NotNull String name,
+            @RequestParam @NotNull String birthday,
+            @RequestParam @NotNull String salary,
+            @RequestParam @NotNull String departmentName,
             Model model
     ) {
 

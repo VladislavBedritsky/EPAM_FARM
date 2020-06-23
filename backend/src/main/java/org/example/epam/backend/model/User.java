@@ -3,6 +3,8 @@ package org.example.epam.backend.model;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
@@ -16,12 +18,20 @@ import java.util.Objects;
 public class User implements UserDetails {
 
     private Integer id;
+    @NotNull(message = "First name cannot be null")
     private String firstName;
+    @NotNull(message = "Last name cannot be null")
     private String lastName;
+    @NotNull(message = "Username cannot be null")
     private String username;
+    @NotNull(message = "Password cannot be null")
     private String password;
+    @NotNull(message = "Email cannot be null")
+    @Email(message = "Email should be valid")
     private String email;
+    @NotNull(message = "Birthday cannot be null")
     private LocalDate birthday;
+    @NotNull(message = "Field active cannot be null")
     private boolean active;
 
     private List<Role> roles;

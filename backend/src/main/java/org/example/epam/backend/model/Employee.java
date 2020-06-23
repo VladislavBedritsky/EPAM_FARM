@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.example.epam.backend.json_view.View;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -17,14 +19,14 @@ public class Employee {
 
     @JsonView(View.Id.class)
     private Integer id;
-
+    @NotNull(message = "Employee name cannot be null")
+    @Size(min=2)
     @JsonView(View.FullEmployeesWithoutDepartment.class)
     private String name;
-
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonView(View.FullEmployeesWithoutDepartment.class)
     private LocalDate birthday;
-
+    @NotNull(message = "Employee salary cannot be null")
     @JsonView(View.FullEmployeesWithoutDepartment.class)
     private Float salary;
 
