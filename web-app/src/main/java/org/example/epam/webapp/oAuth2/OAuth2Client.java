@@ -3,6 +3,7 @@ package org.example.epam.webapp.oAuth2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestOperations;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
@@ -14,11 +15,13 @@ import javax.annotation.Resource;
 
 @Configuration
 @EnableOAuth2Client
+@PropertySource({"classpath:oauth.properties"})
 public class OAuth2Client {
 
-    private static final String ACCESS_TOKEN_URI = "http://3.121.199.219:8981/auth/oauth/token";
-    private static final String USER_AUTH_URI = "http://3.121.199.219:8981/auth/oauth/authorize";
-
+    @Value("${access.token.uri}")
+    private String accessTokenUri;
+    @Value("${user.auth.uri}")
+    private String userAuthUri;
     @Value("${security.oauth2.client.clientId}")
     private String clientId;
     @Value("${security.oauth2.client.clientSecret}")
@@ -32,8 +35,8 @@ public class OAuth2Client {
         AuthorizationCodeResourceDetails resource = new AuthorizationCodeResourceDetails();
         resource.setClientId(clientId);
         resource.setClientSecret(clientSecret);
-        resource.setAccessTokenUri(ACCESS_TOKEN_URI);
-        resource.setUserAuthorizationUri(USER_AUTH_URI);
+        resource.setAccessTokenUri(accessTokenUri);
+        resource.setUserAuthorizationUri(userAuthUri);
 
         return resource;
     }

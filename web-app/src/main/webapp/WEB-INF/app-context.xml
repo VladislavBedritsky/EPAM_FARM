@@ -55,5 +55,6 @@
         <property name="characterEncoding" value="UTF-8" />
     </bean>
 
-
+    <bean id="methodValidationPostProcessor"
+          class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor" />
 </beans>

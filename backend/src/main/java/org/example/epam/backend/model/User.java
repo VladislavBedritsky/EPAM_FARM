@@ -4,7 +4,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
@@ -18,20 +20,19 @@ import java.util.Objects;
 public class User implements UserDetails {
 
     private Integer id;
-    @NotNull(message = "First name cannot be null")
+    @NotBlank(message = "First name can't be empty")
     private String firstName;
-    @NotNull(message = "Last name cannot be null")
+    @NotBlank(message = "Last name can't be empty")
     private String lastName;
-    @NotNull(message = "Username cannot be null")
+    @NotBlank(message = "Username can't be empty")
     private String username;
-    @NotNull(message = "Password cannot be null")
+    @NotBlank(message = "Password can't be empty")
     private String password;
-    @NotNull(message = "Email cannot be null")
+    @NotBlank(message = "Email can't be empty")
     @Email(message = "Email should be valid")
     private String email;
-    @NotNull(message = "Birthday cannot be null")
+    @Past(message = "Birthday should be before today")
     private LocalDate birthday;
-    @NotNull(message = "Field active cannot be null")
     private boolean active;
 
     private List<Role> roles;

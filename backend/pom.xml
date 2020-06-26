@@ -24,7 +24,7 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>test</artifactId>
+            <artifactId>resources</artifactId>
         </dependency>
 
         <dependency>

@@ -15,7 +15,7 @@
         <module>consumer-currency</module>
         <module>mail</module>
         <module>aspect</module>
-        <module>test</module>
+        <module>resources</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -53,6 +53,7 @@
         <javax.mail.version>1.4.7</javax.mail.version>
         <apectj.version>1.9.1</apectj.version>
         <javax.validation.version>2.0.0.Final</javax.validation.version>
+        <hibernate-validator.version>6.0.2.Final</hibernate-validator.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -93,7 +94,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>test</artifactId>
+                <artifactId>resources</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -298,6 +299,12 @@
                 <groupId>javax.validation</groupId>
                 <artifactId>validation-api</artifactId>
                 <version>${javax.validation.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
             </dependency>
         </dependencies>
 

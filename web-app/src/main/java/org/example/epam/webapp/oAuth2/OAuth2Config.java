@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -21,15 +22,17 @@ import org.springframework.security.web.authentication.preauth.AbstractPreAuthen
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@PropertySource({"classpath:oauth.properties"})
 public class OAuth2Config extends WebSecurityConfigurerAdapter {
-
-    private static final String USER_INFO_URI = "http://3.121.199.219:8981/auth/rest/user";
-    private static final String LOGIN_URI  = "/login";
 
     @Autowired
     private OAuth2RestOperations oAuth2RestTemplate;
     @Value("${security.oauth2.client.clientId}")
     private String clientId;
+    @Value("${user.info.uri}")
+    private String userInfoUri;
+    @Value("${login.uri}")
+    private String loginUri;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -60,20 +63,20 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
 
     @Bean
     public AuthenticationEntryPoint authenticationEntryPoint() {
-        return new LoginUrlAuthenticationEntryPoint(LOGIN_URI);
+        return new LoginUrlAuthenticationEntryPoint(loginUri);
     }
 
     @Bean
     public OAuth2ClientAuthenticationProcessingFilter filter() {
 
         OAuth2ClientAuthenticationProcessingFilter oAuth2Filter =
-                new OAuth2ClientAuthenticationProcessingFilter(LOGIN_URI);
+                new OAuth2ClientAuthenticationProcessingFilter(loginUri);
 
         oAuth2Filter.setRestTemplate(oAuth2RestTemplate);
 
         oAuth2Filter.setTokenServices(
                 new UserInfoTokenServices(
-                        USER_INFO_URI,
+                        userInfoUri,
                         clientId));
 
         return oAuth2Filter;
