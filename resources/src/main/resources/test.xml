@@ -18,8 +18,8 @@
     <util:properties id="home" location="http://18.184.244.253:8980/rest-home.properties" />
     <util:properties id="epam" location="http://18.184.244.253:8980/rest-epam.properties" />
     <util:properties id="prod" location="http://18.184.244.253:8980/rest-prod.properties" />
-    <util:properties id="local" location="classpath:local.properties"  />
-    <context:property-placeholder properties-ref="prod"
+    <util:properties id="local" location="classpath*:local.properties"  />
+    <context:property-placeholder properties-ref="local"
                                   ignore-resource-not-found="true"
                                   ignore-unresolvable="true"
                                   order="0" />

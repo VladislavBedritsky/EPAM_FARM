@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.example.epam.backend.json_view.View;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -29,11 +29,11 @@ public class Employee {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonView(View.FullEmployeesWithoutDepartment.class)
     private LocalDate birthday;
-    @NotBlank(message = "Employee salary can't be empty")
-    @Pattern(regexp = "^\\d*\\.?\\d*$", message = "It's not a Float type")
+    @NotNull(message = "Employee salary can't be null")
     @JsonView(View.FullEmployeesWithoutDepartment.class)
     private Float salary;
 
+    @Valid
     private Department department;
 
     public Integer getId() {
