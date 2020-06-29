@@ -1,5 +1,7 @@
 package org.example.epam.backend.model;
 
+import org.example.epam.backend.annotation.DepartmentExistsInDB;
+
 import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
@@ -12,6 +14,7 @@ import java.util.Objects;
 public class Department {
 
     private Integer id;
+    @DepartmentExistsInDB
     @NotBlank(message = "Department name can't be empty")
     private String name;
 
