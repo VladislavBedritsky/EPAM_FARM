@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+
+<h1 align="center">Error !!!</h1>
+
+<hr />
+
+<div style="color:red" class="message"  align="center" >
+    <p>Application has encountered an error. Please contact support on vladquinn2010@gmail.com</p>
+    <br />
+    <p th:text="'Failed url: '+${url}" style="color:green"></p>
+    <p th:text="'Exception: '+${exception}" style="color:green"></p>
+    <br />
+    <div>
+        <a th:href="@{{url}(url=${url})}" >Go back</a>
+    </div>
+</div>
+
+
+</body>
+</html>

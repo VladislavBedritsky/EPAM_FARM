@@ -7,9 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 /**
  * Controller that handle requests about departments
@@ -19,6 +20,7 @@ import javax.validation.constraints.NotNull;
  */
 @Controller
 @RequestMapping("/departments")
+@Validated
 public class DepartmentController {
 
     @Autowired
@@ -77,7 +79,9 @@ public class DepartmentController {
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
     public String saveDepartment (
-            @RequestParam @NotNull String name,
+            @RequestParam
+            @NotBlank(message = "Department name can't be empty")
+                    String name,
             Model model
     ) {
 
@@ -122,7 +126,9 @@ public class DepartmentController {
     @PostMapping("/update/{id}")
     public String updateDepartment (
             @PathVariable Integer id,
-            @RequestParam @NotNull String name
+            @RequestParam
+            @NotBlank(message = "Department name can't be empty")
+                    String name
     ) {
 
         jdbcStorageService.updateDepartment(id, name);

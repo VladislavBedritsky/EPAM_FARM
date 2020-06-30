@@ -9,9 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 /**
  * Controller that handle requests about employees
@@ -21,6 +22,7 @@ import javax.validation.constraints.NotNull;
  */
 @Controller
 @RequestMapping("/employees")
+@Validated
 public class EmployeeController {
 
     @Autowired
@@ -76,11 +78,19 @@ public class EmployeeController {
     @PreAuthorize("hasAnyAuthority('ADMIN','ROLE_ADMINS')")
     @PostMapping
     public String saveEmployee(
-            @RequestParam @NotNull String name,
-            @RequestParam @NotNull String birthday,
-            @RequestParam @NotNull String salary,
-            @RequestParam @NotNull String departmentName,
-            Model model
+            @RequestParam
+            @NotBlank(message = "Name can't be empty")
+                    String name,
+            @RequestParam
+            @NotBlank(message = "Birthday can't be empty")
+                    String birthday,
+            @RequestParam
+            @NotBlank(message = "Salary can't be empty")
+                    String salary,
+            @RequestParam
+            @NotBlank(message = "Department name can't be empty")
+                    String departmentName,
+                    Model model
             ) {
 
 
@@ -89,7 +99,7 @@ public class EmployeeController {
         if (employeeService.isEmployeeNameAlreadyExists(name)) {
             model.addAttribute("isNameExists","Such employee is already exists!");
             return "employees";
-        }else if(!employeeService.isProperFloatValue(salary)) {
+        } else if(!employeeService.isProperFloatValue(salary)) {
             model.addAttribute("wrongFloatValue","Salary value is wrong (e.g. 1034.09)") ;
             return "employees";
         }
@@ -132,11 +142,19 @@ public class EmployeeController {
     @PostMapping("/update/{id}")
     public String updateEmployee (
             @PathVariable Integer id,
-            @RequestParam @NotNull String name,
-            @RequestParam @NotNull String birthday,
-            @RequestParam @NotNull String salary,
-            @RequestParam @NotNull String departmentName,
-            Model model
+            @RequestParam
+            @NotBlank(message = "Name can't be empty")
+                    String name,
+            @RequestParam
+            @NotBlank(message = "Birthday can't be empty")
+                    String birthday,
+            @RequestParam
+            @NotBlank(message = "Salary can't be empty")
+                    String salary,
+            @RequestParam
+            @NotBlank(message = "Department name can't be empty")
+                    String departmentName,
+                    Model model
     ) {
 
         model.addAttribute("employees", employeeService.findAll());
@@ -150,9 +168,9 @@ public class EmployeeController {
         }
 
         Employee getEmployee = employeeService.returnNewEmployeeWithSetParameters(
-                name,birthday,salary
+                name, birthday, salary
         );
-        employeeService.updateEmployee(id,getEmployee,departmentName);
+        employeeService.updateEmployee(id, getEmployee, departmentName);
 
         return "redirect:/employees";
     }
