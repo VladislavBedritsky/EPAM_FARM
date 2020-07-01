@@ -3,26 +3,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/util
-        http://www.springframework.org/schema/util/spring-util.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <import resource="classpath*:spring-cloud-config.xml"/>
 
     <context:component-scan base-package="org.example.*"/>
     <context:annotation-config />
-
-    <!--      SPRING-CLOUD_CONFIG -->
-    <util:properties id="home" location="http://18.184.244.253:8980/rest-home.properties" />
-    <util:properties id="epam" location="http://18.184.244.253:8980/rest-epam.properties" />
-    <util:properties id="prod" location="http://18.184.244.253:8980/rest-prod.properties" />
-    <util:properties id="local" location="classpath*:local.properties"  />
-    <context:property-placeholder properties-ref="local"
-                                  ignore-resource-not-found="true"
-                                  ignore-unresolvable="true"
-                                  order="0" />
 
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <!-- SMTP settings -->

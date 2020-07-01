@@ -65,12 +65,12 @@ _http://35.226.148.166:8161/_
 * password: `admin`
 
 ## Oauth2-server
-_http://18.184.244.253:8981/auth/rest/user_
+_https://oauth.xfarm.xyz/auth/rest/user_
    
 Location: `./oauth/`
 
 ## Config-server
-_http://18.184.244.253:8980/rest-prod.properties/_
+_https://properties.xfarm.xyz/rest-prod.properties/_
    
 Location: `https://github.com/VladislavBedritsky/server-config`
 

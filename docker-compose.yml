@@ -54,7 +54,6 @@ services:
     user: root
     volumes:
       - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./config/nginx/hosts:/etc/hosts
     restart: on-failure
 
   mysql:
