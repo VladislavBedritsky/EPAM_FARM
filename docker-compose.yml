@@ -133,6 +133,19 @@ services:
       - nginx-aws-ec2
     command: certonly --webroot --webroot-path=/var/www/html --email vladquinn2010@gmail.com --agree-tos --no-eff-email --force-renewal -d xfarm.xyz
 
+    nginx:
+      build:
+        context: ./config/nginx/aws-ec2/
+        dockerfile: Dockerfile
+      image: nginx
+      container_name: nginx
+      ports:
+        - 80:80
+        - 443:443
+      networks:
+        - net
+      restart: on-failure
+
 networks:
   net:
     driver: bridge
