@@ -1,13 +1,13 @@
 FROM ubuntu:18.04
 USER root
-RUN apt install nginx
-RUN apt update
+RUN apt-get install nginx
+RUN apt-get update
 COPY default.conf /etc/nginx/conf.d/
-RUN apt install software-properties-common -y
+RUN apt-get install software-properties-common -y
 RUN add-apt-repository universe
 RUN add-apt-repository ppa:certbot/certbot
-RUN apt update
-RUN apt install python-certbot-nginx -y
+RUN apt-get update
+RUN apt-get install python-certbot-nginx -y
 RUN systemctl restart nginx
 RUN ufw allow 'Nginx Full'
 RUN ufw delete allow 'Nginx HTTP'
