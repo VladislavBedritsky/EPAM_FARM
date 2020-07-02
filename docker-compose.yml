@@ -107,17 +107,33 @@ services:
     restart: on-failure
 
   nginx-aws-ec2:
-    build:
-      context: ./config/nginx/aws-ec2/
-      dockerfile: Dockerfile
-    image: nginx-aws-ec2
+    image: nginx:mainline-alpine
     container_name: nginx-aws-ec2
     ports:
       - 80:80
       - 443:443
     networks:
       - net
-    restart: on-failure
+    restart: unless-stopped
+    volumes:
+      - ./config/nginx/aws-ec2/default.conf:/etc/nginx/conf.d/default.conf
+      - ./config/nginx/certbot/conf:/etc/letsencrypt
+      - ./config/nginx/certbot/var:/var/lib/letsencrypt
+    depends_on:
+      - oauth-server
+
+
+  certbot-aws-ec2:
+    container_name: certbot-aws-ec2
+    image: certbot/certbot:v1.5.0
+    networks:
+      - net
+    volumes:
+      - ./config/nginx/certbot/conf:/etc/letsencrypt
+      - ./config/nginx/certbot/var:/var/lib/letsencrypt
+    depends_on:
+      - nginx-aws-ec2
+    command: certonly --webroot --email vladquinn2010@gmail.com --agree-tos --no-eff-email --staging -d oauth.xfarm.xyz  -d properties.xfarm.xyz
 
 networks:
   net:
