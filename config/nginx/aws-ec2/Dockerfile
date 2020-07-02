@@ -1,4 +1,4 @@
-FROM nginx:1.19
+FROM xqdocker/ubuntu-nginx:0.1.4
 USER root
 COPY default.conf /etc/nginx/conf.d/
 RUN apt-get update
