@@ -120,9 +120,6 @@ services:
       - ./config/nginx/aws-ec2/certbot/conf:/etc/letsencrypt
       - ./config/nginx/aws-ec2/certbot/var:/var/lib/letsencrypt
       - ./config/nginx/aws-ec2/web-root:/var/www/html
-    depends_on:
-      - oauth-server
-
 
   certbot-aws-ec2:
     container_name: certbot-aws-ec2
