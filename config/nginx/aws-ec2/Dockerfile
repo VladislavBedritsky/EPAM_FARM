@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 USER root
 RUN apt-get update
-RUN apt-get install nginx
+RUN apt-get install nginx -y
 RUN apt-get update
 COPY default.conf /etc/nginx/conf.d/
 RUN apt-get install software-properties-common -y
