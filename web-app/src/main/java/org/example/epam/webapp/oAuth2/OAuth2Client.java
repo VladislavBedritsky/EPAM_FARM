@@ -18,9 +18,9 @@ import javax.annotation.Resource;
 @PropertySource({"classpath:oauth.properties"})
 public class OAuth2Client {
 
-    @Value("${access.token.uri}")
+    @Value("${security.oauth2.client.accessTokenUri}")
     private String accessTokenUri;
-    @Value("${user.auth.uri}")
+    @Value("${security.oauth2.client.userAuthorizationUri}")
     private String userAuthUri;
     @Value("${security.oauth2.client.clientId}")
     private String clientId;

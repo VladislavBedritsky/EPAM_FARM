@@ -29,7 +29,7 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
     private OAuth2RestOperations oAuth2RestTemplate;
     @Value("${security.oauth2.client.clientId}")
     private String clientId;
-    @Value("${user.info.uri}")
+    @Value("${security.oauth2.resource.userInfoUri}")
     private String userInfoUri;
     @Value("${login.uri}")
     private String loginUri;
