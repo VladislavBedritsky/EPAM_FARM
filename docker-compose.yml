@@ -134,10 +134,7 @@ services:
 #    command: certonly --webroot --webroot-path=/var/www/html --email vladquinn2010@gmail.com --agree-tos --no-eff-email --force-renewal -d xfarm.xyz
 
   nginx:
-    build:
-      context: ./config/nginx/aws-ec2/
-      dockerfile: Dockerfile
-    image: nginx
+    image: nginx:1.19
     container_name: nginx
     ports:
       - 80:80
