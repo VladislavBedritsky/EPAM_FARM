@@ -135,7 +135,7 @@ services:
       - ./config/nginx/aws-ec2/web-root:/var/www/html
     depends_on:
       - nginx-aws-ec2
-    command: certonly --webroot --email vladquinn2010@gmail.com --agree-tos --no-eff-email --force-renewal -d oauth.xfarm.xyz  -d properties.xfarm.xyz
+    command: certonly --webroot --webroot-path=/var/www/html --email vladquinn2010@gmail.com --agree-tos --no-eff-email --force-renewal -d oauth.xfarm.xyz  -d properties.xfarm.xyz
 
 networks:
   net:
