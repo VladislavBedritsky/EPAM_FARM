@@ -13,7 +13,7 @@ _https://tomcat.xfarm.xyz/web-app-1.01_
    
  Location: `./web-app/`
 
-## Rest-app
+## REST-app
 _https://tomcat.xfarm.xyz/rest-1.01/employees_
              
              ADMIN(role): username: q; password: q
