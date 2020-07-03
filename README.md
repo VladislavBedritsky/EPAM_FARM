@@ -57,6 +57,7 @@ _https://properties.xfarm.xyz/rest-prod.properties/_
 Location: `https://github.com/VladislavBedritsky/server-config`
 
 
+#
 ## _Instruction to run app locally:_
    1) `git clone  https://github.com/VladislavBedritsky/EPAM_FARM.git`
    
