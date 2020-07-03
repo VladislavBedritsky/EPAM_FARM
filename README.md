@@ -5,18 +5,26 @@ _**App in progress...**_
 
  ## _You can find all services remotely on links below :_  
 
- ## Tomcat 
- _https://tomcat.xfarm.xyz_
- * username: `jenkins`
- * password: `jenkins`
-
-You can find here 3 apps from current project:
- * `./web-app`
- * `./rest`
-           
+## Web-app
+_https://tomcat.xfarm.xyz/web-app-1.01_
+             
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
- * `./consumer-currency`
+   
+ Location: `./web-app/`
+
+## Rest-app
+_https://tomcat.xfarm.xyz/rest-1.01/employees_
+             
+             ADMIN(role): username: q; password: q
+             USER(role): username: qw; password: qw
+   
+ Location: `./rest/`
+
+## Currency-app
+_https://tomcat.xfarm.xyz/consumer-currency-1.01_
+             
+ Location: `./consumer-currency/`
 
 ## Angular-app
 _https://angular.xfarm.xyz_
@@ -26,12 +34,19 @@ _https://angular.xfarm.xyz_
    
  Location: `./angular/`
  
+ 
+ ## Tomcat 
+ _https://tomcat.xfarm.xyz_
+ * username: `jenkins`
+ * password: `jenkins`
+
+ 
 ## Jenkins
 _https://jenkins.xfarm.xyz_
 * username: `admin`
 * password: `admin`
 
-## Sonarqube
+## Sonar
 _https://sonar.xfarm.xyz_
 * username: `admin`
 * password: `admin`
