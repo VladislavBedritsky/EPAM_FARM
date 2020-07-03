@@ -42,7 +42,7 @@ _https://artifactory.xfarm.xyz_
 * password: `password123`
 
 ## ActiveMQ
-_http://35.226.148.166:8161/_
+_https://activemq.xfarm.xyz_
 * username: `admin`
 * password: `admin`
 
