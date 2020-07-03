@@ -2,26 +2,8 @@
 
 _**App in progress...**_
 
-## Instruction to run app locally:
-   1) `git clone  https://github.com/VladislavBedritsky/EPAM_FARM.git`
-   2) To start Web App:
-      * `cd web-app`
-      * `mvn jetty:run`
-      * http://localhost:8080/web-app-1.01
-   3) To start REST App:
-      * `cd rest`
-      * `mvn jetty:run`
-      * http://localhost:8080/rest-1.01/departments   
-   4) To start Currency App:
-      * `cd consumer-currency`
-      * `mvn jetty:run`
-      * http://localhost:8080/consumer-currency-1.01
-   5) To start Angular App:
-      * `cd angular`
-      * `npm install`
-      * `ng serve` 
-      *  http://localhost:4200/ 
- ## Or you can find all services remotely on links below :  
+
+ ## _You can find all services remotely on links below :_  
 
  ## Tomcat 
  _http://35.239.53.104:8087/_
@@ -65,7 +47,7 @@ _http://35.226.148.166:8161/_
 * password: `admin`
 
 ## Oauth2-server
-_https://oauth.xfarm.xyz/auth/rest/user_
+_https://oauth.xfarm.xyz/auth/login_
    
 Location: `./oauth/`
 
@@ -74,5 +56,28 @@ _https://properties.xfarm.xyz/rest-prod.properties/_
    
 Location: `https://github.com/VladislavBedritsky/server-config`
 
- 
+
+## _Instruction to run app locally:_
+   1) `git clone  https://github.com/VladislavBedritsky/EPAM_FARM.git`
+   
+   2) To start Web App:
+      * `cd web-app`
+      * `mvn jetty:run`
+      * http://localhost:8080/web-app-1.01
+   
+   3) To start REST App:
+      * `cd rest`
+      * `mvn jetty:run`
+      * http://localhost:8080/rest-1.01/departments   
+   
+   4) To start Currency App:
+      * `cd consumer-currency`
+      * `mvn jetty:run`
+      * http://localhost:8080/consumer-currency-1.01
+   
+   5) To start Angular App:
+      * `cd angular`
+      * `npm install`
+      * `ng serve` 
+      *  http://localhost:4200/  
  
