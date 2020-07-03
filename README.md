@@ -6,11 +6,11 @@ _**App in progress...**_
  ## _You can find all services remotely on links below :_  
 
  ## Tomcat 
- _http://35.239.53.104:8087/_
+ _https://tomcat.xfarm.xyz_
  * username: `jenkins`
  * password: `jenkins`
 
-You can find here 3 apps:
+You can find here 3 apps from current project:
  * `./web-app`
  * `./rest`
            
@@ -27,7 +27,7 @@ _http://35.239.53.104:4200/_
  Location: `./angular/`
  
 ## Jenkins
-_http://35.239.53.104:8089/_
+_https://jenkins.xfarm.xyz_
 * username: `admin`
 * password: `admin`
 
@@ -37,7 +37,7 @@ _http://35.239.53.104:9000/_
 * password: `admin`
 
 ## Artifactory
-_http://35.239.53.104:8081/_
+_https://artifactory.xfarm.xyz_
 * username: `admin`
 * password: `password123`
 
