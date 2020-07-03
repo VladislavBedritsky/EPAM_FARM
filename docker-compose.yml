@@ -116,6 +116,26 @@ services:
       - net
     restart: on-failure
 
+  nginx-gce-ef:
+    image: vladquinn/nginx-gce-ef:latest
+    container_name: nginx-gce-ef
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - net
+    restart: on-failure
+
+  nginx-gce-f1:
+    image: vladquinn/nginx-gce-f1:latest
+    container_name: nginx-gce-f1
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - net
+    restart: on-failure
+
 networks:
   net:
     driver: bridge

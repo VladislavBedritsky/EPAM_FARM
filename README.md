@@ -19,7 +19,7 @@ You can find here 3 apps from current project:
  * `./consumer-currency`
 
 ## Angular-app
-_http://35.239.53.104:4200/_
+_https://angular.xfarm.xyz_
              
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
@@ -32,7 +32,7 @@ _https://jenkins.xfarm.xyz_
 * password: `admin`
 
 ## Sonarqube
-_http://35.239.53.104:9000/_
+_https://sonar.xfarm.xyz_
 * username: `admin`
 * password: `admin`
 
