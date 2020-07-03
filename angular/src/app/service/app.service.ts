@@ -15,7 +15,7 @@ export class User{
 })
 export class AppService {
 
-  private baseUrl = "http://35.239.53.104:8087/rest-1.01/user"
+  private baseUrl = "https://tomcat.xfarm.xyz/rest-1.01/user"
 
   constructor(private httpClient:HttpClient) { }
 
