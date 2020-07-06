@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-        PROJECT_VERSION = '1.01'
-    }
     stages {
 //        stage ('SNAPSHOT') {
 //            steps {
@@ -71,9 +68,9 @@ pipeline {
                 script {
                     sh 'mvn clean install -Dmaven.test.skip=true -Dliquibase.should.run=false'
 
-                    sh 'mv web-app/target/web-app-'+${PROJECT_VERSION}+'.war web-app/target/web-app.war'
-                    sh 'mv rest/target/rest-'+${PROJECT_VERSION}+'.war web-app/target/rest.war'
-                    sh 'mv consumer-currency/target/consumer-currency-'+${PROJECT_VERSION}+'.war consumer-currency/target/currency.war'
+                    sh 'mv web-app/target/web-app-1.01.war web-app/target/web-app.war'
+                    sh 'mv rest/target/rest-1.01.war web-app/target/rest.war'
+                    sh 'mv consumer-currency/target/consumer-currency-1.01.war consumer-currency/target/currency.war'
 
                     deploy adapters: [tomcat8(credentialsId: 'cd34afab-d0bd-4e08-949e-d2f2ebf703ef', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'rest/target/*.war'
                     deploy adapters: [tomcat8(credentialsId: 'cd34afab-d0bd-4e08-949e-d2f2ebf703ef', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'web-app/target/*.war'
