@@ -2,6 +2,8 @@ pipeline {
     agent any
     environment {
         PROJECT_VERSION = '1.01'
+        ARTIFACTORY_USERNAME = 'admin'
+        ARTIFACTORY_PASSWORD = 'password123'
     }
     stages {
 //        stage ('SNAPSHOT') {
@@ -37,9 +39,12 @@ pipeline {
         stage('RELEASE') {
             steps {
                 script {
-                    def responseWebApp = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" https://artifactory.xfarm.xyz/artifactory/api/storage/libs-release/org/example/web-app/${PROJECT_VERSION}/web-app-${PROJECT_VERSION}.war', returnStdout: true)
-                    def responseRestApp = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" https://artifactory.xfarm.xyz/artifactory/api/storage/libs-release/org/example/rest/${PROJECT_VERSION}/rest-${PROJECT_VERSION}.war', returnStdout: true)
-                    def responseCurrencyApp = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" https://artifactory.xfarm.xyz/artifactory/api/storage/libs-release/org/example/consumer-currency/${PROJECT_VERSION}/consumer-currency-${PROJECT_VERSION}.war', returnStdout: true)
+                    def responseWebApp = sh(script: 'curl -u ${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD} -s -o /dev/null -w "%{http_code}" ' +
+                            'https://artifactory.xfarm.xyz/artifactory/api/storage/libs-release/org/example/web-app/${PROJECT_VERSION}/web-app-${PROJECT_VERSION}.war', returnStdout: true)
+                    def responseRestApp = sh(script: 'curl -u ${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}  -s -o /dev/null -w "%{http_code}" ' +
+                            'https://artifactory.xfarm.xyz/artifactory/api/storage/libs-release/org/example/rest/${PROJECT_VERSION}/rest-${PROJECT_VERSION}.war', returnStdout: true)
+                    def responseCurrencyApp = sh(script: 'curl -u ${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}  -s -o /dev/null -w "%{http_code}" ' +
+                            'https://artifactory.xfarm.xyz/artifactory/api/storage/libs-release/org/example/consumer-currency/${PROJECT_VERSION}/consumer-currency-${PROJECT_VERSION}.war', returnStdout: true)
 
                     if (responseWebApp == "200" || responseRestApp == "200" || responseCurrencyApp == "200" ) {
                         currentBuild.result = 'FAILURE'
