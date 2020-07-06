@@ -37,12 +37,14 @@ pipeline {
         stage('RELEASE') {
             steps {
                 script {
-//                    def response = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" ' +
-//                            'https://artifactory.xfarm.xyz/artifactory/webapp/#/artifacts/browse/tree/General/libs-release/org/example/web-app/${PROJECT_VERSION}/web-app-${PROJECT_VERSION}.war', returnStdout: true)
-//                    if (response == "200") {
-//                        currentBuild.result = 'FAILURE'
-//                        error "release failed"
-//                    }
+                    def responseWebApp = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" https://artifactory.xfarm.xyz/artifactory/api/storage/libs-release/org/example/web-app/${PROJECT_VERSION}/web-app-${PROJECT_VERSION}.war', returnStdout: true)
+                    def responseRestApp = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" https://artifactory.xfarm.xyz/artifactory/api/storage/libs-release/org/example/rest/${PROJECT_VERSION}/rest-${PROJECT_VERSION}.war', returnStdout: true)
+                    def responseCurrencyApp = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" https://artifactory.xfarm.xyz/artifactory/api/storage/libs-release/org/example/consumer-currency/${PROJECT_VERSION}/consumer-currency-${PROJECT_VERSION}.war', returnStdout: true)
+
+                    if (responseWebApp == "200" || responseRestApp == "200" || responseCurrencyApp == "200" ) {
+                        currentBuild.result = 'FAILURE'
+                        error "release failed"
+                    }
 
                     def artServer = Artifactory.server('ARTIFACTORY_SERVER')
                     def rtMaven = Artifactory.newMavenBuild()
@@ -53,7 +55,7 @@ pipeline {
                     rtMaven.deployer server: artServer, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
 
                     artServer.publishBuildInfo buildInfo
-                    rtMaven.deployer.artifactDeploymentPatterns.addInclude("*.war").addInclude("*.pom")
+                    rtMaven.deployer.artifactDeploymentPatterns.addInclude("*.war")
                     rtMaven.deployer.deployArtifacts buildInfo
 
                 }
