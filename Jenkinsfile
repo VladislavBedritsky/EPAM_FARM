@@ -68,8 +68,8 @@ pipeline {
                 script {
                     sh 'mvn clean install -Dmaven.test.skip=true -Dliquibase.should.run=false'
 
-                    def webappFile = new File("/web-app/target/*.war")
-                    webappFile.renameTo(new File("web-app.war"))
+                    def webappFile = new File("/web-app/target/web-app-1.01.war")
+                    webappFile.renameTo(new File("/web-app/target/web-app.war"))
 
                     println "Original filename is: ${webappFile}"
 
