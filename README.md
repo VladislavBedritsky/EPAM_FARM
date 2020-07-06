@@ -6,7 +6,7 @@ _**App in progress...**_
  ## _You can find all services remotely on links below :_  
 
 ## Web-app
-_https://tomcat.xfarm.xyz/web-app-1.01_
+_https://tomcat.xfarm.xyz/web-app/_
              
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
@@ -14,7 +14,7 @@ _https://tomcat.xfarm.xyz/web-app-1.01_
  Location: `./web-app/`
 
 ## REST-app
-_https://tomcat.xfarm.xyz/rest-1.01/employees_
+_https://tomcat.xfarm.xyz/rest/employees/_
              
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
@@ -22,7 +22,7 @@ _https://tomcat.xfarm.xyz/rest-1.01/employees_
  Location: `./rest/`
 
 ## Currency-app
-_https://tomcat.xfarm.xyz/consumer-currency-1.01_
+_https://tomcat.xfarm.xyz/currency_
              
  Location: `./consumer-currency/`
 
