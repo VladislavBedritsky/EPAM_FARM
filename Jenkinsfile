@@ -37,12 +37,12 @@ pipeline {
         stage('RELEASE') {
             steps {
                 script {
-                    def response = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" ' +
-                            'https://artifactory.xfarm.xyz/artifactory/webapp/#/artifacts/browse/tree/General/libs-release/org/example/web-app/${PROJECT_VERSION}/web-app-${PROJECT_VERSION}.war', returnStdout: true)
-                    if (response == "200") {
-                        currentBuild.result = 'FAILURE'
-                        error "release failed"
-                    }
+//                    def response = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" ' +
+//                            'https://artifactory.xfarm.xyz/artifactory/webapp/#/artifacts/browse/tree/General/libs-release/org/example/web-app/${PROJECT_VERSION}/web-app-${PROJECT_VERSION}.war', returnStdout: true)
+//                    if (response == "200") {
+//                        currentBuild.result = 'FAILURE'
+//                        error "release failed"
+//                    }
 
                     def artServer = Artifactory.server('ARTIFACTORY_SERVER')
                     def rtMaven = Artifactory.newMavenBuild()
