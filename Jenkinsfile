@@ -37,9 +37,9 @@ pipeline {
         stage('RELEASE') {
             steps {
                 script {
-
-                    def ret = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8081/artifactory/api/storage/libs-release-local/org/example/EPAM_FARM/${PROJECT_VERSION}/EPAM_FARM-${PROJECT_VERSION}.pom', returnStdout: true)
-                    if (ret == "200") {
+                    def response = sh(script: 'curl -u admin:password123  -s -o /dev/null -w "%{http_code}" ' +
+                            'https://artifactory.xfarm.xyz/artifactory/webapp/#/artifacts/browse/tree/General/libs-release/org/example/web-app/${PROJECT_VERSION}/web-app-${PROJECT_VERSION}.war', returnStdout: true)
+                    if (response == "200") {
                         currentBuild.result = 'FAILURE'
                         error "release failed"
                     }
