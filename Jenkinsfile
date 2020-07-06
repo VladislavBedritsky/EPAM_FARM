@@ -66,24 +66,38 @@ pipeline {
             steps {
                 script {
                     sh 'mvn clean install -Dmaven.test.skip=true -Dliquibase.should.run=false'
+
+                    def webappFile = "web-app/target/*.war"
+                    def restFile = "rest/target/*.war"
+                    def currencyFile = "consumer-currency/target/*.war"
+
+                    webappFile.renameTo(new File("web-app.war"))
+                    restFile.renameTo(new File("rest.war"))
+                    currencyFile.renameTo(new File("currency.war"))
+
+                    println "Original filename is: ${webappFile}"
+                    println "Original filename is: ${restFile}"
+                    println "Original filename is: ${currencyFile}"
+
                     deploy adapters: [tomcat8(credentialsId: 'cd34afab-d0bd-4e08-949e-d2f2ebf703ef', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'rest/target/*.war'
                     deploy adapters: [tomcat8(credentialsId: 'cd34afab-d0bd-4e08-949e-d2f2ebf703ef', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'web-app/target/*.war'
                     deploy adapters: [tomcat8(credentialsId: 'cd34afab-d0bd-4e08-949e-d2f2ebf703ef', path: '', url: 'http://tomcat:8080')], contextPath: null, war: 'consumer-currency/target/*.war'
+
                     sh 'sleep 10'
 
-                    def statusRest = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8087/rest-1.01/employees/', returnStdout: true)
+                    def statusRest = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8087/rest/employees/', returnStdout: true)
                     if (statusRest != "302") {
                         currentBuild.result = 'FAILURE'
                         error "deploy failed"
                     }
 
-                    def statusWebApp = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8087/web-app-1.01/', returnStdout: true)
+                    def statusWebApp = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8087/web-app/', returnStdout: true)
                     if (statusWebApp != "200") {
                         currentBuild.result = 'FAILURE'
                         error "deploy failed"
                     }
 
-                    def statusConsumer = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8087/consumer-currency-1.01/currency/', returnStdout: true)
+                    def statusConsumer = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://35.239.53.104:8087/currency/table/', returnStdout: true)
                     if (statusConsumer != "200") {
                         currentBuild.result = 'FAILURE'
                         error "deploy failed"

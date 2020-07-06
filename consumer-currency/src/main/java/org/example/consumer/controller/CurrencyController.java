@@ -52,7 +52,7 @@ public class CurrencyController {
      * @param endDate To find currency dynamics to this date
      * @return main.html
      */
-    @GetMapping("/currency")
+    @GetMapping("/table")
     public String getCurrency(
             Model model,
             @RequestParam(required = false) String date,
