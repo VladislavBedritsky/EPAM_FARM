@@ -50,6 +50,7 @@ pipeline {
                     rtMaven.deployer server: artServer, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
 
                     artServer.publishBuildInfo buildInfo
+                    rtMaven.deployer.artifactDeploymentPatterns.addInclude("*.war")
                     rtMaven.deployer.deployArtifacts buildInfo
                 }
             }
