@@ -1,9 +1,9 @@
 # EPAM_FARM PROJECT
 
-_**App in progress...**_
+:bangbang:  _**App in progress...**_
 
 
-## :heavy_exclamation_mark: _You can find all services remotely on links below :_ :arrow_down:  
+## :arrow_down: _You can find all services remotely on links below :_ :arrow_down:  
 
 ##  :white_check_mark: Web-app
  > _https://tomcat.xfarm.xyz/web-app/_
