@@ -11,75 +11,91 @@
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
    
-:round_pushpin: **Location:** _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/web-app_
+:round_pushpin: **Code location:** 
 
-## REST-app
+_https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/web-app_
+
+## :white_check_mark: REST-app
  >  _https://tomcat.xfarm.xyz/rest/employees/_
              
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
    
-:octocat: **Location:** _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/rest_
+:round_pushpin: **Code location:** 
 
-## Currency-app
+_https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/rest_
+
+## :white_check_mark: Currency-app
  >  _https://tomcat.xfarm.xyz/currency_
              
-:octocat: **Location:** _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/consumer-currency_
+:round_pushpin: **Code location:** 
 
-## Angular-app
+_https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/consumer-currency_
+
+## :white_check_mark: Angular-app
  >  _https://angular.xfarm.xyz_
              
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
    
-:octocat: **Location:** _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/angular_
+:round_pushpin: **Code location:** 
 
-## Oauth2-server
+_https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/angular_
+
+## :white_check_mark: Oauth2-server
  >  _https://oauth.xfarm.xyz/auth/login_
    
-:octocat: **Location:** _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/oauth_
+:round_pushpin: **Code location:** 
 
-## Config-server
+_https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/oauth_
+
+## :white_check_mark: Config-server
  >  _https://properties.xfarm.xyz/rest-prod.properties/_
    
-:octocat: **Location:** _https://github.com/VladislavBedritsky/server-config_
+:round_pushpin: **Code location:** 
+ 
+ _https://github.com/VladislavBedritsky/server-config_
 
-## Tic-Tac-Toe game backend
+## :white_check_mark: Tic-Tac-Toe game backend
  >  _https://tomcat.xfarm.xyz/tic-tac-toe/users_ 
 * username: `q`
 * password: `q`
 
-:octocat: **Location:** _https://github.com/VladislavBedritsky/WebGame-Angular-Spring/tree/master/web_
+:round_pushpin: **Code location:** 
  
-## Tic-Tac-Toe game frontend
+ _https://github.com/VladislavBedritsky/WebGame-Angular-Spring/tree/master/web_
+ 
+## :white_check_mark: Tic-Tac-Toe game frontend
  >  _https://xo.xfarm.xyz_ 
 * username: `q`
 * password: `q`
 
-:octocat: **Location:** _https://github.com/VladislavBedritsky/WebGame-Angular-Spring/tree/master/angular_
+:round_pushpin: **Code location:** 
+
+_https://github.com/VladislavBedritsky/WebGame-Angular-Spring/tree/master/angular_
  
-## Tomcat 
+## :white_check_mark: Tomcat 
  >  _https://tomcat.xfarm.xyz_
 * username: `jenkins`
 * password: `jenkins`
 
  
-## Jenkins
+## :white_check_mark: Jenkins
  >  _https://jenkins.xfarm.xyz_
 * username: `admin`
 * password: `admin`
 
-## Sonar
+## :white_check_mark: Sonar
  >  _https://sonar.xfarm.xyz_
 * username: `admin`
 * password: `admin`
 
-## Artifactory
+## :white_check_mark: Artifactory
  >  _https://artifactory.xfarm.xyz_
 * username: `admin`
 * password: `password123`
 
-## ActiveMQ
+## :white_check_mark: ActiveMQ
  >  _https://activemq.xfarm.xyz_
 * username: `admin`
 * password: `admin`
