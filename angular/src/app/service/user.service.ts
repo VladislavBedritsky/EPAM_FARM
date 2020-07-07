@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private baseUrl = "https://tomcat.xfarm.xyz/rest-1.01/user"
-  private saveSessionUrl = "https://tomcat.xfarm.xyz/rest-1.01/saveSession"
+  private baseUrl = "https://tomcat.xfarm.xyz/rest/user"
+  private saveSessionUrl = "https://tomcat.xfarm.xyz/rest/saveSession"
 
   constructor(private httpClient: HttpClient) { }
 

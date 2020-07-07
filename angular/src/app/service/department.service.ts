@@ -9,7 +9,7 @@ import { Department } from 'src/app/common/department'
 })
 export class DepartmentService {
 
-  private baseUrl = "https://tomcat.xfarm.xyz/rest-1.01/departments";
+  private baseUrl = "https://tomcat.xfarm.xyz/rest/departments";
 
   constructor(private httpClient: HttpClient) { }
 
