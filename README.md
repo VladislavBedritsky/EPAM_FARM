@@ -11,7 +11,7 @@ _https://tomcat.xfarm.xyz/web-app/_
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
    
-Code location: _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/web-app_
+**Code location:** _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/web-app_
 
 ## REST-app
 _https://tomcat.xfarm.xyz/rest/employees/_
@@ -19,12 +19,12 @@ _https://tomcat.xfarm.xyz/rest/employees/_
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
    
-Code location: _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/rest_
+**Code location:**  _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/rest_
 
 ## Currency-app
 _https://tomcat.xfarm.xyz/currency_
              
-Code location: _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/consumer-currency_
+**Code location:**  _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/consumer-currency_
 
 ## Angular-app
 _https://angular.xfarm.xyz_
@@ -32,31 +32,31 @@ _https://angular.xfarm.xyz_
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
    
-Code location: _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/angular_
+**Code location:**  _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/angular_
 
 ## Oauth2-server
 _https://oauth.xfarm.xyz/auth/login_
    
-Code location: _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/oauth_
+**Code location:**  _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/oauth_
 
 ## Config-server
 _https://properties.xfarm.xyz/rest-prod.properties/_
    
-Code location: _https://github.com/VladislavBedritsky/server-config_
+**Code location:** _https://github.com/VladislavBedritsky/server-config_
 
 ## Tic-Tac-Toe game backend
-_https://tomcat.xfarm.xyz/tic-tac-toe_ 
+_https://tomcat.xfarm.xyz/tic-tac-toe/users_ 
 * username: `q`
 * password: `q`
 
-Code location: _https://github.com/VladislavBedritsky/WebGame-Angular-Spring/tree/master/web_
+**Code location:**  _https://github.com/VladislavBedritsky/WebGame-Angular-Spring/tree/master/web_
  
 ## Tic-Tac-Toe game frontend
 _https://xo.xfarm.xyz_ 
 * username: `q`
 * password: `q`
 
-Code location: _https://github.com/VladislavBedritsky/WebGame-Angular-Spring/tree/master/angular_
+**Code location:** _https://github.com/VladislavBedritsky/WebGame-Angular-Spring/tree/master/angular_
  
 ## Tomcat 
 _https://tomcat.xfarm.xyz_
