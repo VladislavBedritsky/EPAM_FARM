@@ -11,7 +11,7 @@ _https://tomcat.xfarm.xyz/web-app/_
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
    
-:+1: **location:** _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/web-app_
+:octocat: **location:** _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/web-app_
 
 ## REST-app
 _https://tomcat.xfarm.xyz/rest/employees/_
