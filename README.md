@@ -1,4 +1,4 @@
-# <div style="text-align: right; color: rgb(0,149,255)"> EPAM_FARM </div>
+# <p style="text-align: right;"> EPAM_FARM </p>
 
 :bangbang:  _**App in progress...**_
 
