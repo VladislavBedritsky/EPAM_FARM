@@ -11,7 +11,7 @@
              ADMIN(role): username: q; password: q
              USER(role): username: qw; password: qw
    
-:octocat: **Location:** _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/web-app_
+:round_pushpin: **Location:** _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/web-app_
 
 ## REST-app
  >  _https://tomcat.xfarm.xyz/rest/employees/_
