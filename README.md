@@ -1,4 +1,4 @@
-# <p style="text-align: right;"> EPAM_FARM </p>
+# EPAM_FARM
 
 :bangbang:  _**App in progress...**_
 
