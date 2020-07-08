@@ -17,7 +17,6 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AuthGuardService } from 'src/app/service/auth-guard.service';
 import { BasicAuthHttpInterceptorService } from 'src/app/service/basic-auth-http-interceptor.service';
-import { PresentationComponent } from './components/presentation/presentation.component';
 
 const routes: Routes = [
   {path: 'employees', component: EmployeeListComponent, canActivate:[AuthGuardService] },
@@ -26,7 +25,6 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'logout', component: LogoutComponent, canActivate:[AuthGuardService]},
   {path: 'main', component: MainComponent },
-  {path: 'presentation', component: PresentationComponent },
   {path: '', redirectTo: '/main', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent }
 ]
@@ -42,8 +40,7 @@ const routes: Routes = [
     DepartmentListComponent,
     DepartmentIdComponent,
     LoginComponent,
-    LogoutComponent,
-    PresentationComponent
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
