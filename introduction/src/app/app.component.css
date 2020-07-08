@@ -1,0 +1,66 @@
+
+/* toolbar */
+mat-toolbar {
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  transition: 0.6s;
+}
+
+mat-toolbar.navbar-inverse {
+  opacity: 0.7;
+  height: 60px;
+  transition: 0.6s;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.heading {
+  margin-left: 5%;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-size: 1.5em;
+}
+
+.raised-button {
+  margin-right: 3px;
+}
+
+
+::ng-deep .mat-button {
+    background-color: rgb(245,245,245) !important; /* gray */
+    color: rgb(25,36,41) !important; /* black */
+}
+
+::ng-deep .mat-button:focus {
+    background-color: rgb(25,36,41) !important; /* black */
+    color: rgb(245,245,245) !important; /* gray */
+}
+
+::ng-deep .mat-button:hover {
+    background-color: rgb(25,36,41) !important; /* black */
+    color: rgb(245,245,245) !important; /* gray */
+}
+
+mat-menu ng-container {
+  width: 100%;
+}
+
+::ng-deep .mat-menu-button.mat-button {
+    background-color: white !important;
+    color: rgb(25,36,41) !important; /* black */
+    width: 100%;
+}
+
+::ng-deep .mat-menu-button.mat-button:focus {
+    background-color: rgb(25,36,41) !important; /* black */
+    color: rgb(245,245,245) !important; /* gray */
+    width: 100%;
+}
+
+::ng-deep .mat-menu-button.mat-button:hover {
+    background-color: rgb(25,36,41) !important; /* black */
+    color: rgb(245,245,245) !important; /* gray */
+    width: 100%;
+}

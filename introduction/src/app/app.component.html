@@ -1,5 +1,34 @@
+<mat-toolbar (scroll)="onWindowScroll($event)">
+  <span class="heading">xfarm.xyz</span>
 
-<p>xfarm.xyz in progress</p>
+  <span class="example-spacer"></span>
 
+  <button mat-button class="raised-button"
+          *ngFor="let item of menuItems" fxHide.xs fxHide.sm
+          (click)="scroll(item.label)">
+    {{item.label}}
+  </button>
+
+  <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs fxShow.sm>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #dropMenu="matMenu">
+    <ng-container *ngFor="let item of menuItems">
+      <button mat-button class="mat-menu-button"
+              (click)="scroll(item.label)">
+        {{item.label}}
+      </button>
+      <mat-divider></mat-divider>
+    </ng-container>
+  </mat-menu>
+</mat-toolbar>
+
+
+
+<app-about id="About"></app-about>
+
+<app-services id="Recent work"></app-services>
+
+<app-contacts id="Get in touch"></app-contacts>
 
 <router-outlet></router-outlet>
