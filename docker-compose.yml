@@ -136,6 +136,19 @@ services:
       - net
     restart: on-failure
 
+  introduction:
+    build:
+      context: ./introduction/
+      dockerfile: Dockerfile
+    image: introduction
+    ports:
+      - 4200:4200
+    container_name: introduction
+    networks:
+      - net
+    restart: on-failure
+    command: ng serve --host 0.0.0.0 --port 4200 --disable-host-check
+
 networks:
   net:
     driver: bridge
