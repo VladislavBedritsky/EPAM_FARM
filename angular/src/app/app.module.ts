@@ -26,9 +26,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'logout', component: LogoutComponent, canActivate:[AuthGuardService]},
   {path: 'main', component: MainComponent },
+  {path: 'presentation', component: PresentationComponent },
   {path: '', redirectTo: '/main', pathMatch: 'full'},
-  {path: '**', component: PageNotFoundComponent },
-  {path: 'presentation', component: PresentationComponent }
+  {path: '**', component: PageNotFoundComponent }
 ]
 
 @NgModule({

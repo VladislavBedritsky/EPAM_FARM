@@ -1,9 +1,16 @@
-footer {
-  margin-top: 30px;
-  background-color: #088893;
+
+.page-footer {
+  color: white;
+  background-color: #0D334A;
 }
 
-a {
-  text-decoration: none;
+.page-footer a {
+  font-weight: 500;
   color: white;
+}
+
+.page-footer a:hover {
+  font-weight: 500;
+  text-decoration: none;
+  color: #F57C00;
 }
