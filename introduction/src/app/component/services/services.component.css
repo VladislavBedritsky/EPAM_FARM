@@ -1,1 +1,68 @@
+#container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
 
+#container .heading {
+  border: 1px solid red;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#container .heading h1 {
+  font-weight: 600;
+}
+
+#container .checkbox {
+  border: 1px solid blue;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#container .services {
+  border: 1px solid green;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* buttons */
+#container .services mat-card {
+  border-radius: 2%;
+  width: 250px;
+  height: 250px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  position: relative;
+}
+
+#container .services mat-card:hover {
+  opacity: 0.5;
+}
+
+#container .services mat-card .topic {
+  height: 100%;
+  width: 100%;
+  transition: .5s ease;
+  opacity: 0;
+}
+
+#container .services mat-card .topic:hover {
+  opacity: 1;
+}
+
+
+
+#container .services #github {
+  background: url('src/assets/services/github.png') no-repeat;
+  background-size: cover;
+}

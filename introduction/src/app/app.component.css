@@ -12,6 +12,7 @@ mat-toolbar.navbar-inverse {
   opacity: 0.7;
   height: 60px;
   transition: 0.6s;
+  border-bottom: 3px solid rgba(25, 36, 41, .5);
 }
 
 /* onScroll change button properties in toolbar */
@@ -110,10 +111,10 @@ mat-toolbar.elContacts-inverse ::ng-deep .raised-button.contacts.mat-button {
 
 #services {
   width: 100%;
-  height: 100%;
+  height: auto;
   text-align: center;
-  background-color: yellow;
-  color: white;
+  background-color: rgb(245,245,245); /* gray */
+  color: rgb(25,36,41) ; /* black */
 }
 
 #contacts {
