@@ -1,34 +1,70 @@
-<mat-toolbar (scroll)="onWindowScroll($event)">
+<mat-toolbar
+  (scroll)="onWindowScroll($event)">
+
   <span class="heading">xfarm.xyz</span>
 
   <span class="example-spacer"></span>
 
-  <button mat-button class="raised-button"
-          *ngFor="let item of menuItems" fxHide.xs fxHide.sm
-          (click)="scroll(item.label)">
-    {{item.label}}
+  <button mat-button class="raised-button about"
+          fxHide.xs
+          fxHide.sm
+          (click)="scroll('about')">
+    About
+  </button>
+  <button mat-button class="raised-button services"
+          fxHide.xs
+          fxHide.sm
+          (click)="scroll('services')">
+    Recent work
+  </button>
+  <button mat-button class="raised-button contacts"
+          fxHide.xs
+          fxHide.sm
+          (click)="scroll('contacts')">
+    Get in touch
   </button>
 
-  <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs fxShow.sm>
+  <button mat-icon-button
+          [matMenuTriggerFor]="dropMenu"
+          fxHide
+          fxShow.xs
+          fxShow.sm>
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #dropMenu="matMenu">
-    <ng-container *ngFor="let item of menuItems">
       <button mat-button class="mat-menu-button"
-              (click)="scroll(item.label)">
-        {{item.label}}
+              type="submit"
+              (click)="scrollNotDestop('about')">
+        About
       </button>
       <mat-divider></mat-divider>
-    </ng-container>
+      <button mat-button class="mat-menu-button"
+              type="submit"
+              (click)="scrollNotDestop('services')">
+        Recent work
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-button class="mat-menu-button"
+              type="submit"
+              (click)="scrollNotDestop('contacts')">
+        Get in touch
+      </button>
   </mat-menu>
 </mat-toolbar>
 
 
+<div id="about">
+  <app-about></app-about>
+</div>
 
-<app-about id="About"></app-about>
+<div id="services">
+  <app-services></app-services>
+</div>
 
-<app-services id="Recent work"></app-services>
+<div id="contacts">
+  <app-contacts></app-contacts>
+</div>
 
-<app-contacts id="Get in touch"></app-contacts>
+
 
 <router-outlet></router-outlet>

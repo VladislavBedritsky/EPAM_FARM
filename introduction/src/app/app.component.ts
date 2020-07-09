@@ -3,25 +3,14 @@ import { HostListener } from '@angular/core';
 
 import { MenuItem } from 'src/app/interface/menu-item';
 
+import * as $ from "jquery";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'xfarm';
-
-  menuItems: MenuItem[] = [
-    {
-      label: 'About',
-    },
-    {
-      label: 'Recent work',
-    },
-    {
-      label: 'Get in touch',
-    }
-  ];
 
   constructor() { }
 
@@ -31,15 +20,50 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
-        let element = document.querySelector('mat-toolbar');
-        if (window.pageYOffset > element.clientHeight) {
-          element.classList.add('navbar-inverse');
+        let elToolbar = document.querySelector('mat-toolbar');
+
+        if (window.pageYOffset > elToolbar.clientHeight) {
+          elToolbar.classList.add('navbar-inverse');
         } else {
-          element.classList.remove('navbar-inverse');
+          elToolbar.classList.remove('navbar-inverse');
+        }
+
+        let elAbout = document.getElementById('about');
+        let elServices = document.getElementById('services');
+        let elContacts = document.getElementById('contacts');
+
+        if (window.pageYOffset < (elAbout.clientHeight*0.52)) {
+          elToolbar.classList.add('elAbout-inverse');
+          elAbout.classList.remove('elAbout-fadein');
+        } else {
+          elToolbar.classList.remove('elAbout-inverse');
+          elAbout.classList.add('elAbout-fadein');
+        }
+
+        if (window.pageYOffset >= 0.52*elAbout.clientHeight &&
+        window.pageYOffset < (0.52*elServices.clientHeight + elAbout.clientHeight)) {
+          elToolbar.classList.add('elServices-inverse');
+        } else {
+          elToolbar.classList.remove('elServices-inverse');
+        }
+
+        if (window.pageYOffset >= (0.52*elServices.clientHeight + elAbout.clientHeight) &&
+        window.pageYOffset < (elServices.clientHeight + elAbout.clientHeight + 0.52*elContacts.clientHeight)) {
+          elToolbar.classList.add('elContacts-inverse');
+        } else {
+          elToolbar.classList.remove('elContacts-inverse');
         }
   }
 
+
   scroll(el: any) {
-        document.getElementById(el).scrollIntoView({ behavior: 'smooth' });
+     document.getElementById(el).scrollIntoView({ behavior: 'smooth' });
   }
+
+  scrollNotDestop(el: any) {
+    $('html, body').animate({
+        scrollTop: $("#"+el).offset().top
+    }, 500);
+  }
+
 }

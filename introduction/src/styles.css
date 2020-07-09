@@ -2,7 +2,7 @@
 @import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import "https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat+Subrayada&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat+Subrayada&family=Montserrat&display=swap";
 
 html, body {
   height: 100%;

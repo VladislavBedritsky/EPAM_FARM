@@ -7,10 +7,29 @@ mat-toolbar {
   transition: 0.6s;
 }
 
+/* onScroll toolbar properties */
 mat-toolbar.navbar-inverse {
   opacity: 0.7;
   height: 60px;
   transition: 0.6s;
+}
+
+/* onScroll change button properties in toolbar */
+mat-toolbar.elAbout-inverse ::ng-deep .raised-button.about.mat-button {
+    background-color: rgb(25,36,41) !important; /* black */
+    color: rgb(245,245,245) !important; /* gray */
+}
+
+/* onScroll change button properties in toolbar */
+mat-toolbar.elServices-inverse ::ng-deep .raised-button.services.mat-button {
+    background-color: rgb(25,36,41) !important; /* black */
+    color: rgb(245,245,245) !important; /* gray */
+}
+
+/* onScroll change button properties in toolbar */
+mat-toolbar.elContacts-inverse ::ng-deep .raised-button.contacts.mat-button {
+    background-color: rgb(25,36,41) !important; /* black */
+    color: rgb(245,245,245) !important; /* gray */
 }
 
 .example-spacer {
@@ -28,23 +47,30 @@ mat-toolbar.navbar-inverse {
 }
 
 
-::ng-deep .mat-button {
+::ng-deep .raised-button.mat-button {
     background-color: rgb(245,245,245) !important; /* gray */
     color: rgb(25,36,41) !important; /* black */
+    font-family: 'Montserrat', sans-serif;
 }
 
-::ng-deep .mat-button:focus {
+::ng-deep .raised-button.mat-button:focus {
+    border: 0px;
+    outline: none;
+}
+
+::ng-deep .raised-button.mat-button:hover {
     background-color: rgb(25,36,41) !important; /* black */
     color: rgb(245,245,245) !important; /* gray */
 }
 
-::ng-deep .mat-button:hover {
-    background-color: rgb(25,36,41) !important; /* black */
-    color: rgb(245,245,245) !important; /* gray */
+/* mat menu properties in toolbar */
+::ng-deep .mat-icon-button:focus {
+  border: 0px;
+  outline: none;
 }
 
-mat-menu ng-container {
-  width: 100%;
+::ng-deep .mat-menu-panel {
+  padding: 0 10px!important;
 }
 
 ::ng-deep .mat-menu-button.mat-button {
@@ -53,14 +79,79 @@ mat-menu ng-container {
     width: 100%;
 }
 
-::ng-deep .mat-menu-button.mat-button:focus {
+::ng-deep .mat-menu-button.mat-button:hover  {
     background-color: rgb(25,36,41) !important; /* black */
     color: rgb(245,245,245) !important; /* gray */
     width: 100%;
 }
 
-::ng-deep .mat-menu-button.mat-button:hover {
-    background-color: rgb(25,36,41) !important; /* black */
-    color: rgb(245,245,245) !important; /* gray */
-    width: 100%;
+
+#about {
+  width: 100%;
+  height: 100%;
+  background: url('src/assets/background/about.jpg') no-repeat;
+  background-size: cover;
+  color: white;
 }
+
+/* onScroll change app-about properties */
+#about.elAbout-fadein {
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+#services {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: yellow;
+  color: white;
+}
+
+#contacts {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: red;
+  color: white;
+}
+
+
+/* keyframes */
+@keyframes fadein {
+    from { opacity: 1; }
+    to   { opacity: 0.6; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 1; }
+    to   { opacity: 0.6; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 1; }
+    to   { opacity: 0.6; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 1; }
+    to   { opacity: 0.6; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 1; }
+    to   { opacity: 0.6; }
+}
+
