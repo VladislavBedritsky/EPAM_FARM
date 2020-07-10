@@ -2,92 +2,44 @@
   <div class="heading">
     <h1>Services</h1>
   </div>
-  <div class="checkbox"></div>
-  <div class="services">
-    <div class="card">
-      <mat-card class="background github"></mat-card>
+
+
+  <div class="checkbox">
+    <button mat-stroked-button
+            #btnAllRef
+            (click)="showAllApps()">
+      All
+    </button>
+    <button mat-stroked-button
+            (click)="showSpringApps()">
+      Spring apps
+    </button>
+    <button mat-stroked-button
+            (click)="showAngApps()">
+      Angular apps
+    </button>
+    <button mat-stroked-button
+            (click)="showCICDApps()">
+      CI/CD
+    </button>
+    <button mat-stroked-button
+            (click)="showGitApp()">
+      GitHub
+    </button>
+  </div>
+
+
+  <div class="services" [@enterListAnimation]="services.length" >
+
+    <div class="card"
+         *ngFor="let service of services">
+      <mat-card [ngClass]="'background '+service.class"></mat-card>
       <div class="hidden">
-        <h3>GitHub</h3>
+        <h3>{{ service.label }}</h3>
+        <p class="p-rest">{{ service.rest === true ? '*REST' : ''}}</p>
       </div>
     </div>
-    <div class="card">
-      <mat-card class="background angular"></mat-card>
-      <div class="hidden">
-        <h3>Angular</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background webapp"></mat-card>
-      <div class="hidden">
-        <h3>Web-app</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background rest"></mat-card>
-      <div class="hidden">
-        <h3>Rest</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background tomcat"></mat-card>
-      <div class="hidden">
-        <h3>Tomcat</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background currency"></mat-card>
-      <div class="hidden">
-        <h3>Currency</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background tic-tac-front"></mat-card>
-      <div class="hidden">
-        <h3>Tic-tac-toe</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background tic-tac-back"></mat-card>
-      <div class="hidden">
-        <h3>Tic-tac-toe(rest)</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background jenkins"></mat-card>
-      <div class="hidden">
-        <h3>Jenkins</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background oauth"></mat-card>
-      <div class="hidden">
-        <h3>Oauth2</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background properties"></mat-card>
-      <div class="hidden">
-        <h3>Properties</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background artifactory"></mat-card>
-      <div class="hidden">
-        <h3>Artifactory</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background sonar"></mat-card>
-      <div class="hidden">
-        <h3>SonarQube</h3>
-      </div>
-    </div>
-    <div class="card">
-      <mat-card class="background activemq"></mat-card>
-      <div class="hidden">
-        <h3>ActiveMQ</h3>
-      </div>
-    </div>
+
   </div>
 </div>
 

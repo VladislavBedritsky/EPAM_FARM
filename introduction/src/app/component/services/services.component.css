@@ -6,7 +6,6 @@
 }
 
 #container .heading {
-  border: 1px solid red;
   width: 100%;
   margin-top: 20px;
 }
@@ -15,38 +14,62 @@
   font-weight: 600;
 }
 
+
+
+
+/* checkbox */
 #container .checkbox {
-  border: 1px solid blue;
   height: 50px;
   width: 100%;
   margin-top: 20px;
 }
 
+#container .checkbox button {
+  margin-left: 10px;
+}
+
+#container .checkbox ::ng-deep .mat-stroked-button {
+    background-color: rgb(245,245,245) !important; /* gray */
+    color: rgb(25,36,41) !important; /* black */
+    border: 2px solid rgb(25,36,41, 0.8);
+    font-family: 'Montserrat', sans-serif;
+}
+
+#container .checkbox ::ng-deep .mat-stroked-button:hover {
+    background-color: rgb(25,36,41) !important; /* black */
+    color: rgb(245,245,245) !important; /* gray */
+}
+
+#container .checkbox ::ng-deep .mat-stroked-button:focus {
+    background-color: rgb(25,36,41) !important; /* black */
+    color: rgb(245,245,245) !important; /* gray */
+}
+
+/* services */
 #container .services {
-  border: 1px solid green;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  transition:all 0.3s ease-in-out;
+  transition-duration:2s;
 }
 
-/* buttons */
 #container .services .card {
-  border-radius: 2%;
   width: 250px;
   height: 250px;
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
-  border: 0px;
 }
 
 #container .services .card .background {
   width: 100%;
   height: 100%;
   position: absolute;
+  border-radius: 2%;
 }
 
 #container .services .card .hidden {
@@ -68,6 +91,14 @@
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   position: absolute;
+}
+
+#container .services .card .hidden .p-rest {
+  top: 1%;
+  right: 3%;
+  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 #container .services .card .github {

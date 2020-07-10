@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 
-import { MenuItem } from 'src/app/interface/menu-item';
-
 import * as $ from "jquery";
 
 @Component({
