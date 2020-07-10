@@ -179,7 +179,7 @@
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webApp>
-                        <contextPath>/web-app-1.01</contextPath>
+                        <contextPath>/web-app</contextPath>
                     </webApp>
                 </configuration>
             </plugin>

@@ -105,7 +105,7 @@
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webApp>
-                        <contextPath>/consumer-currency-1.01</contextPath>
+                        <contextPath>/currency</contextPath>
                     </webApp>
                 </configuration>
             </plugin>

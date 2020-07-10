@@ -33,36 +33,110 @@
 }
 
 /* buttons */
-#container .services mat-card {
+#container .services .card {
   border-radius: 2%;
   width: 250px;
   height: 250px;
   margin-top: 20px;
   margin-bottom: 20px;
-  opacity: 1;
-  transition: .5s ease;
-  backface-visibility: hidden;
   position: relative;
+  border: 0px;
 }
 
-#container .services mat-card:hover {
-  opacity: 0.5;
-}
-
-#container .services mat-card .topic {
-  height: 100%;
+#container .services .card .background {
   width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#container .services .card .hidden {
   transition: .5s ease;
   opacity: 0;
+  background-color: gray;
+  width: 100%;
+  height: 100%;
+  color: white;
 }
 
-#container .services mat-card .topic:hover {
-  opacity: 1;
+#container .services .card .hidden:hover {
+  opacity: 0.8;
 }
 
+#container .services .card .hidden h3 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  position: absolute;
+}
 
-
-#container .services #github {
+#container .services .card .github {
   background: url('src/assets/services/github.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .webapp {
+  background: url('src/assets/services/webapp.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .rest {
+  background: url('src/assets/services/rest.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .angular {
+  background: url('src/assets/services/angular1.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .currency {
+  background: url('src/assets/services/currency.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .tic-tac-back {
+  background: url('src/assets/services/tic-tac-rest.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .tic-tac-front {
+  background: url('src/assets/services/tic-tac-front.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .oauth {
+  background: url('src/assets/services/oauth.png') no-repeat;
+  background-size: 110%;
+  background-position: 50% ;
+}
+
+#container .services .card .properties{
+  background: url('src/assets/services/properties.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .tomcat{
+  background: url('src/assets/services/tomcat1.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .jenkins{
+  background: url('src/assets/services/jenkins1.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .sonar{
+  background: url('src/assets/services/sonar.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .artifactory{
+  background: url('src/assets/services/artifactory.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .activemq {
+  background: url('src/assets/services/activemq.png') no-repeat;
   background-size: cover;
 }

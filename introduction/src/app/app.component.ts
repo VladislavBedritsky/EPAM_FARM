@@ -41,14 +41,14 @@ export class AppComponent implements OnInit {
         }
 
         if (window.pageYOffset >= 0.52*elAbout.clientHeight &&
-        window.pageYOffset < (0.52*elServices.clientHeight + elAbout.clientHeight)) {
+        window.pageYOffset < (0.85*elServices.clientHeight + elAbout.clientHeight)) {
           elToolbar.classList.add('elServices-inverse');
         } else {
           elToolbar.classList.remove('elServices-inverse');
         }
 
-        if (window.pageYOffset >= (0.52*elServices.clientHeight + elAbout.clientHeight) &&
-        window.pageYOffset < (elServices.clientHeight + elAbout.clientHeight + 0.52*elContacts.clientHeight)) {
+        if (window.pageYOffset >= (0.85*elServices.clientHeight + elAbout.clientHeight) &&
+        window.pageYOffset < (elServices.clientHeight + elAbout.clientHeight + 0.85*elContacts.clientHeight)) {
           elToolbar.classList.add('elContacts-inverse');
         } else {
           elToolbar.classList.remove('elContacts-inverse');

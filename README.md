@@ -108,17 +108,17 @@ _https://github.com/VladislavBedritsky/WebGame-Angular-Spring/tree/master/angula
    2) To start Web App:
       * `cd web-app`
       * `mvn jetty:run`
-      * http://localhost:8080/web-app-1.01
+      * http://localhost:8080/web-app
    
    3) To start REST App:
       * `cd rest`
       * `mvn jetty:run`
-      * http://localhost:8080/rest-1.01/departments   
+      * http://localhost:8080/rest/departments   
    
    4) To start Currency App:
       * `cd consumer-currency`
       * `mvn jetty:run`
-      * http://localhost:8080/consumer-currency-1.01
+      * http://localhost:8080/currency
    
    5) To start Angular App:
       * `cd angular`
