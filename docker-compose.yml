@@ -142,7 +142,7 @@ services:
       dockerfile: Dockerfile
     image: introduction
     ports:
-      - 4200:4200
+      - 4202:4200
     container_name: introduction
     networks:
       - net
