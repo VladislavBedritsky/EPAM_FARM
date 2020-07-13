@@ -29,15 +29,16 @@
   </div>
 
 
-  <div class="services" [@enterListAnimation]="services.length" >
+  <div class="services" [@servicesAnimation]="services.length" >
 
     <div class="card"
          *ngFor="let service of services">
       <mat-card [ngClass]="'background '+service.class"></mat-card>
-      <div class="hidden">
+
+      <a class="hidden" href="{{ service.link }}">
         <h3>{{ service.label }}</h3>
         <p class="p-rest">{{ service.rest === true ? '*REST' : ''}}</p>
-      </div>
+      </a>
     </div>
 
   </div>

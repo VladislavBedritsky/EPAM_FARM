@@ -33,9 +33,11 @@ export class AppComponent implements OnInit {
         if (window.pageYOffset < (elAbout.clientHeight*0.52)) {
           elToolbar.classList.add('elAbout-inverse');
           elAbout.classList.remove('elAbout-fadein');
+          elAbout.classList.add('elAbout-fadeout');
         } else {
           elToolbar.classList.remove('elAbout-inverse');
           elAbout.classList.add('elAbout-fadein');
+          elAbout.classList.remove('elAbout-fadeout');
         }
 
         if (window.pageYOffset >= 0.52*elAbout.clientHeight &&
@@ -51,6 +53,7 @@ export class AppComponent implements OnInit {
         } else {
           elToolbar.classList.remove('elContacts-inverse');
         }
+
   }
 
 

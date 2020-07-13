@@ -3,4 +3,5 @@ export interface Service {
     label: string;
     class: string;
     rest: boolean;
+    link: string;
 }

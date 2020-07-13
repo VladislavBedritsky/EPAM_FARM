@@ -4,7 +4,7 @@ import { trigger, transition, style, animate, query, stagger } from '@angular/an
 
 import { Service } from 'src/app/interface/service';
 
-const enterListAnimation = trigger('enterListAnimation', [
+const servicesAnimation = trigger('servicesAnimation', [
   transition('* <=> *', [
       style({
         opacity: 0
@@ -22,26 +22,26 @@ const enterListAnimation = trigger('enterListAnimation', [
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css'],
-  animations: [enterListAnimation]
+  animations: [servicesAnimation]
 })
 export class ServicesComponent implements OnInit, AfterViewInit {
 
   @ViewChild('btnAllRef') btnAllRef: MatButton;
 
-  github: Service = { id: 1, label: 'GitHub', class: 'github', rest: false };
-  angular: Service = { id: 2, label: 'Angular', class: 'angular', rest: false  };
-  webapp: Service = { id: 3, label: 'WebApp', class: 'webapp', rest: false  };
-  rest: Service = { id: 4, label: 'WebApp', class: 'rest', rest: true };
-  tomcat: Service = { id: 5, label: 'Tomcat', class: 'tomcat', rest: false  };
-  currency: Service = { id: 6, label: 'Currency', class: 'currency', rest: false  };
-  ticTacFront: Service = { id: 7, label: 'Tic-tac-toe', class: 'tic-tac-front', rest: false  };
-  ticTacBack: Service = { id: 8, label: 'Tic-tac-toe', class: 'tic-tac-back', rest: true  };
-  jenkins: Service = { id: 9, label: 'Jenkins', class: 'jenkins', rest: false  };
-  oauth: Service = { id: 10, label: 'Oauth2', class: 'oauth', rest: false  };
-  properties: Service = { id: 11, label: 'Properties', class: 'properties', rest: false  };
-  artifactory: Service = { id: 12, label: 'Artifactory', class: 'artifactory', rest: false  };
-  sonar: Service = { id: 13, label: 'SonarQube', class: 'sonar', rest: false  };
-  activemq: Service = { id: 14, label: 'ActiveMQ', class: 'activemq', rest: false  };
+  github: Service = { id: 1, label: 'GitHub', class: 'github', rest: false, link: 'https://github.com/VladislavBedritsky/EPAM_FARM' };
+  angular: Service = { id: 2, label: 'Angular', class: 'angular', rest: false, link: 'https://angular.xfarm.xyz/main'  };
+  webapp: Service = { id: 3, label: 'WebApp', class: 'webapp', rest: false, link: 'https://tomcat.xfarm.xyz/web-app/'  };
+  rest: Service = { id: 4, label: 'WebApp', class: 'rest', rest: true, link: 'https://tomcat.xfarm.xyz/rest/departments' };
+  tomcat: Service = { id: 5, label: 'Tomcat', class: 'tomcat', rest: false, link: 'https://tomcat.xfarm.xyz/'  };
+  currency: Service = { id: 6, label: 'Currency', class: 'currency', rest: false, link: 'https://tomcat.xfarm.xyz/currency'  };
+  ticTacFront: Service = { id: 7, label: 'Tic-tac-toe', class: 'tic-tac-front', rest: false, link: 'https://xo.xfarm.xyz/main'  };
+  ticTacBack: Service = { id: 8, label: 'Tic-tac-toe', class: 'tic-tac-back', rest: true, link: 'https://tomcat.xfarm.xyz/tic-tac-toe/users'  };
+  jenkins: Service = { id: 9, label: 'Jenkins', class: 'jenkins', rest: false, link: 'https://jenkins.xfarm.xyz'  };
+  oauth: Service = { id: 10, label: 'Oauth2', class: 'oauth', rest: false, link: 'https://oauth.xfarm.xyz/auth/login'  };
+  properties: Service = { id: 11, label: 'Properties', class: 'properties', rest: false, link: 'https://properties.xfarm.xyz/rest-prod.properties/'  };
+  artifactory: Service = { id: 12, label: 'Artifactory', class: 'artifactory', rest: false, link: 'https://artifactory.xfarm.xyz'  };
+  sonar: Service = { id: 13, label: 'SonarQube', class: 'sonar', rest: false, link: 'https://sonar.xfarm.xyz'  };
+  activemq: Service = { id: 14, label: 'ActiveMQ', class: 'activemq', rest: false, link: 'https://activemq.xfarm.xyz'  };
 
   services: Service[] = [];
 
