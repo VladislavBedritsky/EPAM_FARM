@@ -5,6 +5,13 @@
 
 ## :arrow_down: _You can find all services remotely on links below :_ :arrow_down:  
 
+##  :white_check_mark: Introduction to this project
+ > ### _https://xfarm.xyz_
+   
+:round_pushpin: **Code location:** 
+
+_https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/introduction_
+
 ##  :white_check_mark: Web-app
  > ### _https://tomcat.xfarm.xyz/web-app/_
              
