@@ -50,8 +50,12 @@ export class AppComponent implements OnInit {
         if (window.pageYOffset >= (0.85*elServices.clientHeight + elAbout.clientHeight) &&
         window.pageYOffset < (elServices.clientHeight + elAbout.clientHeight + 0.85*elContacts.clientHeight)) {
           elToolbar.classList.add('elContacts-inverse');
+          elContacts.classList.remove('elContacts-fadein');
+          elContacts.classList.add('elContacts-fadeout');
         } else {
           elToolbar.classList.remove('elContacts-inverse');
+          elContacts.classList.add('elContacts-fadein');
+          elContacts.classList.remove('elContacts-fadeout');
         }
 
   }

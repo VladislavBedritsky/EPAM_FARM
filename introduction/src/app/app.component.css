@@ -138,6 +138,31 @@ mat-toolbar.elContacts-inverse ::ng-deep .raised-button.contacts.mat-button {
   color: white;
 }
 
+#contacts.elContacts-fadein {
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+#contacts.elContacts-fadeout {
+  -webkit-animation: fadeout 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeout 1s; /* Firefox < 16 */
+  -ms-animation: fadeout 1s; /* Internet Explorer */
+  -o-animation: fadeout 1s; /* Opera < 12.1 */
+  animation: fadeout 1s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
 
 
 
