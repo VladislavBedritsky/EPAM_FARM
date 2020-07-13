@@ -6,10 +6,15 @@ import { Service } from 'src/app/interface/service';
 
 const enterListAnimation = trigger('enterListAnimation', [
   transition('* <=> *', [
-    query(':enter',
-      [style({ opacity: 0 }), stagger('200ms', animate('1000ms ease-out', style({ opacity: 1 })))],
-      { optional: true }
-    ),
+      style({
+        opacity: 0
+      }),
+      animate(
+        '1000ms ease-out',
+        style({
+          opacity: 1
+        })
+      )
   ])
 ]);
 
