@@ -2,12 +2,13 @@
 @import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat+Subrayada&family=Montserrat&display=swap";
 
-@font-face {
-  font-family: 'Roboto Mono';
-  src: url(/assets/fonts/RobotoMono/RobotoMono-Regular.ttf) format("truetype");
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.navbar-brand {
-    font-family: 'Roboto Mono';
-}
+
+
