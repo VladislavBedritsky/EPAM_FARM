@@ -133,3 +133,8 @@ _https://github.com/VladislavBedritsky/WebGame-Angular-Spring/tree/master/angula
       * `ng serve` 
       *  http://localhost:4200/  
  
+   6) To start Introduction App:
+      * `cd introduction`
+      * `npm install`
+      * `ng serve` 
+      *  http://localhost:4200/   
