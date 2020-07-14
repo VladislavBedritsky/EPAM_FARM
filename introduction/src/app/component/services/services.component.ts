@@ -45,6 +45,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
   services: Service[] = [];
 
+  buttonAll: any;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -63,11 +65,14 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.artifactory,
         this.sonar,
         this.activemq
-    ]
+    ];
+
   }
 
   ngAfterViewInit() {
-     this.btnAllRef.focus();
+    this.buttonAll = document.getElementById('buttonAll');
+  console.log(this.buttonAll)
+        this.buttonAll.classList.add('buttonAll-focus');
   }
 
   showAllApps() {
@@ -86,7 +91,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.artifactory,
         this.sonar,
         this.activemq
-    ]
+    ];
+    this.buttonAll.classList.remove('buttonAll-focus');
   }
 
   showSpringApps() {
@@ -97,14 +103,16 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.ticTacBack,
         this.oauth,
         this.properties
-    ]
+    ];
+    this.buttonAll.classList.remove('buttonAll-focus');
   }
 
   showAngApps() {
     this.services = [
         this.angular,
         this.ticTacFront
-    ]
+    ];
+    this.buttonAll.classList.remove('buttonAll-focus');
   }
 
   showCICDApps() {
@@ -113,7 +121,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.jenkins,
         this.artifactory,
         this.sonar
-    ]
+    ];
+    this.buttonAll.classList.remove('buttonAll-focus');
   }
 
   showGitApp() {

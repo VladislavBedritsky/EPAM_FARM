@@ -85,7 +85,8 @@
 
 #container .stack #gcp {
   background: url('src/assets/stack/gcp.png') no-repeat;
-  background-size: cover;
+  background-size: 90%;
+    background-position: 30%;
 }
 
 #container .stack #mysql {

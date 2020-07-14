@@ -28,6 +28,12 @@
   margin-left: 10px;
 }
 
+
+#container .checkbox ::ng-deep .buttonAll-focus.mat-stroked-button  {
+    background-color: rgb(25,36,41) !important; /* black */
+    color: rgb(245,245,245) !important; /* gray */
+}
+
 #container .checkbox ::ng-deep .mat-stroked-button {
     background-color: rgb(245,245,245) !important; /* gray */
     color: rgb(25,36,41) !important; /* black */
