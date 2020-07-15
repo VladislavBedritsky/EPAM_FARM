@@ -5,6 +5,4 @@ out/
 *.ipr
 *.iws
 
-script.sh
 target
-Snapshot
