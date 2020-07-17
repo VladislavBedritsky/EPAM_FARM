@@ -42,6 +42,9 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   artifactory: Service = { id: 12, label: 'Artifactory', class: 'artifactory', rest: false, link: 'https://artifactory.xfarm.xyz'  };
   sonar: Service = { id: 13, label: 'SonarQube', class: 'sonar', rest: false, link: 'https://sonar.xfarm.xyz'  };
   activemq: Service = { id: 14, label: 'ActiveMQ', class: 'activemq', rest: false, link: 'https://activemq.xfarm.xyz'  };
+  aviaFront: Service = { id: 14, label: 'Avia', class: 'avia-front', rest: false, link: 'https://avia.xfarm.xyz'  };
+  aviaBack: Service = { id: 14, label: 'Avia', class: 'avia-back', rest: true, link: 'https://tomcat.xfarm.xyz/avia/api/cities'  };
+
 
   services: Service[] = [];
 
@@ -59,12 +62,14 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.currency,
         this.ticTacFront,
         this.ticTacBack,
-        this.jenkins,
+        this.aviaBack,
+        this.aviaFront,
         this.oauth,
         this.properties,
+        this.jenkins,
         this.artifactory,
         this.sonar,
-        this.activemq
+        this.activemq,
     ];
 
   }
@@ -85,9 +90,11 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.currency,
         this.ticTacFront,
         this.ticTacBack,
-        this.jenkins,
+        this.aviaBack,
+        this.aviaFront,
         this.oauth,
         this.properties,
+        this.jenkins,
         this.artifactory,
         this.sonar,
         this.activemq
@@ -102,7 +109,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.currency,
         this.ticTacBack,
         this.oauth,
-        this.properties
+        this.properties,
+        this.aviaBack
     ];
     this.buttonAll.classList.remove('buttonAll-focus');
   }
@@ -110,7 +118,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   showAngApps() {
     this.services = [
         this.angular,
-        this.ticTacFront
+        this.ticTacFront,
+        this.aviaFront
     ];
     this.buttonAll.classList.remove('buttonAll-focus');
   }

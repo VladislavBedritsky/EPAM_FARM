@@ -178,6 +178,16 @@
   background-size: cover;
 }
 
+#container .services .card .avia-front {
+  background: url('src/assets/services/aviaFront.png') no-repeat;
+  background-size: cover;
+}
+
+#container .services .card .avia-back {
+  background: url('src/assets/services/aviaBack.png') no-repeat;
+  background-size: cover;
+}
+
 @media (max-width: 625px) {
   #container .services .card {
     margin-top: 10px;
