@@ -42,8 +42,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   artifactory: Service = { id: 12, label: 'Artifactory', class: 'artifactory', rest: false, link: 'https://artifactory.xfarm.xyz'  };
   sonar: Service = { id: 13, label: 'SonarQube', class: 'sonar', rest: false, link: 'https://sonar.xfarm.xyz'  };
   activemq: Service = { id: 14, label: 'ActiveMQ', class: 'activemq', rest: false, link: 'https://activemq.xfarm.xyz'  };
-  aviaFront: Service = { id: 14, label: 'Avia', class: 'avia-front', rest: false, link: 'https://avia.xfarm.xyz'  };
-  aviaBack: Service = { id: 14, label: 'Avia', class: 'avia-back', rest: true, link: 'https://tomcat.xfarm.xyz/avia/api/cities'  };
+  aviaFront: Service = { id: 14, label: 'Travel', class: 'avia-front', rest: false, link: 'https://travel.xfarm.xyz'  };
+  aviaBack: Service = { id: 14, label: 'Gateway', class: 'avia-back', rest: true, link: 'https://gateway.xfarm.xyz/api/cities'  };
 
 
   services: Service[] = [];
