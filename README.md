@@ -89,20 +89,20 @@ _https://github.com/VladislavBedritsky/EPAM_FARM/tree/master/oauth_
 _https://github.com/VladislavBedritsky/WebGame-Angular-Spring/tree/master/angular_
  
  #
- ## :white_check_mark: Avia backend
-  > ### _https://tomcat.xfarm.xyz/avia/api/cities_ 
+ ## :white_check_mark: Travel backend
+  > ### _https://gateway.xfarm.xyz/api/cities_ 
 
  :round_pushpin: **Code location:** 
   
-  _https://github.com/VladislavBedritsky/schedule_
+  _https://github.com/VladislavBedritsky/TravelApp_
   
  #
- ## :white_check_mark: Avia frontend
-  > ### _https://avia.xfarm.xyz_ 
+ ## :white_check_mark: Travel frontend
+  > ### _https://travel.xfarm.xyz_ 
  
  :round_pushpin: **Code location:** 
  
- _https://github.com/VladislavBedritsky/schedule/tree/master/frontend_
+ _https://github.com/VladislavBedritsky/TravelApp/tree/master/webClient_
  
  
 # 
