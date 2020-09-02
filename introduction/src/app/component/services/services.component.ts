@@ -42,7 +42,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   artifactory: Service = { id: 12, label: 'Artifactory', class: 'artifactory', rest: false, link: 'https://artifactory.xfarm.xyz'  };
   sonar: Service = { id: 13, label: 'SonarQube', class: 'sonar', rest: false, link: 'https://sonar.xfarm.xyz'  };
   activemq: Service = { id: 14, label: 'ActiveMQ', class: 'activemq', rest: false, link: 'https://activemq.xfarm.xyz'  };
-  aviaFront: Service = { id: 14, label: 'Travel', class: 'avia-front', rest: false, link: 'https://travel.xfarm.xyz'  };
+  aviaFront: Service = { id: 14, label: 'Travel', class: 'avia-front', rest: false, link: 'https://searchthetrip.com'  };
   aviaBack: Service = { id: 14, label: 'Gateway', class: 'avia-back', rest: true, link: 'https://gateway.xfarm.xyz/api/cities'  };
 
 
@@ -54,7 +54,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.services = [
-       this.github,
+        this.aviaFront,
+        this.github,
         this.angular,
         this.webapp,
         this.rest,
@@ -63,7 +64,6 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.ticTacFront,
         this.ticTacBack,
         this.aviaBack,
-        this.aviaFront,
         this.oauth,
         this.properties,
         this.jenkins,
