@@ -82,6 +82,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
   showAllApps() {
     this.services = [
+       this.aviaFront,
        this.github,
         this.angular,
         this.webapp,
@@ -91,7 +92,6 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.ticTacFront,
         this.ticTacBack,
         this.aviaBack,
-        this.aviaFront,
         this.oauth,
         this.properties,
         this.jenkins,
@@ -117,9 +117,9 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
   showAngApps() {
     this.services = [
+        this.aviaFront,
         this.angular,
-        this.ticTacFront,
-        this.aviaFront
+        this.ticTacFront
     ];
     this.buttonAll.classList.remove('buttonAll-focus');
   }
