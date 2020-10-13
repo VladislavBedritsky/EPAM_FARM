@@ -29,7 +29,7 @@
         <mysql-connector-java.version>8.0.18</mysql-connector-java.version>
         <liquibase-maven-plugin.version>3.4.1</liquibase-maven-plugin.version>
         <org.springframework.version>4.3.14.RELEASE</org.springframework.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <mockito.version>2.23.4</mockito.version>
         <servlet.version>3.1.0</servlet.version>
         <jackson-databind.version>2.10.1</jackson-databind.version>
