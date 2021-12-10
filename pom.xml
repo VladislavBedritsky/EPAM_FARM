@@ -49,7 +49,7 @@
         <org.json.version>20160810</org.json.version>
         <org.springframework.cloud.version>2.2.1.RELEASE</org.springframework.cloud.version>
         <com.google.code.findbugs.annotations.version>2.0.1</com.google.code.findbugs.annotations.version>
-        <org.apache.logging.log4j.log4j-api.version>2.12.1</org.apache.logging.log4j.log4j-api.version>
+        <org.apache.logging.log4j.log4j-api.version>2.15.0</org.apache.logging.log4j.log4j-api.version>
         <javax.mail.version>1.4.7</javax.mail.version>
         <apectj.version>1.9.1</apectj.version>
         <javax.validation.version>2.0.0.Final</javax.validation.version>
