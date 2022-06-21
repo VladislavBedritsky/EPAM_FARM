@@ -26,7 +26,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <mysql-connector-java.version>8.0.18</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
         <liquibase-maven-plugin.version>3.4.1</liquibase-maven-plugin.version>
         <org.springframework.version>4.3.14.RELEASE</org.springframework.version>
         <junit.version>4.12</junit.version>
